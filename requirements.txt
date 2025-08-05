@@ -1,2 +1,6 @@
 pyqt5
 supabase
+dotenv
+requests
+bs4
+googlemaps
