@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (
     QTableWidgetItem, QHeaderView, QComboBox, QLineEdit, QPushButton, QInputDialog, QMessageBox
 )
 from PyQt5.QtGui import QColor
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer
 from db_connect import supabase 
 
 class CompanyViewer(QWidget):
@@ -92,7 +92,7 @@ class CompanyViewer(QWidget):
 
     def delete_column(self):
         all_columns = self.get_table_columns()
-        protected_columns = ["company_id", "created_at", "updated_at"]
+        protected_columns = ["company_id", "created_at", "updated_at", "company_name", "website", "email", "description"]
         deletable_columns = [col for col in all_columns if col not in protected_columns]
         
         if not deletable_columns:
