@@ -1,0 +1,1001 @@
+company_id,company_name,industry,description,source,website,place_id
+666,Oxbow Bakery,"cafe, bakery, restaurant, food, point_of_interest, store, establishment","2307 24th Ave E, Seattle, WA 98112, USA",google_places,https://www.oxbowmontlake.com/,ChIJHTNKasAVkFQR9HGgjH7MvAc
+1200,Qmart,"store, point_of_interest, establishment","1321 N Callow Ave, Bremerton, WA 98312, USA",google_places,,ChIJ7_s-a3o3kFQR8p1I1YzlQTU
+59,Al's Tavern,"bar, point_of_interest, establishment",,google_places,,
+4,Uber Technologies Seattle Engineering Office,Tech,,google_places,https://www.uber.com/,ChIJZbXzmbFqkFQRwmEdR9dXw1o
+6,Attentus Technologies,Tech,,google_places,https://www.attentus.tech/,ChIJ58F2Ex5tkFQRM4JbxDicGMw
+7,Unity Technologies,Tech,,google_places,http://unity-technology.com/,ChIJlx6A4Ek1joAREBI8gFxUvvs
+10,Levitate Gastropub,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.levitategastropub.com/,ChIJIUAubYBvkFQREE4AuMi7j08
+12,Mr West Cafe Bar Downtown,"cafe, bar, point_of_interest, food, establishment",,google_places,https://mrwestcafebar.com/,ChIJnzzCxkoVkFQRTECoVWZJFiA
+13,Watershed Pub & Kitchen,"meal_takeaway, bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.watershedpub.com/,ChIJgexusP8TkFQRbL-n7XJMhdc
+16,The Goose Pub & Eatery,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.thegoosepub.com/,ChIJBeN62_VskFQRolgeXT5Ho5k
+17,Imperial kitchen and bar,"restaurant, bar, point_of_interest, food, establishment",,google_places,http://imperialbelltown.com/,ChIJrwaaUuoVkFQRkQIBZ4Er8po
+18,Phinney Station,"bar, point_of_interest, establishment",,google_places,https://www.phinneystation.com/,ChIJSxx6NGAVkFQRRIBxMNSzEBg
+20,The Lost Dutchman Sports Bar,"night_club, bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.thelostdutchmanbar.com/,ChIJQ2GjcV1gkFQRhb_GTiDgBAQ
+22,Slim Goody Sports Bar,"restaurant, bar, point_of_interest, food, establishment",,google_places,https://www.slimgoodyseattle.com/,ChIJO3yWBQAVkFQRzazykgAmy7A
+24,Whiskey Gulch,"restaurant, bar, point_of_interest, food, establishment",,google_places,http://www.whiskeygulchpo.com/,ChIJzwvuZJM3kFQRydAUwEFr1c8
+25,Lottie's Lounge,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://lottiesseattle.com/,ChIJ_4mVKAxqkFQRJDAkHIbxEhU
+27,Ables Steakhouse,"restaurant, bar, point_of_interest, food, establishment",,google_places,https://ablessteakhouse.com/,ChIJd0jOJjxFkFQR64gAV6_1yrI
+28,Palmers East,"night_club, bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.facebook.com/PalmersEast,ChIJYSMLAa5ykFQRA-yTZvsBFDY
+29,JOEY Bellevue,"restaurant, point_of_interest, food, establishment",,google_places,https://joeyrestaurants.com/location/joey-bellevue,ChIJJ7WjO49skFQR-4IwG2Zujgg
+31,Arnies Restaurant,"restaurant, point_of_interest, food, establishment",,google_places,http://www.arniesrestaurant.com/,ChIJc1Y_0PgakFQRP3DUOkpjB4I
+34,Latona Pub,"restaurant, bar, meal_takeaway, point_of_interest, food, establishment",,google_places,http://www.latonapub.com/,ChIJjQ5WUGkUkFQRqqckLhz94Wc
+36,Bar Harbor,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.barharbormaine.gov/,ChIJkyWAFUi-rkwRG9nKKGUa6Yg
+37,Three Lions Pub Novelty Hill,"bar, point_of_interest, establishment",,google_places,http://www.thethreelionspubwa.com/,ChIJ0aRE4VdzkFQRYlJKvZwO6Ag
+39,Cafe Hagen (Modern Scandinavian All Day Restaurant and Cocktail Bar),"restaurant, point_of_interest, food, establishment",,google_places,http://cafehagen.com/,ChIJPVMVVABtkFQR79rTIEQnnjI
+40,Admiral Pub,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://admiralpubseattle.com/,ChIJu-DFfW9AkFQRDg08txAbIh4
+41,Can Can Culinary Cabaret,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://thecancan.com/tickets,ChIJt6GM-bJqkFQRGOqskPuiqp4
+43,Finn MacCool’s Irish Public House,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.finnmaccools.com/,ChIJAwwZrvQUkFQRu6zb8LQWYig
+44,Smarty Pants Garage,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.smartypantsgarage.com/,ChIJZ4SDpJxEkFQRGsqVXWRrKfQ
+46,Lotus on The Beach,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.lotusonthebeach.us/,ChIJB_j9MABBkFQRowQPKV6mRX4
+48,Perihelion Brewery,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.perihelionbrewery.com/,ChIJ3yfKEIdqkFQRdgzcpwqH6dw
+49,Ben Paris,"restaurant, point_of_interest, food, establishment",,google_places,http://benparis.com/,ChIJtRCZSe9rkFQRxl4Y_upZoF0
+3,Progressive Tech,Tech,,google_places,http://www.progressivetech.com/,ChIJCXi8om8UkFQRXt-hRVZNdGY
+32,Riverbend Bar & Grill,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://riverbendgrill.com/,ChIJh_NH4udbkFQR4v2X6rwBKi8
+50,Baker's,"bar, point_of_interest, establishment",,google_places,http://fujibakeryinc.com/,ChIJ2UIdj7xqkFQRf5OVSNKl2DQ
+53,Ram Restaurant & Brewery,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://theram.com/,ChIJ-6hn_v5bkFQRCu1kjTqz-q8
+54,Bottle and Bull,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.bottle-bull.com/,ChIJRy_eh90SkFQRVQWY3ZRE_jM
+55,The Great American Diner & Bar,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.greatamericandinerandbar.com/,ChIJw_d85vtAkFQRnDWMG-3C_VY
+57,Ha!,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://thanbrothers.com/,ChIJM-g8wRcUkFQRIkMDW7J_psI
+58,Captain Blacks,"bar, point_of_interest, establishment",,google_places,https://captainblacks.com/,ChIJt8BYATMVkFQRNfh0t4q8E7I
+61,Can Bar,"bar, point_of_interest, establishment",,google_places,http://www.canbarseattle.com/,ChIJC5iqRgFDkFQRG4tX5GvVKP8
+62,Huckleberry Square,"restaurant, point_of_interest, food, establishment",,google_places,http://www.huckleberrysquare.com/,ChIJT-fpc4FEkFQRe0XL6lb5Mlo
+64,El Gaucho Bellevue,"restaurant, point_of_interest, food, establishment",,google_places,https://elgaucho.com/bellevue/,ChIJFYxSVohskFQRC6AH1xscYJY
+65,Andare Kitchen & Bar,"restaurant, point_of_interest, food, establishment",,google_places,https://www.hyatt.com/en-US/hotel/washington/hyatt-regency-seattle/sears/dining,ChIJ3c88zo0VkFQRPj6JIWaYzfA
+67,Metropolitan Grill,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://themetropolitangrill.com/,ChIJPf-9ULBqkFQRSBVLYMR_ONQ
+671,Sweet Dahlia Baking,"bakery, cafe, restaurant, food, point_of_interest, store, establishment","9720 Coppertop Loop NE #103, Bainbridge Island, WA 98110, USA",google_places,https://www.sweetdahliabaking.com/,ChIJC3j3TyI8kFQReT0KETMORj0
+676,Bank of America Financial Center,"bank, finance, point_of_interest, establishment","15600 NE 8th St Suite A9, Bellevue, WA 98008, USA",google_places,https://locators.bankofamerica.com/wa/bellevue/financial-centers-bellevue-16666.html?utm_source=GMBlisting&utm_medium=organic,ChIJz_B3r7ptkFQRdOqxLyeWD_w
+678,Wells Fargo Bank,"bank, atm, finance, point_of_interest, establishment","12516 Totem Lake Blvd NE Bldg L, Kirkland, WA 98034, USA",google_places,https://www.wellsfargo.com/locator/bank/12516__TOTEM__LAKE__BLVD__NE__BLDG__L_KIRKLAND_WA_98034/?utm_campaign=Local_Listings&utm_source=Google&group=Community_Bank&loc=WF01714,ChIJo6dLP4QNkFQRU-bJGhY_BiQ
+680,Banner Bank,"bank, finance, point_of_interest, establishment","1222 E Madison St Suite A, Seattle, WA 98122, USA",google_places,https://locations.bannerbank.com/wa/seattle/1222-e-madison-st?utm_medium=local-search&utm_source=google-my-business&y_source=1_ODQzOTYwMS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,ChIJhcThcclqkFQRHhfqleOr2X4
+683,Pike Place Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","90 Pike St, Seattle, WA 98101, USA",google_places,https://www.eatatpikeplace.com/,ChIJWalY97JqkFQR03-hwcBDefo
+687,520 Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","10146 Main St, Bellevue, WA 98004, USA",google_places,http://www.520barandgrill.com/,ChIJhY1xAn5skFQR740cPn2c5Kc
+690,Lucky 7 Bar and Grill,"bar, restaurant, point_of_interest, food, establishment","12715 NE 124th St, Kirkland, WA 98034, USA",google_places,http://www.lucky7kirkland.com/,ChIJ16ynw4INkFQRZWc3667NsfE
+694,Earls Kitchen + Bar,"restaurant, night_club, bar, point_of_interest, food, establishment","700 Bellevue Way NE Unit 130, Bellevue, WA 98004, USA",google_places,https://www.earls.ca/locations/bellevue,ChIJkTtnrYhskFQRuAW_QTilgLQ
+699,Collins Pub,"bar, restaurant, point_of_interest, food, establishment","526 2nd Ave, Seattle, WA 98104, USA",google_places,http://www.collinspubseattle.com/,ChIJWVuUkLpqkFQRjAp4gthzzdo
+703,Hillside Bar,"bar, point_of_interest, establishment","1520 E Olive Wy, Seattle, WA 98122, USA",google_places,https://hillsidebar.com/,ChIJT9XXcDMVkFQRqiH0RHvDCIE
+706,Blarney Stone Pub,"bar, restaurant, point_of_interest, food, establishment","1416 1st Ave, Seattle, WA 98101, USA",google_places,https://blarneystoneseattle.com/,ChIJHT8jULJqkFQRbWUzOe5ZHHk
+707,re:public,"bar, restaurant, point_of_interest, food, establishment","429 Westlake Ave N, Seattle, WA 98109, USA",google_places,http://www.republicseattle.com/,ChIJZ7vyKjgVkFQR5znRuHMGFxg
+709,Boxcar Ale House,"bar, night_club, restaurant, point_of_interest, food, establishment","3407 Gilman Ave W, Seattle, WA 98199, USA",google_places,https://m.facebook.com/The-Boxcar-Ale-House-121355571211217/,ChIJu5v9U5gVkFQRbqxFLxfo2J0
+715,Greenlake Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","7200 East Green Lake Dr N, Seattle, WA 98115, USA",google_places,https://neighborhoodgrills.com/,ChIJEZ4GIG0UkFQR7PTWzWPbIuE
+719,13th Ave Pub & Eatery,"liquor_store, bar, restaurant, food, store, point_of_interest, establishment","1233 164th St SW Suite J, Lynnwood, WA 98087, USA",google_places,http://13thavepub.com/,ChIJm7I7JsgFkFQRP2yX_piQLuY
+723,Cairde Public House Bar & Restaurant,"bar, night_club, restaurant, food, point_of_interest, establishment","701 5th Ave N #100, Seattle, WA 98109, USA",google_places,https://www.cphbarseattle.com/,ChIJ71wqZP0VkFQR20NNqYyj7SE
+726,Thrasher's Corner Sports Pub,"night_club, bar, restaurant, food, point_of_interest, establishment","20805 Bothell Everett Hwy, Bothell, WA 98021, USA",google_places,http://thrasherspubbothell.com/,ChIJdawae2sPkFQRJUlEPE6rGtw
+728,Daman's Bar and Grill,"bar, restaurant, food, point_of_interest, establishment","14810 NE 24th St, Redmond, WA 98052, USA",google_places,https://damansbarandgrill.com/,ChIJK9Qm_whtkFQRCgv8vnve2ss
+732,Rookies Sports Bar and Grill,"bar, restaurant, food, point_of_interest, establishment","3820 S Ferdinand St, Seattle, WA 98118, USA",google_places,https://www.rookiesseattle.com/,ChIJsbwagA5qkFQRqyybGMmg57s
+926,CAFFE COCINA COFFEE ROASTING CO.,"cafe, food, store, point_of_interest, establishment","18990 Front St NE, Poulsbo, WA 98370, USA",google_places,http://www.caffecocina.com/,ChIJtWpWxmYjkFQRi6nMFWXPjso
+930,Johnny Coffee,"cafe, food, store, point_of_interest, establishment","11199 Pacific Crest Pl D-139, Silverdale, WA 98383, USA",google_places,http://www.drinkjohnnycoffee.com/,ChIJj-ZNzwM7kFQRu2VPkBLFq7Y
+932,Cups Espresso & Cafe,"cafe, restaurant, food, store, point_of_interest, establishment","123 Bjune Dr SE STE 105, Bainbridge Island, WA 98110, USA",google_places,http://www.cupsespresso.com/,ChIJEZnj4LY-kFQRfiRLF8khCYM
+936,Alan's Country Cafe,"cafe, restaurant, food, store, point_of_interest, establishment","4800 Jackson Ave SE STE 101, Port Orchard, WA 98366, USA",google_places,https://alanscountrycafe.square.site/s/order,ChIJkQJu2ctJkFQRVu4mVM93h9A
+940,Camp McKean,"campground, park, lodging, point_of_interest, establishment","Bremerton, WA 98312, USA",google_places,http://kitsap.navylifepnw.com/programs/3f1043a8-bf91-4216-9e7f-eabdfb094caa,ChIJK0vtjtA2kFQRbaoFnVfubXc
+941,Ramada by Wyndham SeaTac Airport,"lodging, point_of_interest, establishment","16720 International Blvd, SeaTac, WA 98188, USA",google_places,https://www.wyndhamhotels.com/ramada/sea-tac-washington/ramada-suites-seatac-airport/overview?CID=LC:wmcic5n98gs1g0r:10919&iata=00093796,ChIJu8-nEE1DkFQRmqI7OYC0fUI
+944,Gilchrist Chevrolet of Port Orchard,"car_dealer, car_repair, store, point_of_interest, establishment","4949 SW Hovde Rd, Port Orchard, WA 98367, USA",google_places,http://www.chevroletofportorchard.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp_sales_websitelink,ChIJ9QBc6edJkFQRbKiBsQ2I0HA
+945,CarHop Auto Sales and Finance,"car_dealer, store, point_of_interest, establishment","6001 Auto Center Way, Bremerton, WA 98312, USA",google_places,http://www.carhopofbremerton.com/?utm_source=google&utm_medium=organic&utm_campaign=googlemybusiness,ChIJwwW5wiE3kFQR1FXkv7I-ShU
+95,Nue,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.nueseattle.com/,ChIJz91V-s1qkFQRTaAOUkM_jKo
+110,Outback Steakhouse,"bar, meal_takeaway, restaurant, point_of_interest, food, establishment",,google_places,https://locations.outback.com/washington/everett/10121-evergreen-way?utm_source=gmb&utm_medium=local_search&utm_campaign=website_cta&y_source=1_MTU1MDI2MjUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,ChIJ__ib0coGkFQRD-UEnubLFvc
+111,Bar Harbor,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.barharbormaine.gov/,ChIJkyWAFUi-rkwRG9nKKGUa6Yg
+736,Adara Salon,"beauty_salon, point_of_interest, establishment","3381 NW Bucklin Hill Rd, Silverdale, WA 98383, USA",google_places,http://www.adarasalonwa.com/,ChIJq6p--c47kFQRYb4EuP-JzNU
+740,Seaport Salon Spa,"spa, beauty_salon, hair_care, health, point_of_interest, establishment","9130 Washington Ave NW, Silverdale, WA 98383, USA",google_places,http://www.seaportsalon.com/,ChIJEza9uZA6kFQRpy8joXoK_Bo
+746,Ulta Beauty,"beauty_salon, hair_care, store, point_of_interest, establishment","11066 Pacific Crest Pl Suite A-120, Silverdale, WA 98383, USA",google_places,https://www.ulta.com/stores/silverdale-wa-1133,ChIJuS_9wMc6kFQRZL37fuv3afw
+750,Mane & Co.,"beauty_salon, point_of_interest, establishment","1616 SE Ellis Ct, Port Orchard, WA 98367, USA",google_places,http://manecobeauty.com/,ChIJi_WId9lJkFQRXVREVvmgxCw
+753,@Rockway Salon - French Stylist,"beauty_salon, point_of_interest, establishment","300 High School Rd NE UNIT 100, Bainbridge Island, WA 98110, USA",google_places,https://rockwaysalon.square.site/,ChIJoULx3LY_kFQRw9yx28a_szg
+755,Northwest Hair Studio - Bremerton,"beauty_salon, hair_care, point_of_interest, establishment","1007 Scott Ave Unit C, Bremerton, WA 98310, USA",google_places,http://www.nwhairstudio.com/,ChIJMw0Eq3M3kFQRsZyrbQbnaPU
+756,Touch of beauty,"hair_care, spa, beauty_salon, point_of_interest, establishment","Eastside plaza, 4171 Wheaton Wy # 2, Bremerton, WA 98310, USA",google_places,http://www.touchofbeauty.info/,ChIJVSEiVoY5kFQRXhPbhu5Jcks
+761,Third Dimension Salon,"beauty_salon, hair_care, point_of_interest, health, establishment","1456 Olney Ave SE #103, Port Orchard, WA 98366, USA",google_places,http://thirddimensionsalon.com/,ChIJ2Q1Ahec3kFQRFWnujI4_QQ8
+767,Precision Beauty,"beauty_salon, point_of_interest, establishment","1102 Scott Ave Suite 103, Bremerton, WA 98310, USA",google_places,http://precisionbeautyllc.com/,ChIJybLekuQ7kFQRWgNJ97PFJdE
+771,Mai Salon,"beauty_salon, point_of_interest, establishment","2130 6th St, Bremerton, WA 98312, USA",google_places,https://maisalonllc.com/,ChIJ-5oiry83kFQRNWkZq1cQRU4
+776,Trends Hair Salon,"beauty_salon, point_of_interest, establishment","3418 Perry Ave NE, Bremerton, WA 98310, USA",google_places,http://www.bremertonhairsalon.com/,ChIJ92XgUJM5kFQRGeGLvenm4iI
+780,Barber & Beauty Lounge by Consele,"hair_care, beauty_salon, health, point_of_interest, establishment","717 And, 719 Pacific Ave, Bremerton, WA 98337, USA",google_places,http://www.theloungebyconsele.com/,ChIJKYBQP3k3kFQRd_0ilLNCs8E
+783,Magnolia Rose Beauty Co.,"beauty_salon, point_of_interest, establishment","6722 Kitsap Way, Bremerton, WA 98312, USA",google_places,https://linktr.ee/magnoliarosebeautyco_kitsap?fbclid=PAZXh0bgNhZW0CMTEAAaZxiyS-bhQMhiAsZPfiSr43PeLhA3DGwSEQ6Kv4gsrC0bGFCXlPPaFLUKg_aem_CqNtvDv1ZJq6Onruzfvf1A,ChIJaUX-q7Q3kFQRTpbO_aAia_4
+796,Gregg's Greenlake Cycle,"bicycle_store, point_of_interest, store, establishment","7007 Woodlawn Ave NE, Seattle, WA 98115, USA",google_places,https://www.greggscycles.com/,ChIJfx2M_mwUkFQR-PlDF6cSxcQ
+800,Gregg's Bellevue Cycle,"bicycle_store, point_of_interest, store, establishment","105 Bellevue Way NE, Bellevue, WA 98004, USA",google_places,https://www.greggscycles.com/,ChIJw1LMZIdskFQRB064zYMhZs4
+802,Bothell Ski & Bike,"bicycle_store, point_of_interest, store, establishment","8020 NE Bothell Way, Kenmore, WA 98028, USA",google_places,http://www.bikesale.com/,ChIJnf_sxxQOkFQRMddjk2rYjH0
+176,Brewtop Social,"bar, restaurant, point_of_interest, food, establishment","17801 International Blvd #1-MZ, Seattle, WA 98158, USA",google_places,,
+192,Jashn,"restaurant, point_of_interest, food, establishment","7325 166th Ave NE F142, Redmond, WA 98052, USA",google_places,,
+168,The Ivy,"bar, night_club, restaurant, point_of_interest, food, establishment","5512 17th Ave NW, Seattle, WA 98107, USA",google_places,https://www.theivyseattle.com/,ChIJBexJoREVkFQR64k4VgtVnYI
+170,Sparrow,"bar, restaurant, point_of_interest, food, establishment","9736 NE 120th Pl, Kirkland, WA 98034, USA",google_places,https://sparrowkirkland.com/,ChIJn2iCHs0TkFQR8WCSqC_efO4
+171,Lockspot Cafe,"bar, restaurant, point_of_interest, food, establishment","3005 NW Locks Pl, Seattle, WA 98107, USA",google_places,https://www.thelockspot.com/,ChIJO942VsIVkFQRA3NXEvSjolY
+172,Serendipity Cafe,"night_club, bar, cafe, restaurant, store, point_of_interest, food, establishment","3222A W McGraw St, Seattle, WA 98199, USA",google_places,http://www.serendipitycafeandlounge.com/,ChIJQ89z8YAVkFQRqUt6GXUppBg
+174,Tapped Mukilteo,"restaurant, meal_takeaway, bar, point_of_interest, food, establishment","10809 Mukilteo Speedway, Mukilteo, WA 98275, USA",google_places,https://www.tappedpublichouse.com/,ChIJ_bvF2JMDkFQRE-pGhqMpUyc
+175,The Dray,"bar, cafe, restaurant, store, point_of_interest, food, establishment","708 NW 65th St, Seattle, WA 98117, USA",google_places,http://thedray.com/,ChIJX1xU6jMUkFQRJri4uN7vU6g
+178,Ezell's Famous Chicken,"restaurant, point_of_interest, food, establishment","3925 196th St SW, Lynnwood, WA 98036, USA",google_places,https://www.ezellschicken.com/,ChIJLYQJMWoFkFQRvPZeBoxsp2s
+179,rachel’s ginger beer - u village,"bar, restaurant, point_of_interest, food, establishment","4626 26th Ave NE, Seattle, WA 98105, USA",google_places,http://rachelsgingerbeer.com/,ChIJ-xq6S48UkFQRtxK9xo82ji8
+180,Outlier,"restaurant, bar, point_of_interest, food, establishment","1101 4th Ave, Seattle, WA 98101, USA",google_places,https://outlierseattle.com/?utm_source=googlemybusiness&utm_medium=organic&utm_campaign=gbreferral,ChIJj2myQ7FqkFQRgvcdiA41MEI
+182,Crystal Creek Cafe,"bar, restaurant, point_of_interest, food, establishment","22620 Bothell Everett Hwy, Bothell, WA 98021, USA",google_places,http://crystalcreek.cafesinc.com/,ChIJuXBQ_gcPkFQR_fBq-9DqnxA
+183,El Moose,"bar, restaurant, point_of_interest, food, establishment","5242 Leary Ave NW, Seattle, WA 98107, USA",google_places,https://www.elmoose.com/,ChIJrWoLyscVkFQRYS0WsbfjejU
+185,Villa Escondida Restaurant and Bar,"bar, restaurant, point_of_interest, food, establishment","2203 1st Ave, Seattle, WA 98121, USA",google_places,http://villaescondidaseattle.com/,ChIJOzjfpk0VkFQRmRjtqDxmzlU
+186,Human People Beer Cafe,"bar, cafe, restaurant, store, point_of_interest, food, establishment","6105a Roosevelt Way NE, Seattle, WA 98115, USA",google_places,http://www.humanpeoplebeer.com/,ChIJGR9QSQAVkFQR0n-lQDvO0Og
+187,Game On NW,"bar, point_of_interest, establishment","1425 SE Everett Mall Way, Everett, WA 98208, USA",google_places,https://gameonnw.com/,ChIJg_E2qNgHkFQRMPEt3x7TSww
+189,Bar Sur Mer,"bar, restaurant, point_of_interest, food, establishment","219 N 85th St, Seattle, WA 98103, USA",google_places,https://barsurmerseattle.com/,ChIJ16tEBMkVkFQRolR3QXlj_1g
+190,Revelry Room,"bar, night_club, point_of_interest, establishment","4547 California Ave SW Suite B, Seattle, WA 98116, USA",google_places,http://revelryroom.com/,ChIJScb9S6lBkFQRMRhhG490YsA
+804,Kirkland Bicycle,"bicycle_store, point_of_interest, store, establishment","208 Kirkland Ave, Kirkland, WA 98033, USA",google_places,https://www.kirklandbicycle.com/,ChIJ52pPe90SkFQRtZIqF6vqNTc
+197,The Harp Bar and Restaurant,"bar, restaurant, point_of_interest, food, establishment","24437 Russell Rd #117, Kent, WA 98032, USA",google_places,,
+198,Cafe on the Ave,"cafe, bar, restaurant, store, point_of_interest, food, establishment","4201 University Wy NE, Seattle, WA 98105, USA",google_places,,
+206,District 4 Cafe,"cafe, restaurant, point_of_interest, food, store, establishment","5600 Roosevelt Way NE, Seattle, WA 98105, USA",google_places,,
+207,La Pisa Cafe,"cafe, restaurant, point_of_interest, food, establishment","Concourse A, 17801 International Blvd, SeaTac, WA 98158, USA",google_places,,
+208,Sahara Cafe Somali Cuisine,"cafe, restaurant, point_of_interest, food, establishment","13919 Tukwila International Blvd, Tukwila, WA 98168, USA",google_places,,
+210,BAM Restaurant & Lounge,"restaurant, point_of_interest, food, establishment","2901 Perry Ave NE #10, Bremerton, WA 98310, USA",google_places,,
+226,Cafe Solstice,"cafe, restaurant, point_of_interest, food, store, establishment","4116 University Wy NE, Seattle, WA 98105, USA",google_places,,
+235,Cafe Argento,"cafe, restaurant, point_of_interest, food, establishment","1125 E Olive St, Seattle, WA 98122, USA",google_places,,
+195,Tom's Watch Bar - Climate Pledge Arena,"bar, restaurant, point_of_interest, food, establishment","105 Lenny Wilkens Wy, Seattle, WA 98109, USA",google_places,https://tomswatchbar.com/seattle-climate-pledge/,ChIJDUFW42gVkFQRhFMAt3OqL_0
+196,BZ's Sports Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","17730 Ambaum Blvd S, Burien, WA 98148, USA",google_places,http://www.bzssportsbar.com/,ChIJLeAuLLJEkFQRgQTr14IaoAM
+200,One million cafe,"cafe, restaurant, point_of_interest, bakery, food, store, establishment","323 N 105th St Suite b, Seattle, WA 98133, USA",google_places,https://onemillioncafeseattle.com/,ChIJ2yj3OAEXkFQR_RQlBJ0VyIU
+201,TeKu Tavern + Café,"bar, liquor_store, cafe, restaurant, point_of_interest, food, store, establishment","552 Denny Wy, Seattle, WA 98109, USA",google_places,http://www.tekutavern.beer/,ChIJP_CQzkgVkFQRZev2ypChEyQ
+202,Hye Life Cafe & Bar,"cafe, bar, restaurant, point_of_interest, food, establishment","900 160th Ave NE Suite 1, Bellevue, WA 98008, USA",google_places,https://hyelifecafebar.com/,ChIJ4VMlse9tkFQR5YmWV4SOvnY
+204,LUMI Dessert Cafe,"cafe, restaurant, point_of_interest, food, store, establishment","4713 168th St SW #101, Lynnwood, WA 98037, USA",google_places,http://lumidessertcafe.com/,ChIJa0bAmNgFkFQRNR1JXndm3fc
+205,Pochi Bubble Tea Cafe (Lynnwood),"cafe, restaurant, point_of_interest, food, establishment","1211 164th St SW #102, Lynnwood, WA 98087, USA",google_places,http://www.pochibubbletea.com/,ChIJt1buJMgFkFQRTySdzTNbUNM
+209,Bang Bang Cafe,"cafe, restaurant, point_of_interest, bakery, food, store, establishment","2460 Western Ave, Seattle, WA 98121, USA",google_places,https://www.bangbangcafeseattle.com/,ChIJ5Y74B04VkFQRvoWKWLoETmA
+212,Purple Café and Wine Bar,"cafe, bar, restaurant, point_of_interest, food, establishment","1225 4th Ave, Seattle, WA 98101, USA",google_places,https://www.purplecafe.com/,ChIJC2j55LNqkFQRRqBoRA_a_3A
+213,Coche Valley Dessert Cafe,"cafe, restaurant, point_of_interest, food, store, establishment","1424 E Pine St, Seattle, WA 98122, USA",google_places,http://www.cochevalleydessertcafe.com/,ChIJ9Yke7MJrkFQR7CJNNPFpfL4
+215,Volunteer Park Cafe & Pantry,"cafe, liquor_store, restaurant, point_of_interest, bakery, food, store, establishment","1501 17th Ave E, Seattle, WA 98112, USA",google_places,http://www.volunteerpark.cafe/,ChIJLWGLg90VkFQREfImduJ7gjA
+216,Sugar Bakery,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","1014 Madison St, Seattle, WA 98104, USA",google_places,https://sugarbakerycafe.com/,ChIJO_YVH7ZqkFQRe6amQ5fBrtg
+217,Sammamish Cafe & Spirits,"cafe, bar, restaurant, point_of_interest, food, establishment","22850 NE 8th St, Sammamish, WA 98074, USA",google_places,http://sammamish.cafesinc.com/,ChIJMVLjIfVxkFQRfWdHiVCXnFc
+219,Village Square Cafe,"cafe, restaurant, point_of_interest, food, establishment","16150 NE 85th St #104, Redmond, WA 98052, USA",google_places,http://villagesquare.cafesinc.com/,ChIJfT0fK7NykFQRCYUuUvXZYZQ
+220,Chelan Cafe,"cafe, bar, restaurant, point_of_interest, food, establishment","3527 Chelan Ave SW, Seattle, WA 98106, USA",google_places,http://thechelancafe.com/,ChIJSQ3hHUZAkFQRilQStXap7Jk
+222,The Stonehouse Cafe,"cafe, restaurant, point_of_interest, food, establishment","9701 Rainier Ave S, Seattle, WA 98118, USA",google_places,http://www.thestonehousecafe.com/,ChIJJV7tinlCkFQR5uCe1wzZP0A
+223,Mukilteo's Speedway Cafe,"cafe, restaurant, point_of_interest, food, establishment","11707B Mukilteo Speedway, Mukilteo, WA 98275, USA",google_places,http://mukilteospeedway.cafesinc.com/,ChIJlepTpZYDkFQRR_0EwfTBItQ
+224,Agua Verde Cafe,"restaurant, cafe, point_of_interest, food, establishment","1303 NE Boat St, Seattle, WA 98105, USA",google_places,http://www.aguaverdecafe.com/,ChIJK51Cgf0VkFQR9xus8VOJJI4
+225,Hangar Cafe,"cafe, restaurant, point_of_interest, food, store, establishment","6261 13th Ave S, Seattle, WA 98108, USA",google_places,http://www.thehangarcafe.com/,ChIJWRgaZOxBkFQRArhWsxJvll0
+228,Salt and Sugar Cafe and Bakery,"cafe, restaurant, point_of_interest, bakery, food, store, establishment","5615 24th Ave NW #102, Seattle, WA 98107, USA",google_places,http://saltandsugarcafe.com/,ChIJ-cmArsUVkFQRMvrYFO6ChIc
+229,Artisan Cafe,"cafe, meal_takeaway, restaurant, point_of_interest, food, store, establishment","2523 5th Ave, Seattle, WA 98121, USA",google_places,http://www.artisancafeonvine.com/,ChIJteL-1U4VkFQRk3iALSegYlQ
+231,Farine Bakery & Café,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","16450 Redmond Way Ste 100, Redmond, WA 98052, USA",google_places,http://www.farinecafe.com/,ChIJC3Tb-lpzkFQRPnln9AmIcPU
+232,Easy Street Records & Cafe,"cafe, restaurant, point_of_interest, food, store, establishment","4559 California Ave SW, Seattle, WA 98116, USA",google_places,https://easystreetonline.com/,ChIJEw2sg_lAkFQR25Oh_sq8qRY
+233,Bacco Cafe,"cafe, restaurant, point_of_interest, food, establishment","86 Pine St, Seattle, WA 98101, USA",google_places,http://baccocafe.com/,ChIJsShv3bJqkFQRNhAXcjjvtSU
+234,Hi-Spot Cafe,"cafe, restaurant, point_of_interest, food, establishment","1410 34th Ave, Seattle, WA 98122, USA",google_places,http://www.hispotcafe.com/,ChIJw5ILDydrkFQRRFtyRupJoEo
+237,Portage Bay Cafe - South Lake Union,"cafe, restaurant, point_of_interest, food, establishment","391 Terry Ave N, Seattle, WA 98109, USA",google_places,https://www.portagebaycafe.com/,ChIJ7ZC5oTcVkFQR4tJqYR-hWbU
+238,Saw Mill Cafe,"cafe, restaurant, point_of_interest, food, establishment","15409 Main St, Mill Creek, WA 98012, USA",google_places,http://sawmill.cafesinc.com/,ChIJ9YkNKHgGkFQRGt0c3jJPP1o
+1412,Seattle Electricians Company,"electrician, point_of_interest, establishment","5048 Delridge Wy SW, Seattle, WA 98106, USA",google_places,,ChIJCVvpXikLkVQRK4dipKTrVLY
+254,Blue Saucer cafe,"cafe, bakery, restaurant, store, point_of_interest, food, establishment","9127 Roosevelt Way NE, Seattle, WA 98115, USA",google_places,,
+256,Al kitab store,"book_store, point_of_interest, store, establishment","13201 Aurora Ave N, Seattle, WA 98133, USA",google_places,,
+282,Charlie's Jewelry and Watch Repair,"jewelry_store, point_of_interest, store, establishment","10315 Silverdale Way NW Suite B04, Silverdale, WA 98383, USA",google_places,,
+284,L.F.R Customs,"jewelry_store, point_of_interest, store, establishment","3435 NE Makah Ct, Bremerton, WA 98311, USA",google_places,,
+240,Semicolon Cafe,"cafe, restaurant, store, point_of_interest, food, establishment","10451 NE 2nd St, Bellevue, WA 98004, USA",google_places,http://semicolonbellevue.com/,ChIJNW7BbmZtkFQRdwg-vYKnGXs
+242,Portage Bay Cafe,"cafe, restaurant, point_of_interest, food, establishment","4130 Roosevelt Way NE, Seattle, WA 98105, USA",google_places,https://www.portagebaycafe.com/,ChIJzZzBbfQUkFQRP0f0nUznInY
+243,Cafe Bambino,"cafe, bar, restaurant, store, point_of_interest, food, establishment","405 NW 65th St, Seattle, WA 98117, USA",google_places,https://www.facebook.com/CafeBambino/,ChIJYwGCVDEUkFQR7efYDK9l4DU
+244,Cheeky Cafe,"restaurant, meal_takeaway, cafe, store, point_of_interest, food, establishment","1700 S Jackson St, Seattle, WA 98144, USA",google_places,https://cheekycafe.shop/,ChIJF5cLJsBqkFQRWFLu67ChHjc
+246,Katy's Corner Cafe,"cafe, restaurant, store, point_of_interest, food, establishment","2000 E Union St, Seattle, WA 98122, USA",google_places,https://katyscornercafe.com/,ChIJYaDb9tBqkFQRBmm_eEPetXo
+247,Red Arrow Coffee,"cafe, restaurant, store, point_of_interest, food, establishment","425 NW Market St, Seattle, WA 98107, USA",google_places,https://www.redarrowcoffee.com/,ChIJmfmiqmIVkFQRiCVDzxYtBug
+248,Café Hagen Modern European Cafe,"cafe, restaurant, point_of_interest, food, establishment","1252 Thomas St, Seattle, WA 98109, USA",google_places,http://cafehagen.com/,ChIJ30hA4soVkFQRvn5g-mme6hw
+250,Arosa Cafe,"cafe, restaurant, store, point_of_interest, food, establishment","3121 E Madison St, Seattle, WA 98112, USA",google_places,http://www.arosacafe.com/,ChIJ0QnZSy1rkFQRrrywDpvsgis
+251,Irwin's Neighborhood Bakery and Cafe,"cafe, bakery, restaurant, store, point_of_interest, food, establishment","2123 N 40th St, Seattle, WA 98103, USA",google_places,http://www.irwinsbakeryseattle.com/,ChIJHbJe-vgUkFQRryD8W-0S7xA
+252,Maltby Cafe,"cafe, restaurant, point_of_interest, food, establishment","8809 Maltby Rd, Snohomish, WA 98296, USA",google_places,http://www.maltbycafe.com/,ChIJOxd4WhgJkFQRi3SREKRQA5Q
+255,Third Place Books,"book_store, point_of_interest, store, establishment","5041 Wilson Ave S, Seattle, WA 98118, USA",google_places,http://www.thirdplacebooks.com/,ChIJE731ZRpqkFQRw8vsEPW6r3I
+257,Away With Words,"book_store, point_of_interest, store, establishment","18954 Front St NE, Poulsbo, WA 98370, USA",google_places,https://awaywithwordsbookshop.com/,ChIJSzTcFp4jkFQRUKf5Wa9m9kI
+258,Liberty Bay Books,"book_store, point_of_interest, store, establishment","18881 Front St NE Suite 'D, Poulsbo, WA 98370, USA",google_places,http://www.libertybaybooks.com/,ChIJX7JqEZ4jkFQR-rXCh1q7OE4
+260,Barnes & Noble,"book_store, cafe, point_of_interest, food, store, establishment","10315 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,https://stores.barnesandnoble.com/store/2281,ChIJQSCJncA6kFQR5txmOEJIPxk
+261,Saltwater Bookshop,"book_store, point_of_interest, store, establishment","10978 NE State Hwy 104 #109, Kingston, WA 98346, USA",google_places,http://www.saltwaterbookshop.com/,ChIJ3696WW8ZkFQRcf1W-SfgRlo
+263,Book'em,"book_store, point_of_interest, store, establishment","2289 Bethel Rd SE, Port Orchard, WA 98366, USA",google_places,http://www.alibris.com/stores/bookem,ChIJ2z69LtI3kFQR828md7lbJGQ
+264,Eagle Harbor Book Co,"book_store, point_of_interest, store, establishment","157 Winslow Way E, Bainbridge Island, WA 98110, USA",google_places,http://eagleharborbooks.com/,ChIJe-6qJbc-kFQRqLu2eRrkttI
+265,The Wise Owl Books and Music,"book_store, point_of_interest, store, establishment","2223 N 56th St, Seattle, WA 98103, USA",google_places,http://www.thewiseowlbooks.com/,ChIJVQYQSrcVkFQRd1qkDNvXSGU
+267,Kingston Bookery,"book_store, point_of_interest, store, establishment","10978 WA-104 #121, Kingston, WA 98346, USA",google_places,http://kingstonbookery.com/,ChIJv1c5Kj4ZkFQRGx2jyUFDCBQ
+268,Olympic College Bookstore,"book_store, point_of_interest, store, establishment","1600 Chester Ave Building 10, Bremerton, WA 98337, USA",google_places,https://ocbookstore.olympic.edu/home,ChIJVfIrhmQ3kFQRqK90tRzz8is
+269,Sinclair Inlet Book Co.,"book_store, point_of_interest, store, establishment","821 Bay St, Port Orchard, WA 98366, USA",google_places,http://sinclairinlet.com/,ChIJeagAYgA3kFQRJGymM-JElDc
+271,HomeGoods,"department_store, furniture_store, home_goods_store, store, point_of_interest, establishment","11066 Pacific Crest Pl, Silverdale, WA 98383, USA",google_places,http://www.homegoods.com/,ChIJpwSvxsc6kFQR3E4B0_f5tdE
+272,Blue Heron Jewelry Company,"jewelry_store, point_of_interest, store, establishment","18946 Front St NE, Poulsbo, WA 98370, USA",google_places,https://www.blueheronjewelry.com/,ChIJsWuqF54jkFQRKxYAqWUbcBo
+274,Fred Meyer Jewelers,"jewelry_store, point_of_interest, store, establishment","1900 SE Sedgwick Rd, Port Orchard, WA 98366, USA",google_places,https://www.fredmeyerjewelers.com/,ChIJDwju48VJkFQRDXPLe_tH5Ts
+275,Ben Bridge Jeweler,"jewelry_store, point_of_interest, store, establishment","10315 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,http://www.benbridge.com/,ChIJbU5suMA6kFQR7gixp7RGtM4
+276,Ofishel Jewelry,"jewelry_store, point_of_interest, store, establishment","19740 7th Ave NE Ste 110, Poulsbo, WA 98370, USA",google_places,http://ofisheljewelry.com/,ChIJNQIHSj8jkFQRw8j3HLPZJpw
+278,Two Sisters Fine Jewelry,"jewelry_store, finance, point_of_interest, store, establishment","1100 Wheaton Wy suite e, Bremerton, WA 98310, USA",google_places,https://www.twosistersfinejewelry.com/,ChIJYwp743g3kFQR6Pp486ukj_Q
+279,Chrey's Fine Jewelry,"finance, jewelry_store, point_of_interest, store, establishment","320 Pacific Ave, Bremerton, WA 98337, USA",google_places,https://chreysjewelry.com/,ChIJxa2qZng3kFQRhQt8Y9jPMNw
+281,Bainbridge Diamonds & Jewelry,"jewelry_store, point_of_interest, store, establishment","265 Winslow Way E, Bainbridge Island, WA 98110, USA",google_places,https://www.bainbridgeisland.com/shopping/jewelry/bainbridge-diamond-jewelry.html,ChIJ_9TuFLc-kFQR8d6dLZ3QcHo
+283,KAY Jewelers,"jewelry_store, finance, point_of_interest, store, establishment","10315 Silverdale Way NW Ste E15, Silverdale, WA 98383, USA",google_places,https://stores.kay.com/wa/silverdale/2141?cid=seo-listings,ChIJd5qDLMc6kFQRTxmRE2ezsoc
+807,Montlake Bicycle Shop,"bicycle_store, point_of_interest, store, establishment","2223 24th Ave E, Seattle, WA 98112, USA",google_places,https://www.montlakebike.com/,ChIJwfnihsQUkFQRQvfHB_nTlns
+287,Evermore Jewelry,"jewelry_store, point_of_interest, store, establishment","5139 NE Mariah Ln #302, Bremerton, WA 98311, USA",google_places,,
+288,Angelic Designs,"jewelry_store, point_of_interest, store, establishment","7745 NE Beachwood Ave, Poulsbo, WA 98370, USA",google_places,,
+810,Recycled Cycles,"bicycle_store, point_of_interest, store, establishment","1007 NE Boat St, Seattle, WA 98105, USA",google_places,http://www.recycledcycles.com/,ChIJqy0av_EUkFQRJC4a80nWr_k
+307,Affordable Insurance Service,"insurance_agency, point_of_interest, establishment","243-249 4th St, Bremerton, WA 98337, USA",google_places,,
+311,Premier Health Insurance WA,"insurance_agency, point_of_interest, health, establishment","450 S Kitsap Blvd, Port Orchard, WA 98366, USA",google_places,,
+321,Silver Insurance,"insurance_agency, point_of_interest, establishment","20153 Viking Ave NW, Poulsbo, WA 98370, USA",google_places,,
+323,Absolute Insurance Poulsbo,"insurance_agency, point_of_interest, establishment","19176 Jensen Way NE, Poulsbo, WA 98370, USA",google_places,,
+285,Lucid Links Permanent Jewelry,"jewelry_store, point_of_interest, store, establishment","2507 SE Mile Hill Dr Ste 109, Port Orchard, WA 98366, USA",google_places,http://lucidlinks.square.site/,ChIJr3rZkIM3kFQR8jQhG6Gqdj4
+289,Eastside Insurance Services,"insurance_agency, point_of_interest, establishment","1375 NW Mall St suite 3, Issaquah, WA 98027, USA",google_places,https://eastsideinsure.com/,ChIJgfjigtlnkFQRCX37Y_Tp6Kk
+290,McClain Insurance Services,"insurance_agency, point_of_interest, establishment","10410 19th Ave SE STE 100, Everett, WA 98208, USA",google_places,http://www.autohomeboat.com/,ChIJhfx099gGkFQRatj28G_n5Bg
+291,Safeco Insurance,"insurance_agency, point_of_interest, health, establishment","1001 4th Ave, Seattle, WA 98154, USA",google_places,http://www.safeco.com/,ChIJVVVVVbBqkFQRZPUzL6syIS0
+292,Sea-Mountain Insurance,"insurance_agency, point_of_interest, health, establishment","19630 76th Ave W, Lynnwood, WA 98036, USA",google_places,https://www.sea-mountain.com/,ChIJe2r3780akFQR-_lpxaD5iOk
+294,Absolute Insurance Solutions,"insurance_agency, point_of_interest, health, establishment","733 7th Ave #204, Kirkland, WA 98033, USA",google_places,https://www.insuredbyabsolute.com/,ChIJL9RuVVoTkFQR8KQYNFXcLqQ
+295,Secord Insurance Agency,"insurance_agency, point_of_interest, establishment","265 NE 45th St, Seattle, WA 98105, USA",google_places,https://secordagency.com/,ChIJkd-EtVgUkFQRgkgt2xtvxto
+297,Villa Insurance Group,"real_estate_agency, insurance_agency, general_contractor, point_of_interest, store, establishment","20006 Cedar Valley Rd Ste. 202, Lynnwood, WA 98036, USA",google_places,https://www.villainsurancegroup.com/,ChIJk7OtpTcFkFQRsVKJO9aQbP8
+298,Path Insurance Solutions,"insurance_agency, point_of_interest, establishment","2535 152nd Ave NE Ste 14MB2, Redmond, WA 98052, USA",google_places,https://www.pathins.com/,ChIJb_FuDlhskFQRIoiEn8TQJF8
+299,"Hood Insurance Agency, Inc","insurance_agency, point_of_interest, establishment","17925 Hwy 99 Ste 202, Lynnwood, WA 98037, USA",google_places,https://insurancelynnwood.com/,ChIJD84hnwMFkFQRqzW-avYKdgs
+301,Insurance Services of Washington Inc.,"insurance_agency, point_of_interest, health, establishment","8561 154th Ave NE Suite 250, Redmond, WA 98052, USA",google_places,https://www.iswash.com/,ChIJE2RhwbNykFQR9MBt6C0MSaA
+302,Vern Fonk Insurance,"insurance_agency, point_of_interest, health, establishment","23830 Pacific Hwy S Ste 101, Kent, WA 98032, USA",google_places,https://www.vernfonk.com/locations/kent-wa-insurance-98032/?utm_medium=google&utm_source=online_directories&utm_campaign=CVF_Kent_WA,ChIJ3yeisGNbkFQR11UWaay33HY
+304,ProStar Insurance,"insurance_agency, point_of_interest, establishment","10308 NE 183rd St, Bothell, WA 98011, USA",google_places,https://prostarinsurance.com/,ChIJnw_0JEIOkFQRC2rhxGk-Piw
+305,PEMCO Mutual Insurance Co.,"insurance_agency, point_of_interest, establishment","1300 Dexter Ave N, Seattle, WA 98109, USA",google_places,https://www.pemco.com/,ChIJC_2rQzEVkFQRbKjcFWUtedQ
+308,"Magnolia Insurance Agency, Inc.","insurance_agency, point_of_interest, establishment","3424 W McGraw St, Seattle, WA 98199, USA",google_places,http://www.magnolia-insurance.com/,ChIJ7c18dSo-kFQRKXo7W-NtOPY
+309,"H&K Insurance Agency, Inc.","insurance_agency, point_of_interest, establishment","3105 Wheaton Wy, Bremerton, WA 98310, USA",google_places,https://handkinsurance.com/,ChIJT6KbxOU5kFQRbyx_OpFsY2Y
+310,Rubens Insurance,"insurance_agency, point_of_interest, establishment","10042 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,http://www.rubensins.com/,ChIJuY-g-786kFQRrZx72fBEpsM
+312,Hawks View Insurance,"insurance_agency, point_of_interest, establishment","3647 NW Byron St, Silverdale, WA 98383, USA",google_places,http://www.hawksviewinsurance.com/,ChIJR8Sd-XkwkFQRXaJv_WJGo4c
+315,Inszone Insurance Services,"insurance_agency, point_of_interest, establishment","1014 Bay St #10, Port Orchard, WA 98366, USA",google_places,https://inszoneinsurance.com/locations-inszone/port-orchard,ChIJ6TaHwH83kFQRmUihmGncL_U
+316,Kuresman Insurance,"insurance_agency, point_of_interest, establishment","9307 Bay Shore Dr NW Suite 101, Silverdale, WA 98383, USA",google_places,https://kuresmanins.com/,ChIJk0Csz5Y6kFQRo3hA9m9q1Bs
+317,Poulsbo Junction Insurance,"insurance_agency, point_of_interest, establishment","19735 10th Ave NE N204, Poulsbo, WA 98370, USA",google_places,http://www.poulsbojunctioninsurance.com/,ChIJB9VXq6YjkFQRU4jntF41Umk
+319,Haley Insurance Agency Inc,"insurance_agency, point_of_interest, establishment","20270 Front St NE #101, Poulsbo, WA 98370, USA",google_places,https://haleyinsuranceagency.com/,ChIJIXaDHeAjkFQRL7rMZ-fztrI
+322,Verse insurance Port Orchard WA,"insurance_agency, point_of_interest, establishment","600 Kitsap St, Port Orchard, WA 98366, USA",google_places,https://cassinodine7194738.wixsite.com/verse-insurance-port,ChIJW5ctN8g3kFQRNKlJ6YDqy0U
+324,Rogers Family Insurance,"insurance_agency, point_of_interest, establishment","18777 9th Ave NE, Poulsbo, WA 98370, USA",google_places,http://www.rogersfamilyinsurance.com/,ChIJMR1k-5gjkFQR-DZaD7WmJRE
+325,Anna Jewell American Family Insurance,"insurance_agency, point_of_interest, establishment","19335 Jensen Way NE, Poulsbo, WA 98370, USA",google_places,https://www.amfam.com/agents/washington/poulsbo/Anna-Jewell,ChIJB9VXq6YjkFQRFchYjsXiCV8
+327,Phoenix Insurance Inc.,"insurance_agency, point_of_interest, establishment","14205 SE 36th St Suite 100, Bellevue, WA 98006, USA",google_places,http://www.phoenixinsured.com/,ChIJxSqy-05tkFQRv64zXnGdvCQ
+328,ISU Insurance Solutions Group,"insurance_agency, point_of_interest, establishment","14623 NE North Woodinville Way #203, Woodinville, WA 98072, USA",google_places,https://isgwoodinville.com/,ChIJc9Z0RJ8OkFQRlac82V0uRsk
+814,"Bicycle Centres of Snohomish | Bike, Ski, and Snowboard Rental","bicycle_store, point_of_interest, store, establishment","707 Pine Ave Unit B101, Snohomish, WA 98290, USA",google_places,http://www.bicyclecentres.com/,ChIJy-ptwLWpmlQRpA_uVnzgi7M
+365,Small World Art Gallery,"art_gallery, point_of_interest, establishment","488 1/2, Winslow Way E, Bainbridge Island, WA 98110, USA",google_places,,
+372,Golden Wheat Bakery,"bakery, store, point_of_interest, food, establishment","2908 E Cherry St, Seattle, WA 98122, USA",google_places,,
+375,JP Bakery,"bakery, store, point_of_interest, food, establishment","2841 NW Kitsap Pl Suite A, Silverdale, WA 98383, USA",google_places,,
+332,Steve Sanelli at Comparion Insurance Agency,"insurance_agency, point_of_interest, establishment","14900 Interurban Ave S #142, Tukwila, WA 98168, USA",google_places,https://www.comparioninsurance.com/insurance-agent/washington/tukwila-0671/stephen-sanelli,ChIJd_6aRQ1DkFQRtmCh5YmseuM
+333,Insurance Connections Northwest,"insurance_agency, point_of_interest, establishment","14040 NE 8th St Ste 207, Bellevue, WA 98007, USA",google_places,http://www.insuranceconnectionsnw.com/,ChIJ96dtWFJskFQReWI0iDrt10E
+335,Scott Kizer - State Farm Insurance Agent,"insurance_agency, point_of_interest, establishment","13106 SE 240th St # 101, Kent, WA 98031, USA",google_places,http://www.scottkizerinsurance.com/,ChIJY7VG2QZckFQR_IFYupCyqi8
+336,Scully Insurance Solutions,"insurance_agency, point_of_interest, establishment","302 W Harrison St Ste 106, Kent, WA 98032, USA",google_places,http://www.scullyinsurancesolutions.com/,ChIJSzPO0bpXkFQRH6f1S1V6Gbw
+338,CHOICE Insurance,"car_repair, insurance_agency, restaurant, point_of_interest, food, establishment","1715 Market St # 100, Kirkland, WA 98033, USA",google_places,http://www.choiceinsurance.net/,ChIJK6GuXPESkFQRxeExtomZimo
+339,Lorenzo Valdivia Jr - State Farm Insurance Agent,"insurance_agency, point_of_interest, establishment","17901 Bothell Everett Hwy Ste F-105, Bothell, WA 98012, USA",google_places,https://www.insurewithlorenzo.com/?cmpid=w342_blm_0001,ChIJGZK8GPoFkFQRanIp1CmYmXE
+341,Tonya Kellum - State Farm Insurance Agent,"insurance_agency, point_of_interest, establishment","8014 Lake City Way NE A, Seattle, WA 98115, USA",google_places,http://www.tonyakelluminsurance.com/?cmpid=yrsb_blm_0001,ChIJJ77qsBcVkFQRvYVDi1zuAK8
+342,Mike Ramirez - State Farm Insurance Agent,"insurance_agency, point_of_interest, establishment","4809 132nd St SE A103, Everett, WA 98208, USA",google_places,https://www.insureitwithmike.com/,ChIJZfk1H_oFkFQR6QoOTEG6Wpg
+343,Issaquah Insurance Agency,"insurance_agency, point_of_interest, establishment","22525 SE 64th Pl #228, Issaquah, WA 98027, USA",google_places,https://issaquahinsuranceagency.com/,ChIJ3eI25ZpvkFQRLVRVfKVRwic
+345,Carrie Goller Gallery,"art_gallery, store, point_of_interest, establishment","18801 Front St NE, Poulsbo, WA 98370, USA",google_places,http://www.carriegollergallery.com/,ChIJh-9JGp4jkFQRyzVo7VJmACU
+346,The Art Study,"art_gallery, store, point_of_interest, establishment","4630 Village Ct. NE, Seattle, WA 98105, USA",google_places,http://theartstudy.com/,ChIJ0YSbAoYUkFQRQZvdDbXEWTI
+347,Gray Sky Gallery,"art_gallery, point_of_interest, establishment","320 1st Ave S, Seattle, WA 98104, USA",google_places,http://grayskygallery.com/,ChIJ8zq8d3AVkFQRODmvOKPxggU
+349,studio e gallery,"art_gallery, point_of_interest, establishment","609 S Brandon St, Seattle, WA 98108, USA",google_places,http://studioegallery.net/,ChIJA4P638BBkFQRAUeAp7GQeJQ
+350,Gallery 110,"art_gallery, point_of_interest, establishment","110 3rd Ave S, Seattle, WA 98104, USA",google_places,http://www.gallery110.com/,ChIJlT9zy7pqkFQR_pTNBOKMdFo
+351,Free Little Art Gallery of Kitsap,"art_gallery, point_of_interest, establishment","2110 E 11th St, Bremerton, WA 98310, USA",google_places,https://www.instagram.com/freelittleartgalleryofkitsap/,ChIJD9liJKQ5kFQRnH09kN5XLu0
+353,Art Center Gallery,"art_gallery, point_of_interest, establishment","3 W Cremona St, Seattle, WA 98119, USA",google_places,http://spu.edu/info/buildings/art-center/,ChIJDSxTAQgVkFQROFogfLPZbu0
+354,Aria Studio Gallery,"art_gallery, painter, point_of_interest, establishment","535 Main St, Edmonds, WA 98020, USA",google_places,https://joanarchergallery.com/,ChIJp1G_8foakFQRZfoKFZ_vns8
+355,A Gallery,"art_gallery, point_of_interest, establishment","117 South Main St #400, Seattle, WA 98104, USA",google_places,http://cargocollective.com/A-Gallery/INFORMATION,ChIJ01_dKaVqkFQRQUkEOdd44aI
+357,Front Street Gallery,"art_gallery, point_of_interest, establishment","18881 Front St NE, Poulsbo, WA 98370, USA",google_places,https://www.frontstreetgallerypoulsbo.com/,ChIJX7JqEZ4jkFQRfs-oDE42aqo
+358,SOIL Artist Run Gallery,"point_of_interest, establishment","112 3rd Ave S, Seattle, WA 98104, USA",google_places,http://soilart.org/,ChIJec4a_LpqkFQR8s8qE-f_5ms
+359,"Artists' Edge, Inc.","store, point_of_interest, establishment","18723 WA-305, Poulsbo, WA 98370, USA",google_places,http://www.artistsedge.com/,ChIJyXSjx3QjkFQRWSOphQDSMjA
+361,Gallery Frames,"store, point_of_interest, establishment","311 3rd Ave S, Seattle, WA 98104, USA",google_places,http://www.galleryframes.com/,ChIJTe-SCLBqkFQRSLK234icJpg
+362,Art Stall Gallery,"art_gallery, point_of_interest, establishment","97 Pike Pl #2, Seattle, WA 98101, USA",google_places,http://artstallgallery.com/,ChIJ7e05-LJqkFQRlu_IMj1_U_c
+364,North Seattle College Art Gallery,"university, point_of_interest, establishment","9600 College Way N, Seattle, WA 98103, USA",google_places,https://artgallery.northseattle.edu/,ChIJDdsjKQAVkFQRCHHIXdsC9uw
+366,JG Art Gallery + Events,"art_gallery, point_of_interest, establishment","176 Winslow Way E, Bainbridge Island, WA 98110, USA",google_places,http://www.jgartgallery.com/,ChIJf4XApn0_kFQRpnY-Ib0zBi4
+368,Safeway Bakery,"bakery, store, point_of_interest, food, establishment","19150 NE Woodinville Duvall Rd, Woodinville, WA 98077, USA",google_places,https://local.safeway.com/safeway/wa/woodinville/19150-ne-woodinville-duvall-rd.html,ChIJRbwuZ4wLkFQRsSdZM6yE90k
+369,Origin Bakery,"bakery, restaurant, store, point_of_interest, food, establishment","14676 NE 95th St, Redmond, WA 98052, USA",google_places,https://www.theoriginbakery.com/,ChIJtQ2l4s8NkFQR7MYnd-jw3Lo
+371,85°C Bakery Cafe - Lynnwood,"bakery, cafe, restaurant, store, point_of_interest, food, establishment","18700-A 33rd Ave W, Lynnwood, WA 98037, USA",google_places,http://www.85cbakerycafe.com/,ChIJlc-qMA0FkFQRYcizS78La5o
+373,Specialty's Café & Bakery,"cafe, bakery, restaurant, store, point_of_interest, food, establishment","1400 5th Ave, Seattle, WA 98101, USA",google_places,https://www.specialtys.com/,ChIJtf-LZLRqkFQRaipr2Bu4xik
+376,Larry & Kristi's Bakery,"bakery, cafe, store, point_of_interest, food, establishment","1100 Wheaton Wy, Bremerton, WA 98310, USA",google_places,http://www.larryandkristisbakery.com/,ChIJFT86vdU5kFQRtRutKR_a4_k
+818,Gerk's Ski and Cycle,"bicycle_store, point_of_interest, store, establishment","1485 11th Ave NW, Issaquah, WA 98027, USA",google_places,http://gerksonline.com/,ChIJ2-2zewlvkFQRJghaf4AXsBg
+387,Honey Bear Bakery,"bakery, cafe, point_of_interest, food, store, establishment","17171 Bothell Way NE, Lake Forest Park, WA 98155, USA",google_places,,
+391,Kirkland Bakery,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","219 Kirkland Ave #102, Kirkland, WA 98033, USA",google_places,,
+404,Aria Food & Bakery,"bakery, restaurant, point_of_interest, food, store, establishment","12033 124th Ave NE, Kirkland, WA 98034, USA",google_places,,
+418,Pet Town,"pet_store, point_of_interest, store, establishment","1948 SE Lund Ave #101, Port Orchard, WA 98366, USA",google_places,,
+379,Rosellini’s Fine Cakes & Baked Goods,"bakery, store, point_of_interest, food, establishment","1413 NW 70th St, Seattle, WA 98117, USA",google_places,http://rosellinis.com/,ChIJsWtSFy0UkFQRY5yibdy4_gI
+380,85°C Bakery Cafe-Tukwila,"bakery, cafe, restaurant, store, point_of_interest, food, establishment","1341 Southcenter Mall, Tukwila, WA 98188, USA",google_places,http://www.85cbakerycafe.com/,ChIJQdLQ9dRckFQRX4bJjEnWVJs
+382,Belle Pastry French Bakery,"bakery, point_of_interest, food, store, establishment","10373 Main St, Bellevue, WA 98004, USA",google_places,http://www.bellepastry.com/,ChIJdRWD_n1skFQR9y7dJuLScms
+383,Bakery Nouveau,"bakery, cafe, point_of_interest, food, store, establishment","4737 California Ave SW, Seattle, WA 98116, USA",google_places,http://bakerynouveau.com/,ChIJqT0Y3PtAkFQRD5Jy6uRQebI
+384,Urban Bakery,"bakery, restaurant, point_of_interest, food, store, establishment","7850 East Green Lake Dr N, Seattle, WA 98103, USA",google_places,http://www.facebook.com/pages/The-Urban-Bakery/113779151986047,ChIJI_37MBEUkFQRTw90Fii68sM
+386,Cakes of Paradise Bakery,"bakery, point_of_interest, food, store, establishment","6322 6th Ave S, Seattle, WA 98108, USA",google_places,http://www.cakesofparadise206.com/,ChIJv2gKZZRBkFQR5b6t5aapnpg
+388,The French Bakery Crossroads Bellevue,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","15600 NE 8th St K-4, Bellevue, WA 98008, USA",google_places,http://www.thefrenchbakery.com/,ChIJz_B3r7ptkFQROmxRGhrbfbk
+390,Dahlia Bakery,"bakery, restaurant, point_of_interest, food, store, establishment","2001 4th Ave, Seattle, WA 98121, USA",google_places,https://www.dahliabakery.com/?utm_source=gbp&utm_medium=organic&utm_campaign=fm,ChIJG0jTnUwVkFQRawMulmeDYDw
+392,Grain Artisan Bakery + Market,"bakery, point_of_interest, food, store, establishment","717 1st St, Snohomish, WA 98290, USA",google_places,http://www.grainartisanbakery.com/,ChIJ1RJGuhuvmlQR0lAdg48BPK8
+394,Wild Wheat Bakery Cafe & Restaurant,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","202 1st Ave S, Kent, WA 98032, USA",google_places,http://www.wildwheatbakery.com/,ChIJ0e8G21VZkFQRUpmpn-v0GSU
+395,Mon Amie Bakery & Cafe,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","914 164th St SE Suite B8, Mill Creek, WA 98012, USA",google_places,http://www.monamiebakery.com/,ChIJUYXldt4FkFQRSjASwGCxoBw
+397,Katya's Bakery,"bakery, point_of_interest, food, store, establishment","12811 8th Ave W Unit E #102, Everett, WA 98204, USA",google_places,http://katyasbakery.com/,ChIJBaesLp8GkFQR1BxLXJUEDGk
+398,Kiki Bakery,"bakery, point_of_interest, food, store, establishment","13200 Aurora Ave N Apt E, Seattle, WA 98133, USA",google_places,http://kikibakery.com/,ChIJfQ1kJTcRkFQRoPKKUXLOL-k
+399,Hillcrest Bakery,"bakery, point_of_interest, food, store, establishment","10010 Main St, Bothell, WA 98011, USA",google_places,http://www.hillcrestbakery.com/,ChIJeWt_smsOkFQRPgcplKe2T6w
+400,Columbia City Bakery,"bakery, point_of_interest, food, store, establishment","4865 Rainier Ave S, Seattle, WA 98118, USA",google_places,http://www.columbiacitybakery.com/,ChIJhavXMQxqkFQRfgBZnQV4eFk
+402,Tasty Doux Bakery,"bakery, point_of_interest, food, store, establishment","10216 SE 256th St Ste 111, Kent, WA 98030, USA",google_places,http://www.tastydoux.com/,ChIJn8oui7ZekFQRKPq11art_Is
+403,Three Girls Bakery,"bakery, point_of_interest, food, store, establishment","1514 Pike Pl, Seattle, WA 98101, USA",google_places,http://www.threegirlsbakery.com/,ChIJmbBY97JqkFQR5yrPXS_EquU
+405,Regent Cakes & Bakery,"bakery, point_of_interest, food, store, establishment","12816 SE 38th St F, Bellevue, WA 98006, USA",google_places,https://www.regentcakesandbakery.com/,ChIJ3ZnwuKpukFQRi5Ucj7Gxuec
+407,The French Guys Bakery,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","810 E Roy St, Seattle, WA 98102, USA",google_places,https://www.thefrenchguys.com/,ChIJ1yWIeIoVkFQRrXqa6lucIXU
+408,Fuji Bakery-ID/King St,"bakery, point_of_interest, food, store, establishment","526 S King St #2834, Seattle, WA 98104, USA",google_places,http://fujibakeryinc.com/,ChIJ2UIdj7xqkFQRf5OVSNKl2DQ
+409,Touba Bakery,"bakery, point_of_interest, food, store, establishment","11114 Evergreen Wy Ste C, Everett, WA 98204, USA",google_places,https://www.toubabakery.com/,ChIJMY-T320HkFQRnOL4_uMnlCA
+411,Macrina Bakery,"bakery, point_of_interest, food, store, establishment","615 W McGraw St, Seattle, WA 98119, USA",google_places,http://macrinabakery.com/,ChIJ7xWuI3MVkFQRz1Ty5zYa_HI
+412,Fuji Bakery-Elliott/Interbay,"bakery, point_of_interest, food, store, establishment","1030 Elliott Ave W, Seattle, WA 98119, USA",google_places,http://www.fujibakeryinc.com/,ChIJpxPXFmYVkFQRuKwPGwj33Ek
+414,Edmonds Bakery,"bakery, point_of_interest, food, store, establishment","418 Main St, Edmonds, WA 98020, USA",google_places,https://edmondsbakery.com/,ChIJtX8rUvoakFQRIXzRm8q4gUw
+415,Mud Bay,"pet_store, point_of_interest, food, store, establishment","11467 Pacific Crest Pl STE C125, Silverdale, WA 98383, USA",google_places,https://www.mudbay.com/pet-store/SIL-silverdale-WA,ChIJsblTn-A7kFQRCpghrAgKoP8
+417,Petco,"pet_store, point_of_interest, food, store, establishment","21700 Market Pl NW, Poulsbo, WA 98370, USA",google_places,https://stores.petco.com/wa/poulsbo/pet-supplies-poulsbo-wa-1242.html,ChIJY9N6nMMjkFQRu9e_N0u5bxY
+419,Paws & Fins Pet Shop,"pet_store, point_of_interest, store, establishment","1050 Hildebrand Ln NE Suite 104 Suite 104, Bainbridge Island, WA 98110, USA",google_places,http://pawsfinspetshop.com/,ChIJld0GmbA-kFQRQGHVqlGp79M
+420,Naturally 4 Paws,"point_of_interest, store, establishment","2779 NW Myhre Rd, Silverdale, WA 98383, USA",google_places,https://naturally4paws.com/,ChIJ4bXiApc6kFQRYdmk9-3c91E
+422,Willow Treats,"pet_store, point_of_interest, store, establishment","1700 SE Mile Hill Dr Suite 121, Port Orchard, WA 98366, USA",google_places,https://www.willowtreats.store/,ChIJ_1rtaOQ3kFQRKmXkcYtAAk4
+423,Gastro Pup,"pet_store, point_of_interest, store, establishment","321 Pacific Ave, Bremerton, WA 98337, USA",google_places,https://www.gastropup.net/,ChIJlxz7QNs3kFQR4gIBTfNz_bQ
+425,Superior Pet Foods,"point_of_interest, store, establishment","19494 7th Ave NE suite c, Poulsbo, WA 98370, USA",google_places,,
+1144,Seattle Jewish Chapel Funerals,"cemetery, funeral_home, point_of_interest, establishment","5145 S Morgan St, Seattle, WA 98118, USA",google_places,,ChIJ0c0hIvlpkFQRQo-opHfwRqU
+434,360 Real Estate Group,"real_estate_agency, point_of_interest, establishment","3594 NW Byron St #105, Silverdale, WA 98383, USA",google_places,,
+442,The Wurden Team: Buy & Sell Kitsap County Real Estate,"real_estate_agency, point_of_interest, establishment","18570 WA-305, Poulsbo, WA 98370, USA",google_places,,
+424,Country Pet Shoppe,"pet_store, point_of_interest, store, establishment","11132 NE 2nd St, Kingston, WA 98346, USA",google_places,http://countrypetshoppe.com/,ChIJkQwyqRUZkFQRwpHMf9K78Ss
+426,The NW Dog,"point_of_interest, store, establishment","18954 Front St NE Suite 102, Poulsbo, WA 98370, USA",google_places,http://www.thenwdog.com/,ChIJF6NNKLkjkFQRsYH_TIKUL0Y
+428,Just Food For Dogs,"pet_store, point_of_interest, store, establishment","Inside Petco, 21700 Market Pl NW, Poulsbo, WA 98370, USA",google_places,https://stores.petco.com/wa/poulsbo/pet-supplies-poulsbo-wa-1242.html,ChIJY9N6nMMjkFQRu9e_N0u5bxY
+430,TagWorks,"point_of_interest, store, establishment","PetSmart, 9588 Ridgetop Blvd NW, Silverdale, WA 98383, USA",google_places,https://www.petsmart.com/stores/us/wa/silverdale-store0373.html?utm_source=google&utm_medium=organic&utm_campaign=google-my-business,ChIJR5SY2us6kFQRR7XqQKiFBJk
+432,Martin Real Estate Group,"real_estate_agency, point_of_interest, establishment","1140 Bethel Ave ste 201, Port Orchard, WA 98366, USA",google_places,http://www.martinrealestategroup.com/,ChIJq6q6GM43kFQRztDRjr8Rgt0
+433,Rachel Harris - Keller Williams Greater 360,"real_estate_agency, point_of_interest, establishment","19470 Viking Ave NW Suite 201, Poulsbo, WA 98370, USA",google_places,https://www.nwbuyandsell.com/,ChIJNwDctkM7kFQRMSb5aLBsipI
+435,Welcome Home Kitsap Team,"real_estate_agency, point_of_interest, establishment","9226 Bay Shore Dr NW #140, Silverdale, WA 98383, USA",google_places,http://welcomehomekitsap.com/,ChIJjcbwdIc7kFQRpKqAeBu0Tpk
+437,"Tudela Team | Erica & Derrick Tudela, REALTORS","real_estate_agency, point_of_interest, establishment","2535 Mitchell Rd SE, Port Orchard, WA 98366, USA",google_places,https://www.sellingkitsap.com/,ChIJBbGziC5TkFQRqkhPUxXw-5Y
+438,Kelsey & Jorge Real Estate Team - Keller Williams Greater 360,"real_estate_agency, point_of_interest, establishment","19470 Viking Ave NW Suite 201, Poulsbo, WA 98370, USA",google_places,https://www.kelseyandjorge.com/,ChIJj6jWscMjkFQRzkqBM80YSxE
+439,Manette Real Estate Co.,"real_estate_agency, point_of_interest, establishment","1104 Pitt Ave, Bremerton, WA 98310, USA",google_places,https://www.manetterealestate.com/,ChIJl6i99xQ5kFQRqZjW7K-74Zk
+441,Menees Realty Group,"real_estate_agency, point_of_interest, establishment","6236 Point Glover Ln E, Port Orchard, WA 98366, USA",google_places,http://meneesrealtygroup.com/,ChIJr5CLs-M3kFQR9hom69i7mPo
+443,Moretty Group - Realtors - Keller Williams Greater 360,"point_of_interest, establishment","19470 Viking Ave NW Suite 201, Poulsbo, WA 98370, USA",google_places,https://jennifermoretty.kw.com/,ChIJHz7otcEjkFQRrSqmm_ztyUI
+445,agencyone Real Estate,"real_estate_agency, point_of_interest, establishment","13500 NE Bel Red Rd #4, Bellevue, WA 98005, USA",google_places,http://www.agencyone.com/,ChIJLzb8YVhskFQRBdOzEAlxQA0
+446,South Kitsap Properties,"real_estate_agency, point_of_interest, establishment","2427 Bethel Rd SE, Port Orchard, WA 98366, USA",google_places,https://linktr.ee/southkitsapproperties,ChIJl2ZhzCpIkFQRMJzr2DJkOrE
+447,Keller Williams Greater 360,"real_estate_agency, point_of_interest, establishment","19470 Viking Ave NW Suite 201, Poulsbo, WA 98370, USA",google_places,http://www.kwgreater360.com/,ChIJ3zfPM_UjkFQR_Fb1DFWURzQ
+449,Strategy Real Estate Group at Fathom,"real_estate_agency, point_of_interest, establishment","2916 NW Bucklin Hill Rd #353, Silverdale, WA 98383, USA",google_places,http://www.strategyrealestate.net/,ChIJY38G3JY6kFQRYE8E661SnNw
+450,Michelle Cook Kitsap Real Estate Broker REALTOR,"real_estate_agency, point_of_interest, establishment","26569 Lindvog Rd NE, Kingston, WA 98346, USA",google_places,http://michellecookhomes.com/,ChIJBWxBVnAZkFQREYPqmJdrSrY
+451,The Agency Seattle,"real_estate_agency, point_of_interest, establishment","123 Lake St S Suite 123B, Kirkland, WA 98033, USA",google_places,https://theagencyseattle.com/?utm_source=gbp&utm_medium=organic,ChIJhdZXuWITkFQRCM4m3YwzCms
+453,"Maria Byrd, REALTOR","real_estate_agency, point_of_interest, establishment","2535 Mitchell Rd SE, Port Orchard, WA 98366, USA",google_places,https://mariabyrd.paramountre.team/index.php,ChIJJYdu9xo3kFQRqtXyA8qhlm8
+455,Seattle Real Estate Media,"point_of_interest, establishment","23610 138th Ave SE, Kent, WA 98042, USA",google_places,https://www.seattlerealestatemedia.com/,ChIJ8fBasHtnkFQR33zlkgUIFIY
+456,Lauren Keehn Real Estate Broker,"real_estate_agency, point_of_interest, establishment","2535 Mitchell Rd SE, Port Orchard, WA 98366, USA",google_places,https://laurenkeehn.paramountre.team/,ChIJYVAkC_Q3kFQRo2gQLVDY0Wc
+457,Ron and Don - Real Estate Brokers with Kelly Right Real Estate,"real_estate_agency, point_of_interest, establishment","117 E Louisa St, Seattle, WA 98102, USA",google_places,https://ronanddon.com/,ChIJZ4gWVPIVkFQR1mqw3Sh1frg
+460,John L. Scott Real Estate | North Kitsap,"real_estate_agency, point_of_interest, establishment","19723 10th Ave NE Suite 200, Poulsbo, WA 98370, USA",google_places,https://northkitsapoffice.johnlscott.com/,ChIJZfeKAaQjkFQRH0ZhOJTxu-8
+461,Evolution Real Estate Company,"real_estate_agency, point_of_interest, establishment","509 4th St #37, Bremerton, WA 98337, USA",google_places,https://www.evolutionrealestate.co/,ChIJVxDt8f03kFQR04tbDiGdzrg
+462,Seattle Real Estate (Compass Real Estate Agency) - Jenny Goh,"real_estate_agency, finance, point_of_interest, establishment","700 110th Ave NE, Bellevue, WA 98004, USA",google_places,http://jennygoh.com/,ChIJ7YcRQQtvkFQR-aADqBSwHYs
+463,"Jennifer DiIorio, Real Estate Broker","real_estate_agency, point_of_interest, establishment","18961 Front St NE Suite 101, Poulsbo, WA 98370, USA",google_places,http://jdiiorio.remax.com/,ChIJ73u0Xw4ZkFQRp5h7t9rQU5w
+465,John L. Scott Real Estate - Silverdale,"real_estate_agency, point_of_interest, establishment","9564 Silverdale Way NW #100, Silverdale, WA 98383, USA",google_places,http://www.silverdaleoffice.johnlscott.com/,ChIJUerQYpY6kFQRZiOWrt6clNo
+466,Reid Real Estate,"real_estate_agency, point_of_interest, establishment","9564 Silverdale Way NW #100, Silverdale, WA 98383, USA",google_places,http://www.reidpm.com/,ChIJA8ELYpY6kFQRj1ePR9Vq0ig
+467,RE/MAX Platinum Services,"real_estate_agency, point_of_interest, establishment","9224 Ridgetop Blvd NW #100th, Silverdale, WA 98383, USA",google_places,https://www.platinumservicesinc.com/,ChIJYY80MpU6kFQRyE4Yh-24kqA
+820,Wright Brothers Cycle Works,"bicycle_store, point_of_interest, store, establishment","219 N 36th St, Seattle, WA 98103, USA",google_places,http://wrightbrotherscycleworks.com/,ChIJd46QsakVkFQRqA5Mys-fawo
+473,Advanced Accounting,"accounting, finance, point_of_interest, establishment","5818 Rainier Ave S, Seattle, WA 98118, USA",google_places,,
+480,Snohomish & Monroe Accounting and Tax Service,"accounting, finance, point_of_interest, establishment","1115 13th St Suite A, Snohomish, WA 98290, USA",google_places,,
+506,Chou Accounting,"accounting, finance, point_of_interest, establishment","14040 NE 8th St #313, Bellevue, WA 98007, USA",google_places,,
+508,Pamela Jacobs Accounting Services,"accounting, finance, point_of_interest, establishment","2551 NE 205th St, Shoreline, WA 98155, USA",google_places,,
+469,Real Estate. Real Service.,"real_estate_agency, point_of_interest, establishment","1313 E Pine St, Seattle, WA 98122, USA",google_places,https://www.fos-re.com/contact,ChIJhxuU8s1qkFQRc4Sv9bDa8lk
+471,Prospect Tax & Accounting Services,"accounting, finance, point_of_interest, establishment","8139 231St Pl NE, Redmond, WA 98053, USA",google_places,http://www.prospecttaxes.com/,ChIJx6FlUdxzkFQRKgYFRMOkTjk
+472,Trail CPA - Tax & Accounting Kirkland,"accounting, finance, point_of_interest, establishment","105 Central Way #200, Kirkland, WA 98033, USA",google_places,https://www.trailcpa.com/,ChIJE-Wp3TATkFQRsxb3mZn4IPk
+474,North Star Tax & Accounting,"accounting, local_government_office, finance, point_of_interest, establishment","2120 Bickford Ave, Snohomish, WA 98290, USA",google_places,http://northstartaxes.com/,ChIJPfbTtdgFkFQR3-ASUZUMMt8
+475,Four Cedars Accounting Group LLC,"accounting, finance, point_of_interest, establishment","450 Alaskan Way S #100, Seattle, WA 98104, USA",google_places,http://www.fourcedarsgroup.com/,ChIJXb4plj4VkFQRBpS1Pl1Of48
+477,Butzerin Tax & Accounting,"accounting, finance, point_of_interest, establishment","4831 California Ave SW, Seattle, WA 98116, USA",google_places,https://www.butzerintax.com/,ChIJ2e008_xAkFQRQvMSo9wpqVc
+478,Better Business Tax & Accounting Corp.,"accounting, finance, point_of_interest, establishment","241 S 4th Pl b, Renton, WA 98057, USA",google_places,http://bbtaxaccounting.com/,ChIJI20jCaFdkFQRZ863L95XDgI
+479,Allied Accounting,"accounting, finance, point_of_interest, establishment","1400 Talbot Rd S, Renton, WA 98055, USA",google_places,https://www.alliedaccountingofwa.com/,ChIJ5X5VeDLPPyER1dkfukZB1X8
+482,Capital Tax Service of Kent,"lawyer, accounting, finance, point_of_interest, establishment","18000 72nd Ave S #192, Kent, WA 98032, USA",google_places,https://capitaltaxservice.net/?utm_source=gmb&utm_medium=organic&utm_campaign=gmb-listing,ChIJbZf3CO5ekFQRPw0dM42Rs50
+484,TL;DR: Accounting,"accounting, finance, point_of_interest, establishment","508 Yale Ave N, Seattle, WA 98109, USA",google_places,http://www.tldraccounting.com/,ChIJdQVp-jAVkFQRnZRS-Oq10D0
+485,Teddy Accounting and Tax Services,"accounting, finance, point_of_interest, establishment","540 NE Northgate Way Suite E1 & E2, Seattle, WA 98125, USA",google_places,http://www.teddycpa.com/,ChIJM9obLlwRkFQRtriGfZjZ8no
+486,Mercedes Accounting & Associates,"accounting, finance, point_of_interest, establishment","12727 Northup Way #7, Bellevue, WA 98005, USA",google_places,http://www.mercedesaccounting.com/,ChIJ0yx_NF9skFQRpAdy32NeuLQ
+488,Nelson CPA,"accounting, finance, point_of_interest, establishment","18300 Redmond Way Suite 100, Redmond, WA 98052, USA",google_places,https://nelson.cpa/,ChIJ81c6ElMNkFQRHzbAWrHqftM
+489,Chapman Tax and Accounting,"accounting, finance, point_of_interest, establishment","14512 NE 173rd St, Woodinville, WA 98072, USA",google_places,https://chapmanea.com/,ChIJuUjUnSUMkFQRVAfpf-LieRE
+490,"Jain Accounting (Formerly RainCity CPA, PLLC)","accounting, finance, point_of_interest, establishment","4300 University Wy NE #B, Seattle, WA 98105, USA",google_places,https://jainaccounting.com/,ChIJjXBo1KoVkFQRiKPAdCyuMSg
+492,Empowered Accounting Inc,"accounting, finance, point_of_interest, establishment","9416 Delridge Wy SW, Seattle, WA 98106, USA",google_places,http://empoweredaccounting.net/,ChIJX3bhy5hDkFQRqzxCnPpHmVg
+493,A+ Tax & Accounting,"accounting, finance, point_of_interest, establishment","913 S Jackson St Ste E, Seattle, WA 98104, USA",google_places,http://www.aplustbs.com/,ChIJEf00NiprkFQRsL0oSlUGues
+494,"Clare Accounting Group, LLC","accounting, finance, point_of_interest, establishment","7981 168th Ave NE Suite 222, Redmond, WA 98052, USA",google_places,http://www.clareaccountinggroup.com/,ChIJD1Ul3cdzkFQRv5NClmrYCo4
+496,Diwan Accounting LLC,"accounting, finance, point_of_interest, establishment","2205 152nd Ave NE, Redmond, WA 98052, USA",google_places,https://www.diwanaccounting.com/,ChIJV-k9loltkFQRfzXTFfG1agQ
+497,Accounting & Tax Pro Inc,"accounting, finance, point_of_interest, establishment","The Forum building, 12505 NE Bel Red Rd, Bellevue, WA 98005, USA",google_places,https://www.taxprofessionalsnw.com/,ChIJhQDXd1hskFQRpLqdOykc_9g
+498,"Thanh Dat Tax & Accounting, LLC","accounting, finance, point_of_interest, establishment","2520 Beacon Ave S, Seattle, WA 98144, USA",google_places,https://thanhdattax.com/,ChIJD5YLyItrkFQRWPfcJUpq_Qg
+500,1 Stop Accounting LLC,"accounting, finance, point_of_interest, establishment","Snohomish, WA 98296, USA",google_places,http://1stopacctg.com/,ChIJzQM3TmYJkFQRRuz2k0tgjTk
+501,Courtesy Accounting,"accounting, finance, point_of_interest, establishment","4411 California Ave SW, Seattle, WA 98116, USA",google_places,http://www.courtesyaccounting.com/,ChIJUcShgvdAkFQRhUp1ZH9pXSg
+502,TheASPTeam,"accounting, finance, point_of_interest, establishment","3150 Richards Rd Suite #150, Bellevue, WA 98005, USA",google_places,https://www.theaspteam.com/,ChIJQZgbrmBskFQR3DZxB2DQJ3c
+504,Wilson Tax And Accounting,"accounting, finance, point_of_interest, establishment","9057 Greenwood Ave N c206, Seattle, WA 98103, USA",google_places,https://www.wilsontaxexperts.com/,ChIJ76b9XKAWkFQRShvg0TFqjyw
+505,Youngs Accounting,"accounting, finance, point_of_interest, establishment","3010 77th Ave SE #209, Mercer Island, WA 98040, USA",google_places,http://www.youngsaccounting.com/,ChIJZ6s25blrkFQRdyBEkD1o4Cg
+509,"Optimize Tax LLC - CPA Services, Accounting, Bookkeeping, Payroll, & Tax Preparation","accounting, finance, point_of_interest, establishment","21177 SE 6th Pl, Sammamish, WA 98074, USA",google_places,https://optimizetax.io/,ChIJl7CCe_9vkFQRqZpJT9TOSbI
+510,Hua Tax & Accounting Services,"accounting, finance, point_of_interest, establishment","339 Burnett Ave S b, Renton, WA 98057, USA",google_places,http://www.huatax.com/,ChIJI20jCaFdkFQR3yDk2DLcjcI
+511,Ellis Accounting,"accounting, finance, point_of_interest, establishment","9501 WA-302, Gig Harbor, WA 98329, USA",google_places,http://ellis-accounting.com/,ChIJ5VuYwsRMkFQRd04POSSmPjQ
+515,Jenderuss Forensic Accounting,"accounting, finance, point_of_interest, establishment","19031 33rd Ave W #207, Lynnwood, WA 98036, USA",google_places,,
+822,REI Bike Shop,"bicycle_store, point_of_interest, store, establishment","222 Yale Ave N, Seattle, WA 98109, USA",google_places,https://www.rei.com/stores/seattle?y_source=1_MTQ1MzQxNS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,ChIJa_52_zMVkFQRIsX5KSvv41k
+826,Alki Bike & Board,"bicycle_store, point_of_interest, store, establishment","2606 California Ave SW, Seattle, WA 98116, USA",google_places,http://www.alkibikeandboard.com/,ChIJg9q352VAkFQRleXDEz3yqj8
+830,Cascade Bicycle Studio,"bicycle_store, point_of_interest, store, establishment","180 N Canal St, Seattle, WA 98103, USA",google_places,http://www.cascadebicyclestudio.com/,ChIJY0gQVagVkFQRW79dviQHoOY
+1145,Marshland Cemetery,"cemetery, point_of_interest, establishment","5720 124th St SE, Snohomish, WA 98296, USA",google_places,,ChIJcXpnsqYHkFQRANCK47wtKOM
+532,Custom Bookkeeping & Accounting Solutions,"accounting, finance, point_of_interest, establishment","5720 144th St NW Suite 119, Gig Harbor, WA 98332, USA",google_places,,
+539,King County International Airport Airpark Hangars,"airport, point_of_interest, establishment","9214 E Marginal Wy S, Tukwila, WA 98108, USA",google_places,,
+542,Port Orchard Airport,"airport, point_of_interest, establishment","Sidney Rd SW, Port Orchard, WA 98367, USA",google_places,,
+551,First Air Field,"airport, point_of_interest, establishment","13812 179th Ave SE, Monroe, WA 98272, USA",google_places,,
+555,Airport Road NB Station,"bus_station, transit_station, point_of_interest, establishment","Washington 98204, USA",google_places,,
+556,UVP Seattle Airport,"parking, point_of_interest, establishment","3211 S 154th St, SeaTac, WA 98188, USA",google_places,,
+513,Millward Accounting & Bookkeeping LLC,"accounting, finance, point_of_interest, establishment","5608 17th Ave NW Ste 1285, Seattle, WA 98107, USA",google_places,http://www.millwardaccounting.com/,ChIJWbJXlv8VkFQRwul2lJNkL_w
+514,J D & Associates Inc,"accounting, finance, point_of_interest, establishment","3331 Kitsap Way Suite A, Bremerton, WA 98312, USA",google_places,http://jdtaxandaccounting.com/,ChIJj4lCmOU2kFQRl3A5CjP-4UM
+516,LTP Tax - Accounting & Tax services,"accounting, finance, point_of_interest, establishment","304 Main Ave S UNIT 104, Renton, WA 98057, USA",google_places,https://ltptax.com/,ChIJ2U5ZK6tCkFQRzYE3GPTUk6E
+518,Somers Accounting,"accounting, finance, point_of_interest, establishment","3099 610 Main St suite c, Edmonds, WA 98020, USA",google_places,http://www.somersaccounting.com/,ChIJZ-4fvvoakFQRfHanwpfVaJM
+519,Haight Accounting Firm,"accounting, finance, point_of_interest, establishment","1924 Bickford Ave Suite 203, Snohomish, WA 98290, USA",google_places,https://haightaccounting.com/,ChIJqRBo3vEOkFQRu744oDxLXvU
+520,Five Seasons Accounting Services LLC,"accounting, finance, point_of_interest, establishment","323 2nd St, Snohomish, WA 98290, USA",google_places,https://www.5seasonsaccounting.com/,ChIJ236C1R6pmlQRXEVZiywJBqM
+522,YMC TAX & ACCOUNTING CORP,"accounting, finance, point_of_interest, establishment","564 Industry Dr STE251A, Tukwila, WA 98188, USA",google_places,https://ymctax.com/,ChIJycY7EddckFQRWxf7cZUr2xI
+523,RJS Tax & Accounting,"accounting, finance, point_of_interest, establishment","22007 Marine View Dr S # 202, Des Moines, WA 98198, USA",google_places,https://www.rjstax.com/,ChIJh2tgtQNbkFQR0hdip8WRbLA
+524,Apgood's Taxes & Accounting,"accounting, finance, point_of_interest, establishment","728 Lebo Blvd, Bremerton, WA 98310, USA",google_places,https://www.apgoodsaccounting.com/,ChIJRfmvGd85kFQRUlxPvwyuhs0
+526,Fidelity Accounting & Tax Services,"accounting, finance, point_of_interest, establishment","2519 15th Ave S, Seattle, WA 98144, USA",google_places,http://www.longchengtax.com/,ChIJsQVwjoZqkFQROMOTk_TD9Hw
+527,"Hearthstone Group, A Division of SingerLewak LLP","accounting, finance, point_of_interest, establishment","4312 Kitsap Way # 102, Bremerton, WA 98312, USA",google_places,https://singerlewak.com/contact-us/washington/,ChIJEdlhcBc3kFQRocMCiz3-tD8
+529,Newcastle CPAs,"accounting, finance, point_of_interest, establishment","8113 120th Pl SE, Newcastle, WA 98056, USA",google_places,http://www.newcastlecpas.com/,ChIJ_WQiH_5okFQRsK438r-YTVE
+530,Main Street Accounting,"accounting, finance, point_of_interest, establishment","16000 Bothell Everett Hwy #130, Mill Creek, WA 98012, USA",google_places,https://www.mainstreetaccounting.biz/,ChIJcT7rydgFkFQRkRF5Fx3JJxU
+531,BCFS Accounting & Tax Solutions,"accounting, finance, point_of_interest, establishment","16300 Mill Creek Blvd #109, Mill Creek, WA 98012, USA",google_places,http://www.bcfsinc.com/,ChIJCeaiCv0EkFQREJtJzDh7fmI
+533,Seattle–Tacoma International Airport,"airport, point_of_interest, establishment","17801 International Blvd, SeaTac, WA 98158, USA",google_places,https://www.portseattle.org/sea-tac,ChIJ_f7qQlVDkFQRtzfcx8TZ05k
+535,King County International Airport - Boeing Field,"airport, point_of_interest, establishment","7277 Perimeter Rd S, Seattle, WA 98108, USA",google_places,http://www.kingcounty.gov/airport,ChIJt_--ofVBkFQR6r7ut1HFVUA
+536,Renton Municipal Airport,"airport, point_of_interest, establishment","243 W Perimeter Rd, Renton, WA 98057, USA",google_places,https://rentonwa.gov/airport/,ChIJOWkX3qZCkFQRg1mXtCNL4zo
+544,Seattle-Tacoma International Airport (SEA) Parking Garage,"airport, parking, point_of_interest, establishment","17801 International Blvd, SeaTac, WA 98188, USA",google_places,https://www.portseattle.org/sea-tac/parking,ChIJeRUR_UBdkFQRQiXaAb85ynU
+548,Signature Aviation BFI - Boeing Field/King County International Airport,"point_of_interest, establishment","7149 Perimeter Rd S, Seattle, WA 98108, USA",google_places,https://www.signatureaviation.com/locations/BFI,ChIJufIiT_RBkFQR09JzroAaFBw
+549,Modern Aviation BFI,"airport, point_of_interest, establishment","8285 Perimeter Rd S, Seattle, WA 98108, USA",google_places,https://modern-aviation.com/seattle/,ChIJ_-458fRDkFQR1PaHX5WX3D4
+552,WallyPark Airport Parking- Premier Garage (SEA),"parking, point_of_interest, establishment","18613 International Blvd, SeaTac, WA 98188, USA",google_places,https://www.wallypark.com/seattle/,ChIJY3AsiFhbkFQR304yTaIMuJ8
+553,Kenmore Air,"airport, store, point_of_interest, establishment","6321 NE 175th St, Kenmore, WA 98028, USA",google_places,http://www.kenmoreair.com/,ChIJzzRmrNsRkFQRJ7-gRXIGVuk
+554,Bremerton Kitsap Airporter Inc,"point_of_interest, establishment","5748 Bethel Rd SE, Port Orchard, WA 98367, USA",google_places,https://www.kitsapairporter.com/,ChIJ7URPnb9JkFQRiBiOtX6YI-Y
+559,Alaska Airlines - Everett,"airport, point_of_interest, establishment","3308 100th St SW, Everett, WA 98204, USA",google_places,https://www.alaskaair.com/,ChIJHXiKVbgBkFQRKj-I8MJCuZc
+561,Seattle Airport Shuttle,"point_of_interest, establishment","701 5th Ave #97, Seattle, WA 98104, USA",google_places,,
+833,Seattle Electric Bike - Eastside,"bicycle_store, point_of_interest, store, establishment","18227 Bothell Way NE, Bothell, WA 98011, USA",google_places,http://seattleelectricbike.net/,ChIJT3JDxmsOkFQRYJ7UhIWlGRQ
+568,SeaTac/Airport Station Passenger Pick-Up,"parking, point_of_interest, establishment","2918 S 176th St, SeaTac, WA 98188, USA",google_places,,
+569,Airport Road SB Station,"bus_station, transit_station, point_of_interest, establishment","Washington 98204, USA",google_places,,
+2638,St. Thomas School,"primary_school, school, point_of_interest, establishment","8300 NE 12th St, Medina, WA 98039, USA",google_places,https://www.stthomasschool.org/,ChIJW3VdsmFrkFQRg7TJRniqi8A
+574,Airfield Business Center,"airport, point_of_interest, establishment","9126 E Marginal Wy S, Seattle, WA 98108, USA",google_places,,
+583,Valley Medical Center Heliport,"airport, point_of_interest, establishment","Renton, WA 98055, USA",google_places,,
+591,Boeing-Renton Ramp Site Nr 2 Heliport,"airport, point_of_interest, establishment","Renton, WA 98056, USA",google_places,,
+597,Eurofish Aquatics,"aquarium, point_of_interest, pet_store, store, establishment","12910 E Marginal Wy S Suite B, Tukwila, WA 98168, USA",google_places,,
+560,"Park N Jet Lot-2, SeaTac Airport Parking","parking, point_of_interest, establishment","1244 S 140th St, Seattle, WA 98168, USA",google_places,http://theseatacparking.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb-listing,ChIJT1HWWXJDkFQR5-FUxzTa5lg
+562,Kenmore Air - Lake Union,"airport, travel_agency, point_of_interest, establishment","950 Westlake Ave N, Seattle, WA 98109, USA",google_places,https://www.kenmoreair.com/,ChIJr5yeBTwVkFQRz8fD-ZAc2kE
+563,Jiffy Airport Parking - SeaTac,"parking, point_of_interest, establishment","18836 International Blvd, SeaTac, WA 98188, USA",google_places,https://www.jiffyseattle.com/,ChIJD15CGENbkFQRLnsx4OUVfrQ
+564,Doubletree By Hilton Seattle Airport Parking,"parking, point_of_interest, establishment","18740 International Blvd, Seattle, WA 98188, USA",google_places,https://www.hilton.com/en/hotels/ctac-dt-doubletree-seattle-airport/hotel-location/,ChIJi_muQadckFQRt0MEZtsbcYk
+565,Quality Inn SEA Airport Parking,"parking, point_of_interest, establishment","2900 S 192nd St, SeaTac, WA 98188, USA",google_places,https://off-airportparking.com/airports/sea/quality-inn-sea-airport/,ChIJv9bvQQBbkFQRZHJoE2GMfD8
+566,"Park N Jet Lot-1, Seatac Airport Parking","parking, point_of_interest, establishment","18220 8th Ave S, SeaTac, WA 98148, USA",google_places,https://www.parknjetseatac.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb-listing,ChIJrbXW9kxbkFQR10hC0eWCrgg
+573,MVP Airport Parking,"parking, point_of_interest, establishment","18831 International Blvd, SeaTac, WA 98188, USA",google_places,http://www.mvpparking.com/,ChIJZ0dr1l5bkFQRu0z73veg06s
+580,Western Town Car Service / Airport Transportation,"point_of_interest, establishment","1258 150th Ave SE, Bellevue, WA 98007, USA",google_places,http://www.westerntowncar.com/,ChIJHSkIVtFskFQRfT5cpWVu_wc
+582,SUV Seattle Services - Airport Transfer & Limousine Services.,"airport, travel_agency, point_of_interest, establishment","14402 86th Pl NE, Kirkland, WA 98034, USA",google_places,https://www.suvseattleservice.com/,ChIJmQvyIuDBSgQRMz53CKGvWbo
+590,Top Spot Airport Parking,"parking, point_of_interest, establishment","17808 International Blvd, SeaTac, WA 98188, USA",google_places,https://www.topspotpark.com/,ChIJ-6a1HXRdkFQRXX13qJ1nfJk
+593,Seattle Aquarium,"aquarium, zoo, tourist_attraction, point_of_interest, establishment","1483 Alaskan Way Pier 59, Seattle, WA 98101, USA",google_places,https://www.seattleaquarium.org/,ChIJQ_oEiK1qkFQRg3bU4l3mmWs
+594,Seattle Aquarium Ocean Pavilion,"aquarium, point_of_interest, establishment","1504 Alaskan Wy, Seattle, WA 98101, USA",google_places,https://www.seattleaquarium.org/explore-the-aquarium/campus/ocean-pavilion/,ChIJoQeGKQBrkFQRYEqidxiM6LU
+595,Sierra Fish & Pets,"pet_store, point_of_interest, store, establishment","601 S Grady Way Suite M, Renton, WA 98057, USA",google_places,https://sierrafishandpets.com/,ChIJ-9r6101dkFQRhFd1cWrYQ2U
+596,The Fish Store,"point_of_interest, pet_store, store, establishment","12320 Lake City Way NE, Seattle, WA 98125, USA",google_places,http://www.thefishstoreseattle.com/,ChIJyzrriGUUkFQR1jfti3Avn9A
+598,Saltwater City,"pet_store, point_of_interest, store, establishment","14150 NE 20th St # F3, Bellevue, WA 98007, USA",google_places,https://www.facebook.com/Saltwater-City-160730641728,ChIJkwvrtQBtkFQRohO5sNCSS-M
+599,Moonlight Aquatics,"aquarium, point_of_interest, pet_store, store, food, establishment","1700 132nd St SE Suite G, Mill Creek, WA 98012, USA",google_places,https://moonlightaquatics.com/,ChIJ-UDdQuwHkFQRmFSJGk_aQks
+600,Woodland Park Zoo,"zoo, tourist_attraction, point_of_interest, establishment","Seattle, WA 98103, USA",google_places,https://www.zoo.org/,ChIJydSuSkkUkFQRsqhB-cEtYnw
+601,Midway Tropical Fish & Pets,"point_of_interest, pet_store, store, establishment","24101 Pacific Hwy S, Kent, WA 98032, USA",google_places,https://m.facebook.com/midway.tropicalfish/,ChIJyzZB4bVbkFQROcjUDmZwJmY
+602,"Bridges Pets, Gifts & Water Gardens","pet_store, point_of_interest, store, establishment","2929 Bickford Ave, Snohomish, WA 98290, USA",google_places,http://facebook.com/bridgespets,ChIJQXsJ7oCpmlQRMK8gnAOh9HQ
+603,SEA Discovery Center,"aquarium, university, tourist_attraction, museum, point_of_interest, establishment","18743 Front St NE, Poulsbo, WA 98370, USA",google_places,https://sea.wwu.edu/,ChIJr2iRdXYjkFQR5pzOjyS9kFk
+604,Denny's Pet World,"point_of_interest, pet_store, store, establishment","13123 NE 124th St, Kirkland, WA 98034, USA",google_places,http://www.dennyspet.com/,ChIJ20VCBoQNkFQRSRf_Zf6m-8E
+605,Aquarium Co-op,"point_of_interest, pet_store, store, establishment","9661 Firdale Ave, Edmonds, WA 98020, USA",google_places,http://www.aquariumcoop.com/,ChIJ6615QYIQkFQRICAt2xbMeOY
+606,Chihuly Garden and Glass,"tourist_attraction, museum, point_of_interest, establishment","305 Harrison St, Seattle, WA 98109, USA",google_places,https://www.chihulygardenandglass.com/,ChIJVTtr1kUVkFQRh-YAfijbQXs
+607,Clayton Aquarium Corporation,"point_of_interest, pet_store, store, establishment","12031 Northup Way #106, Bellevue, WA 98005, USA",google_places,http://claytonaquariums.com/,ChIJC0kOQuVskFQRgFRPQpIFllY
+608,Tanks and Beyond,"aquarium, point_of_interest, establishment","77 S Washington St, Seattle, WA 98104, USA",google_places,https://tanksbykimberlycuratedscapedbyelsenbaumer.com/,ChIJWTYXo3VrkFQR8WnnBKHTr0M
+609,Space Needle,"tourist_attraction, point_of_interest, establishment","400 Broad St, Seattle, WA 98109, USA",google_places,https://www.spaceneedle.com/,ChIJ-bfVTh8VkFQRDZLQnmioK9s
+1177,Road Apparel,"clothing_store, store, point_of_interest, establishment","8 W Roy St, Seattle, WA 98119, USA",google_places,http://www.roadapparel.com/,ChIJ3bW1i7RqkFQRULySWaXTXgU
+611,Little Amazon Fish & Pet,"pet_store, point_of_interest, store, establishment","10316 Aurora Ave N, Seattle, WA 98133, USA",google_places,,
+632,ATM (Broadway Shell),"atm, finance, point_of_interest, establishment","1500 Broadway, Seattle, WA 98122, USA",google_places,,
+637,ATM,"atm, finance, point_of_interest, establishment","4700 University Wy NE, Seattle, WA 98105, USA",google_places,,
+640,ATM (Shell),"atm, finance, point_of_interest, establishment","14008 NE 8th St, Bellevue, WA 98007, USA",google_places,,
+643,Drive Through A.T.M BOA,"atm, finance, point_of_interest, establishment","2400 148th Ave NE, Redmond, WA 98052, USA",google_places,,
+644,Seattle Credit Union ATM - Headquarters,"atm, finance, point_of_interest, establishment","1521 1st Ave S, Seattle, WA 98134, USA",google_places,,
+648,Tony's Bakery,"bakery, food, point_of_interest, store, establishment","6020 Martin Luther King Jr Way S, Seattle, WA 98118, USA",google_places,,
+649,Boulangerie Bakery Café,"bakery, food, point_of_interest, store, establishment","3900 Factoria Blvd SE # B, Bellevue, WA 98006, USA",google_places,,
+654,Daniela Solis Bakery,"bakery, food, point_of_interest, store, establishment","900 160th Ave NE STE 3, Bellevue, WA 98008, USA",google_places,,
+613,Sky View Observatory - Columbia Center,"tourist_attraction, point_of_interest, establishment","700 4th Ave, Seattle, WA 98104, USA",google_places,http://skyviewobservatory.com/,ChIJi-OPx7BqkFQR9TDCUWqViHc
+614,The Arium Shop,"home_goods_store, point_of_interest, pet_store, store, establishment","317 NW Gilman Blvd # 27, Issaquah, WA 98027, USA",google_places,http://www.theariumshop.com/,ChIJe1MbDzdvkFQRm-XXWu_MaUM
+616,Seattle Aquarium Café,"cafe, point_of_interest, food, establishment","1483 Alaskan Wy Pier 59, Seattle, WA 98101, USA",google_places,https://www.seattleaquarium.org/,ChIJQ_oEiK1qkFQRg3bU4l3mmWs
+617,Reptile Zoo,"zoo, tourist_attraction, point_of_interest, establishment","22715 US-2 B, Monroe, WA 98272, USA",google_places,http://thereptilezoo.org/,ChIJSVYQEZymmlQRtJ0o56NmwvY
+618,Seattle Corals Aquariums,"point_of_interest, pet_store, store, establishment","12005 NE 12th St # 29, Bellevue, WA 98005, USA",google_places,http://seattlecorals.com/,ChIJt6VMHRJtkFQRVTKNaM0XBbM
+619,"Aquarium Zen, LLC","point_of_interest, pet_store, store, establishment","920 NE 64th St, Seattle, WA 98115, USA",google_places,http://aquariumzen.net/,ChIJ0zeDpG8UkFQRnME7VF5kxh0
+621,Cougar Mountain Zoo,"zoo, tourist_attraction, point_of_interest, establishment","19525 SE 54th St, Issaquah, WA 98027, USA",google_places,http://www.cougarmountainzoo.org/,ChIJ9R94FwVvkFQR5WmIv46SaX8
+623,Barrier Reef Aquariums,"point_of_interest, pet_store, store, establishment","1717 Northeast 44th Street Behind, 1717 NE 44th St Ste A, Renton, WA 98056, USA",google_places,https://www.barrierreefaquariums.com/,ChIJnwRZY6lpkFQRYYf_rQsL9i4
+624,Bug & Reptile Museum,"museum, tourist_attraction, point_of_interest, establishment","1118 Charleston Beach Rd W, Bremerton, WA 98312, USA",google_places,http://www.bugmuseum.com/,ChIJKYDe16k3kFQRU-tJCmTgKw8
+625,Ballard Locks Fish Ladder,"tourist_attraction, point_of_interest, establishment","2930 W Commodore Way, Seattle, WA 98199, USA",google_places,https://ballardlocks.org/fish-salmon-ladder.html,ChIJT9PGongVkFQRU_AHAeZY8N0
+626,Sea King Aquariums,"pet_store, point_of_interest, store, establishment","12005 NE 12th St # 29, Bellevue, WA 98005, USA",google_places,http://www.seattlecorals.com/,ChIJu8YR3_VskFQRblf08Oq4-Qw
+628,Friends of the Issaquah Salmon Hatchery,"tourist_attraction, point_of_interest, food, establishment","125 W Sunset Way, Issaquah, WA 98027, USA",google_places,http://www.issaquahfish.org/,ChIJj1FJcoBlkFQR4kjn1jOygbw
+629,Bellevue Botanical Garden,"tourist_attraction, park, point_of_interest, establishment","12001 Main St, Bellevue, WA 98005, USA",google_places,https://bellevuebotanical.org/,ChIJtyvP_2ZskFQRAz9MdO6RqfM
+631,Bank of America ATM,"atm, finance, point_of_interest, establishment","1300 E Madison St, Seattle, WA 98122, USA",google_places,https://locators.bankofamerica.com/wa/seattle/financial-centers-seattle-8308.html?utm_source=GMBlisting&utm_medium=organic,ChIJvU55dc5qkFQRvN-YM6TAQww
+634,Wells Fargo ATM,"atm, finance, point_of_interest, establishment","2514 4th Ave, Seattle, WA 98121, USA",google_places,https://www.wellsfargo.com/locator/bank/2514__4TH__AVENUE_SEATTLE_WA_98121/?utm_campaign=Local_Listings&utm_source=Google&group=ATM&loc=AD50680,ChIJgQCH3E4VkFQRsG2tIkop6Nk
+636,Chase ATM,"atm, finance, point_of_interest, establishment","19500 Hwy 99, Lynnwood, WA 98036, USA",google_places,https://locator.chase.com/search,ChIJ87iW2jYFkFQR4WHXbhIRNQg
+638,BECU ATM,"atm, finance, point_of_interest, establishment","25250 Pacific Hwy S, Kent, WA 98032, USA",google_places,https://www.becu.org/?utm_source=G&utm_medium=lpm&utm_campaign=service_neighborhoodfinancialcenters_ms1_other,ChIJkQbDTTJakFQRxGxGhEyrckM
+641,Navy Federal Credit Union - ATM,"atm, finance, point_of_interest, establishment","2541 6th St, Bremerton, WA 98312, USA",google_places,https://www.navyfederal.org/branches-atms.html,ChIJNZgwV203kFQRzS7XBwUPw38
+642,Cardtronics ATM,"atm, finance, point_of_interest, establishment","1801 10th Ave NW #110b, Issaquah, WA 98027, USA",google_places,http://www.cardtronics.com/,ChIJWQqD06NvkFQRt6qmcCytQRE
+645,Citibank ATM,"atm, finance, point_of_interest, establishment","Parking lot, 101 NE 50th St, Seattle, WA 98105, USA",google_places,https://locations.citibank.com/,ChIJWXe7HVwUkFQRBJyRtus86zU
+647,Mariana's Panaderia & Bakery,"bakery, food, point_of_interest, store, establishment","617 128th St SW #106, Everett, WA 98204, USA",google_places,https://www.marianabakery.com/?utm_source=gmb&utm_medium=organic,ChIJ2espghwHkFQRZ2qMxqKhS6c
+650,Despi Delite Bakery,"bakery, food, point_of_interest, store, establishment","2701 15th Ave S, Seattle, WA 98144, USA",google_places,https://despidelitebakery.com/,ChIJA8Hw54ZqkFQRDyNQmJFGqig
+652,Sluys Poulsbo Bakery,"bakery, food, point_of_interest, store, establishment","18924 Front St NE, Poulsbo, WA 98370, USA",google_places,http://sluyspoulsbobakery.com/,ChIJ54Y7Gp4jkFQRXswWD7pea_c
+653,85°C Bakery Cafe - Bellevue,"bakery, cafe, restaurant, food, point_of_interest, store, establishment","14701 NE 20th St, Bellevue, WA 98007, USA",google_places,https://www.85cbakerycafe.com/,ChIJVRQbBtBtkFQRR8rlQ6SWfBY
+656,Borrowed Kitchen Bakery,"bakery, food, point_of_interest, store, establishment","10978 NE State Hwy 104 Suite 111, Kingston, WA 98346, USA",google_places,http://www.borrowedkitchenbakery.com/,ChIJt6mmGT4ZkFQRyKY_cCVy0v8
+657,Nuflours Bakery,"bakery, restaurant, food, point_of_interest, store, establishment","518 15th Ave E, Seattle, WA 98112, USA",google_places,http://nuflours.com/,ChIJZxfduysVkFQR6JL3WmbfZ8I
+658,Q Bakery Sandwiches,"bakery, restaurant, food, point_of_interest, store, establishment","3818 S Graham St, Seattle, WA 98118, USA",google_places,,
+659,Le Bon Bakery,"bakery, food, point_of_interest, store, establishment","3301 184th St SW Suite 250, Lynnwood, WA 98037, USA",google_places,,
+665,Fresh Flours Phinney Ridge,"bakery, cafe, food, point_of_interest, store, establishment","6015 Phinney Ave N, Seattle, WA 98103, USA",google_places,http://www.freshfloursseattle.com/,ChIJeZHvKzYUkFQRIZEMQKRDDuw
+668,Carter And Company,"bakery, cafe, food, point_of_interest, store, establishment","707 Bay St, Port Orchard, WA 98366, USA",google_places,http://www.carterandco.biz/,ChIJG38fN8U3kFQRVo8JzEf81gE
+667,Tikal Bakery,"bakery, food, point_of_interest, store, establishment","15420 Ambaum Blvd SW, Burien, WA 98166, USA",google_places,,
+669,Red Rose Bakery & Halal Food,"bakery, restaurant, food, point_of_interest, store, establishment","25805 104th Ave SE, Kent, WA 98030, USA",google_places,,
+673,Oh! Wheat Bakery,"bakery, food, point_of_interest, store, establishment","15230 NE 24th St ste o, Redmond, WA 98052, USA",google_places,,
+695,Meeker Street Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","1721 W Meeker St, Kent, WA 98032, USA",google_places,,
+696,Black Cat Bar,"bar, point_of_interest, establishment","2132 1st Ave, Seattle, WA 98121, USA",google_places,,
+661,Monica's Waterfront Bakery & Cafe,"restaurant, liquor_store, bakery, cafe, food, point_of_interest, store, establishment","3472 NW Byron St, Silverdale, WA 98383, USA",google_places,http://monicascafe.com/,ChIJT-D2aJo6kFQRO7KpE7V_44M
+662,Alaskan Sourdough Bakery,"bakery, food, point_of_interest, store, establishment","1301 Alaskan Wy, Seattle, WA 98101, USA",google_places,http://www.alaskansourdoughbakeryseattle.com/,ChIJs-Di-61qkFQREQyTugwBPoY
+664,Tammy's Deli & Bakery,"bakery, food, point_of_interest, store, establishment","7101 Martin Luther King Jr Way S, Seattle, WA 98118, USA",google_places,https://m.facebook.com/pages/Tammys-Bakery/145184265515681,ChIJy4KLcAFCkFQR4CZxfa4EaPU
+670,Cake Studio Panaderia Mexicana,"bakery, food, point_of_interest, store, establishment","20149 Viking Ave NW suite#151, Poulsbo, WA 98370, USA",google_places,http://www.ilovecakestudio.com/,ChIJLUF9PgcjkFQR8gKse1VgYZQ
+672,Franz Bakery,"bakery, food, point_of_interest, store, establishment","2006 S Weller St, Seattle, WA 98144, USA",google_places,http://www.franzbakery.com/,ChIJH8XLU-pqkFQR4o1YlmYtEm0
+674,Bee Hill Bakery,"bakery, food, point_of_interest, store, establishment","3381 NW Bucklin Hill Rd STE C, Silverdale, WA 98383, USA",google_places,https://beehillbakery.com/,ChIJkauI1y47kFQRdHIvyz7HMwo
+675,Chase Bank,"bank, atm, finance, point_of_interest, establishment","8010 164th Ave NE, Redmond, WA 98052, USA",google_places,https://locator.chase.com/wa/redmond/8010-164th-ave-ne?jp_cmp=rb%2FLocalListings%2Faff%2Fbranch%2Fna&y_source=1_MjAzOTk2OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,ChIJx5cjMLJykFQRjksz6TNr6Gc
+677,U.S. Bank Branch,"bank, finance, point_of_interest, establishment","305 4th Ave N, Kent, WA 98032, USA",google_places,https://www.usbank.com/locations/washington/kent/305-4th-ave-n-bank-atm/?utm_source=google&utm_medium=organic&utm_campaign=gbp_listing,ChIJo54D1_1bkFQRW_Y3j4yNbGo
+679,Bank of America (with Drive-thru ATM),"bank, finance, point_of_interest, establishment","10833 NE 2nd St, Bellevue, WA 98004, USA",google_places,https://locators.bankofamerica.com/wa/bellevue/financial-centers-bellevue-16763.html?utm_source=GMBlisting&utm_medium=organic,ChIJH7W-tGJskFQRui0r00h7kXs
+681,Umpqua Bank,"bank, finance, point_of_interest, establishment","504 W Meeker St, Kent, WA 98032, USA",google_places,https://locations.umpquabank.com/wa/kent/504-w-meeker,ChIJ2UAzJ1ZZkFQRhOTrwf7cr60
+682,Seattle Bank,"bank, atm, finance, point_of_interest, establishment","401 Union St Floor 2900, Seattle, WA 98101, USA",google_places,http://www.seattlebank.com/,ChIJu9DTJUUVkFQRxuR7l-6wjyU
+684,The Hidden Door,"bar, restaurant, point_of_interest, food, establishment","14525 Aurora Ave N, Shoreline, WA 98133, USA",google_places,http://www.thehiddendoorbbq.com/,ChIJBaqsxe4RkFQRmDvDSkt4iK4
+685,The Pumphouse Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","11802 NE 8th St, Bellevue, WA 98005, USA",google_places,http://www.pumphousebellevue.com/,ChIJM5qcUPVskFQR_1535D5ymes
+686,Diller Room,"bar, point_of_interest, establishment","1224 1st Ave, Seattle, WA 98101, USA",google_places,http://www.dillerroom.com/,ChIJcUvNJ7JqkFQR_qdDVl2ZRfo
+688,The Spot Sports Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","4224 E Valley Rd, Renton, WA 98057, USA",google_places,https://thespotpubrenton.com/,ChIJoz8FsxxdkFQRlgoej-1G-MQ
+689,The Lime,"night_club, bar, restaurant, point_of_interest, food, establishment","8544 122nd Ave NE, Kirkland, WA 98033, USA",google_places,http://www.thelimekirkland.com/,ChIJ7-a7pb4SkFQRqwq3UdE5KF4
+691,Hooverville Bar,"bar, point_of_interest, establishment","1721 1st Ave S, Seattle, WA 98134, USA",google_places,http://www.hoovervillebar.com/,ChIJJxKCPJ5qkFQRn4rM6v1PpA4
+692,Just Left Pub & Grill,"bar, restaurant, point_of_interest, food, establishment","4308 198th St SW, Lynnwood, WA 98036, USA",google_places,https://www.facebook.com/pages/Just-Left-Pub-Grill/505784042910586,ChIJGe3dJ0IFkFQRRTH1fhE6eg4
+693,The Whisky Bar,"bar, point_of_interest, establishment","2122 2nd Ave, Seattle, WA 98121, USA",google_places,http://www.thewhiskybar.com/,ChIJ-2iVw0wVkFQRWsDII6LOrq8
+697,Bar House,"bar, point_of_interest, establishment","503 N 36th St, Seattle, WA 98103, USA",google_places,https://www.facebook.com/BarHouseSeattle/,ChIJzduGWAcVkFQRzm22PRbw5iw
+698,Redmond's Bar & Grill,"restaurant, bar, point_of_interest, food, establishment","7979 Leary Wy, Redmond, WA 98052, USA",google_places,http://www.redmondsgrill.com/,ChIJ8Yd8BLJykFQR6Kc2-IUKFF4
+700,Good Bar,"bar, point_of_interest, establishment","240 2nd Ave S, Seattle, WA 98104, USA",google_places,http://www.goodbarseattle.com/,ChIJG2K5JrtqkFQRsT22hSRqrrc
+701,Deluxe Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","625 Broadway E, Seattle, WA 98102, USA",google_places,http://deluxebarandgrill.com/,ChIJta6_8C4VkFQRj6l3yjOtYpA
+702,All-Star Sports Bar,"bar, point_of_interest, establishment","22303 Marine View Dr S, Des Moines, WA 98198, USA",google_places,http://allstardesmoines.com/,ChIJhS096gFbkFQRWCEZm5x5m20
+704,McCoy's Firehouse Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","173 S Washington St, Seattle, WA 98104, USA",google_places,http://mccoysfirehouse.com/,ChIJ6x4V3LpqkFQRWDvyzCe4vz0
+705,Pony Keg Grill & Bar,"bar, restaurant, point_of_interest, food, establishment","8535 S 212th St, Kent, WA 98031, USA",google_places,https://ponykegkent.com/,ChIJl-QO-UFckFQRVd4lwwPkR8s
+2639,South Shore K-8,"primary_school, school, point_of_interest, establishment","4800 S Henderson St, Seattle, WA 98118, USA",google_places,http://southshorek8.seattleschools.org/,ChIJWRaSHXNCkFQRIG7nhhxMnhE
+713,Cloud 9 Bar and Grill,"bar, restaurant, point_of_interest, food, establishment","806 Central Ave S, Kent, WA 98032, USA",google_places,,
+716,Joe's Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","500 S King St, Seattle, WA 98104, USA",google_places,,
+730,High Dive Bar and Grill,"bar, point_of_interest, establishment","2621 NE Sunset Blvd, Renton, WA 98056, USA",google_places,,
+739,Mj Beauty brows,"beauty_salon, point_of_interest, establishment","10654 Buccaneer Pl, Silverdale, WA 98383, USA",google_places,,
+742,VG Salon,"beauty_salon, point_of_interest, establishment","9960 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,,
+744,Serenity Salon,"beauty_salon, point_of_interest, establishment","1014 Bay St #9, Port Orchard, WA 98366, USA",google_places,,
+708,Central Bar + Restaurant,"bar, restaurant, point_of_interest, food, establishment","10475 NE 6th St, Bellevue, WA 98004, USA",google_places,https://www.centralbar.com/,ChIJCb0qoIhskFQRjmuOkGelT-I
+710,Buckley's in Belltown,"bar, restaurant, point_of_interest, food, establishment","2331 2nd Ave, Seattle, WA 98121, USA",google_places,http://buckleyspubs.com/,ChIJyflW1E0VkFQR0ONRNk5ABdQ
+711,Harry's Bar,"bar, point_of_interest, establishment","514 15th Ave E, Seattle, WA 98112, USA",google_places,http://www.olympiapizza3.com/,ChIJhaDCuysVkFQR958SnPoDLoM
+712,Tony's Sports Bar,"bar, restaurant, point_of_interest, food, establishment","14417 124th Ave NE, Kirkland, WA 98034, USA",google_places,http://www.teamtonys.com/,ChIJQyFn0cENkFQRomAPanlRKEE
+714,Olaf's,"bar, restaurant, point_of_interest, food, establishment","6301 24th Ave NW, Seattle, WA 98107, USA",google_places,http://www.olafsballard.com/,ChIJmYd0a9AVkFQRDHuQkcL6FD0
+717,Ozzie's,"bar, restaurant, point_of_interest, food, establishment","105 W Mercer St, Seattle, WA 98119, USA",google_places,http://www.ozziesinseattle.com/,ChIJs7SarkMVkFQR9wIn1ZsZNac
+718,Shultzy's Bar & Grill,"bar, restaurant, point_of_interest, food, establishment","4114 University Wy NE, Seattle, WA 98105, USA",google_places,http://www.shultzys.com/,ChIJG_j0afMUkFQROPWTaerWo9E
+720,Steve's Bar & Grill,"bar, restaurant, food, point_of_interest, establishment","14230 NE 20th St A, Bellevue, WA 98007, USA",google_places,https://www.stevesbarandgrill.com/?utm_source=gmb,ChIJUZkGTAdtkFQRRT8Q7LLVU7g
+721,Old County Bar,"bar, point_of_interest, establishment","5811 24th Ave NW, Seattle, WA 98107, USA",google_places,https://www.oldcountybar.com/,ChIJuxjTKdcVkFQRW3AC0xJzrRs
+722,Hounds Tooth Public House,"bar, restaurant, food, point_of_interest, establishment","8551 Greenwood Ave N # 5, Seattle, WA 98103, USA",google_places,http://www.houndstoothpublic.com/,ChIJR35QLiAUkFQRnE2tUO8hmm8
+724,19th Hole Bar & Grill,"bar, night_club, restaurant, food, point_of_interest, establishment","2171 Erlands Point Rd NW, Bremerton, WA 98312, USA",google_places,https://www.19thholebarandgrill.com/,ChIJc3HkK8UwkFQR9wJUeRy4Dvo
+725,Pennyroyal,"bar, night_club, point_of_interest, establishment","2000 2nd Ave, Seattle, WA 98121, USA",google_places,https://www.pennyroyalbar.com/?utm_source=googlemybusiness&utm_medium=organic&utm_campaign=gbreferral,ChIJx8nBw0wVkFQRejcwK9h2fpg
+727,Yard House,"bar, meal_takeaway, restaurant, food, point_of_interest, establishment","1501 4th Ave, Seattle, WA 98101, USA",google_places,https://www.yardhouse.com/locations/wa/seattle/seattle-4th-and-pike/8343?cmpid=br:yh_ag:ie_ch:loc_ca:YHGMB_sn:gmb_gt:seattle-wa-8343_pl:locurl_rd:1041,ChIJSxHAcbNqkFQRimpTht7bPsM
+729,King Street Bar & Oven,"restaurant, bar, food, point_of_interest, establishment","170 S King St, Seattle, WA 98104, USA",google_places,http://www.kingstreetbar.com/,ChIJm-BauqRqkFQRPYkzYuSkmTo
+731,Olympic Bar,"restaurant, bar, food, point_of_interest, establishment","411 University St, Seattle, WA 98101, USA",google_places,https://www.fairmont.com/seattle/dining/olympic-bar/,ChIJWVBFYDBrkFQRe3izcKdQSYg
+733,32 Bar & Grill,"bar, restaurant, food, point_of_interest, establishment","10601 5th Ave NE, Seattle, WA 98125, USA",google_places,https://www.krakencommunityiceplex.com/venue/32-bar-grill/,ChIJQeT5OTURkFQRq1YBP7bm4JU
+734,Rooney's Food and Spirits,"bar, restaurant, food, point_of_interest, establishment","17626 140th Ave NE, Woodinville, WA 98072, USA",google_places,https://bit.ly/Rooneysonlineordering,ChIJq9CkbigMkFQRi0NYEYgnltQ
+735,Stimpy’s Sports Bar and Grill,"bar, restaurant, food, point_of_interest, establishment","25608 Pacific Hwy S, Kent, WA 98032, USA",google_places,http://www.stimpyssportsbar.com/,ChIJienZ3TFakFQR86LtNNzW_ss
+737,Bayshore Salon Co.,"beauty_salon, spa, hair_care, point_of_interest, establishment","3541 NW Carlton St, Silverdale, WA 98383, USA",google_places,https://www.facebook.com/bayshoresalonco/?hc_location=ufi,ChIJiZMBt5A6kFQR9Uk7hBV7YJs
+738,Lagniappe Salon,"beauty_salon, point_of_interest, establishment","2501 SE Mile Hill Dr, Port Orchard, WA 98366, USA",google_places,http://www.salonwiththefunnyname.com/,ChIJ83VUyTNGkFQRqNvAogJOo_c
+741,BB Boutique + Salon,"beauty_salon, clothing_store, store, point_of_interest, establishment","10406 Silverdale Way NW Unit D101, Silverdale, WA 98383, USA",google_places,http://bbsalonboutique.com/,ChIJVZE8ZZ0oM2wRZ94pXnTZExE
+743,Salon 302 Hair & Spa,"beauty_salon, hair_care, point_of_interest, establishment","14216 92nd Ave NW, Gig Harbor, WA 98329, USA",google_places,http://www.salon302.salon/,ChIJ60S-fNtMkFQR9ryoZwFyU8U
+745,SolLuna Studio & Spa,"beauty_salon, point_of_interest, establishment","1007 Scott Ave ste e Ste 2, Bremerton, WA 98310, USA",google_places,https://solluna-studio-spa.square.site/,ChIJbSHyNOc5kFQRC8h440k1raY
+747,Beauty in the Blink,"beauty_salon, point_of_interest, establishment","708 NE Normandy Dr, Bremerton, WA 98310, USA",google_places,http://www.beautyintheblink.com/,ChIJwQX-Vfc5kFQRHPnjtzT2TyA
+748,LUXE HAIR + SKIN STUDIO,"spa, beauty_salon, hair_care, health, point_of_interest, establishment","19735 10th Ave NE Suite N 200, Poulsbo, WA 98370, USA",google_places,http://www.luxehairandskinstudio.com/,ChIJCdqVJDcjkFQRLonDkdRFMeI
+749,Cutting Edge,"beauty_salon, point_of_interest, establishment","2556 Perry Ave, Bremerton, WA 98310, USA",google_places,http://facebook.com/PaigeMarieCuttingEdge,ChIJH8BmTOE5kFQR4sWQS5AdYZg
+751,Hollywood 2 U Hair Studio,"beauty_salon, hair_care, point_of_interest, establishment","10868 Myhre Pl NW, Silverdale, WA 98383, USA",google_places,http://hollywood2uhair.com/,ChIJ2_XREMQ6kFQRucgkIrh2kbw
+752,Ten Ten Beauty Supply,"beauty_salon, store, point_of_interest, establishment","3569 Wheaton Wy, Bremerton, WA 98310, USA",google_places,http://www.tentenbeautysupply.com/,ChIJV_KoAvM5kFQRid7wZ8fmLBE
+754,Alayna Beauty,"beauty_salon, point_of_interest, establishment","101315 Silverdale Way NW Suite A12, Silverdale, WA 98383, USA",google_places,,
+2640,Issaquah Middle School,"school, point_of_interest, establishment","600 2nd Ave SE, Issaquah, WA 98027, USA",google_places,https://www.issaquah.wednet.edu/issaquahms,ChIJZ6JW8oFlkFQR5MbmrRuWWmI
+758,Madison Sparks Salon,"beauty_salon, point_of_interest, establishment","3428 NW Lowell St, Silverdale, WA 98383, USA",google_places,,
+764,B E Beauty Salon & Spa,"beauty_salon, point_of_interest, establishment","9222 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,,
+765,Elements of Style,"beauty_salon, point_of_interest, establishment","3381 NW Lowell St, Silverdale, WA 98383, USA",google_places,,
+770,Zehaira Salon,"beauty_salon, hair_care, point_of_interest, establishment","3311 Bethel Rd SE, Port Orchard, WA 98366, USA",google_places,,
+772,Salon Paradiso,"hair_care, beauty_salon, point_of_interest, establishment","2841 NW Kitsap Pl, Silverdale, WA 98383, USA",google_places,,
+774,Beauty Hair Salon,"hair_care, point_of_interest, establishment","7018 NE Bothell Way, Kenmore, WA 98028, USA",google_places,,
+777,Central Avenue Salon,"beauty_salon, point_of_interest, establishment","25960 Central Ave NE Suite 102, Kingston, WA 98346, USA",google_places,,
+782,Vivian Beauty ( Inside Family Hair Studio),"beauty_salon, point_of_interest, establishment","3721 Kitsap Way SUITE 1, Bremerton, WA 98312, USA",google_places,,
+784,Beauty In Stromotion,"hair_care, point_of_interest, establishment","9481 Bay Shore Dr NW # 101, Silverdale, WA 98383, USA",google_places,,
+785,Lisa's Hair Salon,"beauty_salon, hair_care, point_of_interest, establishment","2502 Perry Ave NE, Bremerton, WA 98310, USA",google_places,,
+786,Salone Pettirosso,"beauty_salon, point_of_interest, establishment","813 Bay St, Port Orchard, WA 98366, USA",google_places,,
+787,Salon One-O-Five,"beauty_salon, point_of_interest, establishment","9226 Bay Shore Dr NW # 105, Silverdale, WA 98383, USA",google_places,,
+791,Krestive Cuts Beauty Salon,"beauty_salon, point_of_interest, establishment","11th St, Bremerton, WA 98312, USA",google_places,,
+792,Bay Street Hair Co,"beauty_salon, point_of_interest, establishment","118 Bay St Suite 100, Port Orchard, WA 98366, USA",google_places,,
+793,Alan Salon,"beauty_salon, point_of_interest, establishment","19036 Front St NE # B, Poulsbo, WA 98370, USA",google_places,,
+757,Gene Juarez Salon & Spa - Silverdale,"beauty_salon, point_of_interest, establishment","11065 Pacific Crest Pl Suite B-130, Silverdale, WA 98383, USA",google_places,https://genejuarez.com/pages/location-kitsap,ChIJd5qDLMc6kFQR7XyKHpynpXM
+759,Bon Cheveux Salon and Spa,"beauty_salon, hair_care, spa, point_of_interest, establishment","19880 7th Ave NE #104, Poulsbo, WA 98370, USA",google_places,https://www.boncheveux.com/,ChIJE83XdKQjkFQRmA_qq3jUyQ0
+760,Ashton's Hair Design,"beauty_salon, point_of_interest, establishment","1561 Retsil Rd SE, Port Orchard, WA 98366, USA",google_places,https://www.schedulicity.com/scheduling/AHDB9E,ChIJO_Peytw3kFQRkRLTjUjgdaU
+762,Gallery of Hair Design | Solymar Beauty,"hair_care, point_of_interest, store, establishment","1703 SE Sedgwick Rd # 105, Port Orchard, WA 98366, USA",google_places,http://www.solymarbeauty.com/,ChIJd20ngsVJkFQRgKTVRoXpUXc
+763,Serene Belle Artistry,"beauty_salon, point_of_interest, establishment","3121 Chico Way NW, Bremerton, WA 98312, USA",google_places,https://www.serenebelleartistry.com/,ChIJNZnbl1MnjgMRIMs8ULcCFc8
+766,Fox Hollow Collective,"beauty_salon, point_of_interest, establishment","1007 Scott Ave Unit C, Bremerton, WA 98310, USA",google_places,http://www.foxhollowcollective.com/,ChIJFZ6wFNU5kFQRBUMQ-q_gDfM
+768,Emily’s Lashes and Beauty,"beauty_salon, point_of_interest, establishment","19045 WA-305 Suite 207, Poulsbo, WA 98370, USA",google_places,https://emilys-lashes-and-beauty.square.site/,ChIJW-9IREcjkFQRIg-lvQF3UOY
+769,Katie's Beauty Bar,"beauty_salon, point_of_interest, establishment","19068 Jensen Way NE, Poulsbo, WA 98370, USA",google_places,https://www.vagaro.com/thebeautybarpoulsbo,ChIJY2T2Sa8jkFQRi5nyLpbknII
+773,Meraki Pure Beauty Spa,"beauty_salon, point_of_interest, establishment","18825 Anderson Pkwy, Poulsbo, WA 98370, USA",google_places,https://merakipurebeautyspa.com/,ChIJFc5qOiAjkFQR5hcfyu2y6ZA
+775,Three Arrows Salon,"hair_care, point_of_interest, establishment","3478 NW Byron St, Silverdale, WA 98383, USA",google_places,http://www.threearrowssalon.com/,ChIJq_zybpo6kFQR6hY6lYi1o6s
+778,Beauty By Rachael,"beauty_salon, point_of_interest, establishment","10406 Silverdale Way NW Unit D101, Silverdale, WA 98383, USA",google_places,http://beautybyrachael.glossgenius.com/,ChIJz17-89o7kFQRqTLAtAzH5PA
+779,Hairvana Salon & Spa,"beauty_salon, hair_care, spa, point_of_interest, establishment","1140 Bethel Ave, Port Orchard, WA 98366, USA",google_places,https://www.experiencehairvana.com/,ChIJY56jGM43kFQRq8o4jNPmFiM
+781,Bace Salon LLC,"hair_care, point_of_interest, establishment","307 Pacific Ave, Bremerton, WA 98337, USA",google_places,http://www.bacesalon.com/,ChIJy1MEcHg3kFQREzIjwWSZL7U
+788,"Brittany B Skin Body Beauty, Master Esthetician","hair_care, beauty_salon, spa, health, point_of_interest, establishment","1616 Burwell St, Bremerton, WA 98337, USA",google_places,https://square.site/book/7NAVA49VX6NDD,ChIJHcOngbI3kFQRwI_2qsjcfy0
+789,Waterfront Hair Gallery,"beauty_salon, point_of_interest, establishment","3594 NW Byron St, Silverdale, WA 98383, USA",google_places,https://waterfronthairgallery.com/contact-us,ChIJi2IvXZo6kFQR3UZbMHXqfRo
+790,Ross Michaels Salon,"hair_care, beauty_salon, point_of_interest, establishment","423 Pacific Ave, Bremerton, WA 98337, USA",google_places,https://www.rossmichaelssalon.com/,ChIJ10z4FJo6kFQRJjZJPw75XV4
+794,Salon 371,"hair_care, point_of_interest, establishment","371 NW Lindvig Way, Poulsbo, WA 98370, USA",google_places,http://salon371.com/,ChIJS5kFH5YjkFQRW3EnOId6Pqk
+795,Center Cycle,"bicycle_store, point_of_interest, store, establishment","3950 Lind Ave SW, Renton, WA 98057, USA",google_places,http://centercycle.com/,ChIJdWBHFxxdkFQRmilOPvXUMgQ
+797,Gregg's Lynnwood Cycle,"bicycle_store, point_of_interest, store, establishment","5810 196th St SW, Lynnwood, WA 98036, USA",google_places,https://www.greggscycles.com/,ChIJCUArBAoFkFQRQpB8FG_QbBE
+798,G.H.Y. Bikes,"bicycle_store, point_of_interest, store, establishment","230 Main Ave S, Renton, WA 98057, USA",google_places,http://www.gohuckyourself.com/,ChIJf2sZMKtCkFQRCd4N4aqeuag
+799,Bike Works Seattle,"bicycle_store, point_of_interest, store, establishment","3709 S Ferdinand St, Seattle, WA 98118, USA",google_places,http://bikeworks.org/,ChIJP6GgIQxqkFQRLQfwzLQSpFw
+801,Mello Fellos Bike Shop,"bicycle_store, point_of_interest, store, establishment","2151 6th Ave, Seattle, WA 98121, USA",google_places,https://mellofellos.com/,ChIJxx8siEoVkFQRf-LYmhygEug
+2641,International School,"secondary_school, school, point_of_interest, establishment","445 128th Ave SE, Bellevue, WA 98005, USA",google_places,http://www.bsd405.org/international/,ChIJdypwg2lskFQR2V6H2WZd1AQ
+2642,Glacier Middle School,"school, point_of_interest, establishment","2450 S 142nd St, SeaTac, WA 98168, USA",google_places,https://glacier.highlineschools.org/,ChIJAdebvI9DkFQRsHvVUuRcDoQ
+817,Bike Lair,"bicycle_store, point_of_interest, store, establishment","8203 SE 38th Pl, Mercer Island, WA 98040, USA",google_places,,
+803,Element Cycles,"bicycle_store, point_of_interest, store, establishment","15932 Redmond Way Suite 103, Redmond, WA 98052, USA",google_places,http://www.elementcycles.net/,ChIJH3KQELNykFQRqIvOHsSsPls
+805,Westside Bicycle,"bicycle_store, point_of_interest, store, establishment","3418 Harbor Ave SW, Seattle, WA 98126, USA",google_places,https://www.woodinvillebicycle.com/,ChIJl3Tf5URAkFQRePZ3KeMsSWY
+806,Métier Cycling & Cafe,"bicycle_store, cafe, clothing_store, point_of_interest, store, food, establishment","1017 E Union St, Seattle, WA 98122, USA",google_places,http://metier.cc/,ChIJsRdC0AcVkFQR-M_ZN_wWOgU
+808,Harvy's Bike Shop,"bicycle_store, point_of_interest, store, establishment","19920 Hwy 99 # C, Lynnwood, WA 98036, USA",google_places,http://www.harvysbikeshop.com/,ChIJM4hOsDUFkFQRlKIwk5wLAqs
+809,Rad Power Bikes - Ebike Sales & Service Center,"bicycle_store, point_of_interest, store, establishment","1128 NW 52nd St, Seattle, WA 98107, USA",google_places,https://www.radpowerbikes.com/pages/locations-seattle-washington,ChIJYYPAFr8VkFQRY4oTjRz5uhI
+811,Cycle Therapy,"bicycle_store, point_of_interest, store, establishment","215 W Meeker St, Kent, WA 98032, USA",google_places,http://cycletherapybikeshop.com/,ChIJ71xKplFZkFQRGcqBOoyc6oQ
+812,Free Range Cycles,"bicycle_store, point_of_interest, store, establishment","3501 Phinney Ave N, Seattle, WA 98103, USA",google_places,http://www.freerangecycles.com/,ChIJJX9Iz6kVkFQR0dHbZkISDuU
+813,Angle Lake Cyclery,"bicycle_store, point_of_interest, store, establishment","9421 16th Ave SW, Seattle, WA 98106, USA",google_places,https://anglelakecyclery.com/,ChIJ1aQ6JnJbkFQRnymkIw1nmsY
+815,Trek Bicycle Tukwila Southcenter,"bicycle_store, point_of_interest, store, establishment","331 Tukwila Pkwy, Tukwila, WA 98188, USA",google_places,https://www.trekbikes.com/us/en_US/retail/tukwila_southcenter/?y_source=1_MTM3ODM1MTgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,ChIJJz9QTcJckFQRTZ0mvr27U54
+816,Woodinville Bicycle,"bicycle_store, point_of_interest, store, establishment","13210 NE 175th St, Woodinville, WA 98072, USA",google_places,http://woodinvillebicycle.com/,ChIJjedceSoMkFQRPSYpnh6txLw
+819,Trek Bicycle Redmond,"bicycle_store, point_of_interest, store, establishment","16389 Redmond Way, Redmond, WA 98052, USA",google_places,https://www.trekbikes.com/us/en_US/retail/redmond/?y_source=1_MTM3ODM1NDUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,ChIJU1055bFykFQRR72HpgjvTGs
+821,Trek Bicycle Issaquah,"bicycle_store, point_of_interest, store, establishment","121 Front St N, Issaquah, WA 98027, USA",google_places,https://www.trekbikes.com/us/en_US/retail/issaquah/?y_source=1_MTM4MTE4MDgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,ChIJKYAZCoBvkFQR0wjaYmn83Bw
+823,Rat City Bikes,"bicycle_store, point_of_interest, store, establishment","9614 16th Ave SW, Seattle, WA 98106, USA",google_places,http://www.rideyourbike.com/,ChIJFQ9t3N1DkFQRE6xtir5xSmE
+824,R+E Cycles (Rodriguez Bicycle Company),"bicycle_store, point_of_interest, store, establishment","5627 University Wy NE, Seattle, WA 98105, USA",google_places,https://www.rodbikes.com/,ChIJnY2RYWQUkFQRchLayFgcKyo
+825,Downhill Zone,"bicycle_store, point_of_interest, store, establishment","485 Front St N, Issaquah, WA 98027, USA",google_places,http://www.downhillzone.com/,ChIJvWsr22MUkFQRaVvwdrN0SsI
+827,Bike Swift,"bicycle_store, point_of_interest, store, establishment","603 Eastlake Ave E, Seattle, WA 98109, USA",google_places,https://www.bikeswift.com/,ChIJ-6YsZjAVkFQR6oQuxy0_kfQ
+828,Seattle Electric Bike,"bicycle_store, point_of_interest, store, establishment","7900 East Green Lake Dr N #106, Seattle, WA 98103, USA",google_places,http://www.seattleelectricbike.net/,ChIJS5szdScUkFQRU9j2fiw4Gns
+829,Edge & Spoke,"bicycle_store, point_of_interest, store, establishment","7875 Leary Wy, Redmond, WA 98052, USA",google_places,http://www.edgeandspoke.com/,ChIJafH__7FykFQR6l7We2D32ug
+831,The Fitting Room,"bicycle_store, point_of_interest, store, establishment","Down the ramp, 1423 10th Ave #9, Seattle, WA 98122, USA",google_places,http://thefittingroomseattle.com/,ChIJVQR0BMSqfaMRLy4wIDhqeM8
+832,Ride Bicycles Bike Shop,"bicycle_store, point_of_interest, store, establishment","160 NW Gilman Blvd STE 102, Issaquah, WA 98027, USA",google_places,https://ridebicycles.com/,ChIJsxJo5hlvkFQR8MKchzFKUCs
+834,Branford Bike,"bicycle_store, point_of_interest, store, establishment","2404 10th Ave E, Seattle, WA 98102, USA",google_places,http://branfordbike.com/,ChIJZSWrz-AUkFQRqiIK3OaTArg
+835,JRA Bike Shop,"bicycle_store, store, point_of_interest, establishment","1120 NW 85th St, Seattle, WA 98117, USA",google_places,http://www.jrabikeshop.com/,ChIJRcUtdScUkFQRk14ilDP-y10
+837,Kitsap Key & Bike Shop,"bicycle_store, store, point_of_interest, establishment","306 N Callow Ave, Bremerton, WA 98312, USA",google_places,https://www.kitsapkeyandbike.com/,ChIJVxSsBwA3kFQRWDWfLmNYvYs
+838,Infinity Cyclery LLC,"bicycle_store, store, point_of_interest, establishment","20301 Bond Rd NE Ste 100, Poulsbo, WA 98370, USA",google_places,http://www.infinitycyclery.com/,ChIJw0IIEuglkFQRzTHlSIlJYOM
+839,Peloton Cafe Bike Shop,"cafe, bar, store, restaurant, food, point_of_interest, establishment","1224 E Jefferson St, Seattle, WA 98122, USA",google_places,http://www.pelotonseattle.com/,ChIJfwDARcZqkFQR7ZB9b-A1zUA
+840,Alta Cycling Group,"bicycle_store, store, point_of_interest, establishment","801 SW 16th St STE 115, B15, Renton, WA 98057, USA",google_places,http://www.diamondback.com/,ChIJQaoBWpJckFQR7Np17FilU0A
+842,Mischief Bicycles,"bicycle_store, store, point_of_interest, establishment","3425 Stone Way N, Seattle, WA 98103, USA",google_places,https://mischiefbicycles.com/,ChIJJ72jZwgVkFQRrvt6UhrDNss
+843,Sasquatch Cycle Works,"bicycle_store, store, point_of_interest, establishment","19188 8th Ave NE Suite 100, Poulsbo, WA 98370, USA",google_places,http://www.sasquatchcw.com/,ChIJ-Vc__G20CwgRscl6555Ntlg
+844,Dandelion Bikes,"bicycle_store, store, point_of_interest, establishment","408 18th Ave S, Seattle, WA 98144, USA",google_places,http://dandelion.bike/,ChIJKRX6W9prkFQRTqXdCD13hSQ
+846,Rapha Seattle,"bicycle_store, cafe, clothing_store, store, food, point_of_interest, establishment","301 E Pine St, Seattle, WA 98122, USA",google_places,https://content.rapha.cc/gb/en/clubhouses/seattle,ChIJD8j-K8tqkFQRxaf5FFiDUeg
+847,Davidson Custom Bicycles,"bicycle_store, store, point_of_interest, establishment","3425 Stone Way N, Seattle, WA 98103, USA",google_places,http://davidsonbicycles.com/,ChIJz1VRMuR5CEERbYpoit7vrXU
+849,Whistle Stop Co-op,"bicycle_store, cafe, store, food, point_of_interest, establishment","7148 Martin Luther King Jr Way S, Seattle, WA 98118, USA",google_places,,
+2643,Lynnwood High School,"secondary_school, school, point_of_interest, establishment","18218 North Rd, Bothell, WA 98012, USA",google_places,http://lhs.edmonds.wednet.edu/,ChIJ1TFOYJEFkFQRFLdbQ_69HO0
+852,Kyronox,"bicycle_store, store, point_of_interest, establishment","1122 228th Ave SE, Sammamish, WA 98075, USA",google_places,,
+2644,Redmond Middle School,"school, point_of_interest, establishment","10055 166th Ave NE, Redmond, WA 98052, USA",google_places,http://rms.lwsd.org/,ChIJsTAcZDcNkFQRAEcIRm2isCM
+2645,The Clearwater School,"school, primary_school, secondary_school, point_of_interest, establishment","1510 196th St SE, Bothell, WA 98012, USA",google_places,http://clearwaterschool.com/,ChIJLTPAj10PkFQRMcKqKkDh-Bc
+2646,Kirkland Middle School,"school, point_of_interest, establishment","430 18th Ave, Kirkland, WA 98033, USA",google_places,http://kims.lwsd.org/,ChIJAXvHL40SkFQRI1vy5S44fP8
+2647,Soundview School,"primary_school, school, point_of_interest, establishment","6515 196th St SW, Lynnwood, WA 98036, USA",google_places,http://www.soundview.org/,ChIJjd-yxTMFkFQRH9yLSiHidxY
+2648,Alan T. Sugiyama High School at South Lake,"secondary_school, school, point_of_interest, establishment","8601 Rainier Ave S, Seattle, WA 98118, USA",google_places,http://sugiyamahs.seattleschools.org/,ChIJAYTy8gxCkFQR1Q0G37OGOvc
+2649,Sanislo Elementary School,"primary_school, school, point_of_interest, establishment","1812 SW Myrtle St, Seattle, WA 98106, USA",google_places,http://sanisloes.seattleschools.org/,ChIJl__krXRBkFQRhNhw9wXIt_4
+2650,Seattle Classical Christian School,"school, primary_school, secondary_school, point_of_interest, establishment","810 18th Ave, Seattle, WA 98122, USA",google_places,http://www.seattleclassicalchristianschool.org/,ChIJvUfwtcNqkFQRVaWPrtOy8RA
+2651,John Rogers Elementary School (Public K-5),"primary_school, school, point_of_interest, establishment","4030 NE 109th St, Seattle, WA 98125, USA",google_places,http://rogerses.seattleschools.org/,ChIJw99oGtsTkFQRvLCyE9VWpj4
+877,6th Ave S & S Royal Brougham Way,"bus_station, transit_station, point_of_interest, establishment","504 S Royal Brougham Way, Seattle, WA 98134, USA",google_places,,
+882,Seattle Bus Station,"point_of_interest, establishment","530 S Royal Brougham Way, Seattle, WA 98134, USA",google_places,,
+884,E Pine St & Broadway,"bus_station, transit_station, point_of_interest, establishment","Seattle, WA 98122, USA",google_places,,
+888,Aurora Village Transit Center - Bay 6,"bus_station, transit_station, point_of_interest, establishment","Shoreline, WA 98133, USA",google_places,,
+851,Electric & Folding Bikes Northwest,"bicycle_store, store, point_of_interest, establishment","4810 17th Ave NW, Seattle, WA 98107, USA",google_places,http://ebikesnw.com/,ChIJ8VilFLgVkFQRmNvpV6Y_8VQ
+854,Round1 Bowling & Arcade Westfield Southcenter,"bowling_alley, bar, restaurant, food, point_of_interest, store, establishment","2351 Southcenter Mall, Tukwila, WA 98188, USA",google_places,http://round1usa.com/,ChIJNZadmtNckFQR8V8aWGdloSE
+855,Lucky Strike Bellevue,"bowling_alley, point_of_interest, establishment","700 Bellevue Way NE Suite #250, Bellevue, WA 98004, USA",google_places,https://www.luckystrikeent.com/location/lucky-strike-bellevue,ChIJkTtnrYhskFQR4cvXveytCdY
+856,Garage Billiards & Bowl,"bowling_alley, point_of_interest, establishment","1130 Broadway, Seattle, WA 98122, USA",google_places,https://www.bowlero.com/location/garage/,ChIJfQUW-ctqkFQRWrlbEAyr-CU
+858,Bowlero South Seattle,"bowling_alley, bar, restaurant, food, point_of_interest, store, establishment","100 Andover Park W, Tukwila, WA 98188, USA",google_places,https://www.bowlero.com/location/bowlero-south-seattle,ChIJsf6ksNVckFQR9dqqnvtK7OA
+859,Kent Bowl,"bowling_alley, point_of_interest, establishment","1234 Central Ave N, Kent, WA 98032, USA",google_places,http://kentbowl.net/,ChIJXzmHjQ9ckFQR1Hf5ixNaQT8
+861,Kenmore Lanes,"bowling_alley, night_club, bar, restaurant, food, point_of_interest, establishment","7638 NE Bothell Way, Kenmore, WA 98028, USA",google_places,http://kenmore50lanes.com/,ChIJW6Xa5SMOkFQReld7o8FtkhI
+862,All Star Lanes & Casino,"bowling_alley, casino, point_of_interest, establishment","10710 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,https://www.maverickgaming.com/maverick-washington/listings/all-star-lanes-casino/,ChIJsUZC9cM6kFQR2GddyiaKYKA
+864,Hi Joy Bowl,"bowling_alley, night_club, bar, restaurant, food, point_of_interest, establishment","1011 Bethel Ave, Port Orchard, WA 98366, USA",google_places,http://www.hijoybowl.com/,ChIJ8WcyeMU3kFQRNw4aYcaZwjY
+865,Roxbury Lanes,"bowling_alley, casino, bar, restaurant, food, point_of_interest, establishment","2823 SW Roxbury St, Seattle, WA 98126, USA",google_places,http://roxburylanesbowl.com/,ChIJiXhu0lhBkFQR0hooLU7LJjI
+866,Lynnwood Bowl & Skate,"bowling_alley, point_of_interest, establishment","6210 200th St SW, Lynnwood, WA 98036, USA",google_places,http://www.bowlandskate.com/,ChIJCZIihTUFkFQRX2db4iY5ae0
+868,Arena Sports Mill Creek,"bowling_alley, restaurant, food, point_of_interest, establishment","13500 Bothell Everett Hwy Suite A, Mill Creek, WA 98012, USA",google_places,https://www.arenasports.net/locations/mill-creek/?utm_source=google&utm_medium=organic&utm_campaign=gmb,ChIJecY3PFkPkFQRptHy6ymsYnc
+870,Detroit Duckpin Bowling,"bowling_alley, point_of_interest, establishment","425 Urban Plz Suite 200, Kirkland, WA 98033, USA",google_places,https://detroitduckpin.com/?utm_source=local&utm_medium=organic&utm_campaign=wa&utm_content=kirkland-duckpin,ChIJSTtUdjUTkFQRlWFr0isoFcs
+871,Monster Mini Golf Bellevue,"bowling_alley, point_of_interest, establishment","4080 Factoria Square Mall SE, Bellevue, WA 98006, USA",google_places,https://monsterminigolf.com/locations/us/wa/bellevue/,ChIJk02uzf5pkFQRRMKsDi02r7E
+873,Burien TC,"bus_station, transit_station, point_of_interest, establishment","14900 4th Ave SW, Burien, WA 98166, USA",google_places,http://kingcounty.gov/depts/transportation/metro/schedules-maps/maps/boarding/burien-tc.aspx,ChIJ1-78q2JDkFQR96-h6LtIovc
+878,Kitsap Transit,"local_government_office, point_of_interest, establishment","60 Washington Ave UNIT 200, Bremerton, WA 98337, USA",google_places,http://www.kitsaptransit.org/,ChIJ3ZJck4I3kFQREilWLb3KaUo
+880,North Viking Transit Center,"point_of_interest, establishment","21992 Viking Ave NW, Poulsbo, WA 98370, USA",google_places,http://kitsaptransit.com/,ChIJFYxpl8gjkFQR3fZ2GZ0bg-4
+886,Sound Transit,"point_of_interest, establishment","401 S Jackson St, Seattle, WA 98104, USA",google_places,http://www.soundtransit.org/,ChIJrdGlX7tqkFQRJYG-T09mD5g
+891,Greyhound: Bus Stop,"point_of_interest, establishment","303 S Jackson St, Seattle, WA 98104, USA",google_places,https://www.greyhound.com/bus/seattle-wa/seattle-train-station?utm_source=google_maps&utm_medium=organic,ChIJ_bBAV7tqkFQRKOdsp8neDTw
+897,Poulsbo Transfer Center,"bus_station, transit_station, point_of_interest, establishment","Poulsbo, WA 98370, USA",google_places,,
+2652,Hilder Pearson Elementary School,"primary_school, school, point_of_interest, establishment","15650 Central Valley Rd NW, Poulsbo, WA 98370, USA",google_places,http://hilderpearson.nkschools.org/,ChIJ4aRxY6MkkFQRwaMDHiBCU3o
+2653,International Community School,"school, point_of_interest, establishment","11133 NE 65th St, Kirkland, WA 98033, USA",google_places,http://ics.lwsd.org/,ChIJ55b8f9ESkFQROTTs2hSrMkA
+2654,Hazel Wolf K-8 ESTEM School,"primary_school, school, point_of_interest, establishment","11530 12th Ave NE, Seattle, WA 98125, USA",google_places,https://hazelwolfk8.seattleschools.org/,ChIJE9L5BVwRkFQR8qn955l6bIo
+2655,Thornton Creek Elementary School (Public K-5),"primary_school, school, point_of_interest, establishment","7712 40th Ave NE, Seattle, WA 98115, USA",google_places,http://thorntoncreekes.seattleschools.org/,ChIJz_Bxv5ATkFQRvisATaeFXqo
+2656,Kent Meridian High School,"secondary_school, school, point_of_interest, establishment","10020 SE 256th St, Kent, WA 98030, USA",google_places,https://www.kent.k12.wa.us/KM,ChIJ7bmjMLRekFQRfEyBMYnw2fM
+2657,Eastlake High School,"secondary_school, school, point_of_interest, establishment","400 228th Ave NE, Sammamish, WA 98074, USA",google_places,https://ehs.lwsd.org/,ChIJZY152PJxkFQR_zf_x3BUxG0
+909,Bus stop,"point_of_interest, establishment","899-801 Chester Ave, Bremerton, WA 98337, USA",google_places,,
+908,Peninsula School District Bus Barn,"point_of_interest, establishment","13869, 13815 62nd Ave NW, Gig Harbor, WA 98332, USA",google_places,http://psd401.net/,ChIJzXuxqAZNkFQRK2Yst7cWzo8
+910,Ugly Mug Cafe,"cafe, restaurant, food, point_of_interest, store, establishment","1309 NE 43rd St, Seattle, WA 98105, USA",google_places,http://www.uglymugseattle.com/,ChIJwZGQzPQUkFQRRhd8D82mN_k
+912,Ada's Technical Books and Cafe,"book_store, cafe, restaurant, food, point_of_interest, store, establishment","425 15th Ave E, Seattle, WA 98112, USA",google_places,http://www.adasbooks.com/,ChIJuUSn_S4VkFQRGlFCqecQhas
+913,Café Hagen Modern All-Day Cafe,"cafe, restaurant, food, point_of_interest, store, establishment","2128 Queen Anne Ave N, Seattle, WA 98109, USA",google_places,http://www.cafehagen.com/,ChIJP0Fh64oVkFQRyY0tlusdnRY
+914,Fulcrum Café,"cafe, restaurant, food, point_of_interest, store, establishment","590 Bell St, Seattle, WA 98121, USA",google_places,https://fulcrumcoffee.com/,ChIJhUYpdTEVkFQRyXPEzyPjJiY
+915,12th Avenue Cafe,"cafe, restaurant, food, point_of_interest, establishment","775 NW Gilman Blvd, Issaquah, WA 98027, USA",google_places,http://12thavenuecafe.com/,ChIJGTs43p1vkFQRd1ENYqhqeWU
+917,MOVE Espresso + Blend,"cafe, restaurant, food, health, store, point_of_interest, establishment","10876 Myhre Pl NW #118, Silverdale, WA 98383, USA",google_places,https://moveespresso.com/,ChIJARpA2zo7kFQRUu1NiS5TG4M
+918,Dilettante Mocha Café at Kent Station,"cafe, restaurant, food, store, point_of_interest, establishment","514 Ramsay Way, Kent, WA 98032, USA",google_places,https://www.dilettantemochacafe.com/pages/locations-contact_kent-station,ChIJo8dk6_5bkFQRLkuirQCKYP0
+920,Dilettante Mocha Café at Bellefield Office Park,"cafe, restaurant, food, store, point_of_interest, establishment","Bellefield Office Park, Conifer Building, 1450 114th Ave SE #120, Bellevue, WA 98004, USA",google_places,https://www.dilettantemochacafe.com/pages/locations-contact_bellefield,ChIJUaS2CnRskFQRgkVy8FFKcKE
+921,Habesha Cafe,"cafe, restaurant, food, store, point_of_interest, establishment","5710 Rainier Ave S, Seattle, WA 98118, USA",google_places,https://habesha.cafe/,ChIJ7Tu8l95qkFQRIgq2r9wUupo
+923,Pluto Organic Cafe,"cafe, restaurant, food, point_of_interest, establishment","2502 5th Ave, Seattle, WA 98121, USA",google_places,http://www.plutoorganiccafe.com/,ChIJeepuK0kVkFQR1Y_4A_kzTWE
+924,Cafe Campagne,"cafe, restaurant, food, point_of_interest, establishment","1600 Post Alley Walk Wy, Seattle, WA 98101, USA",google_places,http://www.cafecampagne.com/,ChIJWfoS3bJqkFQRe8w36H6VslI
+925,Cafe Joy,"cafe, restaurant, food, store, point_of_interest, establishment","11004 NE 11th St, Bellevue, WA 98004, USA",google_places,http://cafejoybellevue.com/,ChIJy7o1jjFtkFQRzh5phIdE3ig
+927,West Wall Cafe,"cafe, bar, restaurant, food, store, point_of_interest, establishment","900 Poplar Pl S, Seattle, WA 98144, USA",google_places,https://boulderingproject.com/west-wall-cafe-bar/,ChIJKSQDf5RqkFQRzteZKb8c9Co
+928,Caffe Cocina Coffee Roasting Co.,"cafe, food, store, point_of_interest, establishment","580 NW Finn Hill Rd, Poulsbo, WA 98370, USA",google_places,http://www.caffecocina.com/,ChIJw9QIiZUjkFQRIzDP1LhNl24
+929,Café Elite,"cafe, food, store, point_of_interest, establishment","1905 SE Sedgwick Rd, Port Orchard, WA 98366, USA",google_places,http://www.cafeelite.com/,ChIJ1QHNQc9JkFQRLcR1HiHDzc8
+931,Revive Coffee,"cafe, food, store, point_of_interest, establishment","174 SW Sedgwick Rd, Port Orchard, WA 98367, USA",google_places,https://m.facebook.com/ReviveCoffeeHouseandFrozenYogurt/?ref=page_internal&mt_nav=1,ChIJu0TgROlJkFQRaIu2xvn6myA
+933,Grilla Bites Co-op Cafe,"cafe, restaurant, food, point_of_interest, establishment","1020 1st St STE 104, Snohomish, WA 98290, USA",google_places,https://grillabites.com/,ChIJY0_PsrWpmlQRRDQdqRqoA2A
+934,Holy Grounds Coffee Co.,"cafe, food, store, point_of_interest, establishment","9536 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,http://www.holygrounds.coffee/,ChIJK38gejk7kFQRNDxoHce_fjE
+935,Cups Espresso & Cafe Poulsbo,"cafe, bakery, restaurant, food, store, point_of_interest, establishment","18881 Front St NE Suite E, Poulsbo, WA 98370, USA",google_places,https://www.cupsespresso.com/,ChIJX7JqEZ4jkFQRgrHhxAdDE1w
+937,Fay Bainbridge Park,"campground, park, lodging, point_of_interest, establishment","15446 Sunrise Drive NE, Bainbridge Island, WA 98110, USA",google_places,https://biparks.org/fay-bainbridge-park-campground/,ChIJ0YRKT249kFQRSYN0_fRbv6A
+938,Maple Grove RV Resort,"rv_park, campground, park, lodging, point_of_interest, establishment","12417 Hwy 99, Everett, WA 98204, USA",google_places,https://maplegrovervresort.com/,ChIJdb64zx0EkFQRxhx234nOEEQ
+939,Illahee State Park,"tourist_attraction, park, point_of_interest, establishment","3540 NE Sylvan Way, Bremerton, WA 98310, USA",google_places,https://parks.wa.gov/find-parks/state-parks/illahee-state-park,ChIJjfaCgJc5kFQR3swBuIdewio
+942,Best Western Sky Valley Inn,"lodging, point_of_interest, establishment","19233 US-2, Monroe, WA 98272, USA",google_places,https://www.bestwestern.com/en_US/book/hotel-rooms.48118.html?iata=00171880&ssob=BLBWI0004G&cid=BLBWI0004G:google:gmb:48118,ChIJqQd14VimmlQR9QnH3fookIc
+943,Advantage Nissan,"car_rental, car_dealer, finance, store, point_of_interest, establishment","5101 Auto Center Blvd, Bremerton, WA 98312, USA",google_places,https://www.advantagenissan.com/?utm_source=GoogleMyBusiness&utm_medium=organic&utm_campaign=GoogleListing,ChIJm8FB9x03kFQReE8_jMGp1vQ
+2658,Arbor Heights Elementary School,"primary_school, school, point_of_interest, establishment","3701 SW 104th St, Seattle, WA 98146, USA",google_places,https://arborheightses.seattleschools.org/,ChIJuyVl0f1DkFQRSLHIkbwz-pI
+980,Seattle Motors,"car_dealer, store, point_of_interest, establishment","8101 Aurora Ave N, Seattle, WA 98103, USA",google_places,,
+981,Kean Auto and RV,"car_dealer, store, point_of_interest, establishment","127 N Callow Ave, Bremerton, WA 98312, USA",google_places,,
+984,Lifetime Used Cars,"car_dealer, point_of_interest, store, establishment","2735 Mile Hill Dr, Port Orchard, WA 98366, USA",google_places,,
+988,Haselwood Pre-Owned,"car_dealer, point_of_interest, store, establishment","Bremerton, WA 98312, USA",google_places,,
+990,Cars Auto Repair,"car_repair, point_of_interest, establishment","3740 Wheaton Wy A, Bremerton, WA 98310, USA",google_places,,
+946,Port Orchard Ford,"car_dealer, finance, car_repair, store, point_of_interest, establishment","1215 Bay St, Port Orchard, WA 98366, USA",google_places,http://www.portorchardford.com/,ChIJwXL6ar83kFQRHl9yQ4olYLc
+947,West Hills Chrysler Dodge Jeep Ram,"car_dealer, car_repair, store, point_of_interest, establishment","900 W Hills Blvd, Bremerton, WA 98312, USA",google_places,https://www.westhillscjd.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp+sales,ChIJ-RpjCQI3kFQR5oM8su0huuc
+949,Enterprise Car Sales,"car_dealer, store, point_of_interest, establishment","14135 Aurora Ave N, Seattle, WA 98133, USA",google_places,https://www.enterprisecarsales.com/location/45R1/Enterprise_Car_Sales_Seattle/?CUR=Local_Campaign&mcid=iyp:24489698,ChIJpaTvrSYRkFQRg17IT92Y38k
+951,West Hills Ford,"car_dealer, car_repair, store, point_of_interest, establishment","1100 Oyster Bay Ave S, Bremerton, WA 98312, USA",google_places,https://www.westhillsford.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp+sales,ChIJedOm3gE3kFQRO3hP3Ah3Ls8
+952,West Hills Kia,"car_dealer, car_repair, store, point_of_interest, establishment","515 W Hills Blvd, Bremerton, WA 98312, USA",google_places,https://www.westhillskia.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp+sales,ChIJ8xJ9gAI3kFQRbLyG0KwNTbw
+954,First National Autos,"car_dealer, finance, store, point_of_interest, establishment","12800 Aurora Ave N, Seattle, WA 98133, USA",google_places,http://www.firstnationalseattle.com/,ChIJZ4jwjTYRkFQRN4gYi1kM-kQ
+955,Super America Auto Sales Inc.,"car_dealer, store, point_of_interest, establishment","8601 Aurora Ave N, Seattle, WA 98103, USA",google_places,http://www.superamericaautos.com/,ChIJ97NHWhkUkFQRtJLvykLdKTk
+957,Auto Connections Seattle,"car_dealer, store, point_of_interest, establishment","920 Elliott Ave W, Seattle, WA 98119, USA",google_places,http://www.autoconnectionsseattle.com/,ChIJA8b7nLcVkFQRREn7yaPBWkI
+958,Hudson Auto Center,"car_dealer, car_repair, store, point_of_interest, establishment","20081 Viking Ave NW Suite 101, Poulsbo, WA 98370, USA",google_places,http://www.hudsonautocenter.com/,ChIJD_8jWJYjkFQR8MSe5VcBECc
+959,Mike Columbus at the West Hills Autoplex,"car_dealer, store, point_of_interest, establishment","520 W Hills Blvd, Bremerton, WA 98312, USA",google_places,https://www.mikecolumbus.com/,ChIJkVUOZwI3kFQR8j1JSvjdR5g
+961,West Hills Autoplex,"car_dealer, store, point_of_interest, establishment","950 W Hills Blvd, Bremerton, WA 98312, USA",google_places,https://www.westhillsautoplex.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB,ChIJGQp9ZQI3kFQRnkp7tpL-FjI
+962,Liberty Bay Auto,"car_dealer, car_repair, store, point_of_interest, establishment","20201 Front St NE, Poulsbo, WA 98370, USA",google_places,http://www.libertybayauto.com/,ChIJbxu6DL0jkFQRN-1fkfmN4ZY
+964,Wild West Cars & Trucks,"car_dealer, store, point_of_interest, establishment","8830 Lake City Way NE, Seattle, WA 98115, USA",google_places,http://www.wildwestcarsandtrucks.com/,ChIJMw9AwfMTkFQRYtvvpKUjjU8
+965,Affordable Used Cars & Trucks,"car_dealer, store, point_of_interest, establishment","3890 Wheaton Wy, Bremerton, WA 98310, USA",google_places,http://www.affordablecarswa.com/,ChIJh-EqefE5kFQRrkd3PQMWPco
+966,Five Star Auto Sales,"store, point_of_interest, establishment","13738 Aurora Ave N, Seattle, WA 98133, USA",google_places,http://www.fivestarautos.com/,ChIJIxQ1uzoRkFQRSSJuZwwmcq8
+968,Daily Deals Auto Sales (Seattle),"car_dealer, store, point_of_interest, establishment","Daily Deals Auto Sales, 8110 Aurora Ave N, Seattle, WA 98103, USA",google_places,http://www.dailydealsautosales.com/,ChIJt3gUbv0VkFQRYSr2YkkmDW0
+969,Reality Auto Sales,"car_dealer, store, point_of_interest, establishment","8101 Aurora Ave N, Seattle, WA 98103, USA",google_places,http://www.realityautos.net/,ChIJM-iZyhkUkFQRs1pTYmcN7_s
+971,Truck Town,"car_dealer, store, point_of_interest, establishment","4701 Auto Center Blvd, Bremerton, WA 98312, USA",google_places,https://www.trucktownltd.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB,ChIJ0zhzsgI3kFQRhAAgn3APx3k
+973,Rusty Rides Auto Sales,"car_dealer, store, point_of_interest, establishment","6791 Bethel Rd SE, Port Orchard, WA 98367, USA",google_places,http://www.rustyridesauto.com/,ChIJDQ_Q05lJkFQR53c4Q5HUkIg
+974,Dick Vlist Motors Inc,"car_dealer, store, point_of_interest, establishment","514 Bay St, Port Orchard, WA 98366, USA",google_places,http://www.dickvlistmotorsinc.com/,ChIJJ8_kurc3kFQRJsofTxaPYNc
+975,Direct Auto Sales Seattle,"car_dealer, store, point_of_interest, establishment","12721 Aurora Ave N, Seattle, WA 98133, USA",google_places,http://www.directautosales.net/,ChIJc6wMofETkFQRZnoW0O0AR5o
+976,Jim Reed Motors,"car_dealer, store, point_of_interest, establishment","4124 W Loxie Eagans Blvd, Bremerton, WA 98312, USA",google_places,https://www.jimreedmotors.com/,ChIJoRpIdco3kFQR9QOVtm2rHrE
+978,Raphael Luxury Motor Cars,"car_dealer, store, point_of_interest, establishment","2322 6th St, Bremerton, WA 98312, USA",google_places,http://www.raphaelluxurymotorcars.com/,ChIJcRTcT5g3kFQRIgL0uLb5_B0
+979,Car Dealership,"car_dealer, store, point_of_interest, establishment","900 W Hills Blvd, Bremerton, WA 98312, USA",google_places,http://ilovewesthillsfordmazda.com/,ChIJ0aaP9P02kFQRaYNsklTfCpM
+983,Car hop,"car_dealer, point_of_interest, store, establishment","Bremerton, WA 98337, USA",google_places,http://carhop.com/,ChIJGd_atmc3kFQRBbPZKzeYMpw
+985,Tachanka.com - USSR Cars for Sale,"car_dealer, point_of_interest, store, establishment","600 4th Ave, Seattle, WA 98104, USA",google_places,https://tachanka.com/,ChIJv1treoJrkFQRsbvRjh5gy2Y
+987,The Trade Store,"car_dealer, point_of_interest, store, establishment","1283 SE Sedgwick Rd, Port Orchard, WA 98366, USA",google_places,https://www.tradestoreautos.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=6731739842880457829,ChIJMdI9tHpJkFQR1GfRehXzHAQ
+989,Vinturo Motors,"car_dealer, point_of_interest, store, establishment","1410 Lumsden Rd, Port Orchard, WA 98367, USA",google_places,http://vinturomotors.com/,ChIJ8Yu0xfk3kFQRNeyd8PSj0jE
+2659,The Bear Creek School,"primary_school, secondary_school, school, point_of_interest, establishment","8905 208th Ave NE, Redmond, WA 98053, USA",google_places,http://www.tbcs.org/,ChIJ68zLjSNzkFQRLYGfN8tNw3o
+1004,Harlow Auto Repair,"car_repair, point_of_interest, establishment","3217 Perry Ave, Bremerton, WA 98310, USA",google_places,,
+1017,Mike's Auto Repair,"car_repair, point_of_interest, establishment","934 N Wycoff Ave, Bremerton, WA 98312, USA",google_places,,
+1019,Town & Country Auto Repair,"car_repair, point_of_interest, health, establishment","3420 Chico Way NW, Bremerton, WA 98312, USA",google_places,,
+1020,Bremerton Auto Repair,"car_repair, point_of_interest, establishment","2647 Perry Ave NE, Bremerton, WA 98310, USA",google_places,,
+1023,NW Mobile Auto Repair,"car_repair, point_of_interest, establishment","18593 NE Vaughn Milton Loop ne, Poulsbo, WA 98370, USA",google_places,,
+1024,K C Auto Repair,"car_repair, point_of_interest, establishment","3494 Chase Rd SE, Port Orchard, WA 98366, USA",google_places,,
+1028,Hall-N-Sons Automotive Repair,"car_repair, point_of_interest, establishment","512 Bay St, Port Orchard, WA 98366, USA",google_places,,
+1031,618 Auto Repair,"car_repair, point_of_interest, establishment","2142 6th St, Bremerton, WA 98312, USA",google_places,,
+1033,Ken's Northwest Automotive,"car_repair, point_of_interest, establishment","19470 Viking Ave NW # 100, Poulsbo, WA 98370, USA",google_places,,
+1036,Helmut's German Auto Repairs,"car_repair, point_of_interest, establishment","2122 6th St, Bremerton, WA 98312, USA",google_places,,
+1038,L & R Automotive,"car_repair, point_of_interest, establishment","1112 Pearl St A, Bremerton, WA 98310, USA",google_places,,
+1039,2 Lane Auto,"car_repair, point_of_interest, establishment","SE Parakeet Ln, Port Orchard, WA 98367, USA",google_places,,
+993,Budget Car Rental,"car_rental, point_of_interest, establishment","3150 S 160th St, Seattle, WA 98188, USA",google_places,https://www.budget.com/en/locations/us/wa/seatac/sea?utm_source=google&utm_medium=gbp&utm_campaign=budget_gbp,ChIJ7UgxiUhDkFQR6QWiuD_JkOQ
+995,Hertz Car Rental - Bremerton - 6th Street,"car_rental, point_of_interest, establishment","2315 6th St, Bremerton, WA 98312, USA",google_places,https://www.hertz.com/us/en/location/unitedstates/washington/bremerton/seaw25?utm_campaign=gmb-Hertz-Car-Rental---Bremerton---6th-Street&utm_medium=gmb-websitelink&utm_source=Google,ChIJ16mZl3I3kFQREP-H3CMFWvA
+998,Dollar Car Rental - Bremerton Hle Dollar,"car_rental, point_of_interest, establishment","2315 6th St, Bremerton, WA 98312, USA",google_places,https://www.dollar.com/us/en/location/unitedstates/washington/bremerton/seac02?utm_campaign=gmb-Dollar-Car-Rental---Bremerton-Hle-Dollar&utm_medium=gmb-websitelink&utm_source=Google,ChIJ-3Cq90A3kFQRBfzqp6Zbjq0
+999,D&W Auto Repair,"car_repair, point_of_interest, establishment","2616 SE Mile Hill Dr, Port Orchard, WA 98366, USA",google_places,http://www.dw-autorepair.com/,ChIJ144MyuY3kFQRHLODXqnzXrA
+1001,Puget Sound Auto Repair,"car_repair, point_of_interest, establishment","5691 Bethel Rd SE, Port Orchard, WA 98367, USA",google_places,https://psautorepair.com/,ChIJG8UiZ79JkFQR313f--DgccQ
+1002,B&B Auto Repair,"car_repair, point_of_interest, store, establishment","299 S National Ave, Bremerton, WA 98312, USA",google_places,http://www.bnbautorepair.com/,ChIJ9c64-gQ3kFQRIZC5mDAmiQQ
+1003,Complete Auto Repair,"car_repair, point_of_interest, store, establishment","5921 WA-303 #100, Bremerton, WA 98311, USA",google_places,https://www.completeautore.com/,ChIJm9eLlSQ6kFQRZwNNexqocJc
+1006,Blue Canary Auto Repair,"car_repair, point_of_interest, store, establishment","499 Madison Ave N, Bainbridge Island, WA 98110, USA",google_places,https://bluecanaryauto.com/,ChIJK1GVfrA-kFQRdj_wVR_TLUo
+1007,Meineke Car Care Center,"car_repair, point_of_interest, establishment","1445 Olney Ave SE, Port Orchard, WA 98366, USA",google_places,https://www.meineke.com/locations/wa/port-orchard-4374/?utm_source=google&utm_medium=organic&utm_campaign=gbp_website,ChIJO3NIhec3kFQRbHOGVlZ-lCM
+1009,Blue Canary,"car_repair, point_of_interest, store, establishment","706 Pacific Ave, Bremerton, WA 98337, USA",google_places,https://www.autorepairbremerton.com/,ChIJ_7z0JEw3kFQRXnhtXiv1kwo
+1010,Brothers Auto Repair,"car_repair, point_of_interest, establishment","500 Naval Ave, Bremerton, WA 98337, USA",google_places,https://brothersautorepair.mybusiness.site/,ChIJb8YIULk3kFQR20TZEDo9rHQ
+1012,Bainbridge Island Auto Repair,"car_repair, point_of_interest, establishment","8890 Miller Rd NE # B, Bainbridge Island, WA 98110, USA",google_places,http://www.bainbridgeislandautorepair.com/,ChIJv03JfPY7kFQRrSJAcAdkJmY
+1013,Silverdale Autoworks,"car_repair, point_of_interest, establishment","3342 NW Byron St, Silverdale, WA 98383, USA",google_places,http://www.silverdaleautoworks.com/,ChIJWcS5eJo6kFQRD71IJ4XQ2mA
+1014,Keyport Auto Repair,"car_repair, point_of_interest, establishment","1954 WA-308 NE, Keyport, WA 98345, USA",google_places,http://www.keyportautorepair.com/,ChIJD4H6X1EjkFQRyimWCWFJNDU
+1016,Walt's Auto Care Centers,"car_repair, point_of_interest, establishment","3540 SE Mile Hill Dr, Port Orchard, WA 98366, USA",google_places,http://www.waltswrench.com/,ChIJV6GESLc3kFQROZYCLesOCm0
+1018,Community Automotive Repair llc,"car_repair, point_of_interest, store, establishment","101 Bethel Ave, Port Orchard, WA 98366, USA",google_places,https://communityautopo.com/,ChIJY3LElXo3kFQRh3mBbBR_e7k
+1025,Rolling Bay Automotive,"car_repair, point_of_interest, store, establishment","11216 Sunrise Drive NE, Bainbridge Island, WA 98110, USA",google_places,https://rollingbayauto.com/,ChIJje851Mo9kFQRma-hfqjQ32I
+1026,Bucky's Complete Auto Repair Bremerton,"car_repair, point_of_interest, store, establishment","601 N Callow Ave, Bremerton, WA 98312, USA",google_places,https://buckys.com/locations/bremerton/?utm_source=google&utm_medium=local&utm_campaign=bremerton,ChIJSS1WrhI3kFQRqUpqWwpUObw
+1029,Kitsap Kustom,"car_repair, point_of_interest, establishment","6714 Kitsap Way, Bremerton, WA 98312, USA",google_places,http://www.facebook.com/kitsapkustom,ChIJ_xtgPio3kFQROBU1bz5dX04
+1030,Hansville Auto Repair,"car_repair, point_of_interest, establishment","7538 Buck Lake Rd NE, Hansville, WA 98340, USA",google_places,http://www.hansvilleautorepair.com/,ChIJ401LyGjij1QRY1j0XUMEM0A
+1032,Kingston Auto Shop,"car_repair, point_of_interest, establishment","26262 Lindvog Rd NE, Kingston, WA 98346, USA",google_places,http://www.kingstonautoshop.com/,ChIJOXdcFD4ZkFQRWUuPxxGdp4o
+1034,Benchmark Automotive Tire & Service,"car_repair, point_of_interest, store, establishment","8248 NE State Hwy 104, Kingston, WA 98346, USA",google_places,http://www.benchmarkautoandtire.com/,ChIJiyk4GisZkFQRFvvMd3w-w0w
+1035,Joe's Automotive,"car_repair, point_of_interest, store, establishment","26167 United Rd NE, Kingston, WA 98346, USA",google_places,http://www.kingstonjoesauto.com/,ChIJwzONV7MYkFQRx2jhhAW1NJk
+2660,Pine Lake Middle School,"school, point_of_interest, establishment","3095 Issaquah-Pine Lake Rd SE, Sammamish, WA 98075, USA",google_places,https://pinelake.isd411.org/,ChIJK9CTiytukFQRXmHYhQiaGmM
+1046,Hockett & Olsen Automotive Repair,"car_repair, point_of_interest, establishment","1278 Ferncliff Ave NE, Bainbridge Island, WA 98110, USA",google_places,,
+1052,A1 Mechanic,"car_repair, point_of_interest, establishment","14518 94th Ave NW, Gig Harbor, WA 98329, USA",google_places,,
+1053,The Auto Shop at Island Center,"car_repair, point_of_interest, establishment","9270 Miller Rd NE, Bainbridge Island, WA 98110, USA",google_places,,
+1059,Burwell Landing,"car_wash, point_of_interest, establishment","2550 Burwell St, Bremerton, WA 98312, USA",google_places,,
+1060,Monstar Car Wash & Detail Center,"car_wash, point_of_interest, establishment","2990 Bethel Rd SE, Port Orchard, WA 98366, USA",google_places,,
+1061,North Kitsap Mobile Detailing,"car_wash, point_of_interest, establishment","5801 NE Minder Rd, Poulsbo, WA 98370, USA",google_places,,
+1062,The Auto Spa Plus,"point_of_interest, establishment","3740 Wheaton Wy, Bremerton, WA 98311, USA",google_places,,
+1063,"Car Wash Enterprises, Inc.","car_wash, point_of_interest, establishment","3977 Leary Wy NW, Seattle, WA 98107, USA",google_places,,
+1064,Car Wash,"car_wash, point_of_interest, establishment","2381 California Ave SW, Seattle, WA 98116, USA",google_places,,
+1065,All About Detailing,"car_wash, car_repair, point_of_interest, establishment","5223 1st St, Bremerton, WA 98312, USA",google_places,,
+1066,Freedom Car Wash,"car_wash, point_of_interest, establishment","4650 Werner Rd, Bremerton, WA 98312, USA",google_places,,
+1067,Auto Wash,"car_wash, point_of_interest, establishment","1350 Bay St, Port Orchard, WA 98366, USA",google_places,,
+1068,Puget Sound Car Wash Association,"car_wash, point_of_interest, establishment","2501 Mile Hill Dr, Port Orchard, WA 98366, USA",google_places,,
+1069,Suquamish Clearwater Casino Resort,"casino, spa, bar, lodging, restaurant, food, point_of_interest, establishment","15347 Suquamish Way NE, Suquamish, WA 98392, USA",google_places,,
+1070,Great American Casino Everett,"casino, bar, restaurant, food, point_of_interest, establishment","12715 4th Ave W, Everett, WA 98204, USA",google_places,,
+1071,Silver Dollar Casino Seatac,"casino, bar, restaurant, food, point_of_interest, establishment","19222 International Blvd, SeaTac, WA 98188, USA",google_places,,
+1072,Riverside Casino,"casino, bar, tourist_attraction, restaurant, food, point_of_interest, establishment","14060 Interurban Ave S, Tukwila, WA 98168, USA",google_places,,
+1073,Great American Casino Tukwila,"casino, bar, restaurant, food, point_of_interest, establishment","14040 Interurban Ave S, Tukwila, WA 98168, USA",google_places,,
+1074,The Point Casino & Hotel,"casino, lodging, point_of_interest, establishment","7989 NE Salish Ln, Kingston, WA 98346, USA",google_places,,
+1075,Goldie's Shoreline Casino,"casino, point_of_interest, establishment","15030 Aurora Ave N, Shoreline, WA 98133, USA",google_places,,
+1076,Fortune Casino Renton,"casino, restaurant, food, point_of_interest, establishment","111 S 3rd St, Renton, WA 98057, USA",google_places,,
+1077,Casino Caribbean,"casino, bar, restaurant, food, point_of_interest, establishment","12526 NE 144th St, Kirkland, WA 98034, USA",google_places,,
+1078,Fortune Casino Tukwila,"casino, restaurant, food, point_of_interest, establishment","14025 Interurban Ave S, Tukwila, WA 98168, USA",google_places,,
+1079,Crazy Moose Casino Mountlake Terrace,"casino, bar, restaurant, food, point_of_interest, establishment","22003 66th Ave W, Mountlake Terrace, WA 98043, USA",google_places,,
+1080,Roxy's Casino,"casino, point_of_interest, establishment","Seattle, WA 98126, USA",google_places,,
+1081,Silver Dollar Casino Mill Creek,"casino, bar, restaurant, food, point_of_interest, establishment","17917 Bothell Everett Hwy, Bothell, WA 98012, USA",google_places,,
+1082,Fortune Poker,"casino, point_of_interest, establishment","3650 E Valley Rd, Renton, WA 98057, USA",google_places,,
+1083,Imperial Palace Casino,"casino, point_of_interest, establishment","15901 W Valley Hwy, Tukwila, WA 98188, USA",google_places,,
+1084,Grand Casino Shoreline,"casino, point_of_interest, establishment","16716 Aurora Ave N, Shoreline, WA 98133, USA",google_places,,
+1085,Lucky Dragonz Casino & Club,"night_club, point_of_interest, establishment","11819 Renton Ave S, Seattle, WA 98178, USA",google_places,,
+1086,Casino Square east,"shopping_mall, point_of_interest, establishment","209 E Casino Rd, Everett, WA 98208, USA",google_places,,
+1087,Kloomachin Kitchen at The Point Casino,"restaurant, food, point_of_interest, establishment","7989 NE Salish Ln, Kingston, WA 98346, USA",google_places,,
+1041,Del's Automotive Service,"car_repair, point_of_interest, store, establishment","6540 NE Newton St, Suquamish, WA 98392, USA",google_places,http://delsauto.weebly.com/,ChIJHSTxkZUikFQRQ-9kJBx0l3I
+1042,Trew Auto Body,"car_repair, point_of_interest, establishment","3700 W Loxie Eagans Blvd, Bremerton, WA 98312, USA",google_places,https://trewautobody.com/bremerton-team/,ChIJJbWeywU3kFQRf_245x57rdw
+1044,Nowka's Automotive,"car_repair, point_of_interest, health, store, establishment","4268 SE Mile Hill Dr, Port Orchard, WA 98366, USA",google_places,https://www.nowkasautomotive.com/,ChIJ9-kwS-I3kFQRD601gmPbrDE
+1045,Hudson Service Center,"car_repair, point_of_interest, establishment","20081 Viking Ave NW Suite 101, Poulsbo, WA 98370, USA",google_places,http://www.hudsonautocenter.com/,ChIJD_8jWJYjkFQR8MSe5VcBECc
+1048,"theWRENCH, Ltd.","car_repair, point_of_interest, establishment","2600 NW Randall Way #107, Silverdale, WA 98383, USA",google_places,https://thewrenchsilverdale.com/,ChIJ0wl6DcQ6kFQRdACJDRTh0Zo
+1049,Fix Auto North Kitsap,"car_repair, point_of_interest, establishment","22177 Viking Wy NW, Poulsbo, WA 98370, USA",google_places,https://fixautousa.com/north-kitsap/,ChIJBT-2C88jkFQRFWAqnBcL4C0
+1051,Fix Auto Port Orchard,"car_repair, point_of_interest, establishment","2585 Mitchell Rd SE, Port Orchard, WA 98366, USA",google_places,https://fixautousa.com/port-orchard,ChIJtfE5YdQ3kFQRdDmaosRMBjg
+1054,Klean Freak Car Wash,"car_wash, point_of_interest, establishment","9550 Ridgetop Blvd NW, Silverdale, WA 98383, USA",google_places,http://kleanfreakcarwash.com/,ChIJrTpyx-s6kFQRf5KyGsZZzrg
+1055,Sudstar Car Wash,"car_wash, point_of_interest, establishment","1901 SE Sedgwick Rd, Port Orchard, WA 98366, USA",google_places,https://sudstarcarwash.com/,ChIJAdu0u25JkFQRatTnReEony8
+1057,Bainbridge Island Car Wash,"car_wash, point_of_interest, establishment","499 Madison Ave N, Bainbridge Island, WA 98110, USA",google_places,http://www.bainbridgeislandcarwash.com/,ChIJfw9HdlM_kFQR3xyxOkSdJe0
+1058,Shur-Kleen Car Wash,"car_wash, point_of_interest, establishment","3311 Kitsap Way, Bremerton, WA 98312, USA",google_places,https://www.shurkleencarwash.com/locations/bremerton,ChIJzfLKohQ3kFQR7dw-HQ1q9ns
+1088,Hillcrest Burial Park,"cemetery, point_of_interest, establishment","1005 Reiten Rd, Kent, WA 98030, USA",google_places,,
+1089,Evergreen Washelli Columbarium,"cemetery, funeral_home, park, point_of_interest, establishment","11220 Aurora Ave N, Seattle, WA 98133, USA",google_places,,
+1090,Cypress Lawn Memorial Park,"cemetery, park, point_of_interest, establishment","1615 SE Everett Mall Way, Everett, WA 98208, USA",google_places,,
+1091,Holyrood Cemetery,"cemetery, point_of_interest, establishment","205 NE 205th St, Shoreline, WA 98155, USA",google_places,,
+1092,Sunset Hills Memorial Park,"cemetery, park, point_of_interest, establishment","1215 145th Pl SE, Bellevue, WA 98007, USA",google_places,,
+1093,Riverton Crest Cemetery,"cemetery, park, point_of_interest, establishment","3400 S 140th St, Tukwila, WA 98168, USA",google_places,,
+1094,Evergreen Washelli Funeral Home & Cemetery,"funeral_home, cemetery, park, point_of_interest, establishment","11111 Aurora Ave N, Seattle, WA 98133, USA",google_places,,
+1095,Washington Memorial Park,"cemetery, point_of_interest, establishment","16445 International Blvd, SeaTac, WA 98188, USA",google_places,,
+1096,Calvary Cemetery,"cemetery, general_contractor, point_of_interest, establishment","5041 35th Ave NE, Seattle, WA 98105, USA",google_places,,
+1097,Woodlawn Cemetery,"cemetery, park, point_of_interest, establishment","7509 Riverview Rd, Snohomish, WA 98290, USA",google_places,,
+1098,Abbey View Memorial Park,"cemetery, park, point_of_interest, establishment","3601 Alaska Rd, Brier, WA 98036, USA",google_places,,
+1099,Lake View Cemetery,"cemetery, point_of_interest, establishment","1554 15th Ave E, Seattle, WA 98102, USA",google_places,,
+1100,Mt. Olivet Cemetery,"cemetery, point_of_interest, establishment","100 Blaine Ave NE, Renton, WA 98056, USA",google_places,,
+1101,Greenwood Memorial Park & Funeral Home,"funeral_home, cemetery, park, point_of_interest, establishment","350 Monroe Ave NE, Renton, WA 98056, USA",google_places,,
+1102,Herzl Memorial Park,"cemetery, point_of_interest, establishment","16501 Dayton Ave N, Seattle, WA 98133, USA",google_places,,
+1103,Tahoma National Cemetery,"cemetery, tourist_attraction, point_of_interest, establishment","18600 SE 240th St, Kent, WA 98042, USA",google_places,,
+1104,St. Patrick Cemetery,"cemetery, general_contractor, point_of_interest, establishment","S 204th St &, Orillia Rd S, Kent, WA 98032, USA",google_places,,
+1105,Restlawn Memorial Park,"cemetery, park, point_of_interest, establishment","23800 104th Ave W, Edmonds, WA 98020, USA",google_places,,
+1106,Grand Army of the Republic Cemetery,"cemetery, point_of_interest, establishment","8601 Riverview Rd, Snohomish, WA 98290, USA",google_places,,
+1107,Mt Pleasant Cemetery,"cemetery, point_of_interest, establishment","700 W Raye St, Seattle, WA 98119, USA",google_places,,
+1108,Forest Lawn Cemetery,"cemetery, point_of_interest, establishment","6701 30th Ave SW, Seattle, WA 98126, USA",google_places,,
+1109,Acacia Memorial Park & Funeral Home,"funeral_home, cemetery, point_of_interest, establishment","14951 Bothell Way NE, Seattle, WA 98155, USA",google_places,,
+1110,Comet Lodge Cemetery,"cemetery, point_of_interest, establishment","2100 S Graham St, Seattle, WA 98108, USA",google_places,,
+1111,Crown Hill Cemetery,"cemetery, point_of_interest, establishment","8712 12th Ave NW, Seattle, WA 98117, USA",google_places,,
+1112,Pioneer Cemetery,"cemetery, park, point_of_interest, establishment","513 Webster St, Mukilteo, WA 98275, USA",google_places,,
+1113,Purdy & Walters at Floral Hills Funeral Home & Cemetery,"funeral_home, cemetery, park, point_of_interest, establishment","409 Filbert Rd, Lynnwood, WA 98036, USA",google_places,,
+1114,Woodinville Cemetery,"cemetery, point_of_interest, establishment","13200 NE 175th St, Woodinville, WA 98072, USA",google_places,,
+1115,Kirkland Cemetery,"cemetery, point_of_interest, establishment","8100 122nd Ave NE, Kirkland, WA 98033, USA",google_places,,
+1116,Forest Lawn Funeral Home & Cemetery,"funeral_home, cemetery, park, point_of_interest, establishment","6701 30th Ave SW, Seattle, WA 98126, USA",google_places,,
+1117,Bothell Pioneer Cemetery,"cemetery, point_of_interest, establishment","10816 Valley View Rd, Bothell, WA 98011, USA",google_places,,
+1118,Edmonds Memorial Cemetery,"cemetery, point_of_interest, establishment","820 15th St SW, Edmonds, WA 98020, USA",google_places,,
+1119,Cedar Lawns Memorial Park & Funeral Home,"cemetery, funeral_home, park, point_of_interest, establishment","7200 180th Ave NE, Redmond, WA 98052, USA",google_places,,
+1120,Sunset Lane Memorial Park,"cemetery, park, point_of_interest, establishment","1000 Bethel Ave, Port Orchard, WA 98366, USA",google_places,,
+1121,Upper Hillside Cemetery,"cemetery, point_of_interest, establishment","16 Mt Olympus Dr SW, Issaquah, WA 98027, USA",google_places,,
+1122,Vashon Cemetery,"cemetery, point_of_interest, establishment","Vashon, WA 98070, USA",google_places,,
+1123,BONNEY WATSON Funeral Home,"funeral_home, cemetery, point_of_interest, establishment","16445 International Blvd, SeaTac, WA 98188, USA",google_places,,
+1124,Sunset Hills Memorial Park & Funeral Home,"funeral_home, cemetery, park, point_of_interest, establishment","1575 145th Pl SE, Bellevue, WA 98007, USA",google_places,,
+1125,Fall City Cemetery,"cemetery, point_of_interest, establishment","Cemetery Rd, Fall City, WA 98024, USA",google_places,,
+1126,Fort Lawton Post Cemetery,"cemetery, point_of_interest, establishment","Texas Way, Seattle, WA 98199, USA",google_places,,
+1127,Miller-Woodlawn Funeral Home & Memorial Park,"funeral_home, cemetery, park, point_of_interest, establishment","5505 Kitsap Way, Bremerton, WA 98312, USA",google_places,,
+1128,Ivy Green Cemetery,"cemetery, point_of_interest, establishment","1401 Naval Ave, Bremerton, WA 98337, USA",google_places,,
+1129,Bear Creek Cemetery,"cemetery, point_of_interest, establishment","6557 216th St SE, Woodinville, WA 98072, USA",google_places,,
+1130,Saar Pioneer Cemetery,"cemetery, point_of_interest, establishment","Kent, WA 98031, USA",google_places,,
+1131,Island Center Cemetery,"cemetery, point_of_interest, establishment","Bainbridge Island, WA 98110, USA",google_places,,
+1132,Redmond Pioneer Cemetery,"cemetery, point_of_interest, establishment","7200 180th Ave NE, Redmond, WA 98052, USA",google_places,,
+1133,Seattle Sephardic Brotherhood Cemetery,"cemetery, point_of_interest, establishment","1230 N 167th St, Shoreline, WA 98133, USA",google_places,,
+1134,Chief Sealth gravesite,"cemetery, tourist_attraction, point_of_interest, establishment","7076 NE South St, Suquamish, WA 98392, USA",google_places,,
+1135,Hillcrest Cemetery,"cemetery, point_of_interest, establishment","5535 Old Mill Rd NE, Bainbridge Island, WA 98110, USA",google_places,,
+1136,Fraola Cemetery,"cemetery, point_of_interest, establishment","Port Orchard, WA 98367, USA",google_places,,
+1137,Columbia Funeral Home & Crematory,"funeral_home, cemetery, point_of_interest, establishment","4567 Rainier Ave S, Seattle, WA 98118, USA",google_places,,
+1138,Novelty Cemetery,"cemetery, point_of_interest, establishment","28031 NE 116th St, Duvall, WA 98019, USA",google_places,,
+1139,Carnation Cemetery,"cemetery, point_of_interest, establishment","5187 Carnation-Duvall Rd NE, Carnation, WA 98014, USA",google_places,,
+1140,Maury Island Cemetery,"cemetery, point_of_interest, establishment","Vashon, WA 98070, USA",google_places,,
+1141,IOOF Cemetery,"cemetery, point_of_interest, establishment","21714 Old Owen Rd, Monroe, WA 98272, USA",google_places,,
+1142,Bikur Cholim Cemetery,"cemetery, point_of_interest, establishment","1340 N 115th St, Seattle, WA 98133, USA",google_places,,
+1143,Floral Hills Cemetery,"cemetery, point_of_interest, establishment","10934 N Creek Dr, Mill Creek, WA 98036, USA",google_places,,
+5,Attentus Technologies - Renton Managed IT Services Company,Tech,,google_places,https://www.attentus.tech/managed-it-service-providers-renton-wa,ChIJads9bdJCkFQRvs9yWt4iK04
+9,McMenamins Tavern on the Square,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.mcmenamins.com/anderson-school/tavern-on-the-square?utm_source=Google%20Maps&utm_medium=Website%20Button&utm_campaign=Anderson%20-%20Tavern%20on%20the%20Square,ChIJuTek5UEOkFQRI5X6VXnzlEQ
+11,LTD Bar and Grill,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.ltdbarandgrill.com/,ChIJP3SbsKkVkFQRoXZeZ2wj6vQ
+15,Engel's Pub,"night_club, meal_takeaway, bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.facebook.com/engelspub/,ChIJ_zKeW_oakFQRW0jRsxuzRQs
+19,Nue,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://nuebeautysf.com/,ChIJT_DGeGeBhYARKJLN3hpu4yk
+21,Hollywood Tavern,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://thehollywoodtavern.com/,ChIJy0rzX7YNkFQRoyY1MIX4840
+836,Trek Bicycle Silverdale,"bicycle_store, store, point_of_interest, establishment","11065 Pacific Crest Pl Suite B-125, Silverdale, WA 98383, USA",google_places,https://www.trekbikes.com/us/en_US/retail/silverdale/?y_source=1_NDc4NTg4NjItNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,ChIJo7RtRA47kFQRuzLE-E0EyUw
+26,Sharps RoastHouse,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.sharpsroasthouse.com/?utm_source=gmb&utm_medium=organic,ChIJFfMjhqdckFQRfE-oQoQdeJk
+30,The George & Dragon Pub,"bar, point_of_interest, establishment",,google_places,http://theegeorge.com/,ChIJm7w6qakVkFQRq7Mt0WLPNNM
+33,Targy's Tavern,"bar, point_of_interest, establishment",,google_places,http://targysseattle.com/,ChIJW3QZ7XIVkFQRcG6dz5FOBxg
+38,Cactus South Lake Union,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.cactusrestaurants.com/menus,ChIJCz0voDcVkFQRH2R4cNL9j8E
+42,Fall City Bar & Grill,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://fallcitygrill.com/,ChIJ13tB2_57kFQRphUpBybrJ4Q
+45,Sully's Bistro & Bar,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.sullysbistroandbar.com/,ChIJu0DWmbcikFQRrbbplvrjMJ4
+47,Daniel’s Broiler,"night_club, bar, restaurant, point_of_interest, food, establishment",,google_places,https://danielsbroiler.com/pages/locations-daniels-bellevue,ChIJGfCVJo9skFQRqz9VN6zLoj8
+14,Woodblock,"bar, restaurant, point_of_interest, food, establishment",,google_places,http://www.woodblockredmond.com/,ChIJnaqf561ykFQR3VNTb3ZsafE
+51,allister,"restaurant, point_of_interest, food, establishment",,google_places,https://allister-mi.com/,ChIJzXtDaxZrkFQRMrg9Xcl7e78
+52,Von's 1000Spirits,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.vons1000spirits.com/?utm_source=gmb&utm_medium=organic&utm_campaign=gmbpost,ChIJYSjPILJqkFQRE-m7s1g6K0Y
+56,Dave & Buster's Bellevue,"restaurant, bar, point_of_interest, food, establishment",,google_places,http://www.daveandbusters.com/us/en/about/locations/bellevue,ChIJk6fobfttkFQRIeK9XN6jkNY
+60,Moe's Kitchen & Bar Mill Creek,"restaurant, point_of_interest, food, establishment",,google_places,https://moeskitchenandbar.com/,ChIJAe0j1r8HkFQRQeyP2TvYyeU
+63,All Water Seafood & Oyster Bar,"restaurant, point_of_interest, food, establishment",,google_places,https://www.allwaterseattle.com/,ChIJG5nPsLFqkFQRQvzI7nWdCtw
+66,Korochka Tavern,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.korochkatavern.net/,ChIJeaXlXmMRkFQRqRExg5NHzew
+68,Back Bar Private Events by Sabine,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.sabineseattle.com/events,ChIJmUg89f0VkFQReZhSUnuJhxM
+841,Classic Cycle,"bicycle_store, store, point_of_interest, establishment","617 High School Rd NE, Bainbridge Island, WA 98110, USA",google_places,http://www.classiccycleus.com/,ChIJL0ZmV7g-kFQRl9sBdO2HQzU
+845,Bike Works Warehouse **DONATION DROP OFF**,"bicycle_store, store, point_of_interest, establishment","Lower Level (East Entrance, 3715 S Hudson St #111, Seattle, WA 98118, USA",google_places,https://bikeworks.org/donate/used-bicycle/,ChIJyVSk6yNrkFQRyPF7Y_nMRF8
+1178,Six Chicks Boutique,"clothing_store, store, point_of_interest, establishment","1343 West Ave, Port Orchard, WA 98366, USA",google_places,http://sixchicksboutique.com/,ChIJs9C3E9Y3kFQRjcxLhDec5Hg
+169,Side Hustle: Taproom & Experimental Kitchen,"bar, restaurant, point_of_interest, food, establishment","15 Lake St #201, Kirkland, WA 98033, USA",google_places,http://www.sidehustletaps.com/kirkland,ChIJo5ntKAkTkFQRWs8MyLyQntQ
+173,Dino's Pub,"bar, restaurant, point_of_interest, food, establishment","1800 NE 44th St, Renton, WA 98056, USA",google_places,http://dinosrenton.com/,ChIJi9qynqlpkFQRYkdPgfa--i0
+177,Castilla Restaurant and Tapas Bar,"restaurant, meal_takeaway, bar, point_of_interest, food, establishment","504 Bellevue Square, Bellevue, WA 98004, USA",google_places,https://www.castillarestaurant.com/,ChIJqyWGR8ttkFQRmbV4DG1N088
+181,Jay Berry's Cafe,"restaurant, bar, cafe, store, point_of_interest, food, establishment","SE, 16341 Renton Issaquah Rd SE, Renton, WA 98059, USA",google_places,http://jayberryscafe.com/,ChIJsVKxsCZmkFQRm6RRGxkegzc
+184,The Clearwater,"bar, restaurant, point_of_interest, food, establishment","15347 Suquamish Way NE, Suquamish, WA 98392, USA",google_places,https://www.clearwatercasino.com/,ChIJvVIYtio9kFQRKqUUDHv8obQ
+188,Cottontail,"bar, point_of_interest, establishment","2219 4th Ave, Seattle, WA 98121, USA",google_places,https://www.cottontailclubseattle.com/,ChIJIa6ZpVsVkFQRVhCXR6B-dz4
+35,Outback Steakhouse,"bar, meal_takeaway, restaurant, point_of_interest, food, establishment",,google_places,https://locations.outback.com/washington/bellevue/15100-s.e.-38th-st.?utm_source=gmb&utm_medium=local_search&utm_campaign=website_cta&y_source=1_MTU1MDI2NTctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D,ChIJA9XV3crOj4AR-VWp3FUhe2o
+191,Belmont,"night_club, bar, point_of_interest, food, establishment","518 E Pike St, Seattle, WA 98122, USA",google_places,http://www.belmontseattle.com/,ChIJRy2ulYVrkFQRtnHZcrKomgA
+193,Jules Maes Saloon,"bar, restaurant, point_of_interest, food, establishment","5919 Airport Wy S, Seattle, WA 98108, USA",google_places,https://www.julesmaessaloon.com/,ChIJ-14lzutBkFQRaCVjzITxbr0
+194,COMMUNION Restaurant & Bar,"bar, restaurant, point_of_interest, food, establishment","2350 E Union St, Seattle, WA 98122, USA",google_places,https://www.communionseattle.com/,ChIJuTGWZA9rkFQRS8bDs0wnsXU
+199,Post Pike Bar & Cafe,"cafe, bar, restaurant, point_of_interest, food, store, establishment","212 Broadway E Unit A, Seattle, WA 98102, USA",google_places,http://www.postpikebar.com/,ChIJLfVn3osVkFQRqre200PTD1s
+23,Hops n Drops,"bar, restaurant, point_of_interest, food, establishment",,google_places,https://www.hopsndrops.com/,ChIJNUrKGODKj4ARL6j4poDhmic
+203,Bai Tong Thai Street Cafe,"cafe, bar, restaurant, point_of_interest, food, establishment","1121 E Pike St, Seattle, WA 98122, USA",google_places,https://baitongthaistreetcafe.com/,ChIJNeKKlM5qkFQRbqL5RpVeudE
+211,Bellden Cafe,"cafe, restaurant, point_of_interest, food, establishment","10527 Main St, Bellevue, WA 98004, USA",google_places,https://www.belldencafe.com/,ChIJ56sNpH1skFQRa4jznGtK-WY
+214,Mas Cafe,"restaurant, cafe, point_of_interest, food, establishment","1906 N 34th St, Seattle, WA 98103, USA",google_places,https://order.joe.coffee/mascafe,ChIJOailZmoVkFQRQAehkV1h_nU
+218,Fonté Coffee - 1st Avenue,"cafe, restaurant, point_of_interest, food, store, establishment","1321 1st Ave, Seattle, WA 98101, USA",google_places,http://www.fontecoffee.com/,ChIJx_rKPrJqkFQR7OliFT0Jk-A
+221,Salmon Creek Cafe,"cafe, bar, restaurant, point_of_interest, bakery, food, store, establishment","11620 Ambaum Blvd SW, Burien, WA 98146, USA",google_places,http://www.salmoncreekcafe.com/,ChIJZ6wsQ-1DkFQRIi424OSWk-M
+227,Both Ways Cafe,"cafe, restaurant, point_of_interest, bakery, food, store, establishment","4922 S Genesee St, Seattle, WA 98118, USA",google_places,http://bothwayscafe.com/,ChIJXWNvoxVqkFQRJRQPpe2azdk
+230,Sip House - Seattle Vietnamese Coffee Shop,"cafe, restaurant, point_of_interest, food, store, establishment","5001 Brooklyn Ave NE, Seattle, WA 98105, USA",google_places,http://www.siphousewa.com/,ChIJCUNyPKEVkFQR94JP8mIGtbA
+236,Woodinville Cafe,"cafe, restaurant, point_of_interest, food, establishment","14170 NE Woodinville Duvall Rd, Woodinville, WA 98072, USA",google_places,http://woodinville.cafesinc.com/,ChIJSc63JiYMkFQRi9Ds9W-F9mI
+239,Cafe Opla,"cafe, restaurant, store, point_of_interest, food, establishment","2200 Alaskan Wy #120, Seattle, WA 98121, USA",google_places,http://www.cafeopla.com/,ChIJxbeJhFIVkFQRJXdfn17jAsk
+241,One Bite Cafe - Seattle,"cafe, bakery, restaurant, store, point_of_interest, food, establishment","1026 NE 65th St, Seattle, WA 98115, USA",google_places,https://www.toasttab.com/local/order/onebitecafe-seattle/r-ae180206-386a-416e-aa03-4d783ba309bf,ChIJX_V9IrMVkFQRHROORrF4JM0
+245,14 Carrot Cafe,"restaurant, cafe, point_of_interest, food, establishment","2305 Eastlake Ave E, Seattle, WA 98102, USA",google_places,https://www.facebook.com/14CarrotCafe/,ChIJzd7GKOAUkFQRw2zKExHQSZw
+249,Red Twig Cafe and Bakery,"cafe, restaurant, point_of_interest, food, establishment","117 5th Ave S, Edmonds, WA 98020, USA",google_places,http://www.redtwig.com/,ChIJyXIvXfoakFQRJNUoqicC5VY
+253,Issaquah Cafe,"cafe, restaurant, point_of_interest, food, establishment","1580 NW Gilman Blvd #7, Issaquah, WA 98027, USA",google_places,http://issaquah.cafesinc.com/,ChIJEQe53gpvkFQRwp8fKwgr_9A
+259,University Book Store,"book_store, clothing_store, point_of_interest, store, establishment","4326 University Wy NE, Seattle, WA 98105, USA",google_places,https://www.ubookstore.com/,ChIJjwucI4sUkFQR6pdUeAufRqg
+262,Salmonberry Books,"book_store, point_of_interest, store, establishment","715 Bay St #100, Port Orchard, WA 98366, USA",google_places,http://salmonberry-books.com/,ChIJJTFzSQs3kFQRCMqXzeTL_bY
+266,Ballast Book Company,"book_store, point_of_interest, store, establishment","409 Pacific Ave UNIT 202, Bremerton, WA 98337, USA",google_places,http://www.ballastbookco.com/,ChIJbYkqWXg3kFQRzj6GQDaeQ78
+270,Find The Path Books,"book_store, point_of_interest, store, establishment","710 Bay St, Port Orchard, WA 98366, USA",google_places,http://findthepathbooks.com/,ChIJj9sH9yM3kFQRJXSBKlN8NdI
+273,Exclusively Brilliant,"jewelry_store, point_of_interest, store, establishment","1700 SE Mile Hill Dr #150, Port Orchard, WA 98366, USA",google_places,http://exclusivelybrilliant.com/,ChIJXT0LsbRJkFQRGU_s9RU4hX8
+277,Korotkina Fine Jewelry,"jewelry_store, finance, point_of_interest, store, establishment","752 Winslow Way E, Bainbridge Island, WA 98110, USA",google_places,http://www.korotkina.com/,ChIJE3qtW7g-kFQRIuP27RPTMjo
+280,Silverdale Jewelry & Coin,"finance, jewelry_store, point_of_interest, store, establishment","9456 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,http://jewelrystoresilverdale.com/,ChIJLfJn_ZY6kFQRAWUXIR30kj0
+286,Pandora Jewelry,"jewelry_store, point_of_interest, store, establishment","10315 Silverdale Way NW A06, Silverdale, WA 98383, USA",google_places,https://stores.pandora.net/en-us/wa/silverdale/pandora-jewelry-us3c7e0aee.html?utm_source=google&utm_medium=listing&utm_content=us3c7e0aee&utm_campaign=WA&utm_keyword=Silverdale,ChIJySAlSjA7kFQReNxWRvW_61Q
+293,"Mosaic Insurance Alliance, Llc","insurance_agency, point_of_interest, establishment","16108 Ash Way #201, Lynnwood, WA 98087, USA",google_places,https://mosaicia.com/,ChIJi11-Q7EFkFQRwQ_5uLi43OQ
+296,"A & M Insurance Services, Inc.","insurance_agency, point_of_interest, establishment","14410 SE Petrovitsky Rd Suite #202, Renton, WA 98058, USA",google_places,https://aminsurance.com/?utm_source=gbp&utm_medium=organic,ChIJ532H-nxnkFQRg2tiqlmDE4w
+300,Farmers Insurance - Chris Elliott Insurance Agency,"insurance_agency, point_of_interest, establishment","1200 Westlake Ave N #502, Seattle, WA 98109, USA",google_places,http://ceinsuranceagency.com/,ChIJgfJFzFoVkFQRjcamxJr3amE
+303,Farmers Insurance & Financial Services - Hien Luong Agency,"insurance_agency, point_of_interest, establishment","17250 Bothell Way NE, Lake Forest Park, WA 98155, USA",google_places,https://agents.farmers.com/wa/lake-forest-park/hien-luong/,ChIJE3ofUg0FkFQR1Ezm3ZElKis
+306,Farmers Insurance - Chong P Yun,"insurance_agency, point_of_interest, establishment","1130 140th Ave NE Ste 200, Bellevue, WA 98005, USA",google_places,https://agents.farmers.com/wa/bellevue/chong-p-yun?SourceID=AMPALFGMAG&utm_source=GMB&utm_medium=Local&y_source=1_MTU0ODA0MC03MTUtbG9jYXRpb24uZ29vZ2xlX3dlYnNpdGVfb3ZlcnJpZGU%3D,ChIJg8mUb1NskFQRchUsn9Lc6eI
+313,Farmers Insurance - Trina Knoche,"insurance_agency, point_of_interest, establishment","104 Tremont St #200, Port Orchard, WA 98366, USA",google_places,https://knocheagency.com/,ChIJtdXv7ikefIoRCQGkiThS9BE
+318,You Choose Insurance LLC,"insurance_agency, point_of_interest, establishment","358 Tremont St W, Port Orchard, WA 98366, USA",google_places,http://www.youchooseinsurance.com/,ChIJR9PgdzA2kFQRZxflT49IQS0
+320,Joseph Del Grosso: Allstate Insurance,"insurance_agency, point_of_interest, establishment","9201 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,https://agents.allstate.com/joseph-del-grosso-silverdale-wa.html?utm_source=GMB&utm_medium=Website,ChIJz2mruyQ6kFQRGhZc0nQCBaE
+326,Farmers Insurance - Debra Allbee,"insurance_agency, point_of_interest, establishment","19168 B, 19168 Jensen Way NE, Poulsbo, WA 98370, USA",google_places,https://agents.farmers.com/wa/poulsbo/debra-allbee?SourceID=AMPALFGMAG&utm_source=GMB&utm_medium=Local&y_source=1_MTU0OTE4OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ==,ChIJzSo6-Z4jkFQRUgiGNUNcHGI
+329,Farmers Insurance - Mary Allred,"insurance_agency, point_of_interest, establishment","909 SE Everett Mall Way Ste C318, Everett, WA 98208, USA",google_places,https://agents.farmers.com/wa/everett/mary-allred?SourceID=AMPALFGMAG&utm_source=GMB&utm_medium=Local&y_source=1_MTU1NDMyMS03MTUtbG9jYXRpb24ud2Vic2l0ZQ==,ChIJVYqt59QGkFQRYl9ulghMIFI
+330,Northwest Insurance Group,"insurance_agency, point_of_interest, establishment","5431B California Ave SW, Seattle, WA 98136, USA",google_places,https://nwinsgroup.com/,ChIJ896qrGBAkFQRzF6y2PzUOGY
+331,Key Insurance | Personal and Commercial Insurance Seattle,"insurance_agency, health, point_of_interest, establishment","1042 W James St # 103, Kent, WA 98032, USA",google_places,https://keyinsure.net/,ChIJV1TJvy5DkFQRqzfLkuJKa0g
+334,Bordelon Insurance,"insurance_agency, point_of_interest, establishment","1606 148th Ave SE #102, Bellevue, WA 98007, USA",google_places,http://www.bordeloninsurance.com,ChIJD_JbVbtukFQReEjwNpsc7hs
+337,Executive Home & Auto Insurance Brokerage,"insurance_agency, point_of_interest, establishment","838 Innis Arden Dr NW, Shoreline, WA 98177, USA",google_places,https://www.execbrokerage.com/,ChIJEzv1KSMRkFQRVzDteqEU9Ro
+340,Freeway Insurance,"insurance_agency, health, point_of_interest, establishment","11802 Evergreen Wy #106, Everett, WA 98204, USA",google_places,https://locations.freeway.com/freeway-insurance-everett-wa-98204?utm_medium=google&utm_source=online_directories&utm_campaign=CVF_Everett_WA,ChIJ-ahqulwHkFQR6ByaRnQAxcU
+344,Hayk Tadevosyan - State Farm Insurance Agent,"insurance_agency, point_of_interest, establishment","1420 156th Ave NE ste c, Bellevue, WA 98007, USA",google_places,http://www.haykinsurance.com/?cmpid=r1wf_blm_0001,ChIJdWHpOKVtkFQRBIyNIbztNnM
+348,Gunnar Nordstrom Fine Arts and La Petite Galerie,"art_gallery, point_of_interest, establishment","92 Kirkland Ave, Kirkland, WA 98033, USA",google_places,http://www.gunnarnordstrom.com/,ChIJIbWjO49skFQROIOfZrsOpBE
+352,Roq La Rue Gallery,"art_gallery, point_of_interest, establishment","117 W Denny Way ste 217 (second floor, Seattle, WA 98119, USA",google_places,http://www.roqlarue.com/,ChIJCZkrLEwVkFQRsWvjuhgGaAw
+356,Windows Art Gallery,"art_gallery, point_of_interest, establishment","4131 Woodland Park Ave N, Seattle, WA 98103, USA",google_places,http://www.windowsart.com/,ChIJdUwX9FQUkFQRMCMZfQBjji0
+360,Art Wolfe Gallery,"art_gallery, point_of_interest, establishment","520 1st Ave S, Seattle, WA 98104, USA",google_places,http://www.artwolfe.com/,ChIJczsgQidAkFQR9lk-hlEmIWc
+363,Art Gallery PKULTRA,"art_gallery, point_of_interest, establishment","2324 2nd Ave Rear Entrance, Seattle, WA 98121, USA",google_places,https://instagram.com/art_gallery_pkultra?utm_source=ig_profile_share&igshid=11cztfsaam1ok,ChIJ1-Wi300VkFQRLYwqaD1OI_Q
+367,Miel's Bakery,"bakery, store, point_of_interest, food, establishment","718 222nd Street SW, Bothell, WA 98021, USA",google_places,https://mielsbakery.com/,ChIJ04wCOVVzkFQRdAfLPrA2zlM
+370,Franz Bakery Outlet,"bakery, grocery_or_supermarket, store, point_of_interest, food, establishment","4800 Auto Center Way, Bremerton, WA 98312, USA",google_places,http://franzbakery.com/,ChIJdUL6YRw3kFQRJFy9cOljY2U
+374,Grand Central Bakery - Wedgwood cafe,"bakery, cafe, restaurant, store, point_of_interest, food, establishment","7501 35th Ave NE, Seattle, WA 98115, USA",google_places,https://www.grandcentralbakery.com/wedgwood,ChIJNZLT4BETkFQRFNbiNXHxHNw
+377,Bakery Of Smiles,"bakery, store, point_of_interest, food, establishment","41 Fireweed St, Port Orchard, WA 98366, USA",google_places,https://www.bakeryofsmiles.com/contact-us3697527a,ChIJAQBESd9JkFQRX48LVhYSgIk
+378,Corner Bakery Cafe,"cafe, bakery, restaurant, store, point_of_interest, food, establishment","393a Strander Blvd, Tukwila, WA 98188, USA",google_places,https://www.cornerbakerycafe.com/,ChIJe82RL9FckFQRs2MR8xzz7UA
+381,L'Artisan Pastry,"bakery, point_of_interest, food, store, establishment","11419 19th Ave SE UNIT B103, Everett, WA 98208, USA",google_places,https://www.lartisanpastry.com/,ChIJyUQPyuAGkFQRgEixnO0bxIA
+385,Grand Pere Bakery,"bakery, point_of_interest, food, store, establishment","24007 56th Ave W, Mountlake Terrace, WA 98043, USA",google_places,http://grandperebakery.weebly.com/,ChIJOV9DCxQQkFQRwLEAYPjFwpI
+389,Larsen's Bakery,"bakery, point_of_interest, food, store, establishment","8000 24th Ave NW, Seattle, WA 98117, USA",google_places,http://www.larsensbakery.com/,ChIJnSY2038WkFQRYM4ui6T66WI
+393,Hoffman's Fine Cakes and Pastries,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","16175 Cleveland St, Redmond, WA 98052, USA",google_places,http://www.hoffmansfinecakes.com/,ChIJlYs2dsISkFQRx0ChzmCx_t8
+396,Le Fournil French Bakery and Catering,"bakery, cafe, restaurant, point_of_interest, food, store, establishment","3230 Eastlake Ave E Ste A, Seattle, WA 98102, USA",google_places,https://le-fournil-french-bakery-catering-seattle.securebrygid.com/zgrid/proc/site/sitep.jsp,ChIJn7QZqPoUkFQR66Ie5FUD9tw
+401,Sugar n Flakes Bakery & Cafe,"bakery, point_of_interest, food, store, establishment","10797 Main St, Bellevue, WA 98004, USA",google_places,http://www.sugarnflakes.com/,ChIJb13YaTZtkFQRv_I1WV64nsU
+406,Freya Bakery & Cafe,"bakery, point_of_interest, food, store, establishment","1426 Western Ave, Seattle, WA 98101, USA",google_places,https://www.freyabakery.com/,ChIJ20YiR9hrkFQRy2tadLeY5I0
+410,Moonrise Bakery,"bakery, point_of_interest, food, store, establishment","1805 Queen Anne Ave N, Seattle, WA 98109, USA",google_places,http://www.moonrise-bakery.com/,ChIJvcgaetsVkFQRtbdRpY6qZUE
+413,Petit Pierre Bakery,"bakery, cafe, liquor_store, restaurant, point_of_interest, food, store, establishment","6801 Greenwood Ave N #113a, Seattle, WA 98103, USA",google_places,http://www.petitpierrebakery.com/,ChIJe5QnEjoUkFQRAWdfY8qVg1w
+416,PetSmart,"point_of_interest, store, establishment","9589 Ridgetop Blvd NW, Silverdale, WA 98383, USA",google_places,https://www.petsmart.com/stores/us/wa/silverdale-store0373.html?utm_source=google&utm_medium=organic&utm_campaign=google-my-business,ChIJR5SY2us6kFQRR7XqQKiFBJk
+421,Farmland Pets & Feed,"pet_store, general_contractor, point_of_interest, store, establishment","9000 Silverdale Way NW, Silverdale, WA 98383, USA",google_places,https://farmlandpets.com/,ChIJN38xMZo6kFQRKOmXNQO-JB4
+427,Quick-Tag,"point_of_interest, store, establishment","Walmart 6797, 6797 WA-303, Bremerton, WA 98311, USA",google_places,http://www.quick-tag.com/,ChIJ5V4B7kY7kFQRtBacaGMKD0Q
+429,fi.d.o,"point_of_interest, store, establishment","Petco Animal Supplies, 21700 Market Pl NW, Poulsbo, WA 98370, USA",google_places,https://stores.petco.com/wa/poulsbo/pet-supplies-poulsbo-wa-1242.html,ChIJY9N6nMMjkFQRu9e_N0u5bxY
+431,Every Door Real Estate,"real_estate_agency, general_contractor, point_of_interest, establishment","5506 6th Ave S #204, Seattle, WA 98108, USA",google_places,https://www.everydoorrealestate.com/?utm_source=google&utm_medium=gmb&utm_campaign=invicta_main_cta,ChIJOR9o-cBBkFQRR-k_PH6pJzc
+436,Nicole Jamie Home Team - Keller Williams Greater 360,"point_of_interest, establishment","19470 Viking Ave NW Suite 201, Poulsbo, WA 98370, USA",google_places,https://www.liveinkitsap.com/,ChIJabq2EWYjkFQRE-6oV_JxED8
+440,"Irene Garcia (she/her), RE/MAX Platinum Services","point_of_interest, establishment","9224 Ridgetop Blvd NW #100th, Silverdale, WA 98383, USA",google_places,http://www.irenegarcia.realtor/,ChIJAQDMM5U6kFQRrmQgrlXZ11s
+444,Kimmel and Young Kitsap Real Estate Team | Poulsbo,"real_estate_agency, point_of_interest, establishment","18570 WA-305 East, Poulsbo, WA 98370, USA",google_places,https://realestatekitsap.com/,ChIJ-52v_PsjkFQR4N0VpY-B68w
+448,Cassandra Lopez - Keller Williams West Sound,"point_of_interest, establishment","3888 NW Randall Way Ste. 100, Silverdale, WA 98383, USA",google_places,http://livinginbremerton.com/,ChIJifrkxd5TkFQRyRdxLWOquuk
+452,Agent Jayna Real Estate,"real_estate_agency, point_of_interest, establishment","930 SW 152nd St, Burien, WA 98166, USA",google_places,http://www.agentjayna.com/,ChIJp1jCrCdbkFQRUhUcd434PJI
+454,Maria Dennis - NW Moms Invest LLC (HomeSmart Real Estate broker) | Seattle Realtor,"real_estate_agency, point_of_interest, establishment","10202 5th Ave NE, Seattle, WA 98125, USA",google_places,https://www.nwmomsinvest.com/,ChIJpQaw9S8VkFQR4Tk8Bafk8Cs
+459,"Joey Soller, Force 10 Property Group | Keller Williams - KW Commercial","real_estate_agency, point_of_interest, establishment","19470 Viking Ave NW Suite 201, Poulsbo, WA 98370, USA",google_places,https://www.force10propertygroup.com/,ChIJ8aeSxp_7kFQR7uNd-C1qRXM
+464,Sarah Day - John L Scott South Kitsap and Gig Harbor,"real_estate_agency, point_of_interest, establishment","1954 SE Lund Ave, Port Orchard, WA 98366, USA",google_places,https://sarahd.johnlscott.com/home,ChIJd1KvWPM3kFQR99T1xr1-XqU
+468,"Kristin Seibert, REALTOR | Paramount Real Estate Group","real_estate_agency, point_of_interest, establishment","2535 Mitchell Rd SE, Port Orchard, WA 98366, USA",google_places,https://kristinseibert.paramountre.team/,ChIJHW1YeExJkFQRDNb1LlPKShU
+470,"RLP Tax & Accounting, P.L.L.C. - Office of CPA & Enrolled Agent.","accounting, finance, point_of_interest, establishment","CEDAR, 1400 112th Ave SE suite 100, Bellevue, WA 98004, USA",google_places,http://www.rlptax.com/,ChIJjeo0HHRskFQRoKJ5z_tUn0o
+476,Year Round Tax and Accounting,"accounting, finance, point_of_interest, establishment","451 SW 10th St #112, Renton, WA 98057, USA",google_places,http://yearroundtax.com/,ChIJz_IX3SpDkFQR8jUYxezwTLs
+481,K & J Accounting,"accounting, finance, point_of_interest, establishment","255 SW 153rd St, Burien, WA 98166, USA",google_places,http://www.kjaccounting.net/,ChIJgVarZpxEkFQRzmnPJkKykso
+483,Elite Accounting & Financial Services Inc,"accounting, finance, point_of_interest, establishment","19424 58th Pl W, Lynnwood, WA 98036, USA",google_places,http://www.eliteafs.com/,ChIJs4qAW2wFkFQReMt61xasqbI
+487,"A4A Accounting, SPC","accounting, finance, point_of_interest, establishment","Compounding Lab, 500 Aurora Ave N, Seattle, WA 98109, USA",google_places,http://www.a4aaccounting.com/,ChIJ1WeXdzgVkFQRyAtY6EjI3jo
+491,Charlie Dang Tax & Accounting,"accounting, finance, point_of_interest, establishment","1215 South Main St, Seattle, WA 98144, USA",google_places,http://www.dangtax.com/,ChIJr7ItuQJdkFQRVKNYR30wzfY
+495,Full Potential Accounting,"accounting, finance, point_of_interest, establishment","18323 Bothell Everett Hwy #370, Bothell, WA 98012, USA",google_places,http://www.fullpotentialcpa.com/,ChIJ80a1gPcFkFQRvV9DDYhQsPk
+499,Diversified Accounting Services Inc,"accounting, finance, point_of_interest, establishment","19415 Locust Wy, Lynnwood, WA 98036, USA",google_places,http://diversifiedaccting.com/,ChIJZX5enXgFkFQRA-gPxl1NRmE
+503,Fast Easy Accounting,"accounting, finance, point_of_interest, establishment","19909 64th Ave W #201, Lynnwood, WA 98036, USA",google_places,https://www.fasteasyaccounting.com/,ChIJQ6U4UzQFkFQRyNIdG75XAwo
+507,"Kary's Accounting & Tax Services, LLC","accounting, finance, point_of_interest, establishment","16301 NE 8th St #150, Bellevue, WA 98008, USA",google_places,https://www.karysaccountingandtaxservices.com/,ChIJK6qSZVxtkFQRra6q941qHV8
+512,"Bradley W. Orser, CPA, Inc. P.S.","accounting, finance, point_of_interest, establishment","911 Adele Ave, Bremerton, WA 98312, USA",google_places,https://www.orsercpa.com/,ChIJexNsY3c3kFQRoVJAveU2u_w
+517,AG Tax and Accounting Services,"accounting, finance, point_of_interest, establishment","450 Alaskan Way S, Seattle, WA 98104, USA",google_places,https://www.agtaxaccounting.com/,ChIJxYrAfflrkFQRApUHw768b_4
+521,RMJR Tax and Accounting,"accounting, finance, point_of_interest, establishment","336 228th Ave NE, Sammamish, WA 98074, USA",google_places,https://www.rmjr-tax-accounting.com/sammamish-wa,ChIJGRLrBdtxkFQRwgmrUXdpquc
+525,Waterfront Tax Group,"accounting, finance, point_of_interest, establishment","10049 Kitsap Mall Blvd NW #249, Silverdale, WA 98383, USA",google_places,https://pba-advisors.com/services/tax-services/,ChIJn8-2Les6kFQRXc1yk45zy6Y
+528,Paramount Tax & Accounting Kirkland,"accounting, finance, point_of_interest, establishment","11335 NE 122nd Way Suite 105, Kirkland, WA 98034, USA",google_places,https://paramount.tax/kirkland,ChIJo1toK54TkFQRP9ou_JswbOA
+534,Paine Field,"airport, point_of_interest, establishment","3220 100th St SW, Everett, WA 98204, USA",google_places,http://painefield.com/,ChIJ_ZcruFkBkFQRFCU0LsFxNU4
+537,Delta Air Lines Inc,"point_of_interest, establishment","17801 International Blvd, Seattle, WA 98158, USA",google_places,http://www.delta.com/,ChIJ0Q05Zk9DkFQR_E0QitNkWms
+541,Harvey Airfield,"airport, point_of_interest, establishment","9900 Airport Way, Snohomish, WA 98296, USA",google_places,http://harveyfield.com/,ChIJ262EWTOomlQRthBvBot3A8w
+546,Extra Car,"parking, point_of_interest, establishment","16300 International Blvd, Seattle, WA 98188, USA",google_places,http://www.extracar.com/,ChIJZ_L6UUlDkFQR2C38FDQMJ8Y
+550,Signature Aviation SEA - Seattle-Tacoma Int'l Airport,"point_of_interest, establishment","18291 Starling Dr, Seattle, WA 98158, USA",google_places,https://www.signatureaviation.com/locations/SEA,ChIJscRv8lFbkFQRpBzyDr3T9cs
+557,Premier Airport Shuttle by Capital Aeroporter,"point_of_interest, establishment","the Parking Garage, 17801 International Blvd 3rd Floor of, SeaTac, WA 98158, USA",google_places,https://www.premierairportshuttle.com/,ChIJTUIbPKpckFQR3RDaL5kQ0qE
+610,The Shark Reef,"point_of_interest, pet_store, store, establishment","3656 NW Munson St, Silverdale, WA 98383, USA",google_places,http://www.thesharkreef.net/,ChIJeRCb3pk6kFQRWl14Epzrnng
+612,Aquatic Enterprises Inc,"aquarium, point_of_interest, establishment","4101 W Marginal Wy SW # A6, Seattle, WA 98106, USA",google_places,http://www.aquaticenterprises.com/,ChIJ0Rz9t0tAkFQR-E1rKd3YOHM
+615,Pacific Science Center,"tourist_attraction, museum, point_of_interest, establishment","200 Sue Bird Ct N, Seattle, WA 98109, USA",google_places,https://www.pacificsciencecenter.org/?utm_source=local&utm_medium=organic&utm_campaign=gmb,ChIJAxZWvUwVkFQRPuvwC7JTqZk
+620,Aquarium Concepts,"point_of_interest, pet_store, store, establishment","623 NW Richmond Beach Rd, Shoreline, WA 98177, USA",google_places,http://www.aquariumconcepts.com/,ChIJPywuY_IQkFQRESMMBk9nodE
+622,Argosy Cruises - Seattle Waterfront,"tourist_attraction, travel_agency, point_of_interest, establishment","1101 Alaskan Wy Pier 55, #201, Seattle, WA 98101, USA",google_places,https://www.argosycruises.com/?utm_source=local&utm_medium=organic&utm_campaign=gmb,ChIJYf8WJK5qkFQRMCUJj7i3nHk
+627,Miner’s Landing Pier 57 Seattle,"bakery, restaurant, point_of_interest, store, food, establishment","1301 Alaskan Wy, Seattle, WA 98101, USA",google_places,https://www.minerslanding.com/,ChIJxcPk-q1qkFQROJUNAI77zfw
+630,International Fountain,"tourist_attraction, point_of_interest, establishment","305 Harrison St, Seattle, WA 98109, USA",google_places,https://www.seattlecenter.com/explore/attractions/international-fountain,ChIJKTWVIEQVkFQRNBx2rIY03Z0
+633,Bank of America ATM (Drive-thru),"atm, finance, point_of_interest, establishment","525 S Jackson St, Seattle, WA 98104, USA",google_places,https://locators.bankofamerica.com/wa/seattle/financial-centers-seattle-8099.html?utm_source=GMBlisting&utm_medium=organic,ChIJ2zP95ENrkFQRK7WXiCaKXBw
+635,Kitsap Credit Union ATM,"atm, finance, point_of_interest, establishment","155 Washington Ave UNIT 200, Bremerton, WA 98337, USA",google_places,https://www.kitsapcu.org/aboutkcu-branch-locations.html,ChIJy-IAkII3kFQR_v_uCiCrIQw
+639,U.S. Bank ATM,"atm, finance, point_of_interest, establishment","504 Bell St, Seattle, WA 98121, USA",google_places,https://www.usbank.com/locations/washington/seattle/504-bell-st-bank-atm/?utm_source=google&utm_medium=organic&utm_campaign=gbp_listing,ChIJ9_wWUUkVkFQRTrUMRQlKXhg
+646,Macrina Bakery & Cafe,"bakery, restaurant, food, point_of_interest, store, establishment","2408 1st Ave, Seattle, WA 98121, USA",google_places,http://macrinabakery.com/,ChIJd4EJdk4VkFQRcE5sxKy08ww
+651,June Bakery,"bakery, food, point_of_interest, store, establishment","15600 NE 8th St, Bellevue, WA 98007, USA",google_places,https://www.instagram.com/june_bakery_bellevue,ChIJ74Ad2rBtkFQRGsVIOZETBsg
+655,Forest Fairy Bakery,"bakery, food, point_of_interest, store, establishment","485 Front St N, Issaquah, WA 98027, USA",google_places,http://www.forestfairybakerystore.com/,ChIJjQ5OEIFvkFQRJMwgEWlqwmY
+660,McGavin's Bakery,"bakery, food, point_of_interest, store, establishment","619 N Callow Ave, Bremerton, WA 98312, USA",google_places,http://www.mcgavins-bakery.com/,ChIJ1UhUtRI3kFQR_wJ5iRBW9Yc
+663,Salvadorean Bakery and Restaurant Inc.,"bakery, cafe, restaurant, food, point_of_interest, store, establishment","1719 SW Roxbury St, Seattle, WA 98106, USA",google_places,http://www.thesalvadoreanbakery.com/,ChIJFXe7ld9DkFQRtJgt3aqaBSw
+848,REI,"shoe_store, bicycle_store, clothing_store, store, point_of_interest, establishment","410 116th Ave NE, Bellevue, WA 98004, USA",google_places,https://www.rei.com/stores/bellevue?y_source=1_MzU3NzcwMC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D,ChIJBwRkE2FskFQRjuE6Sw1qe1Y
+850,The Polka Dot Jersey,"bicycle_store, store, point_of_interest, establishment","120 Lakeside Ave, Seattle, WA 98122, USA",google_places,http://www.thepolkadotjersey.com/,ChIJqSz6a-FqkFQRINFfQIY0TjE
+853,R2 Bicycles Fitting Studio,"physiotherapist, bicycle_store, store, health, point_of_interest, establishment","17012 Aurora Ave N Suite 101, Shoreline, WA 98133, USA",google_places,http://www.r2bicycles.com/,ChIJVUJBff8TkFQRp7nCU2ohZDs
+857,Bowlero Lynnwood,"bowling_alley, bar, restaurant, food, point_of_interest, store, establishment","1222 164th St SW, Lynnwood, WA 98087, USA",google_places,https://www.bowlero.com/location/bowlero-lynnwood/,ChIJV0_P-rcFkFQRnNrmDd4mFLE
+860,Spin Alley Bowling,"bowling_alley, point_of_interest, establishment","1430 NW Richmond Beach Rd, Shoreline, WA 98177, USA",google_places,http://spinalleybowling.com/,ChIJ32oOupgQkFQR5tdeUZKRq-s
+863,West Seattle Bowl,"bowling_alley, night_club, bar, restaurant, food, point_of_interest, establishment","4505 39th Ave SW, Seattle, WA 98116, USA",google_places,https://www.wsbowl.com/,ChIJ3Uu9FVBAkFQRcN7l5PP0Hb0
+867,Husky Union Building,"bowling_alley, point_of_interest, establishment","4001 E Stevens Way NE, Seattle, WA 98195, USA",google_places,http://hub.washington.edu/,ChIJcUxTZI0UkFQRRlIzAv2TF8k
+869,Arena Sports Mill Creek - Family Entertainment Center,"bowling_alley, point_of_interest, establishment","13500 Bothell Everett Hwy Suite A, Mill Creek, WA 98012, USA",google_places,https://www.arenasports.net/activities/?utm_source=google&utm_medium=organic&utm_campaign=gmb-fec,ChIJRfl9DzkHkFQRPUnXKj9xB2s
+872,Arena Sports Issaquah,"restaurant, food, point_of_interest, establishment","2115 NW Poplar Way, Issaquah, WA 98027, USA",google_places,https://www.arenasports.net/locations/issaquah/?utm_source=google&utm_medium=organic&utm_campaign=gmb,ChIJ24EAJglvkFQRpFYsoSSaEY8
+874,Greyhound: Bus Station,"point_of_interest, establishment","503 S Royal Brougham Way, Seattle, WA 98134, USA",google_places,https://www.greyhound.com/bus/seattle-wa/seattle-bus-station?utm_source=google_maps&utm_medium=organic,ChIJ-Ts1VphqkFQRFdYWeMqy9yE
+2661,Discovery Community School,"primary_school, school, point_of_interest, establishment","12801 84th Ave NE, Kirkland, WA 98034, USA",google_places,https://discovery.lwsd.org/,ChIJfRplwRUSkFQRtLHM01g2APk
+2662,New Horizon School,"secondary_school, primary_school, school, point_of_interest, establishment","1111 S Carr Rd, Renton, WA 98055, USA",google_places,http://www.new-horizon-school.org/,ChIJa0cXHg9dkFQRtZdv71tnGUU
+2663,Edmond S Meany Middle School,"school, health, point_of_interest, establishment","301 21st Ave E, Seattle, WA 98112, USA",google_places,http://meanyms.seattleschools.org/,ChIJEbcpqSoVkFQRGxbRAtzGGVA
+911,Tailwind Café at Good Weather,"cafe, bar, restaurant, food, point_of_interest, store, establishment","Inside Good Weather Bicycles, 1424 11th Ave, Seattle, WA 98122, USA",google_places,https://tailwindcafe.com/,ChIJzzHlqLRrkFQRcwN4t8PTzIk
+916,Cafe Javasti,"cafe, restaurant, food, store, point_of_interest, establishment","8617 35th Ave NE, Seattle, WA 98115, USA",google_places,http://javasti.com/,ChIJucJfPZMTkFQRUppYthTF3Cc
+919,Cafetal Quilombo Cafe,"cafe, restaurant, food, store, point_of_interest, establishment","4343 15th Ave S, Seattle, WA 98108, USA",google_places,https://cafetalquilombocafe.com/,ChIJY3Or6dlBkFQRK5BToTHJQkA
+922,Other Coast Cafe,"cafe, restaurant, food, point_of_interest, establishment","5315 Ballard Ave NW, Seattle, WA 98107, USA",google_places,http://othercoastcafe.com/,ChIJ16QpUcYVkFQRZYtdo4kqk5Q
+948,Haselwood Chevrolet GMC,"car_dealer, car_repair, store, point_of_interest, establishment","501 W Hills Blvd, Bremerton, WA 98312, USA",google_places,https://www.haselwood.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp+sales,ChIJaaZWkAI3kFQRwvDRjXmGiQg
+950,Haselwood Hyundai,"car_dealer, car_repair, store, point_of_interest, establishment","5008 Auto Center Blvd, Bremerton, WA 98312, USA",google_places,https://www.haselwoodhyundai.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp+sales,ChIJeSB4eB03kFQRhujWI6ePhos
+953,Heartland Toyota,"car_dealer, car_repair, store, point_of_interest, establishment","901 W Hills Blvd, Bremerton, WA 98312, USA",google_places,https://www.heartlandtoyota.com/?utm_source=google&utm_medium=organic&utm_campaign=GMB,ChIJJ20e6_02kFQRKgoudOMNX_M
+956,Elliott Bay Auto Brokers,"car_dealer, store, point_of_interest, establishment","13001 Aurora Ave N, Seattle, WA 98133, USA",google_places,https://www.ebautobrokers.com/?utm_source=Google&utm_medium=Organic&utm_campaign=GBP,ChIJRS_QLjkVkFQRS8QbfzHg9nU

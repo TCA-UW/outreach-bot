@@ -1,8 +1,9 @@
 CREATE TABLE companies (
     company_id SERIAL PRIMARY KEY,
-    company_name VARCHAR(255) NOT NULL,
+    company_name TEXT NOT NULL,
     industry VARCHAR(100),
     description TEXT,
+    website TEXT,
     source VARCHAR(50) -- 'google_maps', 'linkedin', 'manual', etc.
 );
 
@@ -29,3 +30,4 @@ CREATE TABLE emails (
 CREATE INDEX idx_companies_name ON companies(company_name);
 CREATE INDEX idx_emails_status ON emails(status);
 CREATE INDEX idx_emails_company_id ON emails(company_id);
+ALTER TABLE companies ADD COLUMN website VARCHAR(255);
