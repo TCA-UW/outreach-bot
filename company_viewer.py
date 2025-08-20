@@ -197,7 +197,7 @@ class CompanyViewer(QWidget):
             col_idx += 1
 
             status_dropdown = QComboBox()
-            status_dropdown.addItems(["Unsent", "Emailed", "In Talks", "Meeting Scheduled", "Rejected"])
+            status_dropdown.addItems(["Unsent", "Emailed", "Called", "Emailed & Called", "In Talks", "Meeting Scheduled", "Rejected"])
             status_dropdown.setCurrentText(status_value)
             status_dropdown.currentTextChanged.connect(
                 lambda value, cid=company_id, row=row_idx: self.update_status(cid, value, row)
@@ -219,7 +219,14 @@ class CompanyViewer(QWidget):
                 col_idx += 1
 
             if status_value == "Rejected":
-                self.set_full_row_color(row_idx, QColor(255, 171, 168))
+                self.set_full_row_color(row_idx, QColor(250, 217, 208))
+            elif status_value == "Emailed":
+                self.set_full_row_color(row_idx, QColor(200, 219, 167))
+            elif status_value == "Called":
+                self.set_full_row_color(row_idx, QColor(167, 195, 219))
+            elif status_value == "Emailed & Called":
+                self.set_full_row_color(row_idx, QColor(167, 219, 200))
+
 
         self.table.horizontalHeader().setDefaultSectionSize(200)
         self.table.horizontalHeader().setStretchLastSection(True)
@@ -278,7 +285,13 @@ class CompanyViewer(QWidget):
                 }).execute()
 
             if new_status == "Rejected":
-                self.set_full_row_color(row_idx, QColor(255, 181, 179)) 
+                self.set_full_row_color(row_idx, QColor(250, 217, 208)) 
+            elif new_status == "Emailed":
+                self.set_full_row_color(row_idx, QColor(200, 219, 167))
+            elif new_status == "Called":
+                self.set_full_row_color(row_idx, QColor(167, 195, 219))
+            elif new_status == "Emailed & Called":
+                self.set_full_row_color(row_idx, QColor(167, 219, 200))
             else:
                 self.clear_row_color(row_idx)
         except Exception as e:
