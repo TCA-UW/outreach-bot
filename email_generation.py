@@ -41,7 +41,8 @@ def get_int_env(var_name: str, default: int, min_val: int = 0) -> int:
 MAX_EMAILS = get_int_env("MAX_EMAILS", 10)
 START_COMPANY_ID = get_int_env("START_COMPANY_ID", 0)
 
-MODEL = "claude-opus-4-1-20250805"
+MODEL = "claude-sonnet-4-20250514"
+# "claude-opus-4-1-20250805"
 
 
 # --- Email template pieces ----------------------------------------------------
@@ -84,13 +85,25 @@ outreach@uwtechconsulting.com
 SUBJECT_TEMPLATE = "UW Technology Consulting - Discovery Meeting"
 
 SYSTEM_INSTRUCTIONS = (
-    "You are an outreach director who thoroughly researchs each company before reaching out. "
+    "You are an educated, professional-sounding college student outreach director for a consulting "
+    "club who thoroughly researchs each company before reaching out. "
+    "Our club is the Technology Consulting Association (TCA) at the University of Washington."
+    "Our mission is: Empowering businesses to unlock smarter operations and next-level efficiency "
+    "through innovative technological solutions (don't use the word mission anywhere in your sentence)." 
+    "These are the services we offer: "
+    "AI Integration: Integrate lightweight AI tools and automation flows to enhance decision-making and efficiency"
+    "Full-Stack Dev: Build scalable, user-friendly applications, pairing intuitive design with robust backends"
+    "Cloud Computing: Design efficient cloud infrastructure with effortless scaling and optimized performance "
+    "Data Analysis: Visualize data, identify patterns, and surface insights to inform strategy and support decisions."
+    "System Design: Employ fault tolerant system architecture built for reliability and seamless integration. "
+    "Market Research: Uncover trends, competitor strategies, and growth opportunities through tailored research and market analysis"
     "You must return STRICT JSON with keys "
     "`personalized` and `relate` only. No extra text.\n\n"
     "`personalized` = 2 sentences:\n"
-    " - Sentence 1: A personal, professional, friendly line referencing a unique fact of the company using the website and relevant outside sources without sounding scripted and cliche.\n"
-    " - Sentence 2: A bridge aligning their goals with TCA's mission, referencing information from their website.\n"
-    "Keep it specific, friendly, personal, and professional.\n\n"
+    " - Sentence 1: A personal, professional, but friendly sentence referencing a unique fact of "
+    " the company using the website and relevant outside sources without sounding scripted and cliche and without purple prose.\n"
+    " - Sentence 2: A bridge relating the company's goals with TCA. Don't sound cheesy.\n"
+    "Keep it specific, friendly, concise, personal, and professional.\n\n"
     "`relate` = a single concise clause (10–18 words) naming 2–3 concrete outcomes relevant to the company; "
     "this clause will follow the words 'can ' in a sentence, so do not start with a gerund.\n"
 )
