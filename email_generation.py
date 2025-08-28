@@ -42,10 +42,9 @@ MAX_EMAILS = get_int_env("MAX_EMAILS", 10)
 START_COMPANY_ID = get_int_env("START_COMPANY_ID", 0)
 
 MODEL = "claude-sonnet-4-20250514"
+# "claude-3-5-sonnet-20241022"  
 # "claude-opus-4-1-20250805"
 
-
-# --- Email template pieces ----------------------------------------------------
 
 TEMPLATE_TOP = """Hi {salutation},
 
@@ -70,10 +69,10 @@ LINKS_BLOCK = """
 </p>
 """
 
-TEMPLATE_BOTTOM = """I’ve attached our partnership guide, which gives more detail on how we operate, 
-what we offer, and past work. If you are open to a 15–20 minute conversation, we’d appreciate the 
+TEMPLATE_BOTTOM = """I've attached our partnership guide, which gives more detail on how we operate, 
+what we offer, and past work. If you are open to a 15–20 minute conversation, we'd appreciate the 
 chance to learn more about your goals and discuss how our student consultants might be of help. 
-We understand you are very busy, so we’re happy to work around your schedule. We are looking 
+We understand you are very busy, so we're happy to work around your schedule. We are looking 
 forward to hearing from you!
 
 Sincerely,
@@ -86,25 +85,28 @@ SUBJECT_TEMPLATE = "UW Technology Consulting - Discovery Meeting"
 
 SYSTEM_INSTRUCTIONS = (
     "You are an educated, professional-sounding college student outreach director for a consulting "
-    "club who thoroughly researchs each company before reaching out. "
-    "Our club is the Technology Consulting Association (TCA) at the University of Washington."
+    "club who thoroughly researches each company before reaching out. "
+    "Our club is the Technology Consulting Association (TCA) at the University of Washington. "
     "Our mission is: Empowering businesses to unlock smarter operations and next-level efficiency "
-    "through innovative technological solutions (don't use the word mission anywhere in your sentence)." 
+    "through innovative technological solutions (don't use the word mission anywhere in your sentence). " 
     "These are the services we offer: "
-    "AI Integration: Integrate lightweight AI tools and automation flows to enhance decision-making and efficiency"
-    "Full-Stack Dev: Build scalable, user-friendly applications, pairing intuitive design with robust backends"
-    "Cloud Computing: Design efficient cloud infrastructure with effortless scaling and optimized performance "
-    "Data Analysis: Visualize data, identify patterns, and surface insights to inform strategy and support decisions."
+    "AI Integration: Integrate lightweight AI tools and automation flows to enhance decision-making and efficiency. "
+    "Full-Stack Dev: Build scalable, user-friendly applications, pairing intuitive design with robust backends. "
+    "Cloud Computing: Design efficient cloud infrastructure with effortless scaling and optimized performance. "
+    "Data Analysis: Visualize data, identify patterns, and surface insights to inform strategy and support decisions. "
     "System Design: Employ fault tolerant system architecture built for reliability and seamless integration. "
-    "Market Research: Uncover trends, competitor strategies, and growth opportunities through tailored research and market analysis"
-    "You must return STRICT JSON with keys "
-    "`personalized` and `relate` only. No extra text.\n\n"
-    "`personalized` = 2 sentences:\n"
+    "Market Research: Uncover trends, competitor strategies, and growth opportunities through tailored research and market analysis. "
+    "\n\n"
+    "You MUST return ONLY valid JSON with exactly these keys: 'personalized' and 'relate'. "
+    "Do not include any other text before or after the JSON. "
+    "Do not wrap the JSON in markdown code blocks. "
+    "Example format: {\"personalized\": \"...\", \"relate\": \"...\"}\n\n"
+    "personalized = 2 sentences:\n"
     " - Sentence 1: A personal, professional, but friendly sentence referencing a unique fact of "
     " the company using the website and relevant outside sources without sounding scripted and cliche and without purple prose.\n"
     " - Sentence 2: A bridge relating the company's goals with TCA. Don't sound cheesy.\n"
     "Keep it specific, friendly, concise, personal, and professional.\n\n"
-    "`relate` = a single concise clause (10–18 words) naming 2–3 concrete outcomes relevant to the company; "
+    "relate = a single concise clause (10–18 words) naming 2–3 concrete outcomes relevant to the company; "
     "this clause will follow the words 'can ' in a sentence, so do not start with a gerund.\n"
 )
 
@@ -236,6 +238,7 @@ def build_batch_items(companies: List[Dict], contacts_by_company: Dict[int, List
                 website=site
             )
 
+            # Fixed payload structure for batch API - only include supported parameters
             payload = {
                 "model": MODEL,
                 "max_tokens": 240,
@@ -257,33 +260,37 @@ def build_batch_items(companies: List[Dict], contacts_by_company: Dict[int, List
     print(f"📝 Prepared {len(items)} batch items for processing")
     return items
 
-def create_batch_file(items: List[Tuple[str, Dict, Dict]]) -> BytesIO:
-    """Create JSONL file for batch processing."""
-    buf = BytesIO()
-    for custom_id, params, _ in items:
-        line = {"custom_id": custom_id, "params": params}
-        buf.write((json.dumps(line) + "\n").encode("utf-8"))
-    buf.seek(0)
-    return buf
-
 def submit_batch(items: List[Tuple[str, Dict, Dict]]):
     """Submit batch to Anthropic Message Batches API."""
     try:
-        # Check if batch processing is available
-        if not hasattr(anth, 'beta') or not hasattr(anth.beta, 'messages') or not hasattr(anth.beta.messages, 'batches'):
-            raise RuntimeError("Message Batches API requires anthropic SDK with beta.messages.batches support")
+        # Use the main messages.batches API, not beta
+        if not hasattr(anth, 'messages') or not hasattr(anth.messages, 'batches'):
+            raise RuntimeError("Message Batches API requires anthropic SDK with messages.batches support")
         
-        # Convert items to the correct batch format
+        # Convert items to the correct batch format using proper types
+        from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+        from anthropic.types.messages.batch_create_params import Request
+        
         requests = []
         for custom_id, params, _ in items:
-            requests.append({
-                "custom_id": custom_id,
-                "params": params
-            })
+            # Create proper MessageCreateParamsNonStreaming object
+            message_params = MessageCreateParamsNonStreaming(
+                model=params["model"],
+                max_tokens=params["max_tokens"],
+                messages=params["messages"],
+                system=params.get("system"),
+                temperature=params.get("temperature")
+            )
             
-        batch = anth.beta.messages.batches.create(
-            requests=requests
-        )
+            # Create Request object
+            request = Request(
+                custom_id=custom_id,
+                params=message_params
+            )
+            requests.append(request)
+            
+        print(f"📤 Submitting batch with {len(requests)} requests...")
+        batch = anth.messages.batches.create(requests=requests)
         return batch
     except Exception as e:
         print(f"❌ Error submitting batch: {e}")
@@ -296,7 +303,7 @@ def poll_batch_completion(batch_id: str, sleep_secs: int = 10, max_polls: int = 
     
     for attempt in range(max_polls):
         try:
-            batch = anth.beta.messages.batches.retrieve(batch_id)
+            batch = anth.messages.batches.retrieve(batch_id)
             status = batch.processing_status
             
             if attempt % 6 == 0 or status in ("ended", "failed", "expired", "canceled"):
@@ -325,7 +332,7 @@ def download_and_parse_results(batch) -> Tuple[Dict[str, Dict], Dict[str, str]]:
             raise RuntimeError("Batch has no results_url - batch may not have completed successfully")
             
         # Stream results from the results URL
-        results_stream = anth.beta.messages.batches.results(batch.id)
+        results_stream = anth.messages.batches.results(batch.id)
         
         results = {}
         failures = {}
@@ -343,19 +350,42 @@ def download_and_parse_results(batch) -> Tuple[Dict[str, Dict], Dict[str, str]]:
                     if hasattr(block, 'text')
                 ).strip()
                 
+                print(f"🔍 Debug - Response for {custom_id}: {text[:200]}...")  # Debug output
+                
                 try:
+                    # Try to find JSON in the response
+                    if not text:
+                        failures[custom_id] = "Empty response from Claude"
+                        continue
+                        
+                    # Sometimes Claude wraps JSON in markdown code blocks
+                    if text.startswith("```"):
+                        lines = text.split('\n')
+                        text = '\n'.join(lines[1:-1])  # Remove first and last line (```json and ```)
+                    
+                    # Try to extract JSON if it's mixed with other text
+                    if '{' in text and '}' in text:
+                        start = text.find('{')
+                        end = text.rfind('}') + 1
+                        text = text[start:end]
+                    
                     data = json.loads(text)
                     personalized = data.get("personalized", "").strip()
                     relate = data.get("relate", "").strip().rstrip(" .")
+                    
+                    if not personalized or not relate:
+                        failures[custom_id] = f"Missing required fields in JSON: {data}"
+                        continue
+                    
                     results[custom_id] = {
                         "personalized": personalized, 
                         "relate": relate
                     }
-                except json.JSONDecodeError:
-                    failures[custom_id] = f"Invalid JSON output: {text[:100]}..."
+                except json.JSONDecodeError as json_err:
+                    failures[custom_id] = f"JSON decode error: {str(json_err)} | Raw response: {text[:200]}..."
             else:
                 # Handle errors, cancellations, expirations
-                error_msg = getattr(result, 'error', f"Request {result.type}")
+                error_msg = str(getattr(result, 'error', f"Request {result.type}"))
                 failures[custom_id] = f"{result.type}: {error_msg}"
         
         print(f"✅ Parsed {len(results)} successful results, {len(failures)} failures")
@@ -418,6 +448,7 @@ def main():
     print(f"   • MAX_EMAILS: {MAX_EMAILS if MAX_EMAILS > 0 else 'unlimited'}")
     print(f"   • ONE_PER_CONTACT: {ONE_PER_CONTACT}")
     print(f"   • OUTREACH_PERSON: {OUTREACH_PERSON}")
+    print(f"   • MODEL: {MODEL}")
     print()
     
     # Fetch data
