@@ -1,21 +1,183 @@
 import sys
+import os
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTableWidget,
-    QTableWidgetItem, QHeaderView, QComboBox, QLineEdit, QPushButton, QInputDialog, QMessageBox
+    QTableWidgetItem, QHeaderView, QComboBox, QLineEdit, QPushButton, 
+    QInputDialog, QMessageBox, QDialog, QFormLayout, QDialogButtonBox,
+    QStackedWidget
 )
 from PyQt5.QtGui import QColor
-from PyQt5.QtCore import Qt, QTimer
-from db_connect import supabase 
+from PyQt5.QtCore import Qt, QTimer, pyqtSignal
+from db_connect import supabase
+
+class LoginDialog(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("Outreach Bot - Login")
+        self.setFixedSize(350, 250)
+        self.user = None
+        self.setModal(True)
+        
+        layout = QVBoxLayout(self)
+        
+        # Title
+        title = QLabel("Outreach Bot Login")
+        title.setStyleSheet("font-size: 18px; font-weight: bold; margin-bottom: 20px;")
+        title.setAlignment(Qt.AlignCenter)
+        layout.addWidget(title)
+        
+        # Form
+        form_layout = QFormLayout()
+        
+        self.email_input = QLineEdit()
+        self.email_input.setPlaceholderText("Enter your email")
+        form_layout.addRow("Email:", self.email_input)
+        
+        self.password_input = QLineEdit()
+        self.password_input.setEchoMode(QLineEdit.Password)
+        self.password_input.setPlaceholderText("Enter your password")
+        form_layout.addRow("Password:", self.password_input)
+        
+        layout.addLayout(form_layout)
+        
+        # Buttons
+        button_layout = QHBoxLayout()
+        
+        self.login_btn = QPushButton("Login")
+        self.login_btn.clicked.connect(self.login)
+        
+        button_layout.addWidget(self.login_btn)
+        
+        layout.addLayout(button_layout)
+        
+        # Enter key handling
+        self.password_input.returnPressed.connect(self.login)
+        self.email_input.returnPressed.connect(self.login)
+    
+    def login(self):
+        email = self.email_input.text().strip()
+        password = self.password_input.text()
+        
+        if not email or not password:
+            QMessageBox.warning(self, "Error", "Please enter both email and password")
+            return
+        
+        try:
+            self.login_btn.setEnabled(False)
+            self.login_btn.setText("Logging in...")
+            
+            # Supabase auth login
+            response = supabase.auth.sign_in_with_password({
+                "email": email,
+                "password": password
+            })
+            
+            if response.user:
+                self.user = response.user
+                QMessageBox.information(self, "Success", "Login successful!")
+                self.accept()
+            else:
+                QMessageBox.critical(self, "Login Failed", "Invalid email or password")
+        
+        except Exception as e:
+            QMessageBox.critical(self, "Login Error", f"Login failed: {str(e)}")
+        
+        finally:
+            self.login_btn.setEnabled(True)
+            self.login_btn.setText("Login")
 
 class CompanyViewer(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Company Database Viewer")
+        self.current_user = None
+        self.user_profile = None
+        
+        # First, show login dialog
+        if not self.authenticate():
+            sys.exit()
+        
+        self.setWindowTitle(f"Company Database Viewer - {self.get_user_display_name()}")
         self.resize(1200, 650)
 
         layout = QVBoxLayout()
         self.setLayout(layout)
 
+        # Header with user info and logout
+        self.create_header(layout)
+        
+        # Main content
+        self.create_main_content(layout)
+        
+        self.load_data()
+    
+    def authenticate(self):
+        """Handle user authentication"""
+        # Check if user is already logged in
+        try:
+            user = supabase.auth.get_user()
+            if user and user.user:
+                self.current_user = user.user
+                self.load_user_profile()
+                return True
+        except:
+            pass
+        
+        # Show login dialog
+        login_dialog = LoginDialog(self)
+        if login_dialog.exec_() == QDialog.Accepted:
+            self.current_user = login_dialog.user
+            self.load_user_profile()
+            return True
+        
+        return False
+    
+    def load_user_profile(self):
+        """Load user profile information"""
+        try:
+            response = supabase.table('user_profiles').select('*').eq('id', self.current_user.id).execute()
+            if response.data:
+                self.user_profile = response.data[0]
+            else:
+                # Create default profile if doesn't exist
+                username = self.current_user.email.split('@')[0]
+                supabase.table('user_profiles').insert({
+                    "id": self.current_user.id,
+                    "username": username,
+                    "full_name": username
+                }).execute()
+                self.user_profile = {"username": username, "full_name": username}
+        except Exception as e:
+            print(f"Error loading user profile: {e}")
+            self.user_profile = {"username": "User", "full_name": "User"}
+    
+    def get_user_display_name(self):
+        """Get display name for current user"""
+        if self.user_profile:
+            return self.user_profile.get('full_name', self.current_user.email)
+        return self.current_user.email if self.current_user else "Unknown"
+    
+    def create_header(self, layout):
+        """Create header with user info and logout"""
+        header_frame = QWidget()
+        header_frame.setStyleSheet("background-color: #f0f0f0; padding: 10px; border-bottom: 1px solid #ccc;")
+        header_layout = QHBoxLayout(header_frame)
+        
+        # User info
+        user_label = QLabel(f"Logged in as: {self.get_user_display_name()}")
+        user_label.setStyleSheet("font-weight: bold;")
+        header_layout.addWidget(user_label)
+        
+        header_layout.addStretch()
+        
+        # Logout button
+        logout_btn = QPushButton("Logout")
+        logout_btn.clicked.connect(self.logout)
+        header_layout.addWidget(logout_btn)
+        
+        layout.addWidget(header_frame)
+    
+    def create_main_content(self, layout):
+        """Create main content area"""
         header_layout = QVBoxLayout()
 
         title = QLabel("Company Records")
@@ -39,8 +201,15 @@ class CompanyViewer(QWidget):
 
         self.table = QTableWidget()
         layout.addWidget(self.table)
-
-        self.load_data()
+    
+    def logout(self):
+        """Handle user logout"""
+        try:
+            supabase.auth.sign_out()
+            QMessageBox.information(self, "Logged Out", "You have been logged out successfully.")
+            self.close()
+        except Exception as e:
+            QMessageBox.critical(self, "Logout Error", f"Error logging out: {str(e)}")
 
     def get_table_columns(self):
         try:
@@ -172,7 +341,9 @@ class CompanyViewer(QWidget):
             contact_list = company.get("contacts", [])
             emails = ", ".join([c.get("email_address") for c in contact_list if c.get("email_address")])
 
+            # Get email info - everyone sees the same data
             email_info = company.get("emails", [])
+            
             outreach_person = ""
             status_value = "Unsent"
             if email_info:
@@ -227,7 +398,6 @@ class CompanyViewer(QWidget):
             elif status_value == "Emailed & Called":
                 self.set_full_row_color(row_idx, QColor(167, 219, 200))
 
-
         self.table.horizontalHeader().setDefaultSectionSize(200)
         self.table.horizontalHeader().setStretchLastSection(True)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Interactive)
@@ -251,6 +421,7 @@ class CompanyViewer(QWidget):
         current_status = status_widget.currentText() if status_widget else "Unsent"
 
         try:
+            # Check if there's already a record for this company (shared by everyone)
             existing = supabase.table("emails").select("email_id").eq("company_id", company_id).execute().data
             if existing:
                 supabase.table("emails").update({
@@ -271,6 +442,7 @@ class CompanyViewer(QWidget):
         current_outreach = outreach_widget.text() if outreach_widget else ""
 
         try:
+            # Check if there's already a record for this company (shared by everyone)
             existing = supabase.table("emails").select("email_id").eq("company_id", company_id).execute().data
             if existing:
                 supabase.table("emails").update({
