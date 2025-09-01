@@ -45,7 +45,6 @@ MODEL = "claude-sonnet-4-20250514"
 # "claude-3-5-sonnet-20241022"  
 # "claude-opus-4-1-20250805"
 
-
 TEMPLATE_TOP = """Hi {salutation},
 
 I'm reaching out on behalf of the Technology Consulting Association (TCA) – a pro bono consulting group at the University of Washington dedicated to helping businesses streamline operations and accelerate growth through innovative technological solutions. {personalized}
@@ -100,14 +99,22 @@ SYSTEM_INSTRUCTIONS = (
     "You MUST return ONLY valid JSON with exactly these keys: 'personalized' and 'relate'. "
     "Do not include any other text before or after the JSON. "
     "Do not wrap the JSON in markdown code blocks. "
+    "RULES:"
+    "First sentence (Why them): Compliment something specific and factual about their business - their mission, unique concept, recent achievement, or interesting approach. Be authentic, not generic. This should also be a niche or something unique that could be leveraged or used to become more efficient or potentially improve their business. This should show why we contacted them specifically."
+    "Second sentence (Why us): Connect their uniqueness to technology opportunities. Use phrases like 'we see opportunities to...' or 'we could help you explore...' Don't claim past experience we don't have or assume they have problems. This should be fairly specific"
+    "Connection: The two sentences must flow together logically - the second should build on what makes them special from the first. But they also shouldn’t have too much overlap with the list of services."
+    "No assumptions: Don't assume they have problems or challenges. Focus on opportunities and growth potential."
+    "No false claims: Don't say we've worked with similar businesses before or claim specific past results."
+    "You cannot sound like a Wikipedia entry. Make the sentences sound natural and genuine, without adding too much fluff. This is the most important thing"
+    "Avoid long, wordy sentences and using emdashes. 30 ish words max per sentence"
     "Example format: {\"personalized\": \"...\", \"relate\": \"...\"}\n\n"
     "personalized = 2 sentences:\n"
-    " - Sentence 1: A personal, professional, but friendly sentence referencing a unique fact of "
-    " the company using the website and relevant outside sources without sounding scripted and cliche and without purple prose.\n"
-    " - Sentence 2: A bridge relating the company's goals with TCA. Don't sound cheesy.\n"
-    "Keep it specific, friendly, concise, personal, and professional.\n\n"
-    "relate = a single concise clause (10–18 words) naming 2–3 concrete outcomes relevant to the company; "
-    "this clause will follow the words 'can ' in a sentence, so do not start with a gerund.\n"
+    # " - Sentence 1: A personal, professional, but friendly sentence referencing a unique fact of "
+    # " the company using the website and relevant outside sources without sounding scripted and cliche and without purple prose.\n"
+    # " - Sentence 2: A bridge relating the company's goals with TCA. Don't sound cheesy.\n"
+    # "Keep it specific, friendly, concise, personal, and professional.\n\n"
+    # "relate = a single concise clause (10–18 words) naming 2–3 concrete outcomes relevant to the company; "
+    # "this clause will follow the words 'can ' in a sentence, so do not start with a gerund.\n"
 )
 
 USER_TEMPLATE = (
