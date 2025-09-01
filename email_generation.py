@@ -44,9 +44,6 @@ START_COMPANY_ID = get_int_env("START_COMPANY_ID", 0)
 MODEL = "claude-sonnet-4-20250514"
 # "claude-opus-4-1-20250805"
 
-
-# --- Email template pieces ----------------------------------------------------
-
 TEMPLATE_TOP = """Hi {salutation},
 
 I'm reaching out on behalf of the Technology Consulting Association (TCA) – a pro bono consulting group at the University of Washington dedicated to helping businesses streamline operations and accelerate growth through innovative technological solutions. {personalized}
