@@ -48,7 +48,7 @@ REPLY_TO  = os.getenv("REPLY_TO", FROM_EMAIL)
 
 SEND_LIMIT = int(os.getenv("SEND_LIMIT", "0"))  # 0 = unlimited
 CONFIRM_EACH = os.getenv("CONFIRM_EACH", "true").lower() == "true"
-ONLY_COMPANY_ID = int(os.getenv("ONLY_COMPANY_ID", "0"))
+START_COMPANY_ID = int(os.getenv("START_COMPANY_ID", "1"))
 
 if not SMTP_HOST or not SMTP_USER or not SMTP_PASS or not FROM_EMAIL:
     print("❌ Missing SMTP settings. Required: SMTP_HOST, SMTP_USER, SMTP_PASS, FROM_EMAIL")
@@ -91,14 +91,35 @@ def to_plain_text(s: str) -> str:
     """Ensure CRLF and reasonable formatting for plain text."""
     return s.replace("\r\n", "\n").replace("\r", "\n")
 
+# def to_html(s: str) -> str:
+#     """Very light plaintext -> HTML conversion: paragraphs + <br> line breaks."""
+#     import html
+#     esc = html.escape(s)
+#     newline = '\n'
+#     br_tag = '<br>'
+#     parts = [f"<p>{p.replace(newline, br_tag)}</p>" for p in esc.split("\n\n")]
+#     return "\n".join(parts)
+
+
 def to_html(s: str) -> str:
-    """Very light plaintext -> HTML conversion: paragraphs + <br> line breaks."""
-    import html
-    esc = html.escape(s)
-    newline = '\n'
-    br_tag = '<br>'
-    parts = [f"<p>{p.replace(newline, br_tag)}</p>" for p in esc.split("\n\n")]
-    return "\n".join(parts)
+    """
+    Render body as HTML.
+    - If it already looks like HTML (starts with "<"), pass through.
+    - Otherwise treat as Markdown and convert to HTML with sane lists + newlines.
+    """
+    if not s:
+        return ""
+    src = s.strip()
+    if src.lstrip().startswith("<"):
+        return src  # already HTML
+
+    import markdown as md
+    # 'extra' adds tables, code blocks; 'sane_lists' gives proper <ul>/<ol>;
+    # 'nl2br' respects single newlines; 'smarty' nice quotes (optional)
+    return md.markdown(
+        src,
+        extensions=["extra", "sane_lists", "nl2br", "smarty"]
+    )
 
 def ask_confirm(prompt: str) -> bool:
     if not CONFIRM_EACH:
@@ -130,16 +151,41 @@ def personalize_content(content: str, recipient: Dict, company: Dict) -> str:
     
     return personalized
 
+def fetch_company_ids_with_drafts(start_company_id: int) -> list[int]:
+    """
+    Return sorted distinct company_id values that have draft emails,
+    starting from start_company_id (inclusive).
+    """
+    # Pull all drafts >= start_company_id and dedupe in Python
+    rows = (sb.table("emails")
+              .select("company_id,status")
+              .eq("status", "draft")
+              .gte("company_id", start_company_id)
+              .order("company_id", desc=False)
+              .execute()
+            ).data or []
+    seen = set()
+    ordered = []
+    for r in rows:
+        cid = r.get("company_id")
+        if cid is None:
+            continue
+        if cid not in seen:
+            seen.add(cid)
+            ordered.append(cid)
+    return ordered
+
 # supabase
-def fetch_drafts() -> List[Dict]:
+def fetch_drafts(company_id: int) -> List[Dict]:
+    """
+    Fetch all draft email rows for a specific company_id.
+    """
     q = (sb.table("emails")
            .select("email_id, company_id, subject, body, status, sent_at, outreach_person")
            .eq("status", "draft")
+           .eq("company_id", company_id)
            .order("email_id", desc=False))
-    if ONLY_COMPANY_ID > 0:
-        q = q.eq("company_id", ONLY_COMPANY_ID)
-    res = q.execute().data or []
-    return res
+    return q.execute().data or []
 
 def fetch_recipients_for_company(company_id: int) -> List[Dict]:
     """Fetch contacts (recipients) for a given company."""
@@ -181,6 +227,8 @@ def smtp_send(to_addr: str, subject: str, body_text: str, body_html: str | None 
         # multipart/alternative: text then html
         msg.set_content(to_plain_text(body_text))
         msg.add_alternative(body_html, subtype="html")
+        # msg.set_content(to_plain_text(personalized_body), subtype="plain", charset="utf-8")
+        # msg.add_alternative(html_body, subtype="html", charset="utf-8")
     else:
         msg.set_content(to_plain_text(body_text))
 
@@ -203,99 +251,108 @@ def smtp_send(to_addr: str, subject: str, body_text: str, body_html: str | None 
 def main():
     print("📨 Email Sender starting...")
     print(f"   FROM: {FROM_NAME} <{FROM_EMAIL}>   SMTP: {SMTP_HOST}:{SMTP_PORT} TLS={SMTP_USE_TLS}")
-    print(f"   CONFIRM_EACH={CONFIRM_EACH}  SEND_LIMIT={SEND_LIMIT or '∞'}  ONLY_COMPANY_ID={ONLY_COMPANY_ID or 'all'}")
+    print(f"   CONFIRM_EACH={CONFIRM_EACH}  COMPANY_LIMIT={SEND_LIMIT or '∞'}  START_COMPANY_ID={START_COMPANY_ID}")
 
-    drafts = fetch_drafts()
-    if not drafts:
-        print("✅ No drafts to send (emails.status='draft' is empty).")
+    # drafts = fetch_drafts()
+        # Determine which companies to process
+    company_ids = fetch_company_ids_with_drafts(START_COMPANY_ID)
+    if not company_ids:
+        print("✅ No drafts to send (no companies with status='draft' at or after START_COMPANY_ID).")
         return
+
+    # Limit to SEND_LIMIT companies (SEND_LIMIT now means 'company count')
+    if SEND_LIMIT and len(company_ids) > SEND_LIMIT:
+        company_ids = company_ids[:SEND_LIMIT]
+    print(f"🧭 Companies to process: {company_ids}")
 
     total_sends = 0
 
-    for draft in drafts:
-        if SEND_LIMIT and total_sends >= SEND_LIMIT:
-            print(f"🛑 Reached SEND_LIMIT={SEND_LIMIT}. Stopping.")
-            break
+    for company_id in company_ids:
+        drafts = fetch_drafts(company_id)
+        if not drafts:
+            # Could happen if drafts were sent/changed between queries
+            print(f"⚠️  No remaining drafts for company_id={company_id}, skipping.")
+            continue
 
-        email_id = draft["email_id"]
-        company_id = draft["company_id"]
-        subject = (draft.get("subject") or "").strip()
-        body    = (draft.get("body") or "").strip()
-        outreach_person = draft.get("outreach_person", "")
-
-        # Fetch company info for personalization
+        # Company info (for personalization)
         company_info = fetch_company_info(company_id)
         if not company_info:
-            print(f"⚠️  No company info found for company_id={company_id}; skipping email_id={email_id}")
+            print(f"⚠️  No company info for company_id={company_id}, skipping.")
             continue
 
+        # Recipients for this company
         recipients = fetch_recipients_for_company(company_id)
         if not recipients:
-            print(f"⚠️  No contacts with email for company_id={company_id}; skipping email_id={email_id}")
+            print(f"⚠️  No contacts with email for company_id={company_id}; skipping.")
             continue
 
-        print(f"\n🏢 Processing draft for company: {company_info.get('company_name', 'Unknown Company')}")
-        print(f"   Draft ID: {email_id} | Recipients found: {len(recipients)}")
+        print(f"\n🏢 Processing company: {company_info.get('company_name','Unknown')} (company_id={company_id})")
+        print(f"   Drafts found: {len(drafts)} | Recipients: {len(recipients)}")
 
-        any_sent = False
-        for r in recipients:
-            if SEND_LIMIT and total_sends >= SEND_LIMIT:
-                print(f"🛑 Reached SEND_LIMIT={SEND_LIMIT}. Stopping.")
-                break
+        # Process each draft for this company (usually one, but supports many)
+        for draft in drafts:
+            email_id = draft["email_id"]
+            subject = (draft.get("subject") or "").strip()
+            body    = (draft.get("body") or "").strip()
+            outreach_person = draft.get("outreach_person", "")
 
-            to_addr = r["email_address"].strip()
-            ok, why = valid_email_syntax(to_addr)
-            if not ok:
-                print(f"⏭️  Skip invalid address (syntax): {to_addr}")
-                continue
+            any_sent = False
 
-            domain = to_addr.split("@", 1)[1]
-            if not domain_can_receive(domain):
-                print(f"⏭️  Skip address (domain has no MX/A): {to_addr}")
-                continue
+            for r in recipients:
+                to_addr = r["email_address"].strip()
+                ok, _ = valid_email_syntax(to_addr)
+                if not ok:
+                    print(f"⏭️  Skip invalid address (syntax): {to_addr}")
+                    continue
 
-            # Personalize content
-            personalized_subject = personalize_content(subject, r, company_info)
-            personalized_body = personalize_content(body, r, company_info)
-            html_body = to_html(personalized_body)
+                domain = to_addr.split("@", 1)[1]
+                if not domain_can_receive(domain):
+                    print(f"⏭️  Skip address (domain has no MX/A): {to_addr}")
+                    continue
 
-            # Preview
-            recipient_name = r.get("contact_name", "Unknown Contact")
-            recipient_title = r.get("contact_title", "")
-            title_display = f" ({recipient_title})" if recipient_title else ""
-            
-            print("\n" + "="*80)
-            print(f"📧 EMAIL PREVIEW")
-            print(f"To:      {recipient_name}{title_display} <{to_addr}>")
-            print(f"Company: {company_info.get('company_name', 'Unknown')}")
-            print(f"Subject: {personalized_subject}")
-            print(f"From:    {outreach_person or FROM_NAME}")
-            print("-" * 80)
-            print("Body:")
-            print(personalized_body[:1000] + ("..." if len(personalized_body) > 1000 else ""))
-            print("="*80)
+                # Personalize & preview
+                personalized_subject = personalize_content(subject, r, company_info)
+                personalized_body = personalize_content(body, r, company_info)
+                html_body = personalized_body if personalized_body.lstrip().startswith("<") else to_html(personalized_body)
 
-            if not ask_confirm("Send this email?"):
-                print("   ↪️  Skipped by user.")
-                continue
+                # html_body = to_html(personalized_body)
 
-            try:
-                smtp_send(to_addr, personalized_subject, personalized_body, body_html=html_body)
-                any_sent = True
-                total_sends += 1
-                print(f"✅ Sent to {recipient_name} <{to_addr}>")
-            except (smtplib.SMTPException, socket.error) as e:
-                print(f"❌ Send failed to {to_addr}: {e}")
+                recipient_name = r.get("contact_name", "Unknown Contact")
+                recipient_title = r.get("contact_title", "")
+                title_display = f" ({recipient_title})" if recipient_title else ""
 
-        if any_sent:
-            # mark the draft as 'sent' once at least one recipient succeeds
-            try:
-                mark_email_sent(email_id, sent_count=1)
-                print(f"🗂️  Marked email_id={email_id} as sent.")
-            except Exception as e:
-                print(f"⚠️  Could not update status for email_id={email_id}: {e}")
+                print("\n" + "="*80)
+                print(f"📧 EMAIL PREVIEW")
+                print(f"To:      {recipient_name}{title_display} <{to_addr}>")
+                print(f"Company: {company_info.get('company_name', 'Unknown')}")
+                print(f"Subject: {personalized_subject}")
+                print(f"From:    {outreach_person or FROM_EMAIL}")
+                print("-" * 80)
+                print("Body:")
+                print(personalized_body[:1000] + ("..." if len(personalized_body) > 1000 else ""))
+                print("="*80)
+
+                if not ask_confirm("Send this email?"):
+                    print("   ↪️  Skipped by user.")
+                    continue
+
+                try:
+                    smtp_send(to_addr, personalized_subject, personalized_body, body_html=html_body)
+                    any_sent = True
+                    total_sends += 1
+                    print(f"✅ Sent to {recipient_name} <{to_addr}>")
+                except (smtplib.SMTPException, socket.error) as e:
+                    print(f"❌ Send failed to {to_addr}: {e}")
+
+            if any_sent:
+                try:
+                    mark_email_sent(email_id, sent_count=1)
+                    print(f"🗂️  Marked email_id={email_id} as sent.")
+                except Exception as e:
+                    print(f"⚠️  Could not update status for email_id={email_id}: {e}")
 
     print(f"\n🏁 Done. Total emails sent this run: {total_sends}")
+
 
 if __name__ == "__main__":
     main()
