@@ -1,6 +1,6 @@
-.env
 .venv/
-venv/
 __pycache__/
 *.pyc
+.env
+*.lock
 .DS_Store
