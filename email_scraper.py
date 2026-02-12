@@ -5,10 +5,35 @@ from urllib.parse import urljoin, urlparse
 import time
 from db_connect import supabase
 
-CONTACT_PATHS = ['contact', 'contact-us', 'about', 'about-us', 'team', 'support', 'staff', 'help', 
+from email_check import basic_email_syntax_ok, dns_valid_for_email
+
+CONTACT_PATHS = ['contact', 'contact-us', 'about', 'about-us', 'team', 'support', 'staff', 'help',
                  'info', 'email', 'reach-us', 'get-in-touch', 'leadership', 'management']
 
-start_company_id = 2965
+start_company_id = 3000
+
+_domain_cache: dict[str, bool] = {}  # caches domain -> deliverable (MX or A/AAAA)
+
+def is_deliverable(email: str) -> bool:
+    if not email:
+        return False
+
+    ok, _ = basic_email_syntax_ok(email)
+    if not ok:
+        return False
+
+    try:
+        domain = email.split("@", 1)[1].strip().lower()
+    except Exception:
+        return False
+
+    cached = _domain_cache.get(domain)
+    if cached is not None:
+        return cached
+
+    good, _why = dns_valid_for_email(domain)
+    _domain_cache[domain] = bool(good)
+    return bool(good)
 
 def find_emails_in_text(text):
     pattern = r'\b[a-zA-Z0-9]([a-zA-Z0-9._+-]*[a-zA-Z0-9])?@[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])?\.[a-zA-Z]{2,}\b'
@@ -230,10 +255,15 @@ def extract_emails_from_website(website):
         found.update(emails)
         time.sleep(1) 
 
-    # validity
-    valid_emails = [email for email in found if is_valid_email(email)]
+    # First pass: regex/format filter
+    valid_format = [e for e in found if is_valid_email(e)]
+
+    # Second pass: DNS deliverability check (MX or A/AAAA)
+    deliverable = [e for e in valid_format if is_deliverable(e)]
+
+    return list(set(deliverable))
     
-    return list(set(valid_emails))
+
 
 def run_email_scraper_on_companies(start_company_id=None):
     query = supabase.table("companies").select("company_id, company_name, website").order("company_id")
@@ -266,6 +296,9 @@ def run_email_scraper_on_companies(start_company_id=None):
                 if email in existing_emails:
                     print(f"[SKIP] Email already exists: {email}")
                     continue
+                if not is_deliverable(email):
+                    print(f"[SKIP] Not deliverable (DNS): {email}")
+                    continue
 
                 try:
                     supabase.table("contacts").insert({
@@ -279,7 +312,7 @@ def run_email_scraper_on_companies(start_company_id=None):
                     print(f"[ERROR] Failed to insert {email}: {e}")
             
             if new_emails_added == 0:
-                print(f"[INFO] No new emails added for {name} (all already existed)")
+                print(f"[INFO] No new emails added for {name}")
         else:
             print(f"[SKIP] No emails found for {name}")
 

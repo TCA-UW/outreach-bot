@@ -30,6 +30,7 @@ keywords = [
 seen_place_ids = set()
 inserted = 0
 skipped = 0
+no_website = 0
 
 for keyword in keywords:
     print(f"\nSearching for: {keyword}")
@@ -63,8 +64,8 @@ for keyword in keywords:
         seen_place_ids.add(place_id)
 
         name = place.get("name")
-        types_list = place.get("types", [])
-        types = ", ".join(types_list)
+        # types_list = place.get("types", [])
+        # types = ", ".join(types_list)
 
         try:
             time.sleep(1)
@@ -73,6 +74,11 @@ for keyword in keywords:
             website = details.get("website")
         except Exception as e:
             print(f"[ERROR] {name}: {e}")
+            continue
+
+        if not website:
+            print(f"[SKIP - no website] {name}")
+            no_website +=1
             continue
 
         try:
@@ -89,15 +95,12 @@ for keyword in keywords:
         try:
             supabase.table("companies").insert({
                 'company_name': name,
-                'industry': types,
                 'description': description,
-                'source': "google_places",
-                'website': website,
-                'place_id': place_id
+                'website': website
             }).execute()
             print(f"[ADDED] {name}")
             inserted += 1
         except Exception as e:
             print(f"[ERROR inserting] {name}: {e}")
 
-print(f"\nInserted {inserted}, Skipped {skipped}")
+print(f"\nInserted {inserted}, Skipped {skipped}, No Website {no_website}")
