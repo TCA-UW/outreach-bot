@@ -11,3 +11,9 @@ supabase: Client = create_client(
 
 def get_client():
     return supabase
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass

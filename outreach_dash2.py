@@ -4,18 +4,16 @@
 import os, sys, threading, subprocess, traceback
 from functools import lru_cache
 from typing import List, Dict, Any, Optional
+from datetime import datetime
 
 from PySide6.QtCore import Qt, Signal, QObject, QThread, Slot
-from PySide6.QtGui import QAction
+from PySide6.QtGui import QAction, QColor
 from PySide6.QtWidgets import (
     QApplication, QWidget, QMainWindow, QTabWidget, QVBoxLayout, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QSpinBox, QTableWidget, QTableWidgetItem,
     QHeaderView, QMessageBox, QListWidget, QListWidgetItem, QTextEdit, QSplitter,
-    QGroupBox, QFileDialog
+    QGroupBox, QFileDialog, QComboBox
 )
-
-from dotenv import load_dotenv
-load_dotenv()
 
 
 # ---------- Paths / Repo root ----------
@@ -24,6 +22,8 @@ GEN_SCRIPT = os.path.join(BASE_DIR, "email_generation.py")
 SEND_SCRIPT = os.path.join(BASE_DIR, "email_send.py")
 SCANNER_SCRIPT = os.path.join(BASE_DIR, "get_places_and_emails.py")
 
+# Get current user's name from environment (can be overridden in .env)
+CURRENT_USER = os.getenv("OUTREACH_PERSON", "Gus A")
 
 # ---------- Log helper ----------
 def exc_str(e: Exception) -> str:
@@ -133,11 +133,23 @@ def sb_list_contacts(company_id: int) -> List[Dict[str, Any]]:
     return [r for r in rows if r.get("email_address") and is_valid_email(r["email_address"].strip())]
 
 
-def sb_list_drafts(company_id: int) -> List[Dict[str, Any]]:
+def sb_list_all_drafts(company_id: int) -> List[Dict[str, Any]]:
+    """Get ALL drafts for a company (draft, sent, and unsent), sorted with sent emails last"""
     if not SUPABASE_OK:
         raise RuntimeError("Supabase client import failed.\n" + SUPABASE_ERR)
-    result = supabase.table("emails").select("email_id, company_id, subject, body, status").eq("company_id", company_id).eq("status", "draft").order("email_id", desc=False).execute()
-    return result.data or []
+    result = supabase.table("emails").select("email_id, company_id, subject, body, status, sent_at, replied_at, outreach_person").eq("company_id", company_id).order("email_id", desc=False).execute()
+    rows = result.data or []
+    
+    # Sort: drafts and unsent first, then emailed/sent at the bottom
+    def sort_key(email):
+        status = (email.get("status") or "").lower()
+        # Emailed/sent emails go last (return 1), others first (return 0)
+        if status in ("emailed", "sent"):
+            return (1, email.get("email_id", 0))
+        else:
+            return (0, email.get("email_id", 0))
+    
+    return sorted(rows, key=sort_key)
 
 
 def sb_update_draft(email_id: int, subject: str, body: str) -> None:
@@ -146,11 +158,34 @@ def sb_update_draft(email_id: int, subject: str, body: str) -> None:
     supabase.table("emails").update({"subject": subject, "body": body}).eq("email_id", email_id).execute()
 
 
+def sb_update_email_status(email_id: int, status: str, outreach_person: str = None) -> None:
+    """Update email status (Emailed, Unsent, Draft) and optionally who sent it"""
+    if not SUPABASE_OK:
+        raise RuntimeError("Supabase client import failed.\n" + SUPABASE_ERR)
+    
+    update_data = {"status": status}
+    
+    # If marking as Emailed/Sent, record sent_at timestamp and who sent it
+    if status.lower() in ("emailed", "sent"):
+        update_data["sent_at"] = datetime.utcnow().isoformat()
+        if outreach_person:
+            update_data["outreach_person"] = outreach_person
+    elif status.lower() == "unsent":
+        # Clear sent_at when marking as unsent
+        update_data["sent_at"] = None
+    
+    supabase.table("emails").update(update_data).eq("email_id", email_id).execute()
+
+
 def sb_insert_draft(company_id: int, subject: str, body: str) -> int:
     if not SUPABASE_OK:
         raise RuntimeError("Supabase client import failed.\n" + SUPABASE_ERR)
     res = supabase.table("emails").insert({
-        "company_id": company_id, "status": "draft", "subject": subject, "body": body
+        "company_id": company_id, 
+        "status": "draft", 
+        "subject": subject, 
+        "body": body,
+        "outreach_person": CURRENT_USER,
     }).execute()
     
     if res.data and len(res.data) > 0 and "email_id" in res.data[0]:
@@ -163,10 +198,9 @@ def sb_insert_draft(company_id: int, subject: str, body: str) -> int:
     raise RuntimeError("Failed to retrieve email_id after insert")
 
 
-def sb_mark_sent(email_id: int) -> None:
-    if not SUPABASE_OK:
-        raise RuntimeError("Supabase client import failed.\n" + SUPABASE_ERR)
-    supabase.table("emails").update({"status": "sent"}).eq("email_id", email_id).execute()
+def sb_mark_sent(email_id: int, outreach_person: str = None) -> None:
+    """Mark email as sent/emailed"""
+    sb_update_email_status(email_id, "Emailed", outreach_person or CURRENT_USER)
 
 
 # ---------- Generator ----------
@@ -390,6 +424,7 @@ class CompaniesTab(QWidget):
         if not SENDER_OK: 
             msgs.append("  " + (SENDER_ERR.splitlines()[-1] if SENDER_ERR else "Unknown error"))
         msgs.append(f"email_generation.anthropic_generate_for_company: {'OK' if ANTH_GEN_OK else 'MISSING'}")
+        msgs.append(f"Current User: {CURRENT_USER}")
         msgs.append(f"email_generation.py path: {GEN_SCRIPT} ({'exists' if os.path.isfile(GEN_SCRIPT) else 'NOT FOUND'})")
         self.log.append("\n".join(["🔎 Diagnostics:"] + msgs) + "\n")
 
@@ -424,23 +459,45 @@ class ComposeTab(QWidget):
         ll.addWidget(QLabel("Recipients (valid emails only)"))
         self.contact_list = QListWidget()
         ll.addWidget(self.contact_list, 1)
-        ll.addWidget(QLabel("Drafts"))
+        ll.addWidget(QLabel("Drafts (sent emails at bottom)"))
         self.draft_list = QListWidget()
         self.draft_list.itemSelectionChanged.connect(self.select_draft)
         ll.addWidget(self.draft_list, 1)
 
         right = QWidget()
         rl = QVBoxLayout(right)
-        form = QGroupBox("Editor")
-        fl = QVBoxLayout(form)
+        
+        # Status controls
+        status_group = QGroupBox("Email Status")
+        status_layout = QHBoxLayout(status_group)
+        status_layout.addWidget(QLabel("Status:"))
+        self.status_combo = QComboBox()
+        self.status_combo.addItems(["Draft", "Unsent", "Emailed"])
+        self.status_combo.currentTextChanged.connect(self.status_changed)
+        status_layout.addWidget(self.status_combo)
+        
+        status_layout.addWidget(QLabel("Sent by:"))
+        self.sender_label = QLabel("—")
+        status_layout.addWidget(self.sender_label)
+        status_layout.addStretch(1)
+        
+        self.mark_status_btn = QPushButton("Update Status")
+        self.mark_status_btn.clicked.connect(self.update_status)
+        status_layout.addWidget(self.mark_status_btn)
+        rl.addWidget(status_group)
+        
+        # Editor
+        editor = QGroupBox("Editor")
+        ev = QVBoxLayout(editor)
         self.subj_edit = QLineEdit()
         self.body_edit = QTextEdit()
-        fl.addWidget(QLabel("Subject"))
-        fl.addWidget(self.subj_edit)
-        fl.addWidget(QLabel("Body (HTML or plain text)"))
-        fl.addWidget(self.body_edit, 1)
-        rl.addWidget(form, 1)
+        ev.addWidget(QLabel("Subject"))
+        ev.addWidget(self.subj_edit)
+        ev.addWidget(QLabel("Body (HTML or plain text)"))
+        ev.addWidget(self.body_edit, 1)
+        rl.addWidget(editor, 1)
         
+        # Action buttons
         actions = QHBoxLayout()
         self.save_btn = QPushButton("Save Draft")
         self.save_btn.clicked.connect(self.save_draft)
@@ -469,6 +526,8 @@ class ComposeTab(QWidget):
         self.draft_list.clear()
         self.subj_edit.clear()
         self.body_edit.clear()
+        self.status_combo.setCurrentText("Draft")
+        self.sender_label.setText("—")
 
     @Slot()
     def load_company_data(self):
@@ -495,8 +554,8 @@ class ComposeTab(QWidget):
                 it.setData(Qt.UserRole, c)
                 self.contact_list.addItem(it)
             
-            # Now load drafts
-            run_in_thread(lambda: sb_list_drafts(cid), after_drafts)
+            # Now load ALL drafts (including sent)
+            run_in_thread(lambda: sb_list_all_drafts(cid), after_drafts)
 
         @Slot(object, object)
         def after_drafts(res, err):
@@ -507,11 +566,34 @@ class ComposeTab(QWidget):
                 return
             self.drafts = res or []
             self.draft_list.clear()
+            
             for d in self.drafts:
-                it = QListWidgetItem(f"#{d['email_id']}  {d.get('subject') or '(no subject)'}")
+                status = (d.get("status") or "Draft").capitalize()
+                sent_by = d.get("outreach_person") or ""
+                
+                # Create label with status indicator
+                label = f"#{d['email_id']}  {d.get('subject') or '(no subject)'}"
+                if status in ("Emailed", "Sent"):
+                    label = f"✉️ {label} ({sent_by})"
+                elif status == "Unsent":
+                    label = f"✗ {label}"
+                
+                it = QListWidgetItem(label)
                 it.setData(Qt.UserRole, d)
+                
+                # Color code by status
+                if status in ("Emailed", "Sent"):
+                    it.setForeground(QColor("#666"))  # Gray for sent
+                elif status == "Unsent":
+                    it.setForeground(QColor("#d32f2f"))  # Red for unsent
+                
                 self.draft_list.addItem(it)
-            self.log.append(f"✅ {len(self.contacts)} valid contacts; {len(self.drafts)} drafts.")
+            
+            draft_count = sum(1 for d in self.drafts if (d.get("status") or "").lower() == "draft")
+            sent_count = sum(1 for d in self.drafts if (d.get("status") or "").lower() in ("emailed", "sent"))
+            self.log.append(f"✅ {len(self.contacts)} contacts; {draft_count} drafts, {sent_count} sent.")
+            
+            # Auto-select first draft
             if self.drafts:
                 self.draft_list.setCurrentRow(0)
         
@@ -524,11 +606,63 @@ class ComposeTab(QWidget):
             self.active_draft = None
             self.subj_edit.clear()
             self.body_edit.clear()
+            self.status_combo.setCurrentText("Draft")
+            self.sender_label.setText("—")
             return
+        
         d = items[0].data(Qt.UserRole)
         self.active_draft = d
         self.subj_edit.setText(d.get("subject") or "")
         self.body_edit.setPlainText(d.get("body") or "")
+        
+        # Update status dropdown
+        status = (d.get("status") or "Draft").capitalize()
+        if status == "Sent":
+            status = "Emailed"
+        self.status_combo.setCurrentText(status)
+        
+        # Update sender label
+        sender = d.get("outreach_person") or "—"
+        self.sender_label.setText(sender)
+
+    @Slot(str)
+    def status_changed(self, new_status: str):
+        """Called when status dropdown changes"""
+        # Just update UI, don't save to DB until "Update Status" is clicked
+        pass
+
+    @Slot()
+    def update_status(self):
+        """Update the email status in the database"""
+        if not self.active_draft:
+            QMessageBox.information(self, "No draft", "Select a draft first.")
+            return
+        
+        eid = int(self.active_draft["email_id"])
+        new_status = self.status_combo.currentText()
+        
+        self.mark_status_btn.setDisabled(True)
+        
+        @Slot(object, object)
+        def done(_res, err):
+            self.mark_status_btn.setDisabled(False)
+            if err:
+                self.log.append("❌ Status update failed:\n" + exc_str(err))
+                QMessageBox.critical(self, "Error", str(err))
+                return
+            
+            self.active_draft["status"] = new_status
+            if new_status in ("Emailed", "Sent"):
+                self.active_draft["outreach_person"] = CURRENT_USER
+                self.sender_label.setText(CURRENT_USER)
+            
+            self.log.append(f"✅ Email #{eid} marked as {new_status}")
+            QMessageBox.information(self, "Status Updated", f"Email marked as {new_status}")
+            
+            # Reload to show updated sorting
+            self.load_company_data()
+        
+        run_in_thread(lambda: sb_update_email_status(eid, new_status, CURRENT_USER), done)
 
     @Slot()
     def generate_draft_now(self):
@@ -629,8 +763,13 @@ class ComposeTab(QWidget):
             sent, errs, eid = result
             if sent:
                 try:
-                    sb_mark_sent(eid)
-                    self.log.append(f"✅ Sent {sent} emails. Draft #{eid} marked as sent.")
+                    sb_mark_sent(eid, CURRENT_USER)
+                    self.log.append(f"✅ Sent {sent} emails. Draft #{eid} marked as sent by {CURRENT_USER}.")
+                    # Update local status
+                    self.status_combo.setCurrentText("Emailed")
+                    self.sender_label.setText(CURRENT_USER)
+                    # Reload to show updated sorting
+                    self.load_company_data()
                 except Exception as e:
                     self.log.append("⚠️ Could not mark sent: " + str(e))
                 QMessageBox.information(self, "Sent", f"Emails sent: {sent}")

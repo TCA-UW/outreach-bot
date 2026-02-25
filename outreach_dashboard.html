@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outreach — UW Technology Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #18181f;
+    --surface3: #1e1e28;
+    --border: rgba(255,255,255,0.06);
+    --border2: rgba(255,255,255,0.12);
+    --accent: #7c6dff;
+    --accent2: #a78bfa;
+    --accent-glow: rgba(124, 109, 255, 0.15);
+    --green: #22d3a5;
+    --green-dim: rgba(34, 211, 165, 0.12);
+    --red: #f87171;
+    --yellow: #fbbf24;
+    --text: #e8e8f0;
+    --text2: #8888a0;
+    --text3: #555568;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+
+  html { height: 100%; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Ambient background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(124,109,255,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -20%;
+    right: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(34,211,165,0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Header ── */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,15,0.8);
+    backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--accent), var(--green));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: white;
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+  .logo-text span {
+    color: var(--text3);
+    font-weight: 400;
+  }
+
+  header nav {
+    display: flex;
+    gap: 2px;
+    margin-left: auto;
+    background: var(--surface2);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .nav-btn {
+    padding: 6px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text2);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.15s;
+    letter-spacing: 0.3px;
+  }
+  .nav-btn:hover { color: var(--text); background: var(--surface3); }
+  .nav-btn.active {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 20px rgba(124,109,255,0.4);
+  }
+
+  .header-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text3);
+    margin-left: 16px;
+  }
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── Layout ── */
+  .app-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 20px 20px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 12px;
+  }
+
+  .search-wrap {
+    position: relative;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text3);
+  }
+  .search-input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 8px 10px 8px 32px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .search-input::placeholder { color: var(--text3); }
+
+  .company-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+  .company-list::-webkit-scrollbar { width: 4px; }
+  .company-list::-webkit-scrollbar-track { background: transparent; }
+  .company-list::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  .company-item {
+    padding: 12px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 2px;
+    border: 1px solid transparent;
+    position: relative;
+  }
+  .company-item:hover {
+    background: var(--surface2);
+    border-color: var(--border);
+  }
+  .company-item.active {
+    background: var(--accent-glow);
+    border-color: rgba(124,109,255,0.3);
+  }
+  .company-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 3px; height: 60%;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .ci-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ci-meta {
+    font-size: 10px;
+    color: var(--text3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ci-badges {
+    display: flex;
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .badge {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .badge-green { background: var(--green-dim); color: var(--green); }
+  .badge-purple { background: var(--accent-glow); color: var(--accent2); }
+  .badge-yellow { background: rgba(251,191,36,0.1); color: var(--yellow); }
+
+  .sidebar-footer {
+    padding: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Main content ── */
+  .main {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Tab panels ── */
+  .tab-panel { display: none; flex: 1; overflow: hidden; flex-direction: column; }
+  .tab-panel.active { display: flex; }
+
+  /* ── Compose Panel ── */
+  .compose-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .compose-left {
+    width: 340px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .compose-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .panel-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text3);
+    font-weight: 500;
+  }
+
+  .panel-count {
+    font-size: 11px;
+    color: var(--text3);
+    background: var(--surface2);
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  /* Company info banner */
+  .company-banner {
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+  .cb-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .cb-url {
+    font-size: 11px;
+    color: var(--accent2);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .cb-url:hover { text-decoration: underline; }
+  .cb-desc {
+    font-size: 11px;
+    color: var(--text2);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .cb-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  /* Contacts section */
+  .contacts-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  .contacts-scroll::-webkit-scrollbar { width: 3px; }
+  .contacts-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 3px;
+    border: 1px solid transparent;
+  }
+  .contact-card:hover { background: var(--surface2); border-color: var(--border); }
+  .contact-card.checked {
+    background: rgba(124,109,255,0.08);
+    border-color: rgba(124,109,255,0.2);
+  }
+
+  .cc-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .cc-info { flex: 1; min-width: 0; }
+  .cc-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cc-email {
+    font-size: 10px;
+    color: var(--text3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+  }
+
+  .cc-check {
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    border: 1.5px solid var(--border2);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+  .contact-card.checked .cc-check {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* Drafts section */
+  .drafts-section {
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+  }
+
+  .draft-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .draft-item:hover { background: var(--surface2); }
+  .draft-item.active { background: var(--accent-glow); }
+  .draft-item:last-child { border-bottom: none; }
+
+  .draft-id {
+    font-size: 9px;
+    color: var(--text3);
+    font-weight: 500;
+    background: var(--surface2);
+    padding: 2px 5px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .draft-subject {
+    font-size: 11px;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Editor */
+  .editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .editor-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .subject-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    outline: none;
+    placeholder-color: var(--text3);
+  }
+  .subject-field::placeholder { color: var(--text3); }
+
+  .body-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    resize: none;
+    outline: none;
+    padding: 22px 22px;
+  }
+  .body-field::placeholder { color: var(--text3); }
+
+  .editor-footer {
+    padding: 14px 22px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .recip-preview {
+    font-size: 11px;
+    color: var(--text3);
+  }
+  .recip-preview strong { color: var(--accent2); }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.15s;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 0 rgba(124,109,255,0);
+  }
+  .btn-primary:hover {
+    background: #6c5cf7;
+    box-shadow: 0 4px 20px rgba(124,109,255,0.4);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border2);
+  }
+  .btn-ghost:hover {
+    background: var(--surface2);
+    color: var(--text);
+    border-color: var(--border2);
+  }
+
+  .btn-success {
+    background: rgba(34,211,165,0.15);
+    color: var(--green);
+    border: 1px solid rgba(34,211,165,0.25);
+  }
+  .btn-success:hover {
+    background: rgba(34,211,165,0.25);
+    box-shadow: 0 4px 20px rgba(34,211,165,0.2);
+    transform: translateY(-1px);
+  }
+
+  .btn-sm {
+    padding: 5px 11px;
+    font-size: 11px;
+  }
+
+  .btn-icon {
+    padding: 7px;
+    border-radius: 7px;
+  }
+
+  /* ── Discover Tab ── */
+  .discover-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1px;
+    flex: 1;
+    background: var(--border);
+    overflow: hidden;
+  }
+
+  .discover-card {
+    background: var(--bg);
+    padding: 28px;
+    overflow-y: auto;
+  }
+  .discover-card::-webkit-scrollbar { width: 3px; }
+  .discover-card::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  .dc-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .dc-sub {
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .field-group { display: flex; flex-direction: column; gap: 5px; }
+  .field-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text3);
+    font-weight: 500;
+  }
+  .field-input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 9px 12px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+  }
+  .field-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(124,109,255,0.1);
+  }
+  .field-input::placeholder { color: var(--text3); }
+
+  /* Keywords tags */
+  .tag-input-wrap {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    cursor: text;
+    min-height: 40px;
+    transition: border-color 0.15s;
+  }
+  .tag-input-wrap:focus-within { border-color: var(--accent); }
+
+  .kw-tag {
+    background: var(--accent-glow);
+    color: var(--accent2);
+    border: 1px solid rgba(124,109,255,0.2);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .kw-tag button {
+    background: none; border: none; color: var(--accent2);
+    cursor: pointer; font-size: 12px; line-height: 1; padding: 0;
+    opacity: 0.6;
+  }
+  .kw-tag button:hover { opacity: 1; }
+
+  .tag-bare-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    min-width: 80px;
+    flex: 1;
+  }
+
+  /* Log card */
+  .log-wrap {
+    grid-column: 1 / -1;
+    background: var(--bg);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .log-header {
+    padding: 14px 22px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .log-title {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text3);
+    font-weight: 500;
+  }
+
+  .log-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 22px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--text2);
+  }
+  .log-body::-webkit-scrollbar { width: 3px; }
+  .log-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  .log-line { display: flex; gap: 10px; align-items: flex-start; }
+  .log-ts { color: var(--text3); flex-shrink: 0; }
+  .log-ok { color: var(--green); }
+  .log-err { color: var(--red); }
+  .log-info { color: var(--accent2); }
+  .log-warn { color: var(--yellow); }
+
+  /* Empty state */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    padding: 40px;
+    gap: 12px;
+    color: var(--text3);
+  }
+  .empty-icon {
+    width: 56px; height: 56px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text3);
+    margin-bottom: 4px;
+  }
+  .empty-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text2);
+  }
+  .empty-sub { font-size: 12px; line-height: 1.5; max-width: 240px; }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    gap: 1px;
+    background: var(--border);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .stat-cell {
+    flex: 1;
+    padding: 14px 20px;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stat-val {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-lbl { font-size: 10px; color: var(--text3); letter-spacing: 0.5px; }
+  .stat-cell.accent .stat-val { color: var(--accent2); }
+  .stat-cell.green .stat-val { color: var(--green); }
+
+  /* Pill progress */
+  .progress-bar {
+    height: 2px;
+    background: var(--surface2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+
+  /* Tag chip row */
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  .chip {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .chip:hover, .chip.active {
+    background: var(--accent-glow);
+    border-color: rgba(124,109,255,0.3);
+    color: var(--accent2);
+  }
+
+  /* Animation */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fadein { animation: fadeInUp 0.25s ease forwards; }
+
+  /* Notification toast */
+  .toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toast {
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    animation: slideInRight 0.25s ease, fadeOut 0.3s ease 2.7s forwards;
+    min-width: 240px;
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeOut {
+    to { opacity: 0; transform: translateX(20px); }
+  }
+  .toast.success { border-color: rgba(34,211,165,0.3); }
+  .toast.error { border-color: rgba(248,113,113,0.3); }
+  .toast-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  }
+  .toast.success .toast-dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+  .toast.error .toast-dot { background: var(--red); box-shadow: 0 0 8px var(--red); }
+
+  /* Loading spinner */
+  .spinner {
+    width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.15);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Scrollable drafts */
+  .drafts-scroll {
+    overflow-y: auto;
+    flex: 1;
+  }
+  .drafts-scroll::-webkit-scrollbar { width: 3px; }
+  .drafts-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+  /* Divider with label */
+  .divider-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 8px;
+    padding: 0 12px;
+  }
+  .divider-label span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text3);
+    white-space: nowrap;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="logo-mark">UW</div>
+  <div>
+    <div class="logo-text">Outreach <span>/ Technology Consulting</span></div>
+  </div>
+  <div class="header-status">
+    <div class="status-dot"></div>
+    <span id="db-status">Connected</span>
+  </div>
+  <nav>
+    <button class="nav-btn active" onclick="switchTab('discover', this)">Discover</button>
+    <button class="nav-btn" onclick="switchTab('compose', this)">Compose</button>
+  </nav>
+</header>
+
+<!-- ── APP BODY ── -->
+<div class="app-body">
+
+  <!-- ── SIDEBAR (Companies) ── -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">Companies</div>
+      <div class="search-wrap">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input class="search-input" type="text" placeholder="Search companies..." id="company-search" oninput="filterCompanies()">
+      </div>
+      <!-- Quick filter chips -->
+      <div class="chip-row">
+        <span class="chip active" onclick="toggleChip(this,'all')">All</span>
+        <span class="chip" onclick="toggleChip(this,'drafts')">Has Drafts</span>
+        <span class="chip" onclick="toggleChip(this,'contacts')">Has Contacts</span>
+      </div>
+    </div>
+    <div class="company-list" id="company-list">
+      <!-- Populated by JS -->
+    </div>
+    <div class="sidebar-footer">
+      <button class="btn btn-ghost btn-sm" style="width:100%" onclick="refreshCompanies()">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+        </svg>
+        Refresh
+      </button>
+    </div>
+  </div>
+
+  <!-- ── MAIN AREA ── -->
+  <div class="main">
+
+    <!-- ── DISCOVER TAB ── -->
+    <div class="tab-panel active" id="tab-discover">
+      <div class="discover-layout">
+
+        <!-- Scanner config -->
+        <div class="discover-card fadein">
+          <div class="dc-title">Scanner Configuration</div>
+          <div class="dc-sub">Configure Google Places search parameters to discover local businesses and extract contact emails.</div>
+
+          <div class="field-group" style="margin-bottom:14px">
+            <div class="field-label">Keywords</div>
+            <div class="tag-input-wrap" id="kw-wrap" onclick="document.getElementById('kw-input').focus()">
+              <span class="kw-tag">university <button onclick="removeTag(this,'university')">×</button></span>
+              <span class="kw-tag">veterinary_care <button onclick="removeTag(this,'veterinary_care')">×</button></span>
+              <span class="kw-tag">zoo <button onclick="removeTag(this,'zoo')">×</button></span>
+              <input class="tag-bare-input" id="kw-input" placeholder="Add keyword..." onkeydown="handleTagKey(event)">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field-group">
+              <div class="field-label">Latitude</div>
+              <input class="field-input" type="text" value="47.65673397183744" id="lat-input">
+            </div>
+            <div class="field-group">
+              <div class="field-label">Longitude</div>
+              <input class="field-input" type="text" value="-122.30658974412395" id="lng-input">
+            </div>
+          </div>
+
+          <div class="field-group" style="margin-bottom:18px">
+            <div class="field-label">Radius (miles)</div>
+            <input class="field-input" type="number" value="20" min="1" max="1000" id="radius-input">
+          </div>
+
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-primary" onclick="runScanner()" id="scan-btn">
+              <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+              Run Scanner
+            </button>
+            <button class="btn btn-ghost" onclick="previewCmd()">
+              <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+              </svg>
+              Preview Command
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats / info -->
+        <div class="discover-card fadein" style="animation-delay:0.05s">
+          <div class="dc-title">Validation Pipeline</div>
+          <div class="dc-sub">Emails pass through syntax, DNS, and SMTP checks before entering the database.</div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="font-size:11px;color:var(--text2)">1. Syntax Check</span>
+                <span style="font-size:11px;color:var(--green)">Active</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="font-size:11px;color:var(--text2)">2. DNS / MX Lookup</span>
+                <span style="font-size:11px;color:var(--green)">Active</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--green)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="font-size:11px;color:var(--text2)">3. SMTP Probe</span>
+                <span style="font-size:11px;color:var(--yellow)">Enabled</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:75%;background:var(--yellow)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="font-size:11px;color:var(--text2)">4. Catch-All Detection</span>
+                <span style="font-size:11px;color:var(--yellow)">Enabled</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:75%;background:var(--yellow)"></div></div>
+            </div>
+          </div>
+
+          <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px">
+            <div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:10px">Quick Stats</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div>
+                <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--text)" id="stat-companies">—</div>
+                <div style="font-size:10px;color:var(--text3)">companies</div>
+              </div>
+              <div>
+                <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--accent2)" id="stat-contacts">—</div>
+                <div style="font-size:10px;color:var(--text3)">contacts</div>
+              </div>
+              <div>
+                <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--green)" id="stat-sent">—</div>
+                <div style="font-size:10px;color:var(--text3)">sent</div>
+              </div>
+              <div>
+                <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--yellow)" id="stat-drafts">—</div>
+                <div style="font-size:10px;color:var(--text3)">drafts</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Log -->
+        <div class="log-wrap">
+          <div class="log-header">
+            <div class="log-title">Activity Log</div>
+            <button class="btn btn-ghost btn-sm" onclick="clearLog()">Clear</button>
+          </div>
+          <div class="log-body" id="log-body">
+            <div class="log-line"><span class="log-ts">—</span><span class="log-info">Dashboard initialized. Select a company or run the scanner.</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── COMPOSE TAB ── -->
+    <div class="tab-panel" id="tab-compose">
+      <!-- Stats bar -->
+      <div class="stats-bar" id="compose-stats" style="display:none">
+        <div class="stat-cell">
+          <div class="stat-val" id="sc-name" style="font-size:15px;font-family:'Syne',sans-serif">—</div>
+          <div class="stat-lbl">selected company</div>
+        </div>
+        <div class="stat-cell accent">
+          <div class="stat-val" id="sc-contacts">0</div>
+          <div class="stat-lbl">valid contacts</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-val" id="sc-drafts">0</div>
+          <div class="stat-lbl">drafts</div>
+        </div>
+        <div class="stat-cell green">
+          <div class="stat-val" id="sc-recips">0</div>
+          <div class="stat-lbl">selected recipients</div>
+        </div>
+      </div>
+
+      <!-- No company selected state -->
+      <div class="empty-state" id="compose-empty">
+        <div class="empty-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="empty-title">No Company Selected</div>
+        <div class="empty-sub">Double-click a company in the sidebar to load its contacts and drafts here.</div>
+      </div>
+
+      <!-- Compose layout (hidden until company selected) -->
+      <div class="compose-layout" id="compose-layout" style="display:none">
+
+        <!-- Left panel -->
+        <div class="compose-left">
+          <!-- Contacts -->
+          <div class="panel-header">
+            <div class="panel-label">Recipients</div>
+            <div class="panel-count" id="recip-count-badge">0 selected</div>
+          </div>
+          <div class="contacts-scroll" id="contacts-list">
+            <div class="empty-state" style="padding:30px">
+              <div class="empty-sub">No valid contacts found for this company.</div>
+            </div>
+          </div>
+
+          <!-- Drafts section -->
+          <div class="drafts-section">
+            <div class="panel-header" style="padding:12px 16px">
+              <div class="panel-label">Drafts</div>
+              <button class="btn btn-ghost btn-sm" id="gen-btn" onclick="generateDraft()">
+                <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+                Generate
+              </button>
+            </div>
+            <div class="drafts-scroll" id="drafts-list">
+              <div style="padding:12px 16px;font-size:11px;color:var(--text3)">No drafts yet.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right panel: editor -->
+        <div class="compose-right">
+          <div class="editor-toolbar">
+            <input class="subject-field" id="subject-field" placeholder="Email subject..." type="text">
+            <button class="btn btn-ghost btn-sm" onclick="saveDraft()" id="save-btn">Save</button>
+          </div>
+          <div class="editor-area">
+            <textarea class="body-field" id="body-field" placeholder="Email body...&#10;&#10;HTML or plain text supported."></textarea>
+          </div>
+          <div class="editor-footer">
+            <div class="recip-preview" id="recip-preview">No recipients selected</div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-success" onclick="sendEmails()" id="send-btn">
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+                Send to Selected
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /app-body -->
+
+<!-- Toasts -->
+<div class="toast-container" id="toasts"></div>
+
+<script>
+// ─────────────────────────────────────────────
+// State
+// ─────────────────────────────────────────────
+const state = {
+  companies: [],
+  filteredCompanies: [],
+  activeCompany: null,
+  contacts: [],
+  drafts: [],
+  activeDraft: null,
+  checkedContacts: new Set(),
+  currentTab: 'discover',
+  logLines: []
+};
+
+// ─────────────────────────────────────────────
+// Mock data (replace with real API calls)
+// ─────────────────────────────────────────────
+const MOCK_COMPANIES = [
+  { company_id: 1, company_name: "Seattle Aquarium", website: "seattleaquarium.org", description: "Seattle, WA 98101", contacts: 3, drafts: 1, sent: 2 },
+  { company_id: 2, company_name: "Woodland Park Zoo", website: "zoo.org", description: "5500 Phinney Ave N, Seattle, WA", contacts: 5, drafts: 0, sent: 1 },
+  { company_id: 3, company_name: "UW Veterinary Care", website: "uwvetcare.org", description: "University of Washington, Seattle", contacts: 2, drafts: 2, sent: 0 },
+  { company_id: 4, company_name: "Emerald City Science", website: "emeraldcitysci.org", description: "340 15th Ave E, Seattle, WA", contacts: 4, drafts: 1, sent: 3 },
+  { company_id: 5, company_name: "Pacific Rim Vet", website: "pacificrimvet.com", description: "1200 Union St, Seattle, WA", contacts: 1, drafts: 0, sent: 0 },
+  { company_id: 6, company_name: "Burke Museum", website: "burkemuseum.org", description: "4300 15th Ave NE, Seattle", contacts: 6, drafts: 3, sent: 5 },
+];
+
+const MOCK_CONTACTS = {
+  1: [
+    { contact_id: 1, contact_name: "Dr. Sarah Chen", contact_title: "Director of Operations", email_address: "s.chen@seattleaquarium.org" },
+    { contact_id: 2, contact_name: "Marcus Okafor", contact_title: "Tech Lead", email_address: "m.okafor@seattleaquarium.org" },
+    { contact_id: 3, contact_name: "Priya Nair", contact_title: "Admin", email_address: "p.nair@seattleaquarium.org" },
+  ],
+  2: [
+    { contact_id: 4, contact_name: "James Whitfield", contact_title: "CEO", email_address: "j.whitfield@zoo.org" },
+    { contact_id: 5, contact_name: "Lena Hartmann", contact_title: "IT Director", email_address: "l.hartmann@zoo.org" },
+  ],
+  3: [
+    { contact_id: 6, contact_name: "Dr. Alex Rivera", contact_title: "Head Veterinarian", email_address: "a.rivera@uwvetcare.org" },
+  ],
+  4: [
+    { contact_id: 7, contact_name: "Tiffany Brooks", contact_title: "Executive Director", email_address: "t.brooks@emeraldcitysci.org" },
+    { contact_id: 8, contact_name: "Raj Patel", contact_title: "Systems Manager", email_address: "r.patel@emeraldcitysci.org" },
+  ],
+};
+
+const MOCK_DRAFTS = {
+  1: [
+    { email_id: 101, subject: "UW Technology Consulting — Discovery Meeting", body: "Dear Dr. Chen,\n\nI hope this message finds you well. My name is [Name], and I represent UW Technology Consulting...\n\nWe specialize in helping organizations like the Seattle Aquarium leverage modern technology to enhance operations and visitor experiences.\n\nWould you be open to a brief 20-minute discovery call?\n\nBest regards,\n[Name]\nUW Technology Consulting", status: "draft" }
+  ],
+  3: [
+    { email_id: 102, subject: "Exploring Technology Solutions — UW Consulting", body: "Dear Dr. Rivera,\n\nI'm reaching out from UW Technology Consulting...", status: "draft" },
+    { email_id: 103, subject: "Follow-up: Technology Partnership Opportunity", body: "Hi Dr. Rivera,\n\nFollowing up on our previous note...", status: "draft" },
+  ],
+};
+
+// ─────────────────────────────────────────────
+// Tab switching
+// ─────────────────────────────────────────────
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  if (btn) btn.classList.add('active');
+  state.currentTab = tab;
+}
+
+// ─────────────────────────────────────────────
+// Companies / sidebar
+// ─────────────────────────────────────────────
+function refreshCompanies() {
+  state.companies = MOCK_COMPANIES;
+  state.filteredCompanies = [...state.companies];
+  renderCompanyList();
+  updateStats();
+  log('info', `Loaded ${state.companies.length} companies.`);
+  toast('success', `${state.companies.length} companies loaded`);
+}
+
+function filterCompanies() {
+  const q = document.getElementById('company-search').value.toLowerCase();
+  state.filteredCompanies = state.companies.filter(c =>
+    c.company_name.toLowerCase().includes(q) ||
+    (c.website || '').toLowerCase().includes(q)
+  );
+  renderCompanyList();
+}
+
+function toggleChip(chip, filter) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  let filtered = [...state.companies];
+  if (filter === 'drafts') filtered = filtered.filter(c => c.drafts > 0);
+  if (filter === 'contacts') filtered = filtered.filter(c => c.contacts > 0);
+  state.filteredCompanies = filtered;
+  renderCompanyList();
+}
+
+function renderCompanyList() {
+  const el = document.getElementById('company-list');
+  if (!state.filteredCompanies.length) {
+    el.innerHTML = `<div class="empty-state" style="padding:40px 20px"><div class="empty-sub">No companies match your filter.</div></div>`;
+    return;
+  }
+
+  const avatarColors = [
+    ['#7c6dff','#4f46e5'],['#22d3a5','#0f9d7e'],['#f472b6','#be185d'],
+    ['#fbbf24','#d97706'],['#60a5fa','#2563eb'],['#a78bfa','#7c3aed'],
+  ];
+
+  el.innerHTML = state.filteredCompanies.map((c, i) => {
+    const isActive = state.activeCompany && state.activeCompany.company_id === c.company_id;
+    const [c1, c2] = avatarColors[i % avatarColors.length];
+    const initials = c.company_name.split(' ').slice(0,2).map(w => w[0]).join('');
+    const hasDrafts = c.unsent_count > 0;
+    const hasContacts = c.contact_count > 0;
+
+    return `
+    <div class="company-item ${isActive ? 'active' : ''}" onclick="selectCompany(${c.company_id})" ondblclick="openCompose(${c.company_id})">
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,${c1},${c2});display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:11px;color:white;flex-shrink:0">${initials}</div>
+        <div style="flex:1;min-width:0">
+          <div class="ci-name">${c.company_name}</div>
+          <div class="ci-meta">${c.website || '—'}</div>
+          <div class="ci-badges">
+            ${hasContacts ? `<span class="badge badge-purple">${c.contact_count} contacts</span>` : ''}
+            ${hasDrafts ? `<span class="badge badge-yellow">${c.unsent_count} unsent</span>` : ''}
+            ${c.emailed_count ? `<span class="badge badge-green">${c.emailed_count} sent</span>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selectCompany(id) {
+  state.activeCompany = state.companies.find(c => c.company_id === id);
+  renderCompanyList();
+}
+
+function openCompose(id) {
+  selectCompany(id);
+  loadCompanyData();
+  switchTab('compose', document.querySelectorAll('.nav-btn')[1]);
+}
+
+// ─────────────────────────────────────────────
+// Compose tab
+// ─────────────────────────────────────────────
+function loadCompanyData() {
+  const c = state.activeCompany;
+  if (!c) return;
+
+  document.getElementById('compose-empty').style.display = 'none';
+  document.getElementById('compose-layout').style.display = 'flex';
+  document.getElementById('compose-stats').style.display = 'flex';
+
+  document.getElementById('sc-name').textContent = c.company_name;
+
+  // Load contacts
+  state.contacts = MOCK_CONTACTS[c.company_id] || [];
+  state.checkedContacts.clear();
+  renderContacts();
+
+  // Load drafts
+  state.drafts = MOCK_DRAFTS[c.company_id] || [];
+  state.activeDraft = null;
+  renderDrafts();
+
+  document.getElementById('sc-contacts').textContent = state.contacts.length;
+  document.getElementById('sc-drafts').textContent = state.drafts.length;
+  document.getElementById('sc-recips').textContent = '0';
+
+  if (state.drafts.length) selectDraft(state.drafts[0]);
+
+  log('info', `Loaded ${state.contacts.length} contacts, ${state.drafts.length} drafts for ${c.company_name}`);
+}
+
+function renderContacts() {
+  const el = document.getElementById('contacts-list');
+  if (!state.contacts.length) {
+    el.innerHTML = `<div class="empty-state" style="padding:30px"><div class="empty-sub">No valid contacts found.</div></div>`;
+    return;
+  }
+
+  const palettes = [
+    ['#7c6dff20','#7c6dff'],['#22d3a520','#22d3a5'],['#f472b620','#f472b6'],
+    ['#fbbf2420','#fbbf24'],['#60a5fa20','#60a5fa'],
+  ];
+
+  el.innerHTML = state.contacts.map((c, i) => {
+    const checked = state.checkedContacts.has(c.contact_id);
+    const [bg, fg] = palettes[i % palettes.length];
+    const initials = (c.contact_name || '?').split(' ').slice(0,2).map(w=>w[0]).join('');
+    return `
+    <div class="contact-card ${checked ? 'checked' : ''}" onclick="toggleContact(${c.contact_id})" id="cc-${c.contact_id}">
+      <div class="cc-avatar" style="background:${bg};color:${fg}">${initials}</div>
+      <div class="cc-info">
+        <div class="cc-name">${c.contact_name || '(no name)'}</div>
+        <div class="cc-email">${c.email_address}</div>
+        ${c.contact_title ? `<div class="cc-email" style="color:var(--text3);margin-top:1px">${c.contact_title}</div>` : ''}
+      </div>
+      <div class="cc-check">
+        ${checked ? `<svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleContact(id) {
+  if (state.checkedContacts.has(id)) {
+    state.checkedContacts.delete(id);
+  } else {
+    state.checkedContacts.add(id);
+  }
+  renderContacts();
+  updateRecipPreview();
+}
+
+function updateRecipPreview() {
+  const n = state.checkedContacts.size;
+  document.getElementById('sc-recips').textContent = n;
+  document.getElementById('recip-count-badge').textContent = `${n} selected`;
+  if (n === 0) {
+    document.getElementById('recip-preview').innerHTML = 'No recipients selected';
+  } else {
+    const names = state.contacts
+      .filter(c => state.checkedContacts.has(c.contact_id))
+      .map(c => `<strong>${(c.contact_name||'').split(' ')[0] || c.email_address}</strong>`).join(', ');
+    document.getElementById('recip-preview').innerHTML = `To: ${names}`;
+  }
+}
+
+function renderDrafts() {
+  const el = document.getElementById('drafts-list');
+  if (!state.drafts.length) {
+    el.innerHTML = `<div style="padding:12px 16px;font-size:11px;color:var(--text3)">No drafts yet. Click Generate.</div>`;
+    return;
+  }
+
+  // Sort: Unsent first, Emailed at bottom
+  const sorted = [
+    ...state.drafts.filter(d => d.status !== 'Emailed'),
+    ...state.drafts.filter(d => d.status === 'Emailed'),
+  ];
+
+  // Add divider if there are both unsent and emailed
+  const unsentCount = sorted.filter(d => d.status !== 'Emailed').length;
+  const emailedCount = sorted.filter(d => d.status === 'Emailed').length;
+
+  el.innerHTML = sorted.map((d, i) => {
+    const isSent = d.status === 'Emailed';
+    const isActive = state.activeDraft && state.activeDraft.email_id === d.email_id;
+    const sentTime = d.sent_at
+      ? new Date(d.sent_at).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+      : null;
+
+    // Insert divider before first Emailed item
+    const divider = (isSent && i === unsentCount && unsentCount > 0)
+      ? `<div style="display:flex;align-items:center;gap:8px;padding:6px 12px 2px">
+           <div style="flex:1;height:1px;background:var(--border)"></div>
+           <span style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3)">Emailed</span>
+           <div style="flex:1;height:1px;background:var(--border)"></div>
+         </div>`
+      : '';
+
+    return divider + `
+    <div class="draft-item ${isActive ? 'active' : ''}"
+         onclick="selectDraft(${d.email_id})"
+         style="${isSent ? 'opacity:0.5' : ''}">
+      <span class="draft-id" style="${isSent ? 'background:var(--green-dim);color:var(--green)' : ''}">#${d.email_id}</span>
+      <span class="draft-subject" style="${isSent ? 'text-decoration:line-through;color:var(--text3)' : ''}">${d.subject || '(no subject)'}</span>
+      ${isSent ? `<span style="font-size:9px;color:var(--green);flex-shrink:0;margin-left:auto;white-space:nowrap">✓ ${sentTime || 'sent'}</span>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function selectDraft(draftOrId) {
+  const d = typeof draftOrId === 'object' ? draftOrId : state.drafts.find(x => x.email_id === draftOrId);
+  if (!d) return;
+  state.activeDraft = d;
+  document.getElementById('subject-field').value = d.subject || '';
+  document.getElementById('body-field').value = d.body || '';
+  renderDrafts();
+}
+
+function saveDraft() {
+  if (!state.activeDraft) return toast('error', 'No draft selected');
+  state.activeDraft.subject = document.getElementById('subject-field').value;
+  state.activeDraft.body = document.getElementById('body-field').value;
+  log('ok', `Draft #${state.activeDraft.email_id} saved.`);
+  toast('success', 'Draft saved');
+  renderDrafts();
+}
+
+async function generateDraft() {
+  if (!state.activeCompany) return toast('error', 'No company selected');
+  const btn = document.getElementById('gen-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Generating...';
+  try {
+    const res = await fetch(`${API}/companies/${state.activeCompany.company_id}/generate`, {
+      method: 'POST'
+    });
+    if (!res.ok) throw new Error(await res.text());
+    const draft = await res.json();
+    state.drafts.unshift(draft);
+    selectDraft(draft);
+    const unsentCount = state.drafts.filter(d => d.status !== 'Emailed').length;
+    document.getElementById('sc-drafts').textContent = unsentCount;
+    toast('success', 'Draft generated');
+    log('ok', `Draft #${draft.email_id} generated for ${state.activeCompany.company_name}.`);
+  } catch (e) {
+    toast('error', 'Generation failed: ' + e.message);
+    log('err', e.message);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg> Generate`;
+  }
+}
+
+async function sendEmails() {
+  if (!state.activeDraft) return toast('error', 'Select a draft first');
+  if (!state.checkedContacts.size) return toast('error', 'Select at least one recipient');
+
+  const btn = document.getElementById('send-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Sending…';
+
+  try {
+    const res = await fetch(`${API}/send`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email_id: state.activeDraft.email_id,
+        contact_ids: [...state.checkedContacts],
+        subject: document.getElementById('subject-field').value,
+        body: document.getElementById('body-field').value,
+      })
+    });
+    const { sent, errors } = await res.json();
+
+    if (sent) {
+      // Mark active draft as Emailed locally
+      state.activeDraft.status = 'Emailed';
+      state.activeDraft.sent_at = new Date().toISOString();
+
+      // Move it to end of array
+      state.drafts = [
+        ...state.drafts.filter(d => d.email_id !== state.activeDraft.email_id),
+        state.activeDraft,
+      ];
+
+      // Auto-advance to next Unsent draft
+      const nextDraft = state.drafts.find(d => d.status !== 'Emailed');
+      if (nextDraft) {
+        selectDraft(nextDraft);
+      } else {
+        renderDrafts();
+      }
+
+      // Update unsent count in stats bar
+      const unsentCount = state.drafts.filter(d => d.status !== 'Emailed').length;
+      document.getElementById('sc-drafts').textContent = unsentCount;
+
+      toast('success', `Sent to ${sent} recipient(s)`);
+      log('ok', `Sent ${sent} emails. Draft #${state.activeDraft.email_id} marked as Emailed.`);
+    }
+
+    if (errors && errors.length) {
+      toast('error', `${errors.length} failed`);
+      errors.forEach(e => log('err', e));
+    }
+  } catch (e) {
+    toast('error', 'Send failed: ' + e.message);
+    log('err', e.message);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send to Selected`;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Discover tab
+// ─────────────────────────────────────────────
+async function runScanner() {
+  const btn = document.getElementById('scan-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Scanning...';
+  log('info', `Scanner started — keywords: ${getKeywords().join(', ')}`);
+  try {
+    const res = await fetch(`${API}/scan`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        keywords: getKeywords(),
+        lat: parseFloat(document.getElementById('lat-input').value),
+        lng: parseFloat(document.getElementById('lng-input').value),
+        radius_mi: parseInt(document.getElementById('radius-input').value),
+      })
+    });
+    if (!res.ok) throw new Error(await res.text());
+    const { output } = await res.json();
+    output.split('\n').filter(l => l.trim()).forEach(line => log('info', line));
+    toast('success', 'Scanner complete — refresh companies');
+    await refreshCompanies();
+  } catch (e) {
+    toast('error', 'Scanner failed');
+    log('err', e.message);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Run Scanner`;
+  }
+}
+
+function previewCmd() {
+  const kws = getKeywords();
+  const lat = document.getElementById('lat-input').value;
+  const lng = document.getElementById('lng-input').value;
+  const radius = Math.round(parseFloat(document.getElementById('radius-input').value) * 1609.34);
+  log('info', `python get_places_and_emails.py`);
+  log('info', `  KEYWORDS="${kws.join(',')}" LAT=${lat} LNG=${lng} RADIUS_M=${radius}`);
+}
+
+// ─────────────────────────────────────────────
+// Keywords tags
+// ─────────────────────────────────────────────
+function getKeywords() {
+  return [...document.querySelectorAll('#kw-wrap .kw-tag')].map(t => t.textContent.replace('×','').trim());
+}
+
+function handleTagKey(e) {
+  if (e.key === 'Enter' || e.key === ',') {
+    e.preventDefault();
+    const val = e.target.value.trim().replace(/,/g,'');
+    if (!val) return;
+    addTag(val);
+    e.target.value = '';
+  }
+  if (e.key === 'Backspace' && !e.target.value) {
+    const tags = document.querySelectorAll('#kw-wrap .kw-tag');
+    if (tags.length) tags[tags.length - 1].remove();
+  }
+}
+
+function addTag(val) {
+  const input = document.getElementById('kw-input');
+  const tag = document.createElement('span');
+  tag.className = 'kw-tag';
+  tag.innerHTML = `${val} <button onclick="removeTag(this,'${val}')">×</button>`;
+  document.getElementById('kw-wrap').insertBefore(tag, input);
+}
+
+function removeTag(btn, val) { btn.closest('.kw-tag').remove(); }
+
+// ─────────────────────────────────────────────
+// Log & stats
+// ─────────────────────────────────────────────
+function log(type, msg) {
+  const el = document.getElementById('log-body');
+  const now = new Date().toLocaleTimeString('en-US', {hour12:false});
+  const cls = {ok:'log-ok', err:'log-err', info:'log-info', warn:'log-warn'}[type] || '';
+  const prefix = {ok:'✓', err:'✗', info:'›', warn:'⚠'}[type] || '·';
+  const line = document.createElement('div');
+  line.className = 'log-line fadein';
+  line.innerHTML = `<span class="log-ts">${now}</span><span class="${cls}">${prefix} ${msg}</span>`;
+  el.appendChild(line);
+  el.scrollTop = el.scrollHeight;
+}
+
+function clearLog() {
+  document.getElementById('log-body').innerHTML = '';
+}
+
+function updateStats() {
+  const total = state.companies.length;
+  const contacts = state.companies.reduce((a, c) => a + (c.contact_count || 0), 0);
+  const sent = state.companies.reduce((a, c) => a + (c.emailed_count || 0), 0);
+  const drafts = state.companies.reduce((a, c) => a + (c.unsent_count || 0), 0);
+  document.getElementById('stat-companies').textContent = total;
+  document.getElementById('stat-contacts').textContent = contacts;
+  document.getElementById('stat-sent').textContent = sent;
+  document.getElementById('stat-drafts').textContent = drafts;
+}
+
+// ─────────────────────────────────────────────
+// Toasts
+// ─────────────────────────────────────────────
+function toast(type, msg) {
+  const container = document.getElementById('toasts');
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.innerHTML = `<div class="toast-dot"></div>${msg}`;
+  container.appendChild(t);
+  setTimeout(() => t.remove(), 3100);
+}
+
+// ─────────────────────────────────────────────
+// Init
+// ─────────────────────────────────────────────
+refreshCompanies();
+</script>
+</body>
+</html>

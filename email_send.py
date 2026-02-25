@@ -22,6 +22,8 @@ import socket
 from email.message import EmailMessage
 from datetime import datetime, timezone
 from typing import List, Dict, Tuple
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 from dotenv import load_dotenv
 from supabase import create_client, Client

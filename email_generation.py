@@ -9,7 +9,7 @@ from functools import lru_cache
 from dotenv import load_dotenv
 load_dotenv()
 
-ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-3-haiku-20240307")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
 ANTHROPIC_FALLBACKS = [
     "claude-3-haiku-20240307",
     "claude-3-sonnet-20240229",
