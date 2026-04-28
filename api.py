@@ -37,10 +37,38 @@ app.mount("/static", StaticFiles(directory="."), name="static")
 # ── Companies ──
 @app.get("/api/companies")
 def list_companies():
-    result = supabase.table("companies")\
+    companies = supabase.table("companies")\
         .select("company_id, company_name, website, description")\
-        .order("company_id").execute()
-    return result.data or []
+        .order("company_id").execute().data or []
+
+    emails = supabase.table("emails")\
+        .select("company_id, status").execute().data or []
+
+    contacts = supabase.table("contacts")\
+        .select("company_id").execute().data or []
+
+    from collections import defaultdict
+    emailed       = defaultdict(int)
+    unsent        = defaultdict(int)
+    contact_count = defaultdict(int)
+
+    for e in emails:
+        cid = e["company_id"]
+        if e["status"] == "Emailed":
+            emailed[cid] += 1
+        elif e["status"] == "Unsent":
+            unsent[cid] += 1
+
+    for c in contacts:
+        contact_count[c["company_id"]] += 1
+
+    for co in companies:
+        cid = co["company_id"]
+        co["emailed_count"] = emailed[cid]
+        co["unsent_count"]  = unsent[cid]
+        co["contact_count"] = contact_count[cid]
+
+    return companies
 
 
 # ── Contacts ──

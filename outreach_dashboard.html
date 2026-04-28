@@ -983,6 +983,8 @@
         <span class="chip active" onclick="toggleChip(this,'all')">All</span>
         <span class="chip" onclick="toggleChip(this,'drafts')">Has Drafts</span>
         <span class="chip" onclick="toggleChip(this,'contacts')">Has Contacts</span>
+        <span class="chip" onclick="toggleChip(this,'sent')">Sent</span>
+        <span class="chip" onclick="toggleChip(this,'unsent')">Unsent</span>
       </div>
     </div>
     <div class="company-list" id="company-list">
@@ -1225,6 +1227,9 @@
 // ─────────────────────────────────────────────
 // State
 // ─────────────────────────────────────────────
+
+const API = '';
+
 const state = {
   companies: [],
   filteredCompanies: [],
@@ -1292,13 +1297,31 @@ function switchTab(tab, btn) {
 // ─────────────────────────────────────────────
 // Companies / sidebar
 // ─────────────────────────────────────────────
-function refreshCompanies() {
-  state.companies = MOCK_COMPANIES;
-  state.filteredCompanies = [...state.companies];
-  renderCompanyList();
-  updateStats();
-  log('info', `Loaded ${state.companies.length} companies.`);
-  toast('success', `${state.companies.length} companies loaded`);
+// function refreshCompanies() {
+//   state.companies = MOCK_COMPANIES;
+//   state.filteredCompanies = [...state.companies];
+//   renderCompanyList();
+//   updateStats();
+//   log('info', `Loaded ${state.companies.length} companies.`);
+//   toast('success', `${state.companies.length} companies loaded`);
+// }
+async function refreshCompanies() {
+  try {
+    const res = await fetch(`${API}/api/companies`);
+    if (!res.ok) throw new Error(await res.text());
+
+    const data = await res.json();
+    state.companies = data;
+    state.filteredCompanies = [...data];
+
+    renderCompanyList();
+    updateStats();
+    log('info', `Loaded ${state.companies.length} companies.`);
+    toast('success', `${state.companies.length} companies loaded`);
+  } catch (e) {
+    toast('error', 'Failed to load companies');
+    log('err', e.message);
+  }
 }
 
 function filterCompanies() {
@@ -1314,8 +1337,10 @@ function toggleChip(chip, filter) {
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   chip.classList.add('active');
   let filtered = [...state.companies];
-  if (filter === 'drafts') filtered = filtered.filter(c => c.drafts > 0);
-  if (filter === 'contacts') filtered = filtered.filter(c => c.contacts > 0);
+  if (filter === 'drafts')   filtered = filtered.filter(c => c.unsent_count > 0);
+  if (filter === 'contacts') filtered = filtered.filter(c => c.contact_count > 0);
+  if (filter === 'sent')     filtered = filtered.filter(c => c.emailed_count > 0);
+  if (filter === 'unsent')   filtered = filtered.filter(c => !c.emailed_count || c.emailed_count === 0);
   state.filteredCompanies = filtered;
   renderCompanyList();
 }
@@ -1336,8 +1361,8 @@ function renderCompanyList() {
     const isActive = state.activeCompany && state.activeCompany.company_id === c.company_id;
     const [c1, c2] = avatarColors[i % avatarColors.length];
     const initials = c.company_name.split(' ').slice(0,2).map(w => w[0]).join('');
-    const hasDrafts = c.unsent_count > 0;
-    const hasContacts = c.contact_count > 0;
+    const hasDrafts = (c.unsent_count || 0) > 0;
+    const hasContacts = (c.contact_count || 0) > 0;
 
     return `
     <div class="company-item ${isActive ? 'active' : ''}" onclick="selectCompany(${c.company_id})" ondblclick="openCompose(${c.company_id})">
@@ -1349,7 +1374,7 @@ function renderCompanyList() {
           <div class="ci-badges">
             ${hasContacts ? `<span class="badge badge-purple">${c.contact_count} contacts</span>` : ''}
             ${hasDrafts ? `<span class="badge badge-yellow">${c.unsent_count} unsent</span>` : ''}
-            ${c.emailed_count ? `<span class="badge badge-green">${c.emailed_count} sent</span>` : ''}
+            ${c.emailed_count ? `<span class="badge badge-green">✓ sent</span>` : `<span class="badge badge-yellow">unsent</span>`}
           </div>
         </div>
       </div>
@@ -1371,7 +1396,35 @@ function openCompose(id) {
 // ─────────────────────────────────────────────
 // Compose tab
 // ─────────────────────────────────────────────
-function loadCompanyData() {
+// function loadCompanyData() {
+//   const c = state.activeCompany;
+//   if (!c) return;
+
+//   document.getElementById('compose-empty').style.display = 'none';
+//   document.getElementById('compose-layout').style.display = 'flex';
+//   document.getElementById('compose-stats').style.display = 'flex';
+
+//   document.getElementById('sc-name').textContent = c.company_name;
+
+//   // Load contacts
+//   state.contacts = MOCK_CONTACTS[c.company_id] || [];
+//   state.checkedContacts.clear();
+//   renderContacts();
+
+//   // Load drafts
+//   state.drafts = MOCK_DRAFTS[c.company_id] || [];
+//   state.activeDraft = null;
+//   renderDrafts();
+
+//   document.getElementById('sc-contacts').textContent = state.contacts.length;
+//   document.getElementById('sc-drafts').textContent = state.drafts.length;
+//   document.getElementById('sc-recips').textContent = '0';
+
+//   if (state.drafts.length) selectDraft(state.drafts[0]);
+
+//   log('info', `Loaded ${state.contacts.length} contacts, ${state.drafts.length} drafts for ${c.company_name}`);
+// }
+async function loadCompanyData() {
   const c = state.activeCompany;
   if (!c) return;
 
@@ -1381,23 +1434,34 @@ function loadCompanyData() {
 
   document.getElementById('sc-name').textContent = c.company_name;
 
-  // Load contacts
-  state.contacts = MOCK_CONTACTS[c.company_id] || [];
-  state.checkedContacts.clear();
-  renderContacts();
+  try {
+    const [contactsRes, draftsRes] = await Promise.all([
+      fetch(`${API}/api/companies/${c.company_id}/contacts`),
+      fetch(`${API}/api/companies/${c.company_id}/drafts`)
+    ]);
 
-  // Load drafts
-  state.drafts = MOCK_DRAFTS[c.company_id] || [];
-  state.activeDraft = null;
-  renderDrafts();
+    if (!contactsRes.ok) throw new Error(await contactsRes.text());
+    if (!draftsRes.ok) throw new Error(await draftsRes.text());
 
-  document.getElementById('sc-contacts').textContent = state.contacts.length;
-  document.getElementById('sc-drafts').textContent = state.drafts.length;
-  document.getElementById('sc-recips').textContent = '0';
+    state.contacts = await contactsRes.json();
+    state.drafts = await draftsRes.json();
+    state.activeDraft = null;
+    state.checkedContacts.clear();
 
-  if (state.drafts.length) selectDraft(state.drafts[0]);
+    renderContacts();
+    renderDrafts();
 
-  log('info', `Loaded ${state.contacts.length} contacts, ${state.drafts.length} drafts for ${c.company_name}`);
+    document.getElementById('sc-contacts').textContent = state.contacts.length;
+    document.getElementById('sc-drafts').textContent = state.drafts.length;
+    document.getElementById('sc-recips').textContent = '0';
+
+    if (state.drafts.length) selectDraft(state.drafts[0]);
+
+    log('info', `Loaded ${state.contacts.length} contacts, ${state.drafts.length} drafts for ${c.company_name}`);
+  } catch (e) {
+    toast('error', 'Failed to load company data');
+    log('err', e.message);
+  }
 }
 
 function renderContacts() {
@@ -1523,7 +1587,7 @@ async function generateDraft() {
   btn.disabled = true;
   btn.innerHTML = '<div class="spinner"></div> Generating...';
   try {
-    const res = await fetch(`${API}/companies/${state.activeCompany.company_id}/generate`, {
+    const res = await fetch(`${API}/api/companies/${state.activeCompany.company_id}/generate`, {
       method: 'POST'
     });
     if (!res.ok) throw new Error(await res.text());
@@ -1552,7 +1616,7 @@ async function sendEmails() {
   btn.innerHTML = '<div class="spinner"></div> Sending…';
 
   try {
-    const res = await fetch(`${API}/send`, {
+    const res = await fetch(`${API}/api/send`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -1574,6 +1638,21 @@ async function sendEmails() {
         ...state.drafts.filter(d => d.email_id !== state.activeDraft.email_id),
         state.activeDraft,
       ];
+
+      // Move company to bottom of sidebar list
+      const cid = state.activeCompany.company_id;
+      state.companies = [
+        ...state.companies.filter(c => c.company_id !== cid),
+        state.activeCompany,
+      ];
+      state.filteredCompanies = [
+        ...state.filteredCompanies.filter(c => c.company_id !== cid),
+        state.activeCompany,
+      ];
+      // Inside the if (sent) block, after renderCompanyList():
+      state.activeCompany.emailed_count = (state.activeCompany.emailed_count || 0) + sent;
+      renderCompanyList();
+      
 
       // Auto-advance to next Unsent draft
       const nextDraft = state.drafts.find(d => d.status !== 'Emailed');
