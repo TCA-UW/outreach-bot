@@ -9,7 +9,7 @@ from functools import lru_cache
 from dotenv import load_dotenv
 load_dotenv()
 
-ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-opus-4-6")
 ANTHROPIC_FALLBACKS = [
     "claude-3-haiku-20240307",
     "claude-3-sonnet-20240229",
@@ -132,15 +132,15 @@ WRAPPER_CLOSE = "</div>"
 TEMPLATE_TOP = """\
 <p style="margin:0 0 12px 0;">Hi {salutation},</p>
 
-<p style="margin:0 0 12px 0;">I’m reaching out on behalf of the Technology Consulting Association (TCA) – a pro bono consulting group at the University of Washington dedicated to helping businesses streamline operations and accelerate growth through innovative technological solutions. {personalized}</p>
+<p style="margin:0 0 12px 0;">I’m reaching out on behalf of the Technology Consulting Association at the University of Washington. We are a student-led consulting group dedicated to helping businesses streamline operations and accelerate growth through innovative technological solutions. {personalized}</p>
 
-<p style="margin:0 0 18px 0;">Our members bring a diverse skillset across tech and business to deliver real, industry-ready results that can {relate}.</p>
+<p style="margin:0 0 18px 0;">Our members bring a diverse skillset across tech and business to deliver real, industry-ready results. {relate}</p>
 """
 
 SERVICES_BLOCK = """\
 <p style="margin:0 0 8px 0;"><strong style="color:#202124;">Our services include:</strong></p>
 <ul style="margin:0 0 18px 18px; padding:0;">
-  <li style="margin:0 6px 0 0;"><strong style="color:#202124;">Integrating AI features</strong></li>
+  <li style="margin:0 6px 0 0;"><strong style="color:#202124;">Building and integrating AI-powered tools</strong></li>
   <li style="margin:0 6px 0 0;"><strong style="color:#202124;">Implementing scalable cloud infrastructure</strong></li>
   <li style="margin:0 6px 0 0;"><strong style="color:#202124;">Designing internal dashboards &amp; web tools</strong></li>
   <li style="margin:0 6px 0 0;"><strong style="color:#202124;">Analyzing product usage data</strong></li>
@@ -158,12 +158,14 @@ LINKS_BLOCK = " | ".join([
 ])
 
 TEMPLATE_BOTTOM = """\
-<p style="margin:0 0 18px 0;">I’ve attached our <strong>partnership guide</strong>, which gives more detail on how we operate, what we offer, and past work. If you are open to a 15–20 minute conversation, we’d appreciate the chance to learn more about your goals and discuss how our student consultants might be of help. We understand you are very busy, so we’re happy to work around your schedule. We are looking forward to hearing from you!</p>
+<p style="margin:0 0 18px 0;">I’ve attached our <strong>partnership guide</strong> with additional details on how we operate, what we offer, and past engagements. If you are open to it, we’d love to schedule a brief 15-20 minute conversation to learn more about your goals and explore how our team can contribute. We’re happy to work around your schedule.</p>
+
+<p style ="margin:0 0 18px 0;">Thank you for your time and consideration, and we hope to hear from you soon!</p>
 
 <p style="margin:0 0 4px 0;">Sincerely,</p>
 <p style="margin:0 0 2px 0;">{outreach_person}</p>
 <p style="margin:0 0 2px 0;">Outreach Director, Technology Consulting Association</p>
-<p style="margin:0 0 14px 0;"><a href="mailto:outreach@uwtechconsulting.com" style="color:#1a73e8; text-decoration:underline;">outreach@uwtechconsulting.com</a></p>
+<p style="margin:0 0 2px 0;"><a href="mailto:outreach@uwtechconsulting.com" style="color:#1a73e8; text-decoration:underline;">outreach@uwtechconsulting.com</a></p>
 
 <p style="margin:0;">
   {links}
