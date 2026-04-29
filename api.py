@@ -266,8 +266,8 @@ def require_auth(credentials: HTTPAuthorizationCredentials = Security(bearer)):
             raise HTTPException(401, "Invalid or expired token")
     except HTTPException:
         raise
-    except Exception:
-        raise HTTPException(401, "Invalid or expired token")
+    except Exception as e:
+        raise HTTPException(401, f"Auth error: {type(e).__name__}: {e}")
 
 
 # ── Companies ──
