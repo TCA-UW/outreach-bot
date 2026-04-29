@@ -19,11 +19,14 @@ import sys
 import ssl
 import smtplib
 import socket
+import logging
 from email.message import EmailMessage
 from datetime import datetime, timezone
 from typing import List, Dict, Tuple
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+
+log = logging.getLogger("email_send")
 
 from dotenv import load_dotenv
 from supabase import create_client, Client
@@ -218,6 +221,7 @@ def mark_email_sent(email_id: int, sent_count: int):
 
 #smtp
 def smtp_send(to_addr: str, subject: str, body_text: str, body_html: str | None = None):
+    log.info("SMTP send — to: %s  subject: %s  host: %s:%s  tls: %s", to_addr, subject, SMTP_HOST, SMTP_PORT, SMTP_USE_TLS)
     msg = EmailMessage()
     msg["From"] = f"{FROM_NAME} <{FROM_EMAIL}>"
     msg["To"] = to_addr
@@ -226,26 +230,32 @@ def smtp_send(to_addr: str, subject: str, body_text: str, body_html: str | None 
         msg["Reply-To"] = REPLY_TO
 
     if body_html:
-        # multipart/alternative: text then html
         msg.set_content(to_plain_text(body_text))
         msg.add_alternative(body_html, subtype="html")
-        # msg.set_content(to_plain_text(personalized_body), subtype="plain", charset="utf-8")
-        # msg.add_alternative(html_body, subtype="html", charset="utf-8")
     else:
         msg.set_content(to_plain_text(body_text))
 
     # Connect & send
     if SMTP_USE_TLS:
+        log.info("SMTP connecting (STARTTLS)...")
         with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=15) as server:
             server.ehlo()
+            log.info("SMTP EHLO OK — starting TLS...")
             server.starttls(context=ssl.create_default_context())
+            log.info("SMTP TLS OK — logging in...")
             server.login(SMTP_USER, SMTP_PASS)
+            log.info("SMTP login OK — sending message...")
             server.send_message(msg)
+            log.info("SMTP send OK")
     else:
+        log.info("SMTP connecting (SSL)...")
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context, timeout=15) as server:
+            log.info("SMTP SSL connected — logging in...")
             server.login(SMTP_USER, SMTP_PASS)
+            log.info("SMTP login OK — sending message...")
             server.send_message(msg)
+            log.info("SMTP send OK")
 
 # ----- Main flow -----
 
