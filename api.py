@@ -432,6 +432,7 @@ def send_emails(payload: SendBody, auth=Depends(require_auth)):
             smtp_send(addr, payload.subject, payload.body, body_html=html_body)
             sent += 1
         except Exception as e:
+            log.error("SMTP failed for %s: %s", addr, e, exc_info=True)
             errors.append(f"{addr}: {str(e)}")
 
     if sent:
