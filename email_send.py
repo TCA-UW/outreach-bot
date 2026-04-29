@@ -236,15 +236,14 @@ def smtp_send(to_addr: str, subject: str, body_text: str, body_html: str | None 
 
     # Connect & send
     if SMTP_USE_TLS:
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=15) as server:
             server.ehlo()
             server.starttls(context=ssl.create_default_context())
             server.login(SMTP_USER, SMTP_PASS)
             server.send_message(msg)
     else:
-        # SSL-on-connect (e.g., port 465) or plain
         context = ssl.create_default_context()
-        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context) as server:
+        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context, timeout=15) as server:
             server.login(SMTP_USER, SMTP_PASS)
             server.send_message(msg)
 
