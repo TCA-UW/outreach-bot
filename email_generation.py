@@ -1,7 +1,3 @@
-# outreach_dashboard.py
-# UI: generate -> edit -> send, with valid-contact filtering
-# pip install PySide6 supabase python-dotenv anthropic dnspython
-
 import os, sys, threading, traceback, html, json
 from typing import Dict, Any, List, Optional, Tuple
 from functools import lru_cache
@@ -16,20 +12,22 @@ ANTHROPIC_FALLBACKS = [
     "claude-3-opus-20240229"
 ]
 
-from PySide6.QtCore import Qt, QObject, Signal
-from PySide6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QTabWidget, QVBoxLayout, QHBoxLayout,
-    QLabel, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView,
-    QListWidget, QListWidgetItem, QTextEdit, QLineEdit, QMessageBox, QSplitter,
-    QGroupBox
-)
+try:
+    from PySide6.QtCore import Qt, QObject, Signal
+    from PySide6.QtWidgets import (
+        QApplication, QMainWindow, QWidget, QTabWidget, QVBoxLayout, QHBoxLayout,
+        QLabel, QPushButton, QTableWidget, QTableWidgetItem, QHeaderView,
+        QListWidget, QListWidgetItem, QTextEdit, QLineEdit, QMessageBox, QSplitter,
+        QGroupBox
+    )
+    PYSIDE6_OK = True
+except ImportError:
+    PYSIDE6_OK = False
 
-# ---------- ENV & external deps ----------
+# ---------- ENV ----------
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-
 SMTP_HOST = os.getenv("SMTP_HOST")
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
 SMTP_USER = os.getenv("SMTP_USER")
@@ -38,14 +36,12 @@ FROM_EMAIL = os.getenv("FROM_EMAIL")
 FROM_NAME  = os.getenv("FROM_NAME", "Technology Consulting Association (TCA)")
 REPLY_TO   = os.getenv("REPLY_TO", FROM_EMAIL)
 SMTP_USE_TLS = os.getenv("SMTP_USE_TLS", "true").lower() == "true"
-
-# Safe defaults for small UI actions
 OUTREACH_PERSON = os.getenv("OUTREACH_PERSON", "Technology Consulting Association (TCA)")
 
-# ---------- Soft imports (don’t crash UI) ----------
+# ---------- Soft imports ----------
 SUPABASE_OK = True
 try:
-    from db_connect import supabase          # must expose a client named 'supabase'
+    from db_connect import supabase
 except Exception as e:
     SUPABASE_OK = False
     supabase = None
@@ -61,14 +57,13 @@ except Exception as e:
     ANTH_ERR = "".join(traceback.format_exception_only(type(e), e))
 
 try:
-    from email_send import smtp_send         # must expose smtp_send(to, subj, text, body_html=None)
+    from email_send import smtp_send
     SENDER_OK = True
 except Exception as e:
     smtp_send = None
     SENDER_OK = False
     SENDER_ERR = "".join(traceback.format_exception_only(type(e), e))
 
-# Optional: your strong validator
 try:
     from email_check import validate_email_comprehensive
     VALIDATOR_OK = True
@@ -76,7 +71,6 @@ except Exception:
     validate_email_comprehensive = None
     VALIDATOR_OK = False
 
-# Fallback DNS deliverability check
 @lru_cache(maxsize=4096)
 def _fallback_deliverable(addr: str) -> bool:
     try:
@@ -111,16 +105,16 @@ def is_valid_email(addr: str) -> bool:
             pass
     return _fallback_deliverable(addr)
 
-# ---------- Your copy-pasted email generation templates ----------
+# ---------- Email templates ----------
 def html_escape(s: Optional[str]) -> str:
     return html.escape(s or "")
 
 def anti_trim(s: str) -> str:
     if not s: return s
-    s = s.replace("Our services include", "Our ser\u200Bvices include")
-    s = s.replace("Sincerely", "Sincere\u200Bly")
-    s = s.replace("Technology Consulting Association", "Technology Consulting Associ\u200Bation")
-    s = s.replace("outreach@uwtechconsulting.com", "outreach\u200B@uwtechconsulting.com")
+    s = s.replace("Our services include", "Our ser​vices include")
+    s = s.replace("Sincerely", "Sincere​ly")
+    s = s.replace("Technology Consulting Association", "Technology Consulting Associ​ation")
+    s = s.replace("outreach@uwtechconsulting.com", "outreach​@uwtechconsulting.com")
     return s
 
 WRAPPER_OPEN = (
@@ -132,7 +126,7 @@ WRAPPER_CLOSE = "</div>"
 TEMPLATE_TOP = """\
 <p style="margin:0 0 12px 0;">Hi {salutation},</p>
 
-<p style="margin:0 0 12px 0;">I’m reaching out on behalf of the Technology Consulting Association at the University of Washington. We are a student-led consulting group dedicated to helping businesses streamline operations and accelerate growth through innovative technological solutions. {personalized}</p>
+<p style="margin:0 0 12px 0;">I'm reaching out on behalf of the Technology Consulting Association at the University of Washington. We are a student-led consulting group dedicated to helping businesses streamline operations and accelerate growth through innovative technological solutions. {personalized}</p>
 
 <p style="margin:0 0 18px 0;">Our members bring a diverse skillset across tech and business to deliver real, industry-ready results. {relate}</p>
 """
@@ -158,7 +152,7 @@ LINKS_BLOCK = " | ".join([
 ])
 
 TEMPLATE_BOTTOM = """\
-<p style="margin:0 0 18px 0;">I’ve attached our <strong>partnership guide</strong> with additional details on how we operate, what we offer, and past engagements. If you are open to it, we’d love to schedule a brief 15-20 minute conversation to learn more about your goals and explore how our team can contribute. We’re happy to work around your schedule.</p>
+<p style="margin:0 0 18px 0;">I've attached our <strong>partnership guide</strong> with additional details on how we operate, what we offer, and past engagements. If you are open to it, we'd love to schedule a brief 15-20 minute conversation to learn more about your goals and explore how our team can contribute. We're happy to work around your schedule.</p>
 
 <p style ="margin:0 0 18px 0;">Thank you for your time and consideration, and we hope to hear from you soon!</p>
 
@@ -236,7 +230,6 @@ def sb_contacts(company_id: int) -> List[Dict[str, Any]]:
             .select("contact_id, contact_name, contact_title, email_address")
             .eq("company_id", company_id)
             .order("contact_id", desc=False)).execute().data or []
-    # filter valid emails only
     out = []
     for r in rows:
         e = (r.get("email_address") or "").strip()
@@ -267,7 +260,6 @@ def sb_insert_draft(company_id: int, subject: str, body: str) -> int:
         "replied_at": None,
         "outreach_person": OUTREACH_PERSON,
     }).execute()
-    # try to return id
     try:
         if res.data and "email_id" in res.data[0]:
             return res.data[0]["email_id"]
@@ -290,11 +282,8 @@ def sb_mark_sent(email_id: int) -> None:
         raise RuntimeError(f"Supabase import failed:\n{SUPABASE_ERR}")
     supabase.table("emails").update({"status": "sent"}).eq("email_id", email_id).execute()
 
-# ---------- Anthropic one-off generation ----------
+# ---------- Anthropic generation ----------
 def anthropic_generate_for_company(company: Dict[str, Any]) -> Tuple[str, str]:
-    """
-    Returns (subject, html_body). Tries ANTHROPIC_MODEL then fallbacks on 404.
-    """
     if not ANTH_OK:
         raise RuntimeError("Anthropic client not available (check ANTHROPIC_API_KEY and install).")
 
@@ -305,7 +294,6 @@ def anthropic_generate_for_company(company: Dict[str, Any]) -> Tuple[str, str]:
 
     user_prompt = USER_TEMPLATE.format(company_name=cname, description=desc, website=site)
 
-    # Try primary + fallbacks
     tried = []
     models_to_try = [ANTHROPIC_MODEL] + [m for m in ANTHROPIC_FALLBACKS if m != ANTHROPIC_MODEL]
 
@@ -340,325 +328,314 @@ def anthropic_generate_for_company(company: Dict[str, Any]) -> Tuple[str, str]:
             return subject, body_html
 
         except Exception as e:
-            # If it's a not-found error, try next model; otherwise raise
-            msg = str(e).lower()
+            msg_str = str(e).lower()
             last_err = e
-            if "not_found" in msg or "not found" in msg or "model" in msg and "404" in msg:
+            if "not_found" in msg_str or "not found" in msg_str or ("model" in msg_str and "404" in msg_str):
                 continue
             raise
 
-    # If we exhausted all models
     raise RuntimeError(
         "All Anthropic model attempts failed.\n"
         f"Tried: {', '.join(tried)}\n"
         f"Last error: {last_err}"
     )
 
-# ---------- Thread helper ----------
-class Worker(QObject):
-    finished = Signal(object, object)  # (result, error)
-    def __init__(self, fn, *args, **kwargs):
-        super().__init__()
-        self.fn, self.args, self.kwargs = fn, args, kwargs
-    def run(self):
-        try:
-            self.finished.emit(self.fn(*self.args, **self.kwargs), None)
-        except Exception as e:
-            self.finished.emit(None, e)
-
-def run_in_thread(fn, cb, *args, **kwargs):
-    w = Worker(fn, *args, **kwargs)
-    w.finished.connect(cb)
-    t = threading.Thread(target=w.run, daemon=True)
-    t.start()
-
 def exstr(e: Exception) -> str:
     return "".join(traceback.format_exception(type(e), e, e.__traceback__))
 
-# ---------- UI tabs ----------
-class CompaniesTab(QWidget):
-    company_selected = Signal(dict)
-    def __init__(self, log: QTextEdit):
-        super().__init__()
-        self.log = log
-        self.rows: List[Dict[str, Any]] = []
+# ---------- Desktop UI (only loaded when PySide6 is available) ----------
+if PYSIDE6_OK:
+    class Worker(QObject):
+        finished = Signal(object, object)
+        def __init__(self, fn, *args, **kwargs):
+            super().__init__()
+            self.fn, self.args, self.kwargs = fn, args, kwargs
+        def run(self):
+            try:
+                self.finished.emit(self.fn(*self.args, **self.kwargs), None)
+            except Exception as e:
+                self.finished.emit(None, e)
 
-        lay = QVBoxLayout(self)
-        top = QHBoxLayout()
-        self.refresh_btn = QPushButton("Refresh")
-        self.diag_btn = QPushButton("Diagnostics")
-        self.refresh_btn.clicked.connect(self.refresh)
-        self.diag_btn.clicked.connect(self.diagnostics)
-        top.addWidget(self.refresh_btn); top.addWidget(self.diag_btn); top.addStretch(1)
-        lay.addLayout(top)
+    def run_in_thread(fn, cb, *args, **kwargs):
+        w = Worker(fn, *args, **kwargs)
+        w.finished.connect(cb)
+        t = threading.Thread(target=w.run, daemon=True)
+        t.start()
 
-        self.table = QTableWidget(0,4)
-        self.table.setHorizontalHeaderLabels(["ID","Name","Website","Description"])
-        self.table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        self.table.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)
-        self.table.horizontalHeader().setSectionResizeMode(2, QHeaderView.Stretch)
-        self.table.horizontalHeader().setSectionResizeMode(3, QHeaderView.Stretch)
-        self.table.setSelectionBehavior(QTableWidget.SelectRows)
-        self.table.doubleClicked.connect(self.emit_selected)
-        lay.addWidget(self.table, 1)
+    class CompaniesTab(QWidget):
+        company_selected = Signal(dict)
+        def __init__(self, log: QTextEdit):
+            super().__init__()
+            self.log = log
+            self.rows: List[Dict[str, Any]] = []
 
-    def refresh(self):
-        self.refresh_btn.setDisabled(True)
-        run_in_thread(sb_companies, self._refreshed)
+            lay = QVBoxLayout(self)
+            top = QHBoxLayout()
+            self.refresh_btn = QPushButton("Refresh")
+            self.diag_btn = QPushButton("Diagnostics")
+            self.refresh_btn.clicked.connect(self.refresh)
+            self.diag_btn.clicked.connect(self.diagnostics)
+            top.addWidget(self.refresh_btn); top.addWidget(self.diag_btn); top.addStretch(1)
+            lay.addLayout(top)
 
-    def _refreshed(self, res, err):
-        self.refresh_btn.setDisabled(False)
-        if err:
-            QMessageBox.critical(self, "Error", str(err))
-            self.log.append("❌ Companies refresh failed:\n" + exstr(err)); return
-        self.rows = res or []
-        self.table.setRowCount(len(self.rows))
-        for r, row in enumerate(self.rows):
-            self.table.setItem(r,0,QTableWidgetItem(str(row["company_id"])))
-            self.table.setItem(r,1,QTableWidgetItem(row.get("company_name","")))
-            self.table.setItem(r,2,QTableWidgetItem(row.get("website","") or ""))
-            self.table.setItem(r,3,QTableWidgetItem(row.get("description","") or ""))
-        self.log.append(f"✅ Loaded {len(self.rows)} companies.")
+            self.table = QTableWidget(0,4)
+            self.table.setHorizontalHeaderLabels(["ID","Name","Website","Description"])
+            self.table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)
+            self.table.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)
+            self.table.horizontalHeader().setSectionResizeMode(2, QHeaderView.Stretch)
+            self.table.horizontalHeader().setSectionResizeMode(3, QHeaderView.Stretch)
+            self.table.setSelectionBehavior(QTableWidget.SelectRows)
+            self.table.doubleClicked.connect(self.emit_selected)
+            lay.addWidget(self.table, 1)
 
-    def emit_selected(self):
-        idx = self.table.currentRow()
-        if 0 <= idx < len(self.rows):
-            self.company_selected.emit(self.rows[idx])
+        def refresh(self):
+            self.refresh_btn.setDisabled(True)
+            run_in_thread(sb_companies, self._refreshed)
 
-    def diagnostics(self):
-        msgs = [
-            f"Supabase: {'OK' if SUPABASE_OK else 'ERROR'}",
-            f"Anthropic: {'OK' if ANTH_OK else 'MISSING'}",
-            f"Sender (smtp_send): {'OK' if SENDER_OK else 'MISSING'}",
-            f"Validator: {'OK' if VALIDATOR_OK else 'fallback DNS'}",
-        ]
-        if not SUPABASE_OK: msgs.append(SUPABASE_ERR)
-        if not ANTH_OK: msgs.append("Check ANTHROPIC_API_KEY and `pip install anthropic`")
-        if not SENDER_OK: msgs.append(SENDER_ERR)
-        self.log.append("🔎 Diagnostics:\n" + "\n".join(msgs) + "\n")
-
-class ComposeTab(QWidget):
-    def __init__(self, log: QTextEdit):
-        super().__init__()
-        self.log = log
-        self.company: Optional[Dict[str, Any]] = None
-        self.contacts: List[Dict[str, Any]] = []
-        self.drafts: List[Dict[str, Any]] = []
-        self.active_draft: Optional[Dict[str, Any]] = None
-
-        layout = QVBoxLayout(self)
-
-        header = QHBoxLayout()
-        self.company_label = QLabel("No company selected")
-        self.load_btn = QPushButton("Load Contacts/Drafts")
-        self.gen_btn  = QPushButton("Generate Draft")   # NEW
-        self.save_btn = QPushButton("Save Draft")
-        self.send_btn = QPushButton("Send to Selected")
-
-        self.load_btn.clicked.connect(self.load_company_data)
-        self.gen_btn.clicked.connect(self.generate_draft_now)
-        self.save_btn.clicked.connect(self.save_draft)
-        self.send_btn.clicked.connect(self.send_now)
-        if not SENDER_OK:
-            self.send_btn.setDisabled(True); self.send_btn.setToolTip("email_send.smtp_send not available")
-
-        header.addWidget(self.company_label, 1)
-        header.addWidget(self.load_btn)
-        header.addWidget(self.gen_btn)
-        header.addWidget(self.save_btn)
-        header.addWidget(self.send_btn)
-        layout.addLayout(header)
-
-        split = QSplitter(Qt.Horizontal)
-
-        left = QWidget(); lv = QVBoxLayout(left)
-        lv.addWidget(QLabel("Recipients (valid emails only)"))
-        self.contact_list = QListWidget(); lv.addWidget(self.contact_list, 1)
-        lv.addWidget(QLabel("Drafts"))
-        self.draft_list = QListWidget(); lv.addWidget(self.draft_list, 1)
-        self.draft_list.itemSelectionChanged.connect(self._pick_draft)
-
-        right = QWidget(); rv = QVBoxLayout(right)
-        editor = QGroupBox("Editor")
-        ev = QVBoxLayout(editor)
-        self.subj_edit = QLineEdit()
-        self.body_edit = QTextEdit()
-        ev.addWidget(QLabel("Subject")); ev.addWidget(self.subj_edit)
-        ev.addWidget(QLabel("Body (HTML or plain text)")); ev.addWidget(self.body_edit, 1)
-        rv.addWidget(editor, 1)
-
-        split.addWidget(left); split.addWidget(right); split.setStretchFactor(1,2)
-        layout.addWidget(split, 1)
-
-    def set_company(self, company: Dict[str, Any]):
-        self.company = company
-        self.company_label.setText(f"{company.get('company_name','(unknown)')} — {company.get('website','')}")
-        self.contact_list.clear(); self.draft_list.clear()
-        self.subj_edit.clear(); self.body_edit.clear()
-        self.contacts, self.drafts, self.active_draft = [], [], None
-
-    def load_company_data(self):
-        if not self.company:
-            QMessageBox.information(self, "Pick a company", "Select a company first.")
-            return
-        cid = int(self.company["company_id"])
-
-        def after_contacts(res, err):
+        def _refreshed(self, res, err):
+            self.refresh_btn.setDisabled(False)
             if err:
                 QMessageBox.critical(self, "Error", str(err))
-                self.log.append("❌ Contacts load failed:\n" + exstr(err)); return
-            self.contacts = res or []
-            self.contact_list.clear()
-            for c in self.contacts:
-                label = f"{c.get('contact_name') or '(no name)'}  <{c['email_address']}>"
-                it = QListWidgetItem(label)
-                it.setFlags(it.flags() | Qt.ItemIsUserCheckable)
-                it.setCheckState(Qt.Unchecked)
-                it.setData(Qt.UserRole, c)
-                self.contact_list.addItem(it)
-            run_in_thread(lambda: sb_drafts(cid), after_drafts)
+                self.log.append("❌ Companies refresh failed:\n" + exstr(err)); return
+            self.rows = res or []
+            self.table.setRowCount(len(self.rows))
+            for r, row in enumerate(self.rows):
+                self.table.setItem(r,0,QTableWidgetItem(str(row["company_id"])))
+                self.table.setItem(r,1,QTableWidgetItem(row.get("company_name","")))
+                self.table.setItem(r,2,QTableWidgetItem(row.get("website","") or ""))
+                self.table.setItem(r,3,QTableWidgetItem(row.get("description","") or ""))
+            self.log.append(f"✅ Loaded {len(self.rows)} companies.")
 
-        def after_drafts(res, err):
-            if err:
-                QMessageBox.critical(self, "Error", str(err))
-                self.log.append("❌ Drafts load failed:\n" + exstr(err)); return
-            self.drafts = res or []
-            self.draft_list.clear()
-            for d in self.drafts:
-                it = QListWidgetItem(f"#{d['email_id']}  {d.get('subject') or '(no subject)'}")
-                it.setData(Qt.UserRole, d)
-                self.draft_list.addItem(it)
-            self.log.append(f"✅ {len(self.contacts)} valid contact(s); {len(self.drafts)} draft(s).")
+        def emit_selected(self):
+            idx = self.table.currentRow()
+            if 0 <= idx < len(self.rows):
+                self.company_selected.emit(self.rows[idx])
 
-        run_in_thread(lambda: sb_contacts(cid), after_contacts)
+        def diagnostics(self):
+            msgs = [
+                f"Supabase: {'OK' if SUPABASE_OK else 'ERROR'}",
+                f"Anthropic: {'OK' if ANTH_OK else 'MISSING'}",
+                f"Sender (smtp_send): {'OK' if SENDER_OK else 'MISSING'}",
+                f"Validator: {'OK' if VALIDATOR_OK else 'fallback DNS'}",
+            ]
+            if not SUPABASE_OK: msgs.append(SUPABASE_ERR)
+            if not ANTH_OK: msgs.append("Check ANTHROPIC_API_KEY and `pip install anthropic`")
+            if not SENDER_OK: msgs.append(SENDER_ERR)
+            self.log.append("🔎 Diagnostics:\n" + "\n".join(msgs) + "\n")
 
-    # ---- Generate a new draft via Anthropic for the selected company
-    def generate_draft_now(self):
-        if not self.company:
-            QMessageBox.information(self, "Pick a company", "Select a company first.")
-            return
-        if not ANTH_OK:
-            QMessageBox.warning(self, "Anthropic", "ANTHROPIC_API_KEY missing or anthropic not installed.")
-            return
+    class ComposeTab(QWidget):
+        def __init__(self, log: QTextEdit):
+            super().__init__()
+            self.log = log
+            self.company: Optional[Dict[str, Any]] = None
+            self.contacts: List[Dict[str, Any]] = []
+            self.drafts: List[Dict[str, Any]] = []
+            self.active_draft: Optional[Dict[str, Any]] = None
 
-        cid = int(self.company["company_id"])
+            layout = QVBoxLayout(self)
+            header = QHBoxLayout()
+            self.company_label = QLabel("No company selected")
+            self.load_btn = QPushButton("Load Contacts/Drafts")
+            self.gen_btn  = QPushButton("Generate Draft")
+            self.save_btn = QPushButton("Save Draft")
+            self.send_btn = QPushButton("Send to Selected")
 
-        def done(res, err):
-            if err:
-                QMessageBox.critical(self, "Generation failed", str(err))
-                self.log.append("❌ Generation failure:\n" + exstr(err))
+            self.load_btn.clicked.connect(self.load_company_data)
+            self.gen_btn.clicked.connect(self.generate_draft_now)
+            self.save_btn.clicked.connect(self.save_draft)
+            self.send_btn.clicked.connect(self.send_now)
+            if not SENDER_OK:
+                self.send_btn.setDisabled(True); self.send_btn.setToolTip("email_send.smtp_send not available")
+
+            header.addWidget(self.company_label, 1)
+            header.addWidget(self.load_btn)
+            header.addWidget(self.gen_btn)
+            header.addWidget(self.save_btn)
+            header.addWidget(self.send_btn)
+            layout.addLayout(header)
+
+            split = QSplitter(Qt.Horizontal)
+            left = QWidget(); lv = QVBoxLayout(left)
+            lv.addWidget(QLabel("Recipients (valid emails only)"))
+            self.contact_list = QListWidget(); lv.addWidget(self.contact_list, 1)
+            lv.addWidget(QLabel("Drafts"))
+            self.draft_list = QListWidget(); lv.addWidget(self.draft_list, 1)
+            self.draft_list.itemSelectionChanged.connect(self._pick_draft)
+
+            right = QWidget(); rv = QVBoxLayout(right)
+            editor = QGroupBox("Editor")
+            ev = QVBoxLayout(editor)
+            self.subj_edit = QLineEdit()
+            self.body_edit = QTextEdit()
+            ev.addWidget(QLabel("Subject")); ev.addWidget(self.subj_edit)
+            ev.addWidget(QLabel("Body (HTML or plain text)")); ev.addWidget(self.body_edit, 1)
+            rv.addWidget(editor, 1)
+
+            split.addWidget(left); split.addWidget(right); split.setStretchFactor(1,2)
+            layout.addWidget(split, 1)
+
+        def set_company(self, company: Dict[str, Any]):
+            self.company = company
+            self.company_label.setText(f"{company.get('company_name','(unknown)')} — {company.get('website','')}")
+            self.contact_list.clear(); self.draft_list.clear()
+            self.subj_edit.clear(); self.body_edit.clear()
+            self.contacts, self.drafts, self.active_draft = [], [], None
+
+        def load_company_data(self):
+            if not self.company:
+                QMessageBox.information(self, "Pick a company", "Select a company first.")
                 return
-            subj, body_html = res
-            # insert to DB as draft
+            cid = int(self.company["company_id"])
+
+            def after_contacts(res, err):
+                if err:
+                    QMessageBox.critical(self, "Error", str(err))
+                    self.log.append("❌ Contacts load failed:\n" + exstr(err)); return
+                self.contacts = res or []
+                self.contact_list.clear()
+                for c in self.contacts:
+                    label = f"{c.get('contact_name') or '(no name)'}  <{c['email_address']}>"
+                    it = QListWidgetItem(label)
+                    it.setFlags(it.flags() | Qt.ItemIsUserCheckable)
+                    it.setCheckState(Qt.Unchecked)
+                    it.setData(Qt.UserRole, c)
+                    self.contact_list.addItem(it)
+                run_in_thread(lambda: sb_drafts(cid), after_drafts)
+
+            def after_drafts(res, err):
+                if err:
+                    QMessageBox.critical(self, "Error", str(err))
+                    self.log.append("❌ Drafts load failed:\n" + exstr(err)); return
+                self.drafts = res or []
+                self.draft_list.clear()
+                for d in self.drafts:
+                    it = QListWidgetItem(f"#{d['email_id']}  {d.get('subject') or '(no subject)'}")
+                    it.setData(Qt.UserRole, d)
+                    self.draft_list.addItem(it)
+                self.log.append(f"✅ {len(self.contacts)} valid contact(s); {len(self.drafts)} draft(s).")
+
+            run_in_thread(lambda: sb_contacts(cid), after_contacts)
+
+        def generate_draft_now(self):
+            if not self.company:
+                QMessageBox.information(self, "Pick a company", "Select a company first.")
+                return
+            if not ANTH_OK:
+                QMessageBox.warning(self, "Anthropic", "ANTHROPIC_API_KEY missing or anthropic not installed.")
+                return
+            cid = int(self.company["company_id"])
+
+            def done(res, err):
+                if err:
+                    QMessageBox.critical(self, "Generation failed", str(err))
+                    self.log.append("❌ Generation failure:\n" + exstr(err))
+                    return
+                subj, body_html = res
+                try:
+                    new_id = sb_insert_draft(cid, subj, body_html)
+                    self.log.append(f"✅ Inserted draft #{new_id}")
+                    self.load_company_data()
+                    QMessageBox.information(self, "Draft created", f"Draft generated and saved (ID #{new_id}).")
+                except Exception as e:
+                    QMessageBox.critical(self, "DB insert failed", str(e))
+                    self.log.append("❌ Draft insert failed:\n" + exstr(e))
+
+            run_in_thread(lambda: anthropic_generate_for_company(self.company), done)
+
+        def _pick_draft(self):
+            items = self.draft_list.selectedItems()
+            if not items: return
+            d = items[0].data(Qt.UserRole)
+            self.active_draft = d
+            self.subj_edit.setText(d.get("subject") or "")
+            self.body_edit.setPlainText(d.get("body") or "")
+
+        def save_draft(self):
+            if not self.active_draft:
+                QMessageBox.information(self, "No draft", "Select a draft first.")
+                return
+            eid = int(self.active_draft["email_id"])
+            subject = self.subj_edit.text().strip()
+            body = self.body_edit.toPlainText().strip()
             try:
-                new_id = sb_insert_draft(cid, subj, body_html)
-                self.log.append(f"✅ Inserted draft #{new_id}")
-                # refresh and select it
-                self.load_company_data()
-                QMessageBox.information(self, "Draft created", f"Draft generated and saved (ID #{new_id}).")
+                sb_update_draft(eid, subject, body)
+                self.active_draft["subject"] = subject
+                self.active_draft["body"] = body
+                QMessageBox.information(self, "Saved", "Draft updated.")
             except Exception as e:
-                QMessageBox.critical(self, "DB insert failed", str(e))
-                self.log.append("❌ Draft insert failed:\n" + exstr(e))
+                QMessageBox.critical(self, "Save failed", str(e))
+                self.log.append("❌ Save draft failed:\n" + exstr(e))
 
-        run_in_thread(lambda: anthropic_generate_for_company(self.company), done)
+        def _selected_recipients(self) -> List[Dict[str, Any]]:
+            out = []
+            for i in range(self.contact_list.count()):
+                it = self.contact_list.item(i)
+                if it.checkState() == Qt.Checked:
+                    out.append(it.data(Qt.UserRole))
+            return out
 
-    def _pick_draft(self):
-        items = self.draft_list.selectedItems()
-        if not items: return
-        d = items[0].data(Qt.UserRole)
-        self.active_draft = d
-        self.subj_edit.setText(d.get("subject") or "")
-        self.body_edit.setPlainText(d.get("body") or "")
+        def send_now(self):
+            if not self.active_draft:
+                QMessageBox.information(self, "No draft", "Select a draft first."); return
+            if not SENDER_OK:
+                QMessageBox.warning(self, "Sender missing", "email_send.smtp_send not available."); return
+            recips = self._selected_recipients()
+            if not recips:
+                QMessageBox.information(self, "No recipients", "Check at least one recipient."); return
 
-    def save_draft(self):
-        if not self.active_draft:
-            QMessageBox.information(self, "No draft", "Select a draft first.")
-            return
-        eid = int(self.active_draft["email_id"])
-        subject = self.subj_edit.text().strip()
-        body = self.body_edit.toPlainText().strip()
-        try:
-            sb_update_draft(eid, subject, body)
-            self.active_draft["subject"] = subject
-            self.active_draft["body"] = body
-            QMessageBox.information(self, "Saved", "Draft updated.")
-        except Exception as e:
-            QMessageBox.critical(self, "Save failed", str(e))
-            self.log.append("❌ Save draft failed:\n" + exstr(e))
+            subj = self.subj_edit.text().strip()
+            body = self.body_edit.toPlainText().strip()
+            body_html = body if body.lstrip().startswith("<") else None
 
-    def _selected_recipients(self) -> List[Dict[str, Any]]:
-        out = []
-        for i in range(self.contact_list.count()):
-            it = self.contact_list.item(i)
-            if it.checkState() == Qt.Checked:
-                out.append(it.data(Qt.UserRole))
-        return out
+            sent = 0; errs = []
+            for r in recips:
+                to = r["email_address"]
+                try:
+                    smtp_send(to, subj, body, body_html=body_html)
+                    sent += 1
+                except Exception as e:
+                    errs.append(f"{to}: {e}")
 
-    def send_now(self):
-        if not self.active_draft:
-            QMessageBox.information(self, "No draft", "Select a draft first."); return
-        if not SENDER_OK:
-            QMessageBox.warning(self, "Sender missing", "email_send.smtp_send not available."); return
+            if sent:
+                try:
+                    sb_mark_sent(int(self.active_draft["email_id"]))
+                except Exception as e:
+                    self.log.append("⚠️ Could not mark sent: " + str(e))
+                QMessageBox.information(self, "Sent", f"Emails sent: {sent}")
+            if errs:
+                self.log.append("❌ Some sends failed:\n" + "\n".join(errs))
 
-        recips = self._selected_recipients()
-        if not recips:
-            QMessageBox.information(self, "No recipients", "Check at least one recipient."); return
+    class MainWindow(QMainWindow):
+        def __init__(self):
+            super().__init__()
+            self.setWindowTitle("Outreach Dashboard (Generate → Edit → Send)")
+            self.resize(1200, 820)
 
-        subj = self.subj_edit.text().strip()
-        body = self.body_edit.toPlainText().strip()
-        body_html = body if body.lstrip().startswith("<") else None
+            self.log = QTextEdit(); self.log.setReadOnly(True)
+            self.tabs = QTabWidget()
+            self.companies = CompaniesTab(self.log)
+            self.compose   = ComposeTab(self.log)
+            self.tabs.addTab(self.companies, "Companies")
+            self.tabs.addTab(self.compose,   "Compose & Send")
 
-        sent = 0; errs = []
-        for r in recips:
-            to = r["email_address"]
-            try:
-                smtp_send(to, subj, body, body_html=body_html)
-                sent += 1
-            except Exception as e:
-                errs.append(f"{to}: {e}")
+            central = QWidget(); v = QVBoxLayout(central)
+            v.addWidget(self.tabs, 1)
+            v.addWidget(QLabel("Log")); v.addWidget(self.log)
+            self.setCentralWidget(central)
 
-        if sent:
-            try:
-                sb_mark_sent(int(self.active_draft["email_id"]))
-            except Exception as e:
-                self.log.append("⚠️ Could not mark sent: " + str(e))
-            QMessageBox.information(self, "Sent", f"Emails sent: {sent}")
-        if errs:
-            self.log.append("❌ Some sends failed:\n" + "\n".join(errs))
+            self.companies.company_selected.connect(self.on_company_selected)
+            self.companies.refresh()
 
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Outreach Dashboard (Generate → Edit → Send)")
-        self.resize(1200, 820)
+        def on_company_selected(self, company: Dict[str, Any]):
+            self.compose.set_company(company)
+            self.tabs.setCurrentWidget(self.compose)
+            self.compose.load_company_data()
 
-        self.log = QTextEdit(); self.log.setReadOnly(True)
+    def main():
+        app = QApplication(sys.argv)
+        w = MainWindow()
+        w.show()
+        sys.exit(app.exec())
 
-        self.tabs = QTabWidget()
-        self.companies = CompaniesTab(self.log)
-        self.compose   = ComposeTab(self.log)
-        self.tabs.addTab(self.companies, "Companies")
-        self.tabs.addTab(self.compose,   "Compose & Send")
-
-        central = QWidget(); v = QVBoxLayout(central)
-        v.addWidget(self.tabs, 1)
-        v.addWidget(QLabel("Log")); v.addWidget(self.log)
-        self.setCentralWidget(central)
-
-        self.companies.company_selected.connect(self.on_company_selected)
-        self.companies.refresh()
-
-    def on_company_selected(self, company: Dict[str, Any]):
-        self.compose.set_company(company)
-        self.tabs.setCurrentWidget(self.compose)
-        # auto-load contacts/drafts
-        self.compose.load_company_data()
-
-def main():
-    app = QApplication(sys.argv)
-    w = MainWindow()
-    w.show()
-    sys.exit(app.exec())
-
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()
