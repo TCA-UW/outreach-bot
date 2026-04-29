@@ -4,3 +4,12 @@ dotenv
 requests
 bs4
 googlemaps
+PyJWT
+uvicorn
+PySide6
+fastapi
+anthropic
+dnspython
+tenacity
+pydantic
+uvicorn[standard]

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Outreach — UW Technology Consulting</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -41,29 +42,142 @@
     overflow: hidden;
   }
 
-  /* Ambient background */
   body::before {
     content: '';
     position: fixed;
-    top: -20%;
-    left: -10%;
-    width: 60%;
-    height: 60%;
+    top: -20%; left: -10%;
+    width: 60%; height: 60%;
     background: radial-gradient(ellipse, rgba(124,109,255,0.07) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
   body::after {
     content: '';
     position: fixed;
-    bottom: -20%;
-    right: -10%;
-    width: 50%;
-    height: 50%;
+    bottom: -20%; right: -10%;
+    width: 50%; height: 50%;
     background: radial-gradient(ellipse, rgba(34,211,165,0.05) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+    pointer-events: none; z-index: 0;
   }
+
+  /* ── Login Screen ── */
+  #login-screen {
+    position: fixed; inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background: var(--bg);
+  }
+
+  .login-card {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 360px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeInUp 0.3s ease;
+  }
+
+  .login-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .login-logo-mark {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--accent), var(--green));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+  }
+
+  .login-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .login-sub {
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.5;
+    margin-top: -12px;
+  }
+
+  .login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .login-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text3);
+  }
+  .login-input {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+  }
+  .login-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(124,109,255,0.12);
+  }
+  .login-input::placeholder { color: var(--text3); }
+
+  .login-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .login-btn:hover {
+    background: #6c5cf7;
+    box-shadow: 0 4px 20px rgba(124,109,255,0.4);
+    transform: translateY(-1px);
+  }
+  .login-btn:active { transform: translateY(0); }
+  .login-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .login-error {
+    font-size: 11px;
+    color: var(--red);
+    background: rgba(248,113,113,0.08);
+    border: 1px solid rgba(248,113,113,0.2);
+    border-radius: 7px;
+    padding: 8px 12px;
+    display: none;
+  }
+  .login-error.visible { display: block; }
 
   /* ── Header ── */
   header {
@@ -80,8 +194,7 @@
   }
 
   .logo-mark {
-    width: 34px;
-    height: 34px;
+    width: 34px; height: 34px;
     background: linear-gradient(135deg, var(--accent), var(--green));
     border-radius: 8px;
     display: flex;
@@ -102,10 +215,7 @@
     color: var(--text);
     letter-spacing: -0.3px;
   }
-  .logo-text span {
-    color: var(--text3);
-    font-weight: 400;
-  }
+  .logo-text span { color: var(--text3); font-weight: 400; }
 
   header nav {
     display: flex;
@@ -157,6 +267,20 @@
     50% { opacity: 0.4; }
   }
 
+  .logout-btn {
+    padding: 5px 12px;
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.15s;
+    margin-left: 8px;
+  }
+  .logout-btn:hover { color: var(--red); border-color: rgba(248,113,113,0.3); background: rgba(248,113,113,0.05); }
+
   /* ── Layout ── */
   .app-body {
     display: flex;
@@ -192,13 +316,10 @@
     margin-bottom: 12px;
   }
 
-  .search-wrap {
-    position: relative;
-  }
+  .search-wrap { position: relative; }
   .search-wrap svg {
     position: absolute;
-    left: 10px;
-    top: 50%;
+    left: 10px; top: 50%;
     transform: translateY(-50%);
     color: var(--text3);
   }
@@ -235,10 +356,7 @@
     border: 1px solid transparent;
     position: relative;
   }
-  .company-item:hover {
-    background: var(--surface2);
-    border-color: var(--border);
-  }
+  .company-item:hover { background: var(--surface2); border-color: var(--border); }
   .company-item.active {
     background: var(--accent-glow);
     border-color: rgba(124,109,255,0.3);
@@ -270,11 +388,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .ci-badges {
-    display: flex;
-    gap: 4px;
-    margin-top: 6px;
-  }
+  .ci-badges { display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap; }
   .badge {
     font-size: 9px;
     padding: 2px 6px;
@@ -299,16 +413,11 @@
     flex-direction: column;
   }
 
-  /* ── Tab panels ── */
   .tab-panel { display: none; flex: 1; overflow: hidden; flex-direction: column; }
   .tab-panel.active { display: flex; }
 
   /* ── Compose Panel ── */
-  .compose-layout {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-  }
+  .compose-layout { display: flex; flex: 1; overflow: hidden; }
 
   .compose-left {
     width: 340px;
@@ -352,42 +461,6 @@
     border: 1px solid var(--border);
   }
 
-  /* Company info banner */
-  .company-banner {
-    padding: 20px 22px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-    flex-shrink: 0;
-  }
-  .cb-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-  .cb-url {
-    font-size: 11px;
-    color: var(--accent2);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .cb-url:hover { text-decoration: underline; }
-  .cb-desc {
-    font-size: 11px;
-    color: var(--text2);
-    margin-top: 8px;
-    line-height: 1.5;
-  }
-  .cb-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 14px;
-  }
-
-  /* Contacts section */
   .contacts-scroll {
     flex: 1;
     overflow-y: auto;
@@ -458,7 +531,6 @@
     border-color: var(--accent);
   }
 
-  /* Drafts section */
   .drafts-section {
     border-top: 1px solid var(--border);
     display: flex;
@@ -496,13 +568,7 @@
     text-overflow: ellipsis;
   }
 
-  /* Editor */
-  .editor-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
+  .editor-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
 
   .editor-toolbar {
     display: flex;
@@ -522,7 +588,6 @@
     font-weight: 700;
     font-size: 16px;
     outline: none;
-    placeholder-color: var(--text3);
   }
   .subject-field::placeholder { color: var(--text3); }
 
@@ -536,7 +601,7 @@
     line-height: 1.7;
     resize: none;
     outline: none;
-    padding: 22px 22px;
+    padding: 22px;
   }
   .body-field::placeholder { color: var(--text3); }
 
@@ -549,10 +614,7 @@
     flex-shrink: 0;
   }
 
-  .recip-preview {
-    font-size: 11px;
-    color: var(--text3);
-  }
+  .recip-preview { font-size: 11px; color: var(--text3); }
   .recip-preview strong { color: var(--accent2); }
 
   /* Buttons */
@@ -571,29 +633,18 @@
     white-space: nowrap;
     letter-spacing: 0.2px;
   }
-  .btn-primary {
-    background: var(--accent);
-    color: white;
-    box-shadow: 0 0 0 rgba(124,109,255,0);
-  }
+  .btn-primary { background: var(--accent); color: white; }
   .btn-primary:hover {
     background: #6c5cf7;
     box-shadow: 0 4px 20px rgba(124,109,255,0.4);
     transform: translateY(-1px);
   }
-  .btn-primary:active { transform: translateY(0); }
-
   .btn-ghost {
     background: transparent;
     color: var(--text2);
     border: 1px solid var(--border2);
   }
-  .btn-ghost:hover {
-    background: var(--surface2);
-    color: var(--text);
-    border-color: var(--border2);
-  }
-
+  .btn-ghost:hover { background: var(--surface2); color: var(--text); }
   .btn-success {
     background: rgba(34,211,165,0.15);
     color: var(--green);
@@ -604,16 +655,7 @@
     box-shadow: 0 4px 20px rgba(34,211,165,0.2);
     transform: translateY(-1px);
   }
-
-  .btn-sm {
-    padding: 5px 11px;
-    font-size: 11px;
-  }
-
-  .btn-icon {
-    padding: 7px;
-    border-radius: 7px;
-  }
+  .btn-sm { padding: 5px 11px; font-size: 11px; }
 
   /* ── Discover Tab ── */
   .discover-layout {
@@ -648,13 +690,7 @@
     line-height: 1.5;
   }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
   .field-group { display: flex; flex-direction: column; gap: 5px; }
   .field-label {
     font-size: 10px;
@@ -681,7 +717,6 @@
   }
   .field-input::placeholder { color: var(--text3); }
 
-  /* Keywords tags */
   .tag-input-wrap {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -709,8 +744,7 @@
   }
   .kw-tag button {
     background: none; border: none; color: var(--accent2);
-    cursor: pointer; font-size: 12px; line-height: 1; padding: 0;
-    opacity: 0.6;
+    cursor: pointer; font-size: 12px; line-height: 1; padding: 0; opacity: 0.6;
   }
   .kw-tag button:hover { opacity: 1; }
 
@@ -725,7 +759,6 @@
     flex: 1;
   }
 
-  /* Log card */
   .log-wrap {
     grid-column: 1 / -1;
     background: var(--bg);
@@ -771,7 +804,6 @@
   .log-info { color: var(--accent2); }
   .log-warn { color: var(--yellow); }
 
-  /* Empty state */
   .empty-state {
     display: flex;
     flex-direction: column;
@@ -802,7 +834,6 @@
   }
   .empty-sub { font-size: 12px; line-height: 1.5; max-width: 240px; }
 
-  /* Stats bar */
   .stats-bar {
     display: flex;
     gap: 1px;
@@ -829,7 +860,6 @@
   .stat-cell.accent .stat-val { color: var(--accent2); }
   .stat-cell.green .stat-val { color: var(--green); }
 
-  /* Pill progress */
   .progress-bar {
     height: 2px;
     background: var(--surface2);
@@ -843,13 +873,7 @@
     transition: width 0.5s ease;
   }
 
-  /* Tag chip row */
-  .chip-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 10px;
-  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
   .chip {
     font-size: 10px;
     padding: 3px 9px;
@@ -865,18 +889,15 @@
     color: var(--accent2);
   }
 
-  /* Animation */
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
   .fadein { animation: fadeInUp 0.25s ease forwards; }
 
-  /* Notification toast */
   .toast-container {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 24px; right: 24px;
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -900,18 +921,13 @@
     from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
   }
-  @keyframes fadeOut {
-    to { opacity: 0; transform: translateX(20px); }
-  }
+  @keyframes fadeOut { to { opacity: 0; transform: translateX(20px); } }
   .toast.success { border-color: rgba(34,211,165,0.3); }
   .toast.error { border-color: rgba(248,113,113,0.3); }
-  .toast-dot {
-    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-  }
+  .toast-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .toast.success .toast-dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
   .toast.error .toast-dot { background: var(--red); box-shadow: 0 0 8px var(--red); }
 
-  /* Loading spinner */
   .spinner {
     width: 14px; height: 14px;
     border: 2px solid rgba(255,255,255,0.15);
@@ -921,33 +937,39 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* Scrollable drafts */
-  .drafts-scroll {
-    overflow-y: auto;
-    flex: 1;
-  }
+  .drafts-scroll { overflow-y: auto; flex: 1; }
   .drafts-scroll::-webkit-scrollbar { width: 3px; }
   .drafts-scroll::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
-
-  /* Divider with label */
-  .divider-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 12px 0 8px;
-    padding: 0 12px;
-  }
-  .divider-label span {
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--text3);
-    white-space: nowrap;
-  }
-  .divider-line { flex: 1; height: 1px; background: var(--border); }
 </style>
 </head>
 <body>
+
+<!-- ── LOGIN SCREEN ── -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-mark">UW</div>
+      <div>
+        <div class="login-title">TCA Outreach</div>
+      </div>
+    </div>
+    <div class="login-sub">Sign in with your team account to continue.</div>
+    <div class="login-error" id="login-error"></div>
+    <div class="login-field">
+      <div class="login-label">Email</div>
+      <input class="login-input" id="login-email" type="email" placeholder="you@uw.edu" autocomplete="email">
+    </div>
+    <div class="login-field">
+      <div class="login-label">Password</div>
+      <input class="login-input" id="login-pass" type="password" placeholder="••••••••" autocomplete="current-password"
+             onkeydown="if(event.key==='Enter') login()">
+    </div>
+    <button class="login-btn" id="login-btn" onclick="login()">Sign In</button>
+  </div>
+</div>
+
+<!-- ── APP (hidden until logged in) ── -->
+<div id="app" style="display:none;flex-direction:column;height:100vh">
 
 <!-- ── HEADER ── -->
 <header>
@@ -963,12 +985,14 @@
     <button class="nav-btn active" onclick="switchTab('discover', this)">Discover</button>
     <button class="nav-btn" onclick="switchTab('compose', this)">Compose</button>
   </nav>
+  <span id="user-email" style="font-size:11px;color:var(--text3);margin-left:8px"></span>
+  <button class="logout-btn" onclick="logout()">Sign out</button>
 </header>
 
 <!-- ── APP BODY ── -->
 <div class="app-body">
 
-  <!-- ── SIDEBAR (Companies) ── -->
+  <!-- ── SIDEBAR ── -->
   <div class="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">Companies</div>
@@ -978,7 +1002,6 @@
         </svg>
         <input class="search-input" type="text" placeholder="Search companies..." id="company-search" oninput="filterCompanies()">
       </div>
-      <!-- Quick filter chips -->
       <div class="chip-row">
         <span class="chip active" onclick="toggleChip(this,'all')">All</span>
         <span class="chip" onclick="toggleChip(this,'drafts')">Has Drafts</span>
@@ -987,9 +1010,7 @@
         <span class="chip" onclick="toggleChip(this,'unsent')">Unsent</span>
       </div>
     </div>
-    <div class="company-list" id="company-list">
-      <!-- Populated by JS -->
-    </div>
+    <div class="company-list" id="company-list"></div>
     <div class="sidebar-footer">
       <button class="btn btn-ghost btn-sm" style="width:100%" onclick="refreshCompanies()">
         <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -1007,7 +1028,6 @@
     <div class="tab-panel active" id="tab-discover">
       <div class="discover-layout">
 
-        <!-- Scanner config -->
         <div class="discover-card fadein">
           <div class="dc-title">Scanner Configuration</div>
           <div class="dc-sub">Configure Google Places search parameters to discover local businesses and extract contact emails.</div>
@@ -1054,7 +1074,6 @@
           </div>
         </div>
 
-        <!-- Stats / info -->
         <div class="discover-card fadein" style="animation-delay:0.05s">
           <div class="dc-title">Validation Pipeline</div>
           <div class="dc-sub">Emails pass through syntax, DNS, and SMTP checks before entering the database.</div>
@@ -1113,7 +1132,6 @@
           </div>
         </div>
 
-        <!-- Log -->
         <div class="log-wrap">
           <div class="log-header">
             <div class="log-title">Activity Log</div>
@@ -1129,7 +1147,6 @@
 
     <!-- ── COMPOSE TAB ── -->
     <div class="tab-panel" id="tab-compose">
-      <!-- Stats bar -->
       <div class="stats-bar" id="compose-stats" style="display:none">
         <div class="stat-cell">
           <div class="stat-val" id="sc-name" style="font-size:15px;font-family:'Syne',sans-serif">—</div>
@@ -1149,7 +1166,6 @@
         </div>
       </div>
 
-      <!-- No company selected state -->
       <div class="empty-state" id="compose-empty">
         <div class="empty-icon">
           <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -1160,12 +1176,8 @@
         <div class="empty-sub">Double-click a company in the sidebar to load its contacts and drafts here.</div>
       </div>
 
-      <!-- Compose layout (hidden until company selected) -->
       <div class="compose-layout" id="compose-layout" style="display:none">
-
-        <!-- Left panel -->
         <div class="compose-left">
-          <!-- Contacts -->
           <div class="panel-header">
             <div class="panel-label">Recipients</div>
             <div class="panel-count" id="recip-count-badge">0 selected</div>
@@ -1175,8 +1187,6 @@
               <div class="empty-sub">No valid contacts found for this company.</div>
             </div>
           </div>
-
-          <!-- Drafts section -->
           <div class="drafts-section">
             <div class="panel-header" style="padding:12px 16px">
               <div class="panel-label">Drafts</div>
@@ -1193,7 +1203,6 @@
           </div>
         </div>
 
-        <!-- Right panel: editor -->
         <div class="compose-right">
           <div class="editor-toolbar">
             <input class="subject-field" id="subject-field" placeholder="Email subject..." type="text">
@@ -1217,17 +1226,89 @@
       </div>
     </div>
 
-  </div><!-- /main -->
-</div><!-- /app-body -->
+  </div>
+</div>
 
-<!-- Toasts -->
+</div><!-- /app -->
+
 <div class="toast-container" id="toasts"></div>
 
 <script>
+// ── Supabase Auth ──
+// IMPORTANT: Replace these two values with your own from the Supabase dashboard
+// Project Settings → API → Project URL and anon/public key
+const SUPABASE_URL  = 'https://ktinxotuaivtmrjxokbj.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0aW54b3R1YWl2dG1yanhva2JqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkyOTI0MTEsImV4cCI6MjA4NDg2ODQxMX0.uspjIOhUjZDXlQMJHEZc8-UdCOptSjM4Fmcax7NN7tU';
+
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+async function init() {
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) {
+    showApp(session);
+  } else {
+    document.getElementById('login-screen').style.display = 'flex';
+  }
+}
+
+function showApp(session) {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  document.getElementById('user-email').textContent = session.user.email;
+  refreshCompanies();
+}
+
+async function login() {
+  const btn = document.getElementById('login-btn');
+  const errEl = document.getElementById('login-error');
+  const email = document.getElementById('login-email').value.trim();
+  const pass  = document.getElementById('login-pass').value;
+
+  errEl.classList.remove('visible');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Signing in...';
+
+  const { data, error } = await sb.auth.signInWithPassword({ email, password: pass });
+
+  if (error) {
+    errEl.textContent = error.message;
+    errEl.classList.add('visible');
+    btn.disabled = false;
+    btn.textContent = 'Sign In';
+    return;
+  }
+  showApp(data.session);
+}
+
+async function logout() {
+  await sb.auth.signOut();
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('login-pass').value = '';
+  document.getElementById('login-error').classList.remove('visible');
+}
+
+// ── Authenticated fetch wrapper ──
+async function apiFetch(url, options = {}) {
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) {
+    logout();
+    throw new Error('Not authenticated');
+  }
+  return fetch(url, {
+    ...options,
+    headers: {
+      ...(options.headers || {}),
+      'Authorization': `Bearer ${session.access_token}`,
+      'Content-Type': 'application/json',
+    }
+  });
+}
+
 // ─────────────────────────────────────────────
 // State
 // ─────────────────────────────────────────────
-
 const API = '';
 
 const state = {
@@ -1239,48 +1320,6 @@ const state = {
   activeDraft: null,
   checkedContacts: new Set(),
   currentTab: 'discover',
-  logLines: []
-};
-
-// ─────────────────────────────────────────────
-// Mock data (replace with real API calls)
-// ─────────────────────────────────────────────
-const MOCK_COMPANIES = [
-  { company_id: 1, company_name: "Seattle Aquarium", website: "seattleaquarium.org", description: "Seattle, WA 98101", contacts: 3, drafts: 1, sent: 2 },
-  { company_id: 2, company_name: "Woodland Park Zoo", website: "zoo.org", description: "5500 Phinney Ave N, Seattle, WA", contacts: 5, drafts: 0, sent: 1 },
-  { company_id: 3, company_name: "UW Veterinary Care", website: "uwvetcare.org", description: "University of Washington, Seattle", contacts: 2, drafts: 2, sent: 0 },
-  { company_id: 4, company_name: "Emerald City Science", website: "emeraldcitysci.org", description: "340 15th Ave E, Seattle, WA", contacts: 4, drafts: 1, sent: 3 },
-  { company_id: 5, company_name: "Pacific Rim Vet", website: "pacificrimvet.com", description: "1200 Union St, Seattle, WA", contacts: 1, drafts: 0, sent: 0 },
-  { company_id: 6, company_name: "Burke Museum", website: "burkemuseum.org", description: "4300 15th Ave NE, Seattle", contacts: 6, drafts: 3, sent: 5 },
-];
-
-const MOCK_CONTACTS = {
-  1: [
-    { contact_id: 1, contact_name: "Dr. Sarah Chen", contact_title: "Director of Operations", email_address: "s.chen@seattleaquarium.org" },
-    { contact_id: 2, contact_name: "Marcus Okafor", contact_title: "Tech Lead", email_address: "m.okafor@seattleaquarium.org" },
-    { contact_id: 3, contact_name: "Priya Nair", contact_title: "Admin", email_address: "p.nair@seattleaquarium.org" },
-  ],
-  2: [
-    { contact_id: 4, contact_name: "James Whitfield", contact_title: "CEO", email_address: "j.whitfield@zoo.org" },
-    { contact_id: 5, contact_name: "Lena Hartmann", contact_title: "IT Director", email_address: "l.hartmann@zoo.org" },
-  ],
-  3: [
-    { contact_id: 6, contact_name: "Dr. Alex Rivera", contact_title: "Head Veterinarian", email_address: "a.rivera@uwvetcare.org" },
-  ],
-  4: [
-    { contact_id: 7, contact_name: "Tiffany Brooks", contact_title: "Executive Director", email_address: "t.brooks@emeraldcitysci.org" },
-    { contact_id: 8, contact_name: "Raj Patel", contact_title: "Systems Manager", email_address: "r.patel@emeraldcitysci.org" },
-  ],
-};
-
-const MOCK_DRAFTS = {
-  1: [
-    { email_id: 101, subject: "UW Technology Consulting — Discovery Meeting", body: "Dear Dr. Chen,\n\nI hope this message finds you well. My name is [Name], and I represent UW Technology Consulting...\n\nWe specialize in helping organizations like the Seattle Aquarium leverage modern technology to enhance operations and visitor experiences.\n\nWould you be open to a brief 20-minute discovery call?\n\nBest regards,\n[Name]\nUW Technology Consulting", status: "draft" }
-  ],
-  3: [
-    { email_id: 102, subject: "Exploring Technology Solutions — UW Consulting", body: "Dear Dr. Rivera,\n\nI'm reaching out from UW Technology Consulting...", status: "draft" },
-    { email_id: 103, subject: "Follow-up: Technology Partnership Opportunity", body: "Hi Dr. Rivera,\n\nFollowing up on our previous note...", status: "draft" },
-  ],
 };
 
 // ─────────────────────────────────────────────
@@ -1297,23 +1336,13 @@ function switchTab(tab, btn) {
 // ─────────────────────────────────────────────
 // Companies / sidebar
 // ─────────────────────────────────────────────
-// function refreshCompanies() {
-//   state.companies = MOCK_COMPANIES;
-//   state.filteredCompanies = [...state.companies];
-//   renderCompanyList();
-//   updateStats();
-//   log('info', `Loaded ${state.companies.length} companies.`);
-//   toast('success', `${state.companies.length} companies loaded`);
-// }
 async function refreshCompanies() {
   try {
-    const res = await fetch(`${API}/api/companies`);
+    const res = await apiFetch(`${API}/api/companies`);
     if (!res.ok) throw new Error(await res.text());
-
     const data = await res.json();
     state.companies = data;
     state.filteredCompanies = [...data];
-
     renderCompanyList();
     updateStats();
     log('info', `Loaded ${state.companies.length} companies.`);
@@ -1363,6 +1392,7 @@ function renderCompanyList() {
     const initials = c.company_name.split(' ').slice(0,2).map(w => w[0]).join('');
     const hasDrafts = (c.unsent_count || 0) > 0;
     const hasContacts = (c.contact_count || 0) > 0;
+    const hasSent = (c.emailed_count || 0) > 0;
 
     return `
     <div class="company-item ${isActive ? 'active' : ''}" onclick="selectCompany(${c.company_id})" ondblclick="openCompose(${c.company_id})">
@@ -1373,8 +1403,8 @@ function renderCompanyList() {
           <div class="ci-meta">${c.website || '—'}</div>
           <div class="ci-badges">
             ${hasContacts ? `<span class="badge badge-purple">${c.contact_count} contacts</span>` : ''}
-            ${hasDrafts ? `<span class="badge badge-yellow">${c.unsent_count} unsent</span>` : ''}
-            ${c.emailed_count ? `<span class="badge badge-green">✓ sent</span>` : `<span class="badge badge-yellow">unsent</span>`}
+            ${hasDrafts   ? `<span class="badge badge-yellow">${c.unsent_count} unsent</span>` : ''}
+            ${hasSent     ? `<span class="badge badge-green">✓ sent</span>` : `<span class="badge badge-yellow">unsent</span>`}
           </div>
         </div>
       </div>
@@ -1396,34 +1426,6 @@ function openCompose(id) {
 // ─────────────────────────────────────────────
 // Compose tab
 // ─────────────────────────────────────────────
-// function loadCompanyData() {
-//   const c = state.activeCompany;
-//   if (!c) return;
-
-//   document.getElementById('compose-empty').style.display = 'none';
-//   document.getElementById('compose-layout').style.display = 'flex';
-//   document.getElementById('compose-stats').style.display = 'flex';
-
-//   document.getElementById('sc-name').textContent = c.company_name;
-
-//   // Load contacts
-//   state.contacts = MOCK_CONTACTS[c.company_id] || [];
-//   state.checkedContacts.clear();
-//   renderContacts();
-
-//   // Load drafts
-//   state.drafts = MOCK_DRAFTS[c.company_id] || [];
-//   state.activeDraft = null;
-//   renderDrafts();
-
-//   document.getElementById('sc-contacts').textContent = state.contacts.length;
-//   document.getElementById('sc-drafts').textContent = state.drafts.length;
-//   document.getElementById('sc-recips').textContent = '0';
-
-//   if (state.drafts.length) selectDraft(state.drafts[0]);
-
-//   log('info', `Loaded ${state.contacts.length} contacts, ${state.drafts.length} drafts for ${c.company_name}`);
-// }
 async function loadCompanyData() {
   const c = state.activeCompany;
   if (!c) return;
@@ -1431,20 +1433,18 @@ async function loadCompanyData() {
   document.getElementById('compose-empty').style.display = 'none';
   document.getElementById('compose-layout').style.display = 'flex';
   document.getElementById('compose-stats').style.display = 'flex';
-
   document.getElementById('sc-name').textContent = c.company_name;
 
   try {
     const [contactsRes, draftsRes] = await Promise.all([
-      fetch(`${API}/api/companies/${c.company_id}/contacts`),
-      fetch(`${API}/api/companies/${c.company_id}/drafts`)
+      apiFetch(`${API}/api/companies/${c.company_id}/contacts`),
+      apiFetch(`${API}/api/companies/${c.company_id}/drafts`)
     ]);
-
     if (!contactsRes.ok) throw new Error(await contactsRes.text());
-    if (!draftsRes.ok) throw new Error(await draftsRes.text());
+    if (!draftsRes.ok)   throw new Error(await draftsRes.text());
 
     state.contacts = await contactsRes.json();
-    state.drafts = await draftsRes.json();
+    state.drafts   = await draftsRes.json();
     state.activeDraft = null;
     state.checkedContacts.clear();
 
@@ -1452,11 +1452,10 @@ async function loadCompanyData() {
     renderDrafts();
 
     document.getElementById('sc-contacts').textContent = state.contacts.length;
-    document.getElementById('sc-drafts').textContent = state.drafts.length;
-    document.getElementById('sc-recips').textContent = '0';
+    document.getElementById('sc-drafts').textContent   = state.drafts.length;
+    document.getElementById('sc-recips').textContent   = '0';
 
     if (state.drafts.length) selectDraft(state.drafts[0]);
-
     log('info', `Loaded ${state.contacts.length} contacts, ${state.drafts.length} drafts for ${c.company_name}`);
   } catch (e) {
     toast('error', 'Failed to load company data');
@@ -1470,18 +1469,16 @@ function renderContacts() {
     el.innerHTML = `<div class="empty-state" style="padding:30px"><div class="empty-sub">No valid contacts found.</div></div>`;
     return;
   }
-
   const palettes = [
     ['#7c6dff20','#7c6dff'],['#22d3a520','#22d3a5'],['#f472b620','#f472b6'],
     ['#fbbf2420','#fbbf24'],['#60a5fa20','#60a5fa'],
   ];
-
   el.innerHTML = state.contacts.map((c, i) => {
     const checked = state.checkedContacts.has(c.contact_id);
     const [bg, fg] = palettes[i % palettes.length];
     const initials = (c.contact_name || '?').split(' ').slice(0,2).map(w=>w[0]).join('');
     return `
-    <div class="contact-card ${checked ? 'checked' : ''}" onclick="toggleContact(${c.contact_id})" id="cc-${c.contact_id}">
+    <div class="contact-card ${checked ? 'checked' : ''}" onclick="toggleContact(${c.contact_id})">
       <div class="cc-avatar" style="background:${bg};color:${fg}">${initials}</div>
       <div class="cc-info">
         <div class="cc-name">${c.contact_name || '(no name)'}</div>
@@ -1496,11 +1493,8 @@ function renderContacts() {
 }
 
 function toggleContact(id) {
-  if (state.checkedContacts.has(id)) {
-    state.checkedContacts.delete(id);
-  } else {
-    state.checkedContacts.add(id);
-  }
+  if (state.checkedContacts.has(id)) state.checkedContacts.delete(id);
+  else state.checkedContacts.add(id);
   renderContacts();
   updateRecipPreview();
 }
@@ -1525,37 +1519,26 @@ function renderDrafts() {
     el.innerHTML = `<div style="padding:12px 16px;font-size:11px;color:var(--text3)">No drafts yet. Click Generate.</div>`;
     return;
   }
-
-  // Sort: Unsent first, Emailed at bottom
   const sorted = [
     ...state.drafts.filter(d => d.status !== 'Emailed'),
     ...state.drafts.filter(d => d.status === 'Emailed'),
   ];
-
-  // Add divider if there are both unsent and emailed
   const unsentCount = sorted.filter(d => d.status !== 'Emailed').length;
-  const emailedCount = sorted.filter(d => d.status === 'Emailed').length;
 
   el.innerHTML = sorted.map((d, i) => {
-    const isSent = d.status === 'Emailed';
+    const isSent   = d.status === 'Emailed';
     const isActive = state.activeDraft && state.activeDraft.email_id === d.email_id;
     const sentTime = d.sent_at
       ? new Date(d.sent_at).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
       : null;
-
-    // Insert divider before first Emailed item
-    const divider = (isSent && i === unsentCount && unsentCount > 0)
+    const divider  = (isSent && i === unsentCount && unsentCount > 0)
       ? `<div style="display:flex;align-items:center;gap:8px;padding:6px 12px 2px">
            <div style="flex:1;height:1px;background:var(--border)"></div>
            <span style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3)">Emailed</span>
            <div style="flex:1;height:1px;background:var(--border)"></div>
-         </div>`
-      : '';
-
+         </div>` : '';
     return divider + `
-    <div class="draft-item ${isActive ? 'active' : ''}"
-         onclick="selectDraft(${d.email_id})"
-         style="${isSent ? 'opacity:0.5' : ''}">
+    <div class="draft-item ${isActive ? 'active' : ''}" onclick="selectDraft(${d.email_id})" style="${isSent ? 'opacity:0.5' : ''}">
       <span class="draft-id" style="${isSent ? 'background:var(--green-dim);color:var(--green)' : ''}">#${d.email_id}</span>
       <span class="draft-subject" style="${isSent ? 'text-decoration:line-through;color:var(--text3)' : ''}">${d.subject || '(no subject)'}</span>
       ${isSent ? `<span style="font-size:9px;color:var(--green);flex-shrink:0;margin-left:auto;white-space:nowrap">✓ ${sentTime || 'sent'}</span>` : ''}
@@ -1568,14 +1551,14 @@ function selectDraft(draftOrId) {
   if (!d) return;
   state.activeDraft = d;
   document.getElementById('subject-field').value = d.subject || '';
-  document.getElementById('body-field').value = d.body || '';
+  document.getElementById('body-field').value    = d.body    || '';
   renderDrafts();
 }
 
 function saveDraft() {
   if (!state.activeDraft) return toast('error', 'No draft selected');
   state.activeDraft.subject = document.getElementById('subject-field').value;
-  state.activeDraft.body = document.getElementById('body-field').value;
+  state.activeDraft.body    = document.getElementById('body-field').value;
   log('ok', `Draft #${state.activeDraft.email_id} saved.`);
   toast('success', 'Draft saved');
   renderDrafts();
@@ -1587,15 +1570,12 @@ async function generateDraft() {
   btn.disabled = true;
   btn.innerHTML = '<div class="spinner"></div> Generating...';
   try {
-    const res = await fetch(`${API}/api/companies/${state.activeCompany.company_id}/generate`, {
-      method: 'POST'
-    });
+    const res = await apiFetch(`${API}/api/companies/${state.activeCompany.company_id}/generate`, { method: 'POST' });
     if (!res.ok) throw new Error(await res.text());
     const draft = await res.json();
     state.drafts.unshift(draft);
     selectDraft(draft);
-    const unsentCount = state.drafts.filter(d => d.status !== 'Emailed').length;
-    document.getElementById('sc-drafts').textContent = unsentCount;
+    document.getElementById('sc-drafts').textContent = state.drafts.filter(d => d.status !== 'Emailed').length;
     toast('success', 'Draft generated');
     log('ok', `Draft #${draft.email_id} generated for ${state.activeCompany.company_name}.`);
   } catch (e) {
@@ -1608,7 +1588,7 @@ async function generateDraft() {
 }
 
 async function sendEmails() {
-  if (!state.activeDraft) return toast('error', 'Select a draft first');
+  if (!state.activeDraft)        return toast('error', 'Select a draft first');
   if (!state.checkedContacts.size) return toast('error', 'Select at least one recipient');
 
   const btn = document.getElementById('send-btn');
@@ -1616,31 +1596,28 @@ async function sendEmails() {
   btn.innerHTML = '<div class="spinner"></div> Sending…';
 
   try {
-    const res = await fetch(`${API}/api/send`, {
+    const res = await apiFetch(`${API}/api/send`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email_id: state.activeDraft.email_id,
+        email_id:    state.activeDraft.email_id,
         contact_ids: [...state.checkedContacts],
-        subject: document.getElementById('subject-field').value,
-        body: document.getElementById('body-field').value,
+        subject:     document.getElementById('subject-field').value,
+        body:        document.getElementById('body-field').value,
       })
     });
     const { sent, errors } = await res.json();
 
     if (sent) {
-      // Mark active draft as Emailed locally
-      state.activeDraft.status = 'Emailed';
+      state.activeDraft.status  = 'Emailed';
       state.activeDraft.sent_at = new Date().toISOString();
 
-      // Move it to end of array
       state.drafts = [
         ...state.drafts.filter(d => d.email_id !== state.activeDraft.email_id),
         state.activeDraft,
       ];
 
-      // Move company to bottom of sidebar list
       const cid = state.activeCompany.company_id;
+      state.activeCompany.emailed_count = (state.activeCompany.emailed_count || 0) + sent;
       state.companies = [
         ...state.companies.filter(c => c.company_id !== cid),
         state.activeCompany,
@@ -1649,27 +1626,16 @@ async function sendEmails() {
         ...state.filteredCompanies.filter(c => c.company_id !== cid),
         state.activeCompany,
       ];
-      // Inside the if (sent) block, after renderCompanyList():
-      state.activeCompany.emailed_count = (state.activeCompany.emailed_count || 0) + sent;
       renderCompanyList();
-      
 
-      // Auto-advance to next Unsent draft
       const nextDraft = state.drafts.find(d => d.status !== 'Emailed');
-      if (nextDraft) {
-        selectDraft(nextDraft);
-      } else {
-        renderDrafts();
-      }
+      if (nextDraft) selectDraft(nextDraft);
+      else renderDrafts();
 
-      // Update unsent count in stats bar
-      const unsentCount = state.drafts.filter(d => d.status !== 'Emailed').length;
-      document.getElementById('sc-drafts').textContent = unsentCount;
-
+      document.getElementById('sc-drafts').textContent = state.drafts.filter(d => d.status !== 'Emailed').length;
       toast('success', `Sent to ${sent} recipient(s)`);
       log('ok', `Sent ${sent} emails. Draft #${state.activeDraft.email_id} marked as Emailed.`);
     }
-
     if (errors && errors.length) {
       toast('error', `${errors.length} failed`);
       errors.forEach(e => log('err', e));
@@ -1692,13 +1658,12 @@ async function runScanner() {
   btn.innerHTML = '<div class="spinner"></div> Scanning...';
   log('info', `Scanner started — keywords: ${getKeywords().join(', ')}`);
   try {
-    const res = await fetch(`${API}/scan`, {
+    const res = await apiFetch(`${API}/api/scan`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        keywords: getKeywords(),
-        lat: parseFloat(document.getElementById('lat-input').value),
-        lng: parseFloat(document.getElementById('lng-input').value),
+        keywords:  getKeywords(),
+        lat:       parseFloat(document.getElementById('lat-input').value),
+        lng:       parseFloat(document.getElementById('lng-input').value),
         radius_mi: parseInt(document.getElementById('radius-input').value),
       })
     });
@@ -1717,9 +1682,9 @@ async function runScanner() {
 }
 
 function previewCmd() {
-  const kws = getKeywords();
-  const lat = document.getElementById('lat-input').value;
-  const lng = document.getElementById('lng-input').value;
+  const kws    = getKeywords();
+  const lat    = document.getElementById('lat-input').value;
+  const lng    = document.getElementById('lng-input').value;
   const radius = Math.round(parseFloat(document.getElementById('radius-input').value) * 1609.34);
   log('info', `python get_places_and_emails.py`);
   log('info', `  KEYWORDS="${kws.join(',')}" LAT=${lat} LNG=${lng} RADIUS_M=${radius}`);
@@ -1731,7 +1696,6 @@ function previewCmd() {
 function getKeywords() {
   return [...document.querySelectorAll('#kw-wrap .kw-tag')].map(t => t.textContent.replace('×','').trim());
 }
-
 function handleTagKey(e) {
   if (e.key === 'Enter' || e.key === ',') {
     e.preventDefault();
@@ -1745,50 +1709,42 @@ function handleTagKey(e) {
     if (tags.length) tags[tags.length - 1].remove();
   }
 }
-
 function addTag(val) {
   const input = document.getElementById('kw-input');
-  const tag = document.createElement('span');
+  const tag   = document.createElement('span');
   tag.className = 'kw-tag';
   tag.innerHTML = `${val} <button onclick="removeTag(this,'${val}')">×</button>`;
   document.getElementById('kw-wrap').insertBefore(tag, input);
 }
-
-function removeTag(btn, val) { btn.closest('.kw-tag').remove(); }
+function removeTag(btn) { btn.closest('.kw-tag').remove(); }
 
 // ─────────────────────────────────────────────
 // Log & stats
 // ─────────────────────────────────────────────
 function log(type, msg) {
-  const el = document.getElementById('log-body');
+  const el  = document.getElementById('log-body');
   const now = new Date().toLocaleTimeString('en-US', {hour12:false});
   const cls = {ok:'log-ok', err:'log-err', info:'log-info', warn:'log-warn'}[type] || '';
-  const prefix = {ok:'✓', err:'✗', info:'›', warn:'⚠'}[type] || '·';
+  const pfx = {ok:'✓', err:'✗', info:'›', warn:'⚠'}[type] || '·';
   const line = document.createElement('div');
   line.className = 'log-line fadein';
-  line.innerHTML = `<span class="log-ts">${now}</span><span class="${cls}">${prefix} ${msg}</span>`;
+  line.innerHTML = `<span class="log-ts">${now}</span><span class="${cls}">${pfx} ${msg}</span>`;
   el.appendChild(line);
   el.scrollTop = el.scrollHeight;
 }
-
-function clearLog() {
-  document.getElementById('log-body').innerHTML = '';
-}
+function clearLog() { document.getElementById('log-body').innerHTML = ''; }
 
 function updateStats() {
-  const total = state.companies.length;
+  const total    = state.companies.length;
   const contacts = state.companies.reduce((a, c) => a + (c.contact_count || 0), 0);
-  const sent = state.companies.reduce((a, c) => a + (c.emailed_count || 0), 0);
-  const drafts = state.companies.reduce((a, c) => a + (c.unsent_count || 0), 0);
+  const sent     = state.companies.reduce((a, c) => a + (c.emailed_count || 0), 0);
+  const drafts   = state.companies.reduce((a, c) => a + (c.unsent_count  || 0), 0);
   document.getElementById('stat-companies').textContent = total;
-  document.getElementById('stat-contacts').textContent = contacts;
-  document.getElementById('stat-sent').textContent = sent;
-  document.getElementById('stat-drafts').textContent = drafts;
+  document.getElementById('stat-contacts').textContent  = contacts;
+  document.getElementById('stat-sent').textContent      = sent;
+  document.getElementById('stat-drafts').textContent    = drafts;
 }
 
-// ─────────────────────────────────────────────
-// Toasts
-// ─────────────────────────────────────────────
 function toast(type, msg) {
   const container = document.getElementById('toasts');
   const t = document.createElement('div');
@@ -1801,7 +1757,7 @@ function toast(type, msg) {
 // ─────────────────────────────────────────────
 // Init
 // ─────────────────────────────────────────────
-refreshCompanies();
+init();
 </script>
 </body>
 </html>
