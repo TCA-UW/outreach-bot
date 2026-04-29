@@ -1,4 +1,5 @@
 supabase
+resend
 python-dotenv
 requests
 bs4
