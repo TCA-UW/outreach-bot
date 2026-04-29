@@ -3,7 +3,6 @@ python-dotenv
 requests
 bs4
 googlemaps
-PyJWT
 fastapi
 anthropic
 dnspython
