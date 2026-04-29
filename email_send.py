@@ -16,15 +16,9 @@ Safety:
 import os
 import re
 import sys
-import ssl
-import smtplib
-import socket
 import logging
-from email.message import EmailMessage
 from datetime import datetime, timezone
 from typing import List, Dict, Tuple
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import resend
 
 log = logging.getLogger("email_send")
@@ -42,12 +36,6 @@ if not SUPABASE_URL or not SUPABASE_KEY:
     print("❌ Missing SUPABASE_URL or SUPABASE_KEY")
     sys.exit(1)
 
-SMTP_HOST = os.getenv("SMTP_HOST")
-SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
-SMTP_USER = os.getenv("SMTP_USER")
-SMTP_PASS = os.getenv("SMTP_PASS")
-SMTP_USE_TLS = os.getenv("SMTP_USE_TLS", "true").lower() == "true"
-
 FROM_NAME = os.getenv("FROM_NAME", "Technology Consulting Association (TCA)")
 FROM_EMAIL = os.getenv("FROM_EMAIL")
 REPLY_TO  = os.getenv("REPLY_TO", FROM_EMAIL)
@@ -56,8 +44,8 @@ SEND_LIMIT = int(os.getenv("SEND_LIMIT", "0"))  # 0 = unlimited
 CONFIRM_EACH = os.getenv("CONFIRM_EACH", "true").lower() == "true"
 START_COMPANY_ID = int(os.getenv("START_COMPANY_ID", "1"))
 
-if not SMTP_HOST or not SMTP_USER or not SMTP_PASS or not FROM_EMAIL:
-    print("❌ Missing SMTP settings. Required: SMTP_HOST, SMTP_USER, SMTP_PASS, FROM_EMAIL")
+if not FROM_EMAIL:
+    print("❌ Missing FROM_EMAIL")
     sys.exit(1)
 
 sb: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -240,7 +228,7 @@ def smtp_send(to_addr: str, subject: str, body_text: str, body_html: str | None 
 
 def main():
     print("📨 Email Sender starting...")
-    print(f"   FROM: {FROM_NAME} <{FROM_EMAIL}>   SMTP: {SMTP_HOST}:{SMTP_PORT} TLS={SMTP_USE_TLS}")
+    print(f"   FROM: {FROM_NAME} <{FROM_EMAIL}>  (via Resend)")
     print(f"   CONFIRM_EACH={CONFIRM_EACH}  COMPANY_LIMIT={SEND_LIMIT or '∞'}  START_COMPANY_ID={START_COMPANY_ID}")
 
     # drafts = fetch_drafts()
