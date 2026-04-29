@@ -1,12 +1,8 @@
-pyqt5
 supabase
-dotenv
+python-dotenv
 requests
 bs4
 googlemaps
-PyJWT
-uvicorn
-PySide6
 fastapi
 anthropic
 dnspython

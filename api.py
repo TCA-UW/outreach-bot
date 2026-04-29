@@ -234,7 +234,6 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from typing import Optional
 import os
-import jwt
 from fastapi.responses import FileResponse
 
 from db_connect import supabase
@@ -258,21 +257,15 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="."), name="static")
 
 # ── Auth ──
-SUPABASE_JWT_SECRET = os.getenv("SUPABASE_JWT_SECRET")
 bearer = HTTPBearer()
 
 def require_auth(credentials: HTTPAuthorizationCredentials = Security(bearer)):
-    if not SUPABASE_JWT_SECRET:
-        raise HTTPException(500, "SUPABASE_JWT_SECRET not configured")
     try:
-        jwt.decode(
-            credentials.credentials,
-            SUPABASE_JWT_SECRET,
-            algorithms=["HS256"],
-            options={"verify_aud": False}
-        )
-    except jwt.ExpiredSignatureError:
-        raise HTTPException(401, "Token expired — please log in again")
+        result = supabase.auth.get_user(credentials.credentials)
+        if not result.user:
+            raise HTTPException(401, "Invalid or expired token")
+    except HTTPException:
+        raise
     except Exception:
         raise HTTPException(401, "Invalid or expired token")
 
