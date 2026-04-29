@@ -25,6 +25,7 @@ from datetime import datetime, timezone
 from typing import List, Dict, Tuple
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import resend
 
 log = logging.getLogger("email_send")
 
@@ -221,41 +222,19 @@ def mark_email_sent(email_id: int, sent_count: int):
 
 #smtp
 def smtp_send(to_addr: str, subject: str, body_text: str, body_html: str | None = None):
-    log.info("SMTP send — to: %s  subject: %s  host: %s:%s  tls: %s", to_addr, subject, SMTP_HOST, SMTP_PORT, SMTP_USE_TLS)
-    msg = EmailMessage()
-    msg["From"] = f"{FROM_NAME} <{FROM_EMAIL}>"
-    msg["To"] = to_addr
-    msg["Subject"] = subject
+    resend.api_key = os.getenv("RESEND_API_KEY")
+    log.info("Resend send — to: %s  subject: %s", to_addr, subject)
+    params = {
+        "from": f"{FROM_NAME} <{FROM_EMAIL}>",
+        "to": [to_addr],
+        "subject": subject,
+        "html": body_html if body_html else f"<pre>{body_text}</pre>",
+        "text": to_plain_text(body_text),
+    }
     if REPLY_TO:
-        msg["Reply-To"] = REPLY_TO
-
-    if body_html:
-        msg.set_content(to_plain_text(body_text))
-        msg.add_alternative(body_html, subtype="html")
-    else:
-        msg.set_content(to_plain_text(body_text))
-
-    # Connect & send
-    if SMTP_USE_TLS:
-        log.info("SMTP connecting (STARTTLS)...")
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=15) as server:
-            server.ehlo()
-            log.info("SMTP EHLO OK — starting TLS...")
-            server.starttls(context=ssl.create_default_context())
-            log.info("SMTP TLS OK — logging in...")
-            server.login(SMTP_USER, SMTP_PASS)
-            log.info("SMTP login OK — sending message...")
-            server.send_message(msg)
-            log.info("SMTP send OK")
-    else:
-        log.info("SMTP connecting (SSL)...")
-        context = ssl.create_default_context()
-        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context, timeout=15) as server:
-            log.info("SMTP SSL connected — logging in...")
-            server.login(SMTP_USER, SMTP_PASS)
-            log.info("SMTP login OK — sending message...")
-            server.send_message(msg)
-            log.info("SMTP send OK")
+        params["reply_to"] = REPLY_TO
+    result = resend.Emails.send(params)
+    log.info("Resend send OK — id: %s", result.get("id"))
 
 # ----- Main flow -----
 
