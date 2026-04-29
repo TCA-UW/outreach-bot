@@ -12,3 +12,4 @@ anthropic
 dnspython
 tenacity
 pydantic
+uvicorn[standard]
