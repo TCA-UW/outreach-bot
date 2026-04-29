@@ -234,7 +234,12 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from typing import Optional
 import os
+import logging
+import traceback
 from fastapi.responses import FileResponse
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger("api")
 
 from db_connect import supabase
 from email_generation import anthropic_generate_for_company
@@ -260,13 +265,19 @@ app.mount("/static", StaticFiles(directory="."), name="static")
 bearer = HTTPBearer()
 
 def require_auth(credentials: HTTPAuthorizationCredentials = Security(bearer)):
+    token = credentials.credentials
+    log.info("AUTH attempt — token prefix: %s", token[:20] if token else "None")
     try:
-        result = supabase.auth.get_user(credentials.credentials)
+        result = supabase.auth.get_user(token)
+        log.info("AUTH get_user result: %s", result)
         if not result.user:
+            log.warning("AUTH failed — result.user is None")
             raise HTTPException(401, "Invalid or expired token")
+        log.info("AUTH success — user: %s", result.user.email)
     except HTTPException:
         raise
     except Exception as e:
+        log.error("AUTH exception: %s\n%s", e, traceback.format_exc())
         raise HTTPException(401, f"Auth error: {type(e).__name__}: {e}")
 
 
